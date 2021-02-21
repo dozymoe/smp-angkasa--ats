@@ -1,0 +1,8 @@
+/etc/runner.json
+
+## python
+
+/.virtualenv/
+/python_modules
+/requirements.txt
+*.pyc
