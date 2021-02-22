@@ -1,0 +1,22 @@
+{% extends "base_drawer.html" %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block drawer_menu_website %}
+  {% if user.is_authenticated %}
+    {% url 'account_logout' as url %}
+    {% List_Item tag="a" href=url tabindex="0" %}
+      <i class="fa fa-sign-out-alt"></i>
+      {% trans "Sign Out" %}
+    {% endList_Item %}
+  {% else %}
+    {% url 'account_login' as url %}
+    {% List_Item tag="a" href=url tabindex="0" %}
+      <i class="fa fa-sign-in-alt"></i>
+      {% trans "Sign In" %}
+    {% endList_Item %}
+  {% endif %}
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

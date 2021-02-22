@@ -1,0 +1,13 @@
+@use "@material/theme/color-palette";
+
+$primary-light: color-palette.$indigo-300;
+$primary: color-palette.$indigo-700;
+$primary-dark: color-palette.$indigo-900;
+$primary-active: color-palette.$indigo-800;
+
+$secondary-light: color-palette.$orange-200;
+$secondary: color-palette.$orange-500;
+$secondary-dark: color-palette.$orange-800;
+
+$surface: color-palette.$light-blue-100;
+$background: color-palette.$blue-50;

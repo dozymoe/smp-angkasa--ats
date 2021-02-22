@@ -1,0 +1,15 @@
+@use "@material/theme";
+
+.form-errors
+{
+    font-size: 0.8em;
+    margin-left: 1em;
+    padding-left: 0;
+
+    @include theme.property(color, 'error');
+}
+
+.form-group
+{
+    margin: 1rem 0;
+}

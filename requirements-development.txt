@@ -1,5 +1,9 @@
 -r requirements-production.txt
 
+factory_boy
+faker
 psycopg2
 pybuildtool
+pygments
+pylint
 uwsgi

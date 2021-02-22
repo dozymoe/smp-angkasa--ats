@@ -1,0 +1,49 @@
+@use "@material/theme";
+@use "@material/shape";
+@import "@material/typography/mdc-typography";
+//-
+@import "../variables";
+
+.mdc-drawer__title
+{
+    a
+    {
+        text-decoration: none;
+    }
+}
+
+.mdc-drawer__content .mdc-list-item__ripple + .mdc-list-item__text
+{
+    margin-left: 2rem;
+}
+
+.mdc-list-item__graphic
+{
+    margin-right: 0;
+    width: 2rem;
+}
+
+footer
+{
+    @include theme.property(background-color, 'primary');
+    @include theme.property(color, 'on-primary');
+
+    a
+    {
+        @include theme.property(color, 'on-primary');
+    }
+
+    .contact-info
+    {
+        display: block;
+        padding: 0.5em 2px;
+        text-decoration: none;
+
+        &:active,
+        &:focus,
+        &:hover
+        {
+            background-color: $primary-active;
+        }
+    }
+}

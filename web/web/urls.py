@@ -13,9 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+#from django.urls import include, path
 from django.urls import path
+#-
+from website import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index.<str:format>', views.Home.as_view(), name='Home'),
+]
+
+urlpatterns += i18n_patterns(
+    path('visi-misi.<str:format>', views.VisiMisi.as_view(),
+        name='ProfileMission'),
+    path('ppdb.<str:format>', views.Ppdb.as_view(), name='Ppdb'),
+
+    prefix_default_language=False,
+)
+
+urlpatterns += [
+    path('', views.Home.as_view()),
 ]

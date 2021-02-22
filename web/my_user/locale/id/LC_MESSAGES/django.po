@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-12 06:10+0700\n"
+"POT-Creation-Date: 2021-02-22 19:44+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: myuser/templates/account/account_inactive.html:5
-#: myuser/templates/account/account_inactive.html:16
+#: my_user/templates/account/account_inactive.html:5
+#: my_user/templates/account/account_inactive.html:16
 msgid "Account Inactive"
 msgstr "Akun Tidak Aktif"
 
-#: myuser/templates/account/account_inactive.html:10
-#: myuser/templates/account/email.html:10
-#: myuser/templates/account/email_confirm.html:11
-#: myuser/templates/account/login.html:6 myuser/templates/account/login.html:16
-#: myuser/templates/account/login.html:93
-#: myuser/templates/account/password_change.html:10
-#: myuser/templates/account/password_reset.html:19
-#: myuser/templates/account/password_reset_done.html:19
-#: myuser/templates/account/password_reset_from_key.html:10
-#: myuser/templates/account/password_reset_from_key_done.html:10
-#: myuser/templates/account/password_set.html:10
-#: myuser/templates/account/signup_closed.html:10
-#: myuser/templates/account/verification_sent.html:10
-#: myuser/templates/account/verified_email_required.html:10
+#: my_user/templates/account/account_inactive.html:10
+#: my_user/templates/account/email.html:10
+#: my_user/templates/account/email_confirm.html:11
+#: my_user/templates/account/login.html:6
+#: my_user/templates/account/login.html:16
+#: my_user/templates/account/login.html:93
+#: my_user/templates/account/password_change.html:10
+#: my_user/templates/account/password_reset.html:19
+#: my_user/templates/account/password_reset_done.html:19
+#: my_user/templates/account/password_reset_from_key.html:10
+#: my_user/templates/account/password_reset_from_key_done.html:10
+#: my_user/templates/account/password_set.html:10
+#: my_user/templates/account/signup_closed.html:10
+#: my_user/templates/account/verification_sent.html:10
+#: my_user/templates/account/verified_email_required.html:10
 msgid "Sign In"
 msgstr "Masuk"
 
-#: myuser/templates/account/account_inactive.html:23
+#: my_user/templates/account/account_inactive.html:23
 msgid "This account is inactive."
 msgstr "Akun ini tidak aktif"
 
-#: myuser/templates/account/email.html:5 myuser/templates/account/email.html:16
+#: my_user/templates/account/email.html:5
+#: my_user/templates/account/email.html:16
 msgid "E-mail Addresses"
 msgstr "Alamat-Alamat Surel"
 
-#: myuser/templates/account/email.html:25
+#: my_user/templates/account/email.html:25
 msgid ""
 "\n"
 "        The following e-mail addresses are associated with your account:\n"
@@ -57,35 +59,35 @@ msgstr ""
 "        Alamat-Alamat surel di bawah terdaftar atas nama akun Anda:\n"
 "      "
 
-#: myuser/templates/account/email.html:45
+#: my_user/templates/account/email.html:45
 msgid "Verified"
 msgstr "Terverifikasi"
 
-#: myuser/templates/account/email.html:47
+#: my_user/templates/account/email.html:47
 msgid "Unverified"
 msgstr "Belum Diverifikasi"
 
-#: myuser/templates/account/email.html:50
+#: my_user/templates/account/email.html:50
 msgid "Primary"
 msgstr "Utama"
 
-#: myuser/templates/account/email.html:58
+#: my_user/templates/account/email.html:58
 msgid "Make Primary"
 msgstr "Bikin Utama"
 
-#: myuser/templates/account/email.html:61
+#: my_user/templates/account/email.html:61
 msgid "Re-send Verification"
 msgstr "Kirim Ulang Verifikasi"
 
-#: myuser/templates/account/email.html:64
+#: my_user/templates/account/email.html:64
 msgid "Remove"
 msgstr "Hapus"
 
-#: myuser/templates/account/email.html:73
+#: my_user/templates/account/email.html:73
 msgid "Warning:"
 msgstr "Peringatan:"
 
-#: myuser/templates/account/email.html:74
+#: my_user/templates/account/email.html:74
 msgid ""
 "\n"
 "        You currently do not have any e-mail address set up. You should\n"
@@ -100,24 +102,24 @@ msgstr ""
 "        prosedur ganti kata sandi kalau lupa, dll.\n"
 "      "
 
-#: myuser/templates/account/email.html:84
+#: my_user/templates/account/email.html:84
 msgid "Add E-mail Address"
 msgstr "Tambah Alamat Surel"
 
-#: myuser/templates/account/email.html:96
+#: my_user/templates/account/email.html:96
 msgid "Add E-mail"
 msgstr "Tambah Surel"
 
-#: myuser/templates/account/email.html:108
+#: my_user/templates/account/email.html:108
 msgid "Do you really want to remove the selected e-mail address?"
 msgstr "Apakah benar Anda mau menghapus alamat surel ini?"
 
-#: myuser/templates/account/email_confirm.html:6
-#: myuser/templates/account/email_confirm.html:17
+#: my_user/templates/account/email_confirm.html:6
+#: my_user/templates/account/email_confirm.html:17
 msgid "Confirm E-mail Address"
 msgstr "Konfirmasi Alamat Surel"
 
-#: myuser/templates/account/email_confirm.html:28
+#: my_user/templates/account/email_confirm.html:28
 #, python-format
 msgid ""
 "\n"
@@ -130,11 +132,11 @@ msgstr ""
 "        adalah alaman surel dari pengguna %(user_display)s.\n"
 "      "
 
-#: myuser/templates/account/email_confirm.html:38
+#: my_user/templates/account/email_confirm.html:38
 msgid "Confirm"
 msgstr "Konfirmasi"
 
-#: myuser/templates/account/email_confirm.html:47
+#: my_user/templates/account/email_confirm.html:47
 #, python-format
 msgid ""
 "\n"
@@ -149,27 +151,27 @@ msgstr ""
 "        <a href=\"%(email_url)s\">lakukan lagi konfirmasi surel</a>.\n"
 "      "
 
-#: myuser/templates/account/login.html:11
-#: myuser/templates/account/password_reset.html:12
-#: myuser/templates/account/password_reset_done.html:12
-#: myuser/templates/account/signup.html:10
+#: my_user/templates/account/login.html:11
+#: my_user/templates/account/password_reset.html:12
+#: my_user/templates/account/password_reset_done.html:12
+#: my_user/templates/account/signup.html:10
 msgid "Home Page"
 msgstr "Laman Muka"
 
-#: myuser/templates/account/login.html:24
-#: myuser/templates/account/signup.html:5
-#: myuser/templates/account/signup.html:16
-#: myuser/templates/account/signup.html:53
+#: my_user/templates/account/login.html:24
+#: my_user/templates/account/signup.html:5
+#: my_user/templates/account/signup.html:16
+#: my_user/templates/account/signup.html:53
 msgid "Sign Up"
 msgstr "Daftar"
 
-#: myuser/templates/account/login.html:30
-#: myuser/templates/account/login.html:89
-#: myuser/templates/account/password_change.html:44
+#: my_user/templates/account/login.html:30
+#: my_user/templates/account/login.html:89
+#: my_user/templates/account/password_change.html:44
 msgid "Forgot Password?"
 msgstr "Lupa Kata Sandi"
 
-#: myuser/templates/account/login.html:41
+#: my_user/templates/account/login.html:41
 #, python-format
 msgid ""
 "\n"
@@ -184,11 +186,11 @@ msgstr ""
 "        %(site_name)s lalu coba masuk di bawah ini:\n"
 "      "
 
-#: myuser/templates/account/login.html:53
+#: my_user/templates/account/login.html:53
 msgid "or"
 msgstr "atau"
 
-#: myuser/templates/account/login.html:60
+#: my_user/templates/account/login.html:60
 #, python-format
 msgid ""
 "\n"
@@ -201,25 +203,25 @@ msgstr ""
 "        <a href=\"%(signup_url)s\">daftar</a> dahulu.\n"
 "      "
 
-#: myuser/templates/account/password_change.html:5
-#: myuser/templates/account/password_change.html:16
-#: myuser/templates/account/password_change.html:41
-#: myuser/templates/account/password_reset_from_key.html:5
-#: myuser/templates/account/password_reset_from_key.html:19
-#: myuser/templates/account/password_reset_from_key.html:52
-#: myuser/templates/account/password_reset_from_key_done.html:5
-#: myuser/templates/account/password_reset_from_key_done.html:16
+#: my_user/templates/account/password_change.html:5
+#: my_user/templates/account/password_change.html:16
+#: my_user/templates/account/password_change.html:41
+#: my_user/templates/account/password_reset_from_key.html:5
+#: my_user/templates/account/password_reset_from_key.html:19
+#: my_user/templates/account/password_reset_from_key.html:52
+#: my_user/templates/account/password_reset_from_key_done.html:5
+#: my_user/templates/account/password_reset_from_key_done.html:16
 msgid "Change Password"
 msgstr "Ganti Kata Sandi"
 
-#: myuser/templates/account/password_reset.html:6
-#: myuser/templates/account/password_reset.html:26
-#: myuser/templates/account/password_reset_done.html:6
-#: myuser/templates/account/password_reset_done.html:26
+#: my_user/templates/account/password_reset.html:6
+#: my_user/templates/account/password_reset.html:26
+#: my_user/templates/account/password_reset_done.html:6
+#: my_user/templates/account/password_reset_done.html:26
 msgid "Password Reset"
 msgstr "Ganti Ulang Kata Sandi"
 
-#: myuser/templates/account/password_reset.html:38
+#: my_user/templates/account/password_reset.html:38
 msgid ""
 "\n"
 "      Forgotten your password? Enter your e-mail address below, and we'll\n"
@@ -231,11 +233,11 @@ msgstr ""
 "      mengirimkan surel agar bisa diganti ulang kata sandinya.\n"
 "    "
 
-#: myuser/templates/account/password_reset.html:54
+#: my_user/templates/account/password_reset.html:54
 msgid "Reset My Password"
 msgstr "Ganti Ulang Kata Sandi Saya"
 
-#: myuser/templates/account/password_reset.html:59
+#: my_user/templates/account/password_reset.html:59
 msgid ""
 "\n"
 "      Please contact us if you have any trouble resetting your password.\n"
@@ -246,7 +248,7 @@ msgstr ""
 "sandi.\n"
 "    "
 
-#: myuser/templates/account/password_reset_done.html:38
+#: my_user/templates/account/password_reset_done.html:38
 msgid ""
 "\n"
 "      We have sent you an e-mail. Please contact us if you do not receive "
@@ -259,11 +261,11 @@ msgstr ""
 "      menerimanya dalam beberapa menit.\n"
 "    "
 
-#: myuser/templates/account/password_reset_from_key.html:17
+#: my_user/templates/account/password_reset_from_key.html:17
 msgid "Bad Token"
 msgstr "Token Salah"
 
-#: myuser/templates/account/password_reset_from_key.html:30
+#: my_user/templates/account/password_reset_from_key.html:30
 #, python-format
 msgid ""
 "\n"
@@ -280,18 +282,18 @@ msgstr ""
 "        <a href=\"%(passwd_reset_url)s\">ganti ulang kata sandi</a>.\n"
 "      "
 
-#: myuser/templates/account/password_reset_from_key.html:56
-#: myuser/templates/account/password_reset_from_key_done.html:23
+#: my_user/templates/account/password_reset_from_key.html:56
+#: my_user/templates/account/password_reset_from_key_done.html:23
 msgid "Your password is now changed."
 msgstr "Kata Sandi Anda telah diganti."
 
-#: myuser/templates/account/password_set.html:5
-#: myuser/templates/account/password_set.html:16
-#: myuser/templates/account/password_set.html:37
+#: my_user/templates/account/password_set.html:5
+#: my_user/templates/account/password_set.html:16
+#: my_user/templates/account/password_set.html:37
 msgid "Set Password"
 msgstr "Tetapkan Kata Sandi"
 
-#: myuser/templates/account/signup.html:24
+#: my_user/templates/account/signup.html:24
 #, python-format
 msgid ""
 "\n"
@@ -304,23 +306,23 @@ msgstr ""
 "      <a href=\"%(login_url)s\">masuk lewat sini</a>.\n"
 "    "
 
-#: myuser/templates/account/signup_closed.html:5
-#: myuser/templates/account/signup_closed.html:16
+#: my_user/templates/account/signup_closed.html:5
+#: my_user/templates/account/signup_closed.html:16
 msgid "Sign Up Closed"
 msgstr "Pendaftaran Telah Ditutup"
 
-#: myuser/templates/account/signup_closed.html:23
+#: my_user/templates/account/signup_closed.html:23
 msgid "We are sorry, but the sign up is currently closed."
 msgstr "Mohon maaf, tapi sementara ini pendaftaran sudah kami tutup."
 
-#: myuser/templates/account/verification_sent.html:5
-#: myuser/templates/account/verification_sent.html:16
-#: myuser/templates/account/verified_email_required.html:5
-#: myuser/templates/account/verified_email_required.html:16
+#: my_user/templates/account/verification_sent.html:5
+#: my_user/templates/account/verification_sent.html:16
+#: my_user/templates/account/verified_email_required.html:5
+#: my_user/templates/account/verified_email_required.html:16
 msgid "Verify Your E-mail Address"
 msgstr "Verifikasi Alamat Surel Anda"
 
-#: myuser/templates/account/verification_sent.html:24
+#: my_user/templates/account/verification_sent.html:24
 msgid ""
 "\n"
 "      We have sent an e-mail to you for verification. Follow the link\n"
@@ -335,7 +337,7 @@ msgstr ""
 "      beberapa menit.\n"
 "    "
 
-#: myuser/templates/account/verified_email_required.html:26
+#: my_user/templates/account/verified_email_required.html:26
 msgid ""
 "\n"
 "      This part of the site requires us to verify that you are who you "
@@ -349,7 +351,7 @@ msgstr ""
 "      Oleh karena itu, kami meminta Anda memverifikasi alamat surel Anda.\n"
 "    "
 
-#: myuser/templates/account/verified_email_required.html:34
+#: my_user/templates/account/verified_email_required.html:34
 msgid ""
 "\n"
 "      We have sent an e-mail to you for verification. Please click on the\n"
@@ -363,7 +365,7 @@ msgstr ""
 "menerima pesan tersebut dalam beberapa menit ke depan.\n"
 "    "
 
-#: myuser/templates/account/verified_email_required.html:42
+#: my_user/templates/account/verified_email_required.html:42
 #, python-format
 msgid ""
 "\n"

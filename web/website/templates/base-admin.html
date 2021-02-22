@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block topbar_right_wrapper %}
+  {% TopAppBar_Right id="topbar-right-menu" %}
+    {% block topbar_right %}{% endblock %}
+    {% if user.is_authenticated %}
+      {% url 'account_logout' as url %}
+      {% trans "Sign Out" as label %}
+      {% IconButton tag="a" href=url label=label %}
+        <i class="fa fa-sign-out-alt"></i>
+      {% endIconButton %}
+    {% else %}
+      {% url 'account_login' as url %}
+      {% trans "Sign In" as label %}
+      {% IconButton tag="a" href=url label=label %}
+        <i class="fa fa-sign-in-alt"></i>
+      {% endIconButton %}
+    {% endif %}
+  {% endTopAppBar_Right %}
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

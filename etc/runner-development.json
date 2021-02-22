@@ -2,6 +2,8 @@
     "modules": [
         "lib.fireh_runner.modules.setup",
         "lib.fireh_runner.modules.python",
+        "lib.fireh_runner.modules.virtualenv",
+        "lib.fireh_runner.modules.waf",
         "lib.fireh_runner.modules.django",
         "lib.fireh_runner.modules.uwsgi"
     ],
@@ -12,6 +14,7 @@
     ],
     "python_version": "3.7",
     "waf_version": "2.0.21",
+    "virtualenv_type": "venv",
 
     "default_project": "web",
     "default_variant": "development",

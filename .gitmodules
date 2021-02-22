@@ -7,3 +7,9 @@
 [submodule "lib-py/frozen-django"]
 	path = lib-py/frozen-django
 	url = https://github.com/dozymoe/frozen-django
+[submodule "lib/react-materialweb"]
+	path = lib/react-materialweb
+	url = https://github.com/dozymoe/react-materialweb
+[submodule "lib/fireh_react"]
+	path = lib/fireh_react
+	url = https://github.com/dozymoe/fireh_react

@@ -1,0 +1,51 @@
+{% extends "base_drawer.html" %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block head_title %}
+  {% trans "Penerimaan Peserta Didik Baru" %}
+{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' 'html' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block drawer %}
+  {% url 'ProfileMission' 'html' as url %}
+  {% List_Item tag="a" href=url tabindex="2" %}
+    {% trans "Profile" %}
+  {% endList_Item %}
+
+  {% List_Item tag="a" href="#" tabindex="3" %}
+    {% trans "Kegiatan" %}
+  {% endList_Item %}
+
+  {% url 'Ppdb' 'html' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% trans "PPDB" %}
+  {% endList_Item %}
+{% endblock %}
+
+
+{% block drawer_menu_website %}
+  {% List_Item tag="a" href="/contact-us" tabindex="1" %}
+    {% trans "Contact Us" %}
+  {% endList_Item %}
+{% endblock %}
+
+
+{% block content %}
+  <div class="mdc-layout-grid__cell">
+    <p>
+      <a href="https://sekolah-angkasa.sch.id/download/2018/" target="_blank">
+        Unduh dokumen PPDB
+      </a>
+    </p>
+  </div>
+{% endblock %}

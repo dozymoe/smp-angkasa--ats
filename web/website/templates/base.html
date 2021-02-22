@@ -1,0 +1,116 @@
+{% spaceless %}
+
+  {% load i18n static %}
+  {% load materialweb website_extras %}
+
+  {% captureas title_content %}{% spaceless %}
+    {% block head_title %}{% endblock %}
+  {% endspaceless %}{% endcaptureas %}
+
+<!DOCTYPE html>
+{% endspaceless %}
+<html {% block html_attrs %}{% endblock %}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  {% spaceless %}
+    <title>
+      {% if title_content %}{{ title_content }} - {% endif %}
+      {{ request.site.name }}
+    </title>
+  {% endspaceless %}
+  <link rel="shortcut icon" href="/favicon.ico">
+  {% block head_meta %}{% endblock %}
+  {% block head_styles %}{% stylesheets %}{% endblock %}
+  {% block head_scripts %}{% javascripts %}{% endblock %}
+</head>
+{% block body %}
+  <body class="mdc-typography {% block body_classes %}{% endblock %}">
+    {% TopAppBar %}
+      {% TopAppBar_Left %}
+        {% block topbar_left %}
+          {% url 'Home' 'html' as url %}
+          {% trans "Home Page" as label %}
+          {% IconButton tag="a" href=url label=label class="material-icons" %}
+            home
+          {% endIconButton %}
+        {% endblock %}
+
+        {% TopAppBar_Title tag="h1" %}
+          {% if title_content %}
+            {{ title_content }}
+          {% else %}
+            {{request.site.name}}
+          {% endif %}
+        {% endTopAppBar_Title %}
+      {% endTopAppBar_Left %}
+
+      {% block topbar_right_wrapper %}
+        {% TopAppBar_Right id="topbar-right-menu" %}
+          {% block topbar_right %}{% endblock %}
+        {% endTopAppBar_Right %}
+      {% endblock %}
+    {% endTopAppBar %}
+
+    <div id="page-wrapper">
+      <main class="mdc-top-app-bar--fixed-adjust">
+        <div class="mdc-layout-grid">
+          {% if messages %}
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell">
+                {% flash_messages messages DEFAULT_MESSAGE_LEVELS.DEBUG DEFAULT_MESSAGE_LEVELS.WARNING as msgs %}
+                {% for msg in msgs %}
+                  {% Snackbar %}
+                    {% Snackbar_Content %}{{msg}}{% endSnackbar_Content %}
+                  {% endSnackbar %}
+                {% endfor %}
+
+                {% flash_messages messages DEFAULT_MESSAGE_LEVELS.WARNING DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
+                {% for msg in msgs %}
+                  {% Banner %}
+                    {% Banner_Content %}
+                      {% Banner_Text %}{{msg}}{% endBanner_Text %}
+                    {% endBanner_Content %}
+                    {% Banner_Actions %}
+                      {% Button type="button" class="mdc-banner__primary-action" %}
+                        {% trans "Close" %}
+                      {% endButton %}
+                    {% endBanner_Actions %}
+                  {% endBanner %}
+                {% endfor %}
+
+                {% flash_messages messages DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
+                {% if msgs %}
+                  <aside role="alert">
+                    <h2>Messages:</h2>
+                    <ul>
+                      {% for msg in msgs %}
+                        <li>{{msg}}</li>
+                      {% endfor %}
+                    </ul>
+                  </aside>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="mdc-layout-grid__inner">
+            {% block content %}
+              <div class="mdc-layout-grid__cell">
+                <p>Under construction.</p>
+              </div>
+            {% endblock %}
+          </div>
+        </div>
+        {% block jscontent %}
+          <div id="js_app"></div>
+        {% endblock %}
+        <div id="js_modal"></div>
+      </main>
+      {% block extra_body %}{% endblock %}
+      {% block footer %}
+        {% include "website/footer.html" %}
+      {% endblock %}
+    </div>
+  </body>
+{% endblock %}

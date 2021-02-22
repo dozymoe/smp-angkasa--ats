@@ -1,0 +1,205 @@
+lib-py:
+  options:
+    pylint_config_file: etc/pylint.rc
+
+  django-materialweb:
+    pylint:
+      raw_file_in: "{_1}/{_2}/materialweb/**/*.py"
+
+  frozen-django:
+    pylint:
+      raw_file_in: "{_1}/{_2}/frozen_django/**/*.py"
+
+
+pygmentize:
+  shell:
+    options:
+      command: ./run pybin pygmentize -S default -f html -a .code > tmp/syntax.css
+    raw_extra_out: tmp/syntax.css
+
+
+docutils:
+  cp:
+    raw_file_in: python_modules/{_1}/writers/html5_polyglot/*.css
+    raw_file_out: tmp/
+
+
+web:
+  options:
+    pylint_config_file: etc/pylint.rc
+    pylint_work_dir: "{_1}/"
+    webpack_work_dir: "{_1}/"
+
+  css:
+    webpack:
+      options:
+        config_file: "{_1}/webpack-{_2}.config.js"
+        mode: production
+      raw_depend_in:
+        - package-{{PROJECT_VARIANT}}.json
+        - "{_1}/webpack-{_2}.config.js"
+        - "{_1}/website/sass/**/*.scss"
+        - lib/react-materialweb/sass/**/*.scss
+      raw_extra_out:
+        - var/{_1}/webpack-{_2}.meta.json
+
+  js:
+    webpack:
+      options:
+        config_file: "{_1}/webpack-{_2}.config.js"
+        mode: production
+      raw_depend_in:
+        - package-{{PROJECT_VARIANT}}.json
+        - "{_1}/webpack-{_2}.config.js"
+        - "{_1}/website/js/**/*.js"
+        - "{_1}/website/js/**/*.jsx"
+        - lib/fireh_react/**/*.js"
+        - lib/fireh_react/js/**/*.jsx"
+        - lib/react-materialweb/js/**/*.js"
+        - lib/react-materialweb/js/**/*.jsx"
+
+  misc:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
+  my_user:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
+  web:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
+  website:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
+
+  collectstatic:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} collectstatic --no-input
+      raw_depend_in:
+        - python_modules/django/contrib/admin/static/**/*
+
+
+  unit_test:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} test --testrunner="test_runner.UnitTestRunner"
+      rule_in:
+        - "{_1}/{_1}/pylint"
+        - "{_1}/misc/pylint"
+        - "{_1}/my_user/pylint"
+        - "{_1}/web/pylint"
+        - "{_1}/website/pylint"
+        - lib-py/django-materialweb/pylint
+        - lib-py/frozen-django/pylint
+
+  check_migration:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} makemigrations --check --dry-run
+      rule_in:
+        - "{_1}/unit_test/shell"
+
+  integration_test:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} test --testrunner="test_runner.IntegrationTestRunner"
+      rule_in:
+        - "{_1}/check_migration/shell"
+
+
+  makemessages:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} {_2} --symlinks -l id
+      rule_in:
+        - "{_1}/unit_test/shell"
+      raw_depend_in:
+        - "{_1}/*/templates/**/*.html"
+
+  prunemessages:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} prune_locale
+      rule_in: "{_1}/makemessages/shell"
+
+  compilemessages:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} {_2}
+      rule_in:
+        - "{_1}/prunemessages/shell"
+      raw_depend_in:
+        - "{_1}/**/*.po"
+
+
+  runit_sv:
+    options:
+      command: restart
+      target: "{{HOME}}/service/smp-{_1}-django/"
+      wait_sec: 120
+      force: true
+    rule_in:
+      - "{_1}/compilemessages/shell"
+      - "{_1}/css/webpack"
+      - "{_1}/js/webpack"
+    raw_depend_in:
+      - etc/runner-{{PROJECT_VARIANT}}.json
+      - etc/{{PROJECT_VARIANT}}/*.json
+      - etc/{{PROJECT_VARIANT}}/{_1}/*.json
+      - etc/{{PROJECT_VARIANT}}/{_1}/uwsgi.ini
+
+  prune_website_assets:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} {_2}
+      rule_in:
+        - "{_1}/css/webpack"
+        - "{_1}/js/webpack"
+
+  beep:
+    shell:
+      options:
+        command: say build web {_1} completed
+      rule_in: "{_1}/runit_sv"
+
+
+node_modules:
+  fontawesome:
+    fonts:
+      cp:
+        raw_file_in: "{_1}/@fortawesome/{_2}-free/webfonts/*"
+        raw_file_out:
+          - public/web/assets/{_3}/
+
+  material-design-icons:
+    cp:
+      raw_file_in: "{_1}/{_2}/iconfont/MaterialIcons-Regular.*"
+      raw_file_out:
+        - public/web/assets/fonts/
+
+  typeface-roboto:
+    cp:
+      raw_file_in: "{_1}/{_2}/files/*"
+      raw_file_out:
+        - public/web/assets/fonts/
+    woff2ttf:
+      raw_file_in: "{_1}/{_2}/files/*.woff"
+      raw_file_out:
+        - public/web/assets/fonts/
+    woff2svg:
+      raw_file_in: "{_1}/{_2}/files/*.woff"
+      raw_file_out:
+        - public/web/assets/fonts/
+    eot:
+      woff2ttf:
+        raw_file_in: "{_1}/{_2}/files/*.woff"
+        raw_file_out: tmp/fonts/
+      ttf2eot:
+        rule_in: "{_1}/{_2}/{_3}/woff2ttf"
+        raw_file_in: tmp/fonts/*.ttf
+        raw_file_out:
+          - public/web/assets/fonts/

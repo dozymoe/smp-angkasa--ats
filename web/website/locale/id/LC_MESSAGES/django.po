@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-22 19:44+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: website/templates/404.html:4 website/templates/404.html:12
+msgid "Not Found"
+msgstr ""
+
+#: website/templates/500.html:4 website/templates/500.html:12
+msgid "Server Error"
+msgstr ""
+
+#: website/templates/base-admin.html:10
+#: website/templates/base_drawer-admin.html:10
+msgid "Sign Out"
+msgstr ""
+
+#: website/templates/base-admin.html:16
+#: website/templates/base_drawer-admin.html:16
+msgid "Sign In"
+msgstr ""
+
+#: website/templates/base.html:33 website/templates/base_drawer.html:11
+#: website/templates/website/ppdb.html:12
+#: website/templates/website/visi-misi.html:12
+msgid "Home Page"
+msgstr ""
+
+#: website/templates/base.html:76 website/templates/base_drawer.html:76
+msgid "Close"
+msgstr ""
+
+#: website/templates/base_drawer.html:48
+msgid "Website"
+msgstr ""
+
+#: website/templates/website/ppdb.html:6
+msgid "Penerimaan Peserta Didik Baru"
+msgstr ""
+
+#: website/templates/website/ppdb.html:22
+#: website/templates/website/visi-misi.html:22
+#: website/templates/website/visi-misi.html:38
+#: website/templates/website/visi-misi.html:43
+#: website/templates/website/welcome.html:8
+msgid "Profile"
+msgstr ""
+
+#: website/templates/website/ppdb.html:26
+#: website/templates/website/visi-misi.html:27
+#: website/templates/website/welcome.html:12
+msgid "Kegiatan"
+msgstr ""
+
+#: website/templates/website/ppdb.html:31
+#: website/templates/website/visi-misi.html:32
+#: website/templates/website/welcome.html:17
+msgid "PPDB"
+msgstr ""
+
+#: website/templates/website/ppdb.html:38
+#: website/templates/website/visi-misi.html:51
+#: website/templates/website/welcome.html:24
+msgid "Contact Us"
+msgstr ""
+
+#: website/templates/website/visi-misi.html:6
+msgid "Visi dan Misi"
+msgstr ""

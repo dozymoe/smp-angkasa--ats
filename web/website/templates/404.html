@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Not Found" %}{% endblock %}
+{% block body_classes %}not-found{% endblock %}
+
+{% block topbar_right_wrapper %}{% endblock %}
+
+
+{% block content %}
+<div class="mdc-layout-grid__cell">
+  <h2>{% trans "Not Found" %}</h2>
+</div>
+{% endblock %}

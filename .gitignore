@@ -2,6 +2,7 @@
 /tmp/
 /etc/runner.json
 /lib/uwsgi-plugins/
+/public/web/assets/css/*.js
 /web/db.sqlite3
 /passenger_wsgi.py
 
@@ -18,3 +19,11 @@
 /python_modules
 /requirements.txt
 *.pyc
+
+
+## waf
+
+/.BUILD/
+/.lock-waf_*
+/build.yml
+/wscript
