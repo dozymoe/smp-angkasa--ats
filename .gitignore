@@ -1,4 +1,8 @@
+/var/
+/tmp/
 /etc/runner.json
+/web/db.sqlite3
+/passenger_wsgi.py
 
 ## python
 
