@@ -1,3 +1,9 @@
 [submodule "lib/fireh_runner"]
 	path = lib/fireh_runner
 	url = https://github.com/dozymoe/fireh_runner
+[submodule "lib-py/django-materialweb"]
+	path = lib-py/django-materialweb
+	url = https://github.com/dozymoe/django-materialweb
+[submodule "lib-py/frozen-django"]
+	path = lib-py/frozen-django
+	url = https://github.com/dozymoe/frozen-django

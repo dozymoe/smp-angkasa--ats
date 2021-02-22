@@ -1,0 +1,25 @@
+{% extends "base_drawer.html" %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block head_title %}{% trans "Sign Up Closed" %}{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'account_login' as url %}
+  {% trans "Sign In" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+
+  {% TopAppBar_Title tag="h1" %}
+    {% trans "Sign Up Closed" %}
+  {% endTopAppBar_Title %}
+{% endblock %} 
+
+
+{% block content %}
+<div class="mdc-layout-grid__cell--span-12">
+  <p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
+</div>
+{% endblock %}

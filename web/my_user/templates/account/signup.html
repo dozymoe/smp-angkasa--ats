@@ -1,0 +1,57 @@
+{% extends "base_drawer.html" %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+
+  {% TopAppBar_Title tag="h1" %}
+    {% trans "Sign Up" %}
+  {% endTopAppBar_Title %}
+{% endblock %} 
+
+
+{% block content %}
+<div class="mdc-layout-grid__cell--span-12">
+  <p>
+    {% blocktrans %}
+      Already have an account? Then please
+      <a href="{{ login_url }}">sign in</a>.
+    {% endblocktrans %}
+  </p>
+
+  <form class="signup" id="signup_form" method="post">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}"
+          value="{{ redirect_field_value }}" />
+    {% endif %}
+
+    <div class="form-group">
+      {% TextField form.email mode="outlined" %}
+    </div>
+    <div class="form-group">
+      {% TextField form.username mode="outlined" %}
+    </div>
+    <div class="form-group">
+      {% TextField form.password1 mode="outlined" %}
+    </div>
+    <div class="form-group">
+      {% TextField form.password2 mode="outlined" %}
+    </div>
+
+    {{form.errors}}
+
+    {% Button type="submit" mode="raised" %}
+      {% trans "Sign Up" %} &raquo;
+    {% endButton %}
+  </form>
+</div>
+{% endblock %}

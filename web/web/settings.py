@@ -9,10 +9,19 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+#-
+from django.utils.translation import gettext_lazy as _
+#-
+from misc import configuration
+
+# Setup config
+_config = {} # pylint:disable=invalid-name
+configuration.load_files_from_shell(_config)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+ROOT_DIR = Path(os.environ['ROOT_DIR'])
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -20,33 +29,50 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mtch&_jx!gm1@q%&$3j9f60%^2v#rby)teykl)bbbt6s+i^f#i'
+SECRET_KEY = _config['application.secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = _config.get('application.debug', False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'my_user',
+    'website',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'frozen_django',
+    'materialweb',
+    'rules',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
+]
+
+FROZEN_MIDDLEWARE = [
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
 ]
 
 ROOT_URLCONF = 'web.urls'
@@ -75,46 +101,127 @@ WSGI_APPLICATION = 'web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.' + _config.get('database.engine',
+            'sqlite3'),
+        'NAME': _config.get('database.name', BASE_DIR/'db.sqlite3'),
+        'HOST': _config.get('database.host'),
+        'USER': _config.get('database.username'),
+        'PASSWORD': _config.get('database.password'),
+        'OPTIONS': _config.get('database.options', {}),
     }
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': _config.get('logging.level', 'INFO'),
+    },
 }
 
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
+AUTH_USER_MODEL = 'my_user.User'
+AUTH_PASSWORD_VALIDATORS = (
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', # pylint:disable=line-too-long
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', # pylint:disable=line-too-long
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', # pylint:disable=line-too-long
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', # pylint:disable=line-too-long
     },
-]
+)
 
+LOGIN_URL = '/account/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
+LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+    ('en', _("English")),
+    ('id', _("Bahasa Indonesia")),
+)
 
 USE_L10N = True
-
 USE_TZ = True
+TIME_ZONE = 'Asia/Jakarta'
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/assets/'
+STATIC_ROOT = ROOT_DIR/'public'/'web'/'assets'
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = ROOT_DIR/'var'/'web'/'uploads'
+
+FROZEN_ROOT = ROOT_DIR/'public'/'web'
+
+
+# SMTP
+
+EMAIL_HOST = _config.get('smtp.host')
+EMAIL_PORT = _config.get('smtp.port')
+EMAIL_HOST_USER = _config.get('smtp.username')
+EMAIL_HOST_PASSWORD = _config.get('smtp.password')
+EMAIL_USE_TLS = _config.get('smtp.use_tls')
+EMAIL_USE_SSL = _config.get('smtp.use_ssl')
+DEFAULT_FROM_EMAIL = _config.get('application.email_from', EMAIL_HOST_USER)
+
+
+## MONEY
+
+DEFAULT_CURRENCY = 'IDR'
+CURRENCIES = ['IDR', 'USD']
+
+
+## AllAuth
+
+ACCOUNT_AUTHENTICATION_METHOD = _config.get('account.authentication_method',
+        'username')
+ACCOUNT_CONFIRM_EMAIL_ON_GET = _config.get('account.confirm_email_on_get',
+        False)
+ACCOUNT_EMAIL_REQUIRED = _config.get('account.email_required', False)
+ACCOUNT_EMAIL_VERIFICATION = _config.get('account.email_verification',
+        'optional')
+ACCOUNT_LOGOUT_ON_GET = _config.get('account.logout_on_get', False)
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = _config.get(
+        'account.logout_on_password_change', False)
+
+AUTHENTICATION_BACKENDS = [
+    'rules.permissions.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+#SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+}
+
+
+## Editor
+
+RESTRUCTURED_TEXT = {
+    'syntax_highlight': 'short',
+}
+
+
+_config = None # pylint:disable=invalid-name

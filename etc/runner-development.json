@@ -2,13 +2,41 @@
     "modules": [
         "lib.fireh_runner.modules.setup",
         "lib.fireh_runner.modules.python",
-        "lib.fireh_runner.modules.django"
+        "lib.fireh_runner.modules.django",
+        "lib.fireh_runner.modules.uwsgi"
     ],
     "setup_modules": [
-        "lib.fireh_runner.setup_modules.python"
+        "lib.fireh_runner.setup_modules.python",
+        "lib.fireh_runner.setup_modules.npm",
+        "lib.fireh_runner.setup_modules.pybuildtool"
     ],
     "python_version": "3.7",
+    "waf_version": "2.0.21",
 
     "default_project": "web",
-    "default_variant": "development"
+    "default_variant": "development",
+
+    "configuration": {
+        "development": {
+            "": {
+                "shell_env": {
+                    "PYTHONPATH": [
+                        "lib-py/django-materialweb",
+                        "lib-py/frozen-django"
+                    ]
+                }
+            },
+            "web": {
+                "shell_env": {
+                    "CONFIG_FILENAMES": [
+                        "etc/development/logging.json",
+                        "etc/development/web/account.json",
+                        "etc/development/web/application.json",
+                        "etc/development/web/database.json",
+                        "etc/development/web/server.json"
+                    ]
+                }
+            }
+        }
+    }
 }

@@ -1,8 +1,16 @@
 /var/
 /tmp/
 /etc/runner.json
+/lib/uwsgi-plugins/
 /web/db.sqlite3
 /passenger_wsgi.py
+
+
+## nodejs
+
+/node_modules/
+/package.json
+
 
 ## python
 

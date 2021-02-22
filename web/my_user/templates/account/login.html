@@ -1,0 +1,97 @@
+{% extends "base_drawer.html" %}
+{% load i18n %}
+{% load account socialaccount %}
+{% load materialweb %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+
+  {% TopAppBar_Title tag="h1" %}{% trans "Sign In" %}{% endTopAppBar_Title %}
+{% endblock %} 
+
+
+{% block drawer_menu_website %}
+  {% url 'account_signup' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    <span class="fa fa-baby"></span>
+    {% trans "Sign Up" %}
+  {% endList_Item %}
+
+  {% url 'account_reset_password' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    <span class="fa fa-user-injured"></span>
+    {% trans "Forgot Password?" %}
+  {% endList_Item %}
+{% endblock %}
+
+
+{% block content %}
+{% get_providers as socialaccount_providers %}
+<div class="mdc-layout-grid__cell--span-12">
+
+  {% if socialaccount_providers %}
+    <p>
+      {% blocktrans with site.name as site_name %}
+        Please sign in with one of your existing third party accounts. Or,
+        <a href="{{ signup_url }}">sign up</a> for a {{ site_name }}
+        account and sign in below:
+      {% endblocktrans %}
+    </p>
+
+    <div class="socialaccount_ballot">
+      <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
+
+      <div class="login-or">{% trans 'or' %}</div>
+    </div>
+
+    {% include "socialaccount/snippets/login_extra.html" %}
+
+  {% else %}
+    <p>
+      {% blocktrans %}
+        If you have not created an account yet, then please
+        <a href="{{ signup_url }}">sign up</a> first.
+      {% endblocktrans %}
+    </p>
+  {% endif %}
+
+  <form class="login" method="POST">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+
+    <div class="form-group">
+      {% TextField form.login mode='outlined' %}
+    </div>
+
+    <div class="form-group">
+      {% TextField form.password mode='outlined' %}
+    </div>
+
+    <div class="form-group">
+      {% CheckBox form.remember %}
+    </div>
+
+    {{form.errors}}
+
+    {% url 'account_reset_password' as url %}
+    {% Button tag="a" href=url %}
+      {% trans "Forgot Password?" %}
+    {% endButton %}
+
+    {% Button type="submit" mode="raised" %}
+      {% trans "Sign In" %}
+    {% endButton %}
+  </form>
+</div>
+{% endblock %}

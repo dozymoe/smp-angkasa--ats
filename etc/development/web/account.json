@@ -1,0 +1,8 @@
+{
+    "authentication_method": "username",
+    "confirm_email_on_get": true,
+    "email_required": false,
+    "email_verification": "optional",
+    "logout_on_get": true,
+    "logout_on_password_change": true
+}
