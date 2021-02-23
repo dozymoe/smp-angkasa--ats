@@ -69,6 +69,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
+
+    'website.middleware.domain_urls.DomainUrlsMiddleware',
 ]
 
 FROZEN_MIDDLEWARE = [
@@ -211,7 +213,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 1
+#SITE_ID = 1
 
 SOCIALACCOUNT_PROVIDERS = {
 }
