@@ -10,13 +10,10 @@ class DomainUrlsMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        _logger.info(request.site)
-        _logger.info(request.get_host())
         if request.site.id == 2:
             request.urlconf = settings.ROOT_URLCONF + '_admin'
         else:
             request.urlconf = settings.ROOT_URLCONF
-        _logger.info(request.urlconf)
 
         response = self.get_response(request)
         return response

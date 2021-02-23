@@ -1,8 +1,3 @@
-bleach
-bs4
-django
-django-allauth
-django-dirtyfields
-docutils
-rules
-yarl
+-r requirements-common.txt
+
+mysqlclient

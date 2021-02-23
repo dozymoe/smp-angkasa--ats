@@ -1,4 +1,4 @@
--r requirements-production.txt
+-r requirements-common.txt
 
 factory_boy
 faker

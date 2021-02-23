@@ -1,0 +1,8 @@
+bleach
+bs4
+django
+django-allauth
+django-dirtyfields
+docutils
+rules
+yarl
