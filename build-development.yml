@@ -152,6 +152,13 @@ web:
       - etc/{{PROJECT_VARIANT}}/{_1}/*.json
       - etc/{{PROJECT_VARIANT}}/{_1}/uwsgi.ini
 
+  build:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} build
+      rule_in:
+        - "{_1}/runit_sv"
+
   prune_website_assets:
     shell:
       options:
