@@ -1,0 +1,8 @@
+{
+  "runtime.js": "/assets/js/runtime.js",
+  "assets/js/414.js": "/assets/js/414.js",
+  "polyfill.js": "/assets/js/polyfill.js",
+  "react.js": "/assets/js/react.js",
+  "main.js": "/assets/js/main.js",
+  "base.js": "/assets/js/base.js"
+}
