@@ -169,11 +169,11 @@ TIME_ZONE = 'Asia/Jakarta'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/assets/'
-STATIC_ROOT = ROOT_DIR/'public'/'web'/'assets'
+STATIC_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web/assets')
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = ROOT_DIR/'var'/'web'/'uploads'
 
-FROZEN_ROOT = ROOT_DIR/'public'/'web'
+FROZEN_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')
 
 
 # SMTP
