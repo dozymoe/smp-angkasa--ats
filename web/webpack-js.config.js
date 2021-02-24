@@ -14,7 +14,7 @@ module.exports = (env, options) =>
             main: [path.resolve(__dirname, 'website/js/app.js')],
         },
         output: {
-            path: path.resolve(__dirname, '../public/web'),
+            path: path.resolve(__dirname, 'static'),
             publicPath: '/',
             filename: 'assets/js/[name].js',
         },

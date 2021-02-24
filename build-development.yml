@@ -173,27 +173,27 @@ node_modules:
       cp:
         raw_file_in: "{_1}/@fortawesome/{_2}-free/webfonts/*"
         raw_file_out:
-          - public/web/assets/{_3}/
+          - web/static/assets/{_3}/
 
   material-design-icons:
     cp:
       raw_file_in: "{_1}/{_2}/iconfont/MaterialIcons-Regular.*"
       raw_file_out:
-        - public/web/assets/fonts/
+        - web/static/assets/fonts/
 
   typeface-roboto:
     cp:
       raw_file_in: "{_1}/{_2}/files/*"
       raw_file_out:
-        - public/web/assets/fonts/
+        - web/static/assets/fonts/
     woff2ttf:
       raw_file_in: "{_1}/{_2}/files/*.woff"
       raw_file_out:
-        - public/web/assets/fonts/
+        - web/static/assets/fonts/
     woff2svg:
       raw_file_in: "{_1}/{_2}/files/*.woff"
       raw_file_out:
-        - public/web/assets/fonts/
+        - web/static/assets/fonts/
     eot:
       woff2ttf:
         raw_file_in: "{_1}/{_2}/files/*.woff"
@@ -202,4 +202,4 @@ node_modules:
         rule_in: "{_1}/{_2}/{_3}/woff2ttf"
         raw_file_in: tmp/fonts/*.ttf
         raw_file_out:
-          - public/web/assets/fonts/
+          - web/static/assets/fonts/

@@ -12,7 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         project = os.environ['PROJECT_NAME']
         rootdir = Path(os.environ['ROOT_DIR']).resolve(strict=True)
-        public_dir = rootdir/'public'/project
+        public_dir = rootdir/project/'static'
         today = datetime.today()
 
         metafile = rootdir/'var'/project/'webpack-css.meta.json'

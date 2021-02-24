@@ -172,6 +172,9 @@ STATIC_URL = '/assets/'
 STATIC_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web/assets')
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = ROOT_DIR/'var'/'web'/'uploads'
+STATICFILES_DIRS = [
+    BASE_DIR/'static',
+]
 
 FROZEN_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')
 

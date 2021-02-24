@@ -18,7 +18,7 @@ module.exports = (env, options) =>
             main: [path.resolve(__dirname, 'website/sass/app.scss')],
         },
         output: {
-            path: path.resolve(__dirname, '../public/web'),
+            path: path.resolve(__dirname, 'static'),
             publicPath: '/',
             filename: 'assets/css/[name].js',
         },
