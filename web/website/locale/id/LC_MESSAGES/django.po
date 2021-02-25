@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-25 16:43+0700\n"
+"POT-Creation-Date: 2021-02-26 01:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,12 +34,12 @@ msgid "Home Page"
 msgstr ""
 
 #: website/templates/base-admin.html:19
-#: website/templates/base_drawer-admin.html:28
+#: website/templates/base_drawer-admin.html:30
 msgid "Sign Out"
 msgstr ""
 
 #: website/templates/base-admin.html:25
-#: website/templates/base_drawer-admin.html:34
+#: website/templates/base_drawer-admin.html:39
 msgid "Sign In"
 msgstr ""
 
@@ -55,29 +55,29 @@ msgstr ""
 msgid "Penerimaan Peserta Didik Baru"
 msgstr ""
 
-#: website/templates/website/ppdb.html:22
+#: website/templates/website/ppdb.html:23
 #: website/templates/website/visi-misi.html:22
-#: website/templates/website/visi-misi.html:38
-#: website/templates/website/visi-misi.html:43
-#: website/templates/website/welcome.html:8
+#: website/templates/website/visi-misi.html:42
+#: website/templates/website/visi-misi.html:48
+#: website/templates/website/welcome.html:9
 msgid "Profile"
 msgstr ""
 
-#: website/templates/website/ppdb.html:26
-#: website/templates/website/visi-misi.html:27
-#: website/templates/website/welcome.html:12
+#: website/templates/website/ppdb.html:29
+#: website/templates/website/visi-misi.html:28
+#: website/templates/website/welcome.html:15
 msgid "Kegiatan"
 msgstr ""
 
-#: website/templates/website/ppdb.html:31
-#: website/templates/website/visi-misi.html:32
-#: website/templates/website/welcome.html:17
+#: website/templates/website/ppdb.html:36
+#: website/templates/website/visi-misi.html:35
+#: website/templates/website/welcome.html:22
 msgid "PPDB"
 msgstr ""
 
-#: website/templates/website/ppdb.html:38
-#: website/templates/website/visi-misi.html:51
-#: website/templates/website/welcome.html:24
+#: website/templates/website/ppdb.html:45
+#: website/templates/website/visi-misi.html:58
+#: website/templates/website/welcome.html:31
 msgid "Contact Us"
 msgstr ""
 

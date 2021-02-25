@@ -1,0 +1,63 @@
+{% extends 'base_drawer-admin.html' %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block head_title %}{% trans "Create Article" %}{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block drawer %}
+  {% url 'BlogPosting:Create' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Content type="image" class="material-icons" %}
+      add
+    {% endList_Content %}
+    {% List_Content %}
+      {% trans "Add Article" %}
+    {% endList_Content %}
+  {% endList_Item %}
+{% endblock %}
+
+
+{% block content %}
+<form action="" method="post" class="mdc-layout-grid__cell--span-12">
+  {% csrf_token %}
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell--span-10">
+        <div class="form-group">
+          {% TextField form.title mode='outlined' autofocus="true" class="d-block" %}
+        </div>
+
+        <div class="form-group">
+          {% TextArea form.body mode='outlined' class="d-block" %}
+        </div>
+
+        <div class="form-group">
+          {% TextArea form.summary mode='outlined' class="d-block" %}
+        </div>
+
+        <div class="form-group">
+          {% TextField form.slug mode='outlined' class="d-block" %}
+        </div>
+
+        {{form.errors}}
+      </div>
+
+      <div class="mdc-layout-grid__cell--span-2">
+        <div class="form-group">
+          {% Button type="submit" mode="raised" %}
+            {% trans "Submit" %}
+          {% endButton %}
+        </div>
+      </div>
+    </div>
+</form>
+{% endblock %}

@@ -19,23 +19,31 @@
 {% block drawer %}
   {% url 'ProfileMission' 'html' as url %}
   {% List_Item tag="a" href=url tabindex="2" %}
-    {% trans "Profile" %}
+    {% List_Content %}
+      {% trans "Profile" %}
+    {% endList_Content %}
   {% endList_Item %}
 
   {% List_Item tag="a" href="#" tabindex="3" %}
-    {% trans "Kegiatan" %}
+    {% List_Content %}
+      {% trans "Kegiatan" %}
+    {% endList_Content %}
   {% endList_Item %}
 
   {% url 'Ppdb' 'html' as url %}
   {% List_Item tag="a" href=url tabindex="0" %}
-    {% trans "PPDB" %}
+    {% List_Content %}
+      {% trans "PPDB" %}
+    {% endList_Content %}
   {% endList_Item %}
 {% endblock %}
 
 
 {% block drawer_menu_website %}
   {% List_Item tag="a" href="/contact-us" tabindex="1" %}
-    {% trans "Contact Us" %}
+    {% List_Content %}
+      {% trans "Contact Us" %}
+    {% endList_Content %}
   {% endList_Item %}
 {% endblock %}
 

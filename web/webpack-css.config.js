@@ -19,12 +19,12 @@ module.exports = (env, options) =>
         },
         output: {
             path: path.resolve(__dirname, 'static'),
-            publicPath: '/',
-            filename: 'assets/css/[name].js',
+            publicPath: '/assets/',
+            filename: 'css/[name].js',
         },
         plugins: [
             new MiniCssExtractPlugin({
-                filename: 'assets/css/[name].css',
+                filename: 'css/[name].css',
             }),
             isDevelopment ? noop() : new OptimizeCssAssetsPlugin({
                 cssProcessor: require('cssnano'),

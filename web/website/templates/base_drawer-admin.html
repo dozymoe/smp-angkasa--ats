@@ -24,14 +24,20 @@
   {% if user.is_authenticated %}
     {% url 'account_logout' as url %}
     {% List_Item tag="a" href=url tabindex="0" %}
-      <i class="fa fa-sign-out-alt"></i>
-      {% trans "Sign Out" %}
+      {% List_Content type="image" class="fa fa-sign-out-alt" %}
+      {% endList_Content %}
+      {% List_Content %}
+        {% trans "Sign Out" %}
+      {% endList_Content %}
     {% endList_Item %}
   {% else %}
     {% url 'account_login' as url %}
     {% List_Item tag="a" href=url tabindex="0" %}
-      <i class="fa fa-sign-in-alt"></i>
-      {% trans "Sign In" %}
+      {% List_Content type="image" class="fa fa-sign-in-alt" %}
+      {% endList_Content %}
+      {% List_Content %}
+        {% trans "Sign In" %}
+      {% endList_Content %}
     {% endList_Item %}
   {% endif %}
 {% endblock %}

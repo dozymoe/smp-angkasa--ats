@@ -15,8 +15,8 @@ module.exports = (env, options) =>
         },
         output: {
             path: path.resolve(__dirname, 'static'),
-            publicPath: '/',
-            filename: 'assets/js/[name].js',
+            publicPath: '/assets/',
+            filename: 'js/[name].js',
         },
         resolve: {
             alias: {

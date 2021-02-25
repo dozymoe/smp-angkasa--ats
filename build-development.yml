@@ -87,6 +87,9 @@ web:
     shell:
       options:
         command: ./run django-manage --project={_1} collectstatic --no-input
+      rule_in:
+        - "{_1}/css/webpack"
+        - "{_1}/js/webpack"
       raw_depend_in:
         - python_modules/django/contrib/admin/static/**/*
 
@@ -189,27 +192,27 @@ node_modules:
       cp:
         raw_file_in: "{_1}/@fortawesome/{_2}-free/webfonts/*"
         raw_file_out:
-          - web/static/assets/{_3}/
+          - web/static/fonts/
 
   material-design-icons:
     cp:
       raw_file_in: "{_1}/{_2}/iconfont/MaterialIcons-Regular.*"
       raw_file_out:
-        - web/static/assets/fonts/
+        - web/static/fonts/
 
   typeface-roboto:
     cp:
       raw_file_in: "{_1}/{_2}/files/*"
       raw_file_out:
-        - web/static/assets/fonts/
+        - web/static/fonts/
     woff2ttf:
       raw_file_in: "{_1}/{_2}/files/*.woff"
       raw_file_out:
-        - web/static/assets/fonts/
+        - web/static/fonts/
     woff2svg:
       raw_file_in: "{_1}/{_2}/files/*.woff"
       raw_file_out:
-        - web/static/assets/fonts/
+        - web/static/fonts/
     eot:
       woff2ttf:
         raw_file_in: "{_1}/{_2}/files/*.woff"
@@ -218,4 +221,4 @@ node_modules:
         rule_in: "{_1}/{_2}/{_3}/woff2ttf"
         raw_file_in: tmp/fonts/*.ttf
         raw_file_out:
-          - web/static/assets/fonts/
+          - web/static/fonts/

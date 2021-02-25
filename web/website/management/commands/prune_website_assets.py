@@ -21,7 +21,7 @@ class Command(BaseCommand):
                 meta = json.load(f)
                 filenames = [os.path.basename(x) for x in meta.values()]
 
-            assets_dir = public_dir/'assets'/'css'
+            assets_dir = public_dir/'css'
             for filename in os.listdir(assets_dir):
                 if filename in ('.', '..'):
                     continue
@@ -39,7 +39,7 @@ class Command(BaseCommand):
                 meta = json.load(f)
                 filenames = [os.path.basename(x) for x in meta.values()]
 
-            assets_dir = public_dir/'assets'/'js'
+            assets_dir = public_dir/'js'
             for filename in os.listdir(assets_dir):
                 if filename in ('.', '..'):
                     continue

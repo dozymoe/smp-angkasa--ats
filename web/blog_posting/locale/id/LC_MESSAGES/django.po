@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-25 12:09+0700\n"
+"POT-Creation-Date: 2021-02-26 01:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,4 +22,20 @@ msgstr ""
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
 "filled if left empty."
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:5
+msgid "Create Article"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:10
+msgid "Home Page"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:24
+msgid "Add Article"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:57
+msgid "Submit"
 msgstr ""
