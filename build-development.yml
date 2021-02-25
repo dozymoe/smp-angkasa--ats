@@ -58,11 +58,19 @@ web:
         - lib/react-materialweb/js/**/*.js"
         - lib/react-materialweb/js/**/*.jsx"
 
+  blog_posting:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
   misc:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
 
   my_user:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
+  thing_keyword:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
 
@@ -88,9 +96,10 @@ web:
       options:
         command: ./run django-manage --project={_1} test --testrunner="test_runner.UnitTestRunner"
       rule_in:
-        - "{_1}/{_1}/pylint"
+        - "{_1}/blog_posting/pylint"
         - "{_1}/misc/pylint"
         - "{_1}/my_user/pylint"
+        - "{_1}/thing_keyword/pylint"
         - "{_1}/web/pylint"
         - "{_1}/website/pylint"
         - lib-py/django-materialweb/pylint

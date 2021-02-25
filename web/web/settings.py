@@ -175,7 +175,7 @@ TIME_ZONE = 'Asia/Jakarta'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/assets/'
-STATIC_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web/assets')
+STATIC_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')/'assets'
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = ROOT_DIR/'var'/'web'/'uploads'
 STATICFILES_DIRS = [
@@ -219,6 +219,11 @@ ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = _config.get(
 
 SOCIALACCOUNT_PROVIDERS = {
 }
+
+
+## Background Tasks
+
+BACKGROUND_TASK_RUN_ASYNC = True
 
 
 ## Editor

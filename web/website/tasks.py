@@ -1,6 +1,8 @@
+from background_task import background
 from django.conf import settings
 from frozen_django.main import generate_static_view
 
+@background(schedule=60)
 def freeze_view(view_name, base_url, dest=None, **kwargs):
     generate_static_view(view_name, frozen_host=base_url, frozen_dest=dest,
             **kwargs)
