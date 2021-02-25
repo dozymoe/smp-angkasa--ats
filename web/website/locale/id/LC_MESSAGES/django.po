@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 19:44+0700\n"
+"POT-Creation-Date: 2021-02-25 16:43+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,20 +26,21 @@ msgstr ""
 msgid "Server Error"
 msgstr ""
 
-#: website/templates/base-admin.html:10
-#: website/templates/base_drawer-admin.html:10
+#: website/templates/base-admin.html:7 website/templates/base.html:33
+#: website/templates/base_drawer-admin.html:7
+#: website/templates/base_drawer.html:11 website/templates/website/ppdb.html:12
+#: website/templates/website/visi-misi.html:12
+msgid "Home Page"
+msgstr ""
+
+#: website/templates/base-admin.html:19
+#: website/templates/base_drawer-admin.html:28
 msgid "Sign Out"
 msgstr ""
 
-#: website/templates/base-admin.html:16
-#: website/templates/base_drawer-admin.html:16
+#: website/templates/base-admin.html:25
+#: website/templates/base_drawer-admin.html:34
 msgid "Sign In"
-msgstr ""
-
-#: website/templates/base.html:33 website/templates/base_drawer.html:11
-#: website/templates/website/ppdb.html:12
-#: website/templates/website/visi-misi.html:12
-msgid "Home Page"
 msgstr ""
 
 #: website/templates/base.html:76 website/templates/base_drawer.html:76

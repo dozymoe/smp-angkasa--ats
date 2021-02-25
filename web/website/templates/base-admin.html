@@ -2,6 +2,15 @@
 {% load i18n %}
 {% load materialweb %}
 
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    home
+  {% endIconButton %}
+{% endblock %}
+
+
 {% block topbar_right_wrapper %}
   {% TopAppBar_Right id="topbar-right-menu" %}
     {% block topbar_right %}{% endblock %}

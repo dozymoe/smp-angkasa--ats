@@ -1,4 +1,4 @@
-{% extends "base_drawer.html" %}
+{% extends "base_drawer-admin.html" %}
 {% load i18n %}
 {% load materialweb %}
 
@@ -11,10 +11,6 @@
   {% IconButton tag="a" href=url label=label class="material-icons" %}
     arrow_back
   {% endIconButton %}
-
-  {% TopAppBar_Title tag="h1" %}
-    {% trans "Sign Up Closed" %}
-  {% endTopAppBar_Title %}
 {% endblock %} 
 
 

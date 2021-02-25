@@ -1,4 +1,4 @@
-{% extends "base_drawer.html" %}
+{% extends "base_drawer-admin.html" %}
 {% load i18n %}
 {% load account %}
 {% load materialweb %}
@@ -12,10 +12,6 @@
   {% IconButton tag="a" href=url label=label class="material-icons" %}
     arrow_back
   {% endIconButton %}
-
-  {% TopAppBar_Title tag="h1" %}
-    {% trans "Confirm E-mail Address" %}
-  {% endTopAppBar_Title %}
 {% endblock %} 
 
 
