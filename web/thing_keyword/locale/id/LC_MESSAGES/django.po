@@ -18,10 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web/settings.py:165
-msgid "Bahasa Indonesia"
-msgstr ""
-
-#: web/settings.py:166
-msgid "English"
+#: thing_keyword/models.py:27
+msgid ""
+"Human friendly unique url to identify content, will automatically be filled "
+"if left empty."
 msgstr ""

@@ -15,10 +15,11 @@ from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 #-
 from misc import configuration
+from .configuration import config_adapter
 
 # Setup config
 _config = {} # pylint:disable=invalid-name
-configuration.load_files_from_shell(_config)
+configuration.load_files_from_shell(_config, adapter=config_adapter)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 ROOT_DIR = Path(os.environ['ROOT_DIR'])
@@ -40,14 +41,18 @@ ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
 # Application definition
 
 INSTALLED_APPS = [
+    'blog_posting',
     'my_user',
+    'thing_keyword',
     'website',
 
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'background_task',
     'frozen_django',
     'materialweb',
+    'modeltranslation',
     'rules',
 
     'django.contrib.admin',
@@ -100,7 +105,6 @@ WSGI_APPLICATION = 'web.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': _config.get('database.engine', 'django.db.backends.sqlite3'),
@@ -115,11 +119,7 @@ DATABASES = {
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
+    'handlers': _config.get('logging.handlers', {}),
     'root': {
         'handlers': ['console'],
         'level': _config.get('logging.level', 'INFO'),
@@ -150,14 +150,20 @@ LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+AUTHENTICATION_BACKENDS = [
+    'rules.permissions.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 USE_I18N = True
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'id-id'
 LANGUAGES = (
-    ('en', _("English")),
     ('id', _("Bahasa Indonesia")),
+    ('en', _("English")),
 )
 
 USE_L10N = True
@@ -208,12 +214,6 @@ ACCOUNT_EMAIL_VERIFICATION = _config.get('account.email_verification',
 ACCOUNT_LOGOUT_ON_GET = _config.get('account.logout_on_get', False)
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = _config.get(
         'account.logout_on_password_change', False)
-
-AUTHENTICATION_BACKENDS = [
-    'rules.permissions.ObjectPermissionBackend',
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
 
 #SITE_ID = 1
 

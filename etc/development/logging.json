@@ -1,3 +1,8 @@
 {
-    "level": "DEBUG"
+    "level": "DEBUG",
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler"
+        }
+    }
 }

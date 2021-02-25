@@ -1,11 +1,12 @@
 /public/
 /var/
 /tmp/
+/etc/production/
 /etc/runner.json
 /lib/uwsgi-plugins/
 /public/web/assets/css/*.js
 /web/db.sqlite3
-passenger_wsgi.py
+/web/passenger_wsgi.py
 
 
 ## nodejs

@@ -1,8 +1,14 @@
-bleach
 beautifulsoup4
 django
 django-allauth
+django-background-tasks
 django-dirtyfields
+django-honeypot
+django-modeltranslation
+django-simple-captcha
+django-treebeard
 docutils
+Pillow
+python-dateutil
 rules
 yarl
