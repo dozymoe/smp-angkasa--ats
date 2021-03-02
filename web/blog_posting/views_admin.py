@@ -3,11 +3,18 @@ import logging
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DeleteView, DetailView, ListView
+from django.views.generic import UpdateView
 #-
 from .models import BlogPosting
 
 _logger = logging.getLogger(__name__)
+
+
+@method_decorator(login_required, name='dispatch')
+class List(ListView):
+    model = BlogPosting
+    paginate_by = 15
 
 
 @method_decorator(login_required, name='dispatch')
@@ -22,4 +29,25 @@ class Create(CreateView):
 
 
     def get_success_url(self):
-        return reverse('BlogPosting:Edit', (self.object.pk,))
+        return reverse('BlogPosting:Index')
+
+
+@method_decorator(login_required, name='dispatch')
+class Display(DetailView):
+    model = BlogPosting
+
+
+@method_decorator(login_required, name='dispatch')
+class Edit(UpdateView):
+    model = BlogPosting
+
+    def get_success_url(self):
+        return reverse('BlogPosting:Index')
+
+
+@method_decorator(login_required, name='dispatch')
+class Destroy(DeleteView):
+    model = BlogPosting
+
+    def get_success_url(self):
+        return reverse('BlogPosting:Index')

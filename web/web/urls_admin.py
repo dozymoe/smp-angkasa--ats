@@ -22,6 +22,7 @@ from website import views_admin
 urlpatterns = [
     path('account/', include('allauth.urls')),
     path('admin/', admin.site.urls),
+    path('api/render-html', views_admin.ReSTPreview.as_view()),
 ]
 
 urlpatterns += i18n_patterns(

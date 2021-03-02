@@ -1,0 +1,82 @@
+{% extends 'base_drawer-admin.html' %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block head_title %}{% trans "Manage Articles" %}{% endblock %}
+{% block drawer_title %}{% trans "Manage Articles" %}{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block drawer %}
+  {% url 'BlogPosting:Index' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Content type="image" class="material-icons" %}
+      toc
+    {% endList_Content %}
+    {% List_Content %}
+      {% trans "Index" %}
+    {% endList_Content %}
+  {% endList_Item %}
+
+  {% url 'BlogPosting:Create' as url %}
+  {% List_Item tag="a" href=url tabindex="1" %}
+    {% List_Content type="image" class="material-icons" %}
+      add
+    {% endList_Content %}
+    {% List_Content %}
+      {% trans "Create" %}
+    {% endList_Content %}
+  {% endList_Item %}
+{% endblock %}
+
+
+{% block content %}
+<div class="mdc-layout-grid__cell--span-12">
+  {% trans "Articles" as label %}
+  {% Table row_selectable=True label=label class="w-100" %}
+    {% Table_Head %}
+      {% Table_Head_Row %}
+        {% Table_Head_Col %}
+          {% trans "Title" %}
+        {% endTable_Head_Col %}
+
+        {% Table_Head_Col %}
+          {% trans "Status" %}
+        {% endTable_Head_Col %}
+
+        {% Table_Head_Col %}
+          {% trans "Operations" %}
+        {% endTable_Head_Col %}
+      {% endTable_Head_Row %}
+    {% endTable_Head %}
+
+    {% Table_Body %}
+      {% for obj in object_list %}
+        {% Table_Row %}
+          {% Table_ColHeader %}
+            <a href="{% url 'BlogPosting:Display' obj.slug obj.pk %}">
+              {{obj.title}}
+            </a>
+          {% endTable_ColHeader %}
+
+          {% Table_Col %}
+            {% if obj.published_at %}
+              {% trans "Published" %}
+            {% else %}
+              {% trans "Not Published" %}
+            {% endif %}
+          {% endTable_Col %}
+        {% endTable_Row %}
+      {% endfor %}
+    {% endTable_Body %}
+  {% endTable %}
+</div>
+{% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 01:27+0700\n"
+"POT-Creation-Date: 2021-03-03 03:46+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,14 +28,76 @@ msgstr ""
 msgid "Create Article"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:10
-msgid "Home Page"
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:6
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:11
+#: blog_posting/templates/blog_posting/blogposting_detail.html:6
+#: blog_posting/templates/blog_posting/blogposting_list.html:5
+#: blog_posting/templates/blog_posting/blogposting_list.html:6
+msgid "Manage Articles"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:24
-msgid "Add Article"
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:25
+#: blog_posting/templates/blog_posting/blogposting_detail.html:25
+#: blog_posting/templates/blog_posting/blogposting_list.html:25
+msgid "Index"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:35
+#: blog_posting/templates/blog_posting/blogposting_detail.html:35
+#: blog_posting/templates/blog_posting/blogposting_list.html:35
+msgid "Create"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:57
+msgid "Body Preview"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:59
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:68
+msgid "Preview"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:66
+msgid "Summary Preview"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:78
 msgid "Submit"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_detail.html:11
+#: blog_posting/templates/blog_posting/blogposting_list.html:11
+msgid "Home Page"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_detail.html:45
+msgid "Edit"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_detail.html:55
+msgid "Delete"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:43
+msgid "Articles"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:48
+msgid "Title"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:52
+msgid "Status"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:56
+msgid "Operations"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:72
+msgid "Published"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:74
+msgid "Not Published"
 msgstr ""

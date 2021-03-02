@@ -1,9 +1,9 @@
-import { InjectWysiwyg } from './views.jsx';
+import { InjectReSTPreview } from './views.jsx';
 
 
 export default [
     {
-        selector: 'textarea[data-provide-editor="ace"]',
-        component: InjectWysiwyg,
+        selector: 'button[data-provide-rest-preview]',
+        component: InjectReSTPreview,
     },
 ];

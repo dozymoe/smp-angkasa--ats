@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 01:27+0700\n"
+"POT-Creation-Date: 2021-03-03 03:46+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,20 +34,20 @@ msgid "Home Page"
 msgstr ""
 
 #: website/templates/base-admin.html:19
-#: website/templates/base_drawer-admin.html:30
+#: website/templates/base_drawer-admin.html:21
 msgid "Sign Out"
 msgstr ""
 
 #: website/templates/base-admin.html:25
-#: website/templates/base_drawer-admin.html:39
+#: website/templates/base_drawer-admin.html:30
 msgid "Sign In"
 msgstr ""
 
-#: website/templates/base.html:76 website/templates/base_drawer.html:76
+#: website/templates/base.html:76 website/templates/base_drawer.html:78
 msgid "Close"
 msgstr ""
 
-#: website/templates/base_drawer.html:48
+#: website/templates/base_drawer.html:50
 msgid "Website"
 msgstr ""
 

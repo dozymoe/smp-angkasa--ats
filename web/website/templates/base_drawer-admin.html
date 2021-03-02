@@ -11,19 +11,10 @@
 {% endblock %}
 
 
-{% block drawer_header %}
-  {% Drawer_Header %}
-    {% Drawer_Title %}
-      <a href="{% url 'Home' %}">{{request.site.name}}</a>
-    {% endDrawer_Title %}
-  {% endDrawer_Header %}
-{% endblock %}
-
-
 {% block drawer_menu_website %}
   {% if user.is_authenticated %}
     {% url 'account_logout' as url %}
-    {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Item tag="a" href=url tabindex="30" %}
       {% List_Content type="image" class="fa fa-sign-out-alt" %}
       {% endList_Content %}
       {% List_Content %}
@@ -32,7 +23,7 @@
     {% endList_Item %}
   {% else %}
     {% url 'account_login' as url %}
-    {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Item tag="a" href=url tabindex="30" %}
       {% List_Content type="image" class="fa fa-sign-in-alt" %}
       {% endList_Content %}
       {% List_Content %}

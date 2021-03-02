@@ -1,7 +1,6 @@
 import json
 import logging
 import os
-import re
 #-
 from django import template
 from django.conf import settings
@@ -39,8 +38,7 @@ def stylesheets(module='main'):
     for key, value in webpack.items():
         if not key.endswith('.css'):
             continue
-        if re.search(r'(^|~)%s(~|\.)' % module, key):
-            html.append('<link href="%s" rel="stylesheet"/>' % value)
+        html.append('<link href="%s" rel="stylesheet"/>' % value)
     return mark_safe('\n'.join(html))
 
 
@@ -54,13 +52,9 @@ def javascripts(module='main'):
         return ''
     html = []
     for key, value in webpack.items():
-        if key == 'runtime.js':
-            html.append('<script src="%s"></script>' % value)
-        elif re.search(r'/\d+\.js$', key):
-            html.append('<script src="%s"></script>' % value)
-        elif re.search(r'(^|~)(base|react|polyfill|%s)(~|\.)' % module, key):
-            html.append('<script src="%s"></script>' % value)
-
+        if not key.endswith('.js'):
+            continue
+        html.append('<script src="%s"></script>' % value)
     return mark_safe('\n'.join(html))
 
 

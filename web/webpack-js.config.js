@@ -35,11 +35,11 @@ module.exports = (env, options) =>
                     '../var/web/webpack-js.meta.json'),
                 sort: (a, b) =>
                     {
-                        const order = ['runtime.js', 'polyfill', 'base', 'react'];
-                        let splita = a.name.split('~');
-                        let splitb = b.name.split('~');
-                        let indexa = order.indexOf(splita[0]);
-                        let indexb = order.indexOf(splitb[0]);
+                        const order = ['runtime', 'polyfill', 'base', 'react'];
+                        let namea = a.name.split('.')[0];
+                        let nameb = b.name.split('.')[0];
+                        let indexa = order.indexOf(namea);
+                        let indexb = order.indexOf(nameb);
                         if (indexa !== -1 && indexb !== -1)
                         {
                             return indexa - indexb;
@@ -52,11 +52,7 @@ module.exports = (env, options) =>
                         {
                             return 1;
                         }
-                        if (splitb.length - splita.length)
-                        {
-                            return splitb.length - splita.length;
-                        }
-                        return b.name.length - a.name.length;
+                        return nameb.length - namea.length;
                     },
             }),
         ],
