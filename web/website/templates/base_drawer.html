@@ -7,7 +7,7 @@
   {% TopAppBar %}
     {% TopAppBar_Left %}
       {% block topbar_left %}
-        {% url 'Home' 'html' as url %}
+        {% url 'Home' as url %}
         {% trans "Home Page" as label %}
         {% IconButton tag="a" href=url label=label class="material-icons" %}
           home

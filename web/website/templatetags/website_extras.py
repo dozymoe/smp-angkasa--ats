@@ -1,3 +1,4 @@
+from collections import OrderedDict
 import json
 import logging
 import os
@@ -31,7 +32,7 @@ def stylesheets(module='main'):
     try:
         with open(os.path.join(os.environ['ROOT_DIR'], 'var',
                 os.environ['PROJECT_NAME'], 'webpack-css.meta.json')) as f:
-            webpack = json.load(f)
+            webpack = json.load(f, object_pairs_hook=OrderedDict)
     except OSError:
         return ''
     html = []
@@ -47,7 +48,7 @@ def javascripts(module='main'):
     try:
         with open(os.path.join(os.environ['ROOT_DIR'], 'var',
                 os.environ['PROJECT_NAME'], 'webpack-js.meta.json')) as f:
-            webpack = json.load(f)
+            webpack = json.load(f, object_pairs_hook=OrderedDict)
     except OSError:
         return ''
     html = []

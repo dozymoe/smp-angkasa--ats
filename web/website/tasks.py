@@ -14,6 +14,5 @@ def hosts_freeze_view(view_name, dest=None, **kwargs):
 
 
 def freeze_all_views():
-    hosts_freeze_view('website.views.Home', format='html')
     hosts_freeze_view('website.views.VisiMisi', format='html')
     hosts_freeze_view('website.views.Ppdb', format='html')

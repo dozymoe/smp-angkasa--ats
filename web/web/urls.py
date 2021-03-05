@@ -19,7 +19,6 @@ from django.urls import path
 from website import views
 
 urlpatterns = [
-    path('index.<str:format>', views.Home.as_view(), name='Home'),
 ]
 
 urlpatterns += i18n_patterns(
@@ -31,5 +30,5 @@ urlpatterns += i18n_patterns(
 )
 
 urlpatterns += [
-    path('', views.Home.as_view()),
+    path('', views.Home.as_view(), name='Home'),
 ]

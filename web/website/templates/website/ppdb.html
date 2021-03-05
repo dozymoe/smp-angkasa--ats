@@ -8,7 +8,7 @@
 
 
 {% block topbar_left %}
-  {% url 'Home' 'html' as url %}
+  {% url 'Home' as url %}
   {% trans "Home Page" as label %}
   {% IconButton tag="a" href=url label=label class="material-icons" %}
     arrow_back
@@ -17,25 +17,50 @@
 
 
 {% block drawer %}
-  {% url 'ProfileMission' 'html' as url %}
-  {% List_Item tag="a" href=url tabindex="2" %}
+  {% List_Item tag="a" href="https://bit.ly/PPDB_SMPANGKASABGR" tabindex="0" %}
     {% List_Text %}
-      {% trans "Profile" %}
+      {% trans "Link Pendaftaran" %}
     {% endList_Text %}
   {% endList_Item %}
 
-  {% List_Item tag="a" href="#" tabindex="3" %}
+  {% List_Item tag="a" href="https://sekolah-angkasa.sch.id/download/2018/" tabindex="2" %}
     {% List_Text %}
-      {% trans "Kegiatan" %}
+      {% trans "Unduh Formulir" %}
     {% endList_Text %}
   {% endList_Item %}
 
-  {% url 'Ppdb' 'html' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
+  {% List_Item tag="a" href="/assets/img/brosur-ppdb.jpeg" target="_blank" tabindex="3" %}
     {% List_Text %}
-      {% trans "PPDB" %}
+      {% trans "Unduh Brosur" %}
     {% endList_Text %}
   {% endList_Item %}
+
+  {% List_Divider tag="div" %}
+  {% List_Group tag="div" %}
+    {% List_Header tag='h6'%}
+      {% trans "Navigasi" %}
+    {% endList_Header %}
+
+    {% url 'ProfileMission' 'html' as url %}
+    {% List_Item tag="a" href=url tabindex="4" %}
+      {% List_Text %}
+        {% trans "Profil" %}
+      {% endList_Text %}
+    {% endList_Item %}
+  
+    {% List_Item tag="a" href="#" tabindex="5" %}
+      {% List_Text %}
+        {% trans "Kegiatan" %}
+      {% endList_Text %}
+    {% endList_Item %}
+  
+    {% url 'Ppdb' 'html' as url %}
+    {% List_Item tag="a" href=url tabindex="6" %}
+      {% List_Text %}
+        {% trans "PPDB" %}
+      {% endList_Text %}
+    {% endList_Item %}
+  {% endList_Group %}
 {% endblock %}
 
 
@@ -49,11 +74,62 @@
 
 
 {% block content %}
-  <div class="mdc-layout-grid__cell">
+<div class="mdc-layout-grid__cell--span-12">
+  <h2>
+    SMP ANGKASA ATANG SENDJAJA<br>
+    BOGOR
+  </h2>
+</div>
+
+<section class="mdc-layout-grid__cell--span-8">
+  <h3>PENERIMAAN PESERTA DIDIK BARU TAHUN PELAJARAN 2021/2022</h3>
+  <p>10 Progam unggulan sekolah, diantaranya:</p>
+  <ol>
+    <li>Angkasa Cerdas Spiritual.</li>
+    <li>Angkasa Cinta Dirgantara.</li>
+    <li>Angkasa Berkarakter.</li>
+    <li>Angkasa Berbudaya.</li>
+    <li>Angkasa Cinta Lingkungan.</li>
+    <li>Angkasa <i>Fullday School</i>.</li>
+    <li>Angkasa Berkarya.</li>
+    <li>Angkasa Juara.</li>
+    <li>Angkasa <i>Can Speak English</i>.</li>
+    <li>Angkasa Berbakat.</li>
+  </ol>
+</section>
+<div class="mdc-layout-grid__cell--span-4">
+  <a href="https://sekolah-angkasa.sch.id/download/2018/" target="_blank">
     <p>
-      <a href="https://sekolah-angkasa.sch.id/download/2018/" target="_blank">
-        Unduh dokumen PPDB
-      </a>
+      GRATIS<br/>
+      FORMULIR PENDAFTARAN
     </p>
-  </div>
+  </a>
+</div>
+
+<section class="mdc-layout-grid__cell--span-6">
+  <h3>WAKTU PENDAFTARAN</h3>
+  <ol>
+    <li>Gelombang 1: 1 Januari - 31 Maret 2021</li>
+    <li>Gelombang 2: 1 April - 31 Mei 2021</li>
+    <li>Gelombang 3: 1 Juni - 9 Juli 2021</li>
+  </ol>
+</section>
+
+<section class="mdc-layout-grid__cell--span-6">
+  <h3>HUBUNGI</h3>
+  <ul>
+    <li><a href="tel:+6281806107644">Dra. LIPUR U (081-8061-07644)</a></li>
+    <li><a href="tel:+6285692070694">EVI S, S.Pd (085-6920-70694)</a></li>
+    <li><a href="tel:+6287874760823">SRI HARNI (087-8747-60823)</a></li>
+  </ul>
+</section>
+
+<div class="mdc-layout-grid__cell--span-12">
+  <p>
+    Link Pendaftaran:<br>
+    <a href="https://bit.ly/PPDB_SMPANGKASABGR" target="_blank">
+      https://bit.ly/PPDB_SMPANGKASABGR
+    </a>
+  </p>
+<div>
 {% endblock %}
