@@ -7,6 +7,7 @@
 /public/web/assets/css/*.js
 /web/db.sqlite3
 /web/passenger_wsgi.py
+/web/tmp/restart.txt
 
 
 ## nodejs

@@ -15,20 +15,20 @@
   {% if user.is_authenticated %}
     {% url 'account_logout' as url %}
     {% List_Item tag="a" href=url tabindex="30" %}
-      {% List_Content type="image" class="fa fa-sign-out-alt" %}
-      {% endList_Content %}
-      {% List_Content %}
+      {% List_Image class="fa fa-sign-out-alt" %}
+      {% endList_Image %}
+      {% List_Text %}
         {% trans "Sign Out" %}
-      {% endList_Content %}
+      {% endList_Text %}
     {% endList_Item %}
   {% else %}
     {% url 'account_login' as url %}
     {% List_Item tag="a" href=url tabindex="30" %}
-      {% List_Content type="image" class="fa fa-sign-in-alt" %}
-      {% endList_Content %}
-      {% List_Content %}
+      {% List_Image class="fa fa-sign-in-alt" %}
+      {% endList_Image %}
+      {% List_Text %}
         {% trans "Sign In" %}
-      {% endList_Content %}
+      {% endList_Text %}
     {% endList_Item %}
   {% endif %}
 {% endblock %}

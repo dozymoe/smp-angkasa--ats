@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-03 03:46+0700\n"
+"POT-Creation-Date: 2021-03-05 07:47+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,10 +71,12 @@ msgid "Home Page"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_detail.html:45
+#: blog_posting/templates/blog_posting/blogposting_list.html:95
 msgid "Edit"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_detail.html:55
+#: blog_posting/templates/blog_posting/blogposting_list.html:105
 msgid "Delete"
 msgstr ""
 
@@ -90,14 +92,18 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:56
+#: blog_posting/templates/blog_posting/blogposting_list.html:55
 msgid "Operations"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:72
+#: blog_posting/templates/blog_posting/blogposting_list.html:73
 msgid "Published"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:74
+#: blog_posting/templates/blog_posting/blogposting_list.html:75
 msgid "Not Published"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:82
+msgid "Open Menu"
 msgstr ""

@@ -18,22 +18,22 @@
 
 {% block drawer %}
   {% List_Item %}
-    {% List_Content %}
+    {% List_Text %}
       {% trans "Profile" %}
-    {% endList_Content %}
+    {% endList_Text %}
   {% endList_Item %}
 
   {% List_Item tag="a" href="#" tabindex="1" %}
-    {% List_Content %}
+    {% List_Text %}
       {% trans "Kegiatan" %}
-    {% endList_Content %}
+    {% endList_Text %}
   {% endList_Item %}
 
   {% url 'Ppdb' 'html' as url %}
   {% List_Item tag="a" href=url tabindex="2" %}
-    {% List_Content %}
+    {% List_Text %}
       {% trans "PPDB" %}
-    {% endList_Content %}
+    {% endList_Text %}
   {% endList_Item %}
 
   {% List_Divider tag="div" %}
@@ -44,9 +44,9 @@
 
     {% url 'ProfileMission' 'html' as url %}
     {% List_Item tag="a" href=url tabindex="0" %}
-      {% List_Content %}
+      {% List_Text %}
         {% trans "Profile" %}
-      {% endList_Content %}
+      {% endList_Text %}
     {% endList_Item %}
   {% endList_Group %}
 {% endblock %}
@@ -54,9 +54,9 @@
 
 {% block drawer_menu_website %}
   {% List_Item tag="a" href="/contact-us" tabindex="3" %}
-    {% List_Content %}
+    {% List_Text %}
       {% trans "Contact Us" %}
-    {% endList_Content %}
+    {% endList_Text %}
   {% endList_Item %}
 {% endblock %}
 

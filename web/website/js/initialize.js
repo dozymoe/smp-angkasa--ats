@@ -5,7 +5,6 @@ import { MDCDrawer } from '@material/drawer';
 import { MDCFormField } from '@material/form-field';
 import { MDCIconButtonToggle } from '@material/icon-button';
 import { MDCList } from '@material/list';
-import { MDCMenu } from '@material/menu';
 import { MDCRipple } from '@material/ripple';
 import { MDCSelect } from '@material/select';
 import { MDCSnackbar } from '@material/snackbar';
@@ -57,10 +56,6 @@ export default function(app)
     for (let el of document.querySelectorAll('.mdc-list'))
     {
         new MDCList(el);
-    }
-    for (let el of document.querySelectorAll('.mdc-menu'))
-    {
-        new MDCMenu(el);
     }
     for (let el of document.querySelectorAll('.mdc-select'))
     {

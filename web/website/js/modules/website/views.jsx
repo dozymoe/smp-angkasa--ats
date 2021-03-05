@@ -1,3 +1,4 @@
+import { MDCMenu } from '@material/menu';
 import React from 'react';
 import ReactDOM from 'react-dom';
 //-
@@ -17,4 +18,23 @@ export function InjectReSTPreview(app, element)
 
         showModal(ReSTPreview, {title: title, markup: markup}, app);
     });
+}
+
+
+export function InjectMenu(app, element)
+{
+    let elMenu = document.getElementById(
+            element.getAttribute('data-provide-menu'));
+
+    if (elMenu)
+    {
+        let mdcMenu = new MDCMenu(elMenu);
+        mdcMenu.setFixedPosition(true);
+
+        element.addEventListener('click', event =>
+                {
+                    event.preventDefault();
+                    mdcMenu.open = true;
+                });
+    }
 }

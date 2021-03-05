@@ -104,3 +104,8 @@ def flash_messages(messages, low, high=None):
             continue
         result.append(msg.message)
     return result
+
+
+@register.simple_tag
+def html_id(name, unique):
+    return '%s-%s' % (name, unique)

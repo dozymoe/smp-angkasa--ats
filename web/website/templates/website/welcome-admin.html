@@ -3,6 +3,15 @@
 {% load materialweb %}
 
 {% block drawer %}
+  {% url 'BlogPosting:Index' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Image class="material-icons" %}
+      toc
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Articles" %}
+    {% endList_Text %}
+  {% endList_Item %}
 {% endblock %}
 
 
