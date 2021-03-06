@@ -39,5 +39,6 @@ urlpatterns += [
 ]
 
 urlpatterns += [
+    path('dashboard/', views_admin.Home.as_view()),
     path('', views_admin.Home.as_view(), name='Home'),
 ]
