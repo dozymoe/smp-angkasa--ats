@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import RedirectView
 #-
 from website import views_admin
 
@@ -31,6 +32,11 @@ urlpatterns += i18n_patterns(
 
     prefix_default_language=False,
 )
+
+# Quickfixes
+urlpatterns += [
+    path('ppdb.<str:format>', RedirectView.as_view(url='/'), name='Ppdb'),
+]
 
 urlpatterns += [
     path('', views_admin.Home.as_view(), name='Home'),
