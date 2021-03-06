@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -20,36 +19,36 @@ msgstr ""
 
 #: website/templates/404.html:4 website/templates/404.html:12
 msgid "Not Found"
-msgstr ""
+msgstr "Tidak Ditemukan"
 
 #: website/templates/500.html:4 website/templates/500.html:12
 msgid "Server Error"
-msgstr ""
+msgstr "Kesalahan Internal"
 
 #: website/templates/base-admin.html:7 website/templates/base.html:33
 #: website/templates/base_drawer-admin.html:7
 #: website/templates/base_drawer.html:11 website/templates/website/ppdb.html:12
 #: website/templates/website/visi-misi.html:12
 msgid "Home Page"
-msgstr ""
+msgstr "Laman Muka"
 
 #: website/templates/base-admin.html:19
 #: website/templates/base_drawer-admin.html:21
 msgid "Sign Out"
-msgstr ""
+msgstr "Keluar"
 
 #: website/templates/base-admin.html:25
 #: website/templates/base_drawer-admin.html:30
 msgid "Sign In"
-msgstr ""
+msgstr "Masuk"
 
 #: website/templates/base.html:76 website/templates/base_drawer.html:78
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #: website/templates/base_drawer.html:50
 msgid "Website"
-msgstr ""
+msgstr "Situs"
 
 #: website/templates/website/ppdb.html:6
 msgid "Penerimaan Peserta Didik Baru"
@@ -91,7 +90,7 @@ msgstr ""
 #: website/templates/website/visi-misi.html:58
 #: website/templates/website/welcome.html:31
 msgid "Contact Us"
-msgstr ""
+msgstr "Hubungi Kami"
 
 #: website/templates/website/visi-misi.html:6
 msgid "Visi dan Misi"
@@ -102,8 +101,8 @@ msgstr ""
 #: website/templates/website/visi-misi.html:48
 #: website/templates/website/welcome.html:9
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: website/templates/website/welcome-admin.html:12
 msgid "Articles"
-msgstr ""
+msgstr "Daftar Artikel"

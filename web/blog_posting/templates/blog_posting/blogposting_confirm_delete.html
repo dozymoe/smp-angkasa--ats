@@ -1,8 +1,10 @@
 {% extends 'base_drawer-admin.html' %}
 {% load i18n %}
-{% load materialweb %}
+{% load materialweb website_extras %}
 
-{% block head_title %}{% trans "Create Article" %}{% endblock %}
+{% block head_title %}
+  {% trans "Delete Article" %}
+{% endblock %}
 {% block drawer_title %}{% trans "Manage Articles" %}{% endblock %}
 
 
@@ -11,30 +13,17 @@
   {% csrf_token %}
 
   <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextField form.title mode='outlined' autofocus="true" class="d-block" %}
+    <div class="mdc-layout-grid__cell--span-12">
+      {% trans "Do you really want to delete" %}:
+      {{ object.title }}?
     </div>
 
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextField form.slug mode='outlined' class="d-block" %}
+    <div class="mdc-layout-grid__cell--span-12">
+      {{ object.summary | restify }}
     </div>
 
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextArea form.body mode='outlined' class="d-block" %}
-
-      {% trans "Body Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.body.id_for_label %}
-        {% trans "Preview" %}
-      {% endButton %}
-    </div>
-
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextArea form.summary mode='outlined' rows="4" class="text-editor d-block" %}
-
-      {% trans "Summary Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.summary.id_for_label %}
-        {% trans "Preview" %}
-      {% endButton %}
+    <div class="mdc-layout-grid__cell--span-12">
+      {% trans "Date Created" %}: {{ object.created_at | date }}
     </div>
 
     {% if form.errors %}
@@ -43,7 +32,7 @@
 
     <div class="mdc-layout-grid__cell--span-12">
       {% Button type="submit" mode="raised" %}
-        {% trans "Submit" %}
+        {% trans "Delete" %}
       {% endButton %}
     </div>
   </div>
@@ -52,8 +41,8 @@
 
 
 {% block topbar_left %}
-  {% url 'BlogPosting:Index' as url %}
-  {% trans "Manage Articles" as label %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
   {% IconButton tag="a" href=url label=label class="material-icons" %}
     arrow_back
   {% endIconButton %}
@@ -72,12 +61,32 @@
   {% endList_Item %}
 
   {% url 'BlogPosting:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
+  {% List_Item tag="a" href=url tabindex="2" %}
     {% List_Image class="material-icons" %}
       add
     {% endList_Image %}
     {% List_Text %}
       {% trans "Create" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'BlogPosting:Update' object.pk as url %}
+  {% List_Item tag="a" href=url tabindex="3" %}
+    {% List_Image class="material-icons" %}
+      edit
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Edit" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'BlogPosting:Destroy' object.pk as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Image class="material-icons" %}
+      delete
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Delete" %}
     {% endList_Text %}
   {% endList_Item %}
 {% endblock %}

@@ -6,38 +6,6 @@
 {% block drawer_title %}{% trans "Manage Articles" %}{% endblock %}
 
 
-{% block topbar_left %}
-  {% url 'Home' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'BlogPosting:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'BlogPosting:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
-{% endblock %}
-
-
 {% block content %}
 <div class="mdc-layout-grid__cell--span-12">
   {% trans "Articles" as label %}
@@ -105,6 +73,22 @@
                       {% trans "Delete" %}
                     {% endList_Text %}
                   {% endList_Item %}
+
+                  {% List_Divider %}
+
+                  {% if obj.published_at %}
+                      {% url 'BlogPosting:Unpublish' obj.pk as url %}
+                      {% trans "Unpublish"  as label %}
+                  {% else %}
+                      {% url 'BlogPosting:Publish' obj.pk as url %}
+                      {% trans "Publish" as label %}
+                  {% endif %}
+                  {% List_Item tag="a" href=url tabindex="1" %}
+                    {% List_Image class="material-icons" %}
+                      {% iif obj.published_at "visibility_off" "visibility" %}
+                    {% endList_Image %}
+                    {% List_Text %}{{ label }}{% endList_Text %}
+                  {% endList_Item %}
                 {% endList %}
               {% endMenu %}
             {% endMenu_Anchor %}
@@ -114,4 +98,36 @@
     {% endTable_Body %}
   {% endTable %}
 </div>
+{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block drawer %}
+  {% url 'BlogPosting:Index' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Image class="material-icons" %}
+      toc
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Index" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'BlogPosting:Create' as url %}
+  {% List_Item tag="a" href=url tabindex="1" %}
+    {% List_Image class="material-icons" %}
+      add
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Create" %}
+    {% endList_Text %}
+  {% endList_Item %}
 {% endblock %}
