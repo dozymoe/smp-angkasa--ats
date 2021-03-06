@@ -23,7 +23,7 @@
     width: 2rem;
 }
 
-footer
+#page-wrapper > footer
 {
     @include theme.property(background-color, 'primary');
     @include theme.property(color, 'on-primary');

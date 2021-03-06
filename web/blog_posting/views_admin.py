@@ -37,6 +37,7 @@ class Create(CreateView):
 @method_decorator(login_required, name='dispatch')
 class Display(DetailView):
     model = BlogPosting
+    template_name_suffix = '_detail-admin.html'
 
 
 @method_decorator(login_required, name='dispatch')

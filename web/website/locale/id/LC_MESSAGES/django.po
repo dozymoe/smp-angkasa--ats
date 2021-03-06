@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-05 11:34+0700\n"
+"POT-Creation-Date: 2021-03-06 19:34+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,19 +76,19 @@ msgstr ""
 
 #: website/templates/website/ppdb.html:53
 #: website/templates/website/visi-misi.html:28
-#: website/templates/website/welcome.html:15
+#: website/templates/website/welcome.html:45
 msgid "Kegiatan"
 msgstr ""
 
 #: website/templates/website/ppdb.html:60
 #: website/templates/website/visi-misi.html:35
-#: website/templates/website/welcome.html:22
+#: website/templates/website/welcome.html:52
 msgid "PPDB"
 msgstr ""
 
 #: website/templates/website/ppdb.html:70
 #: website/templates/website/visi-misi.html:58
-#: website/templates/website/welcome.html:31
+#: website/templates/website/welcome.html:61
 msgid "Contact Us"
 msgstr "Hubungi Kami"
 
@@ -99,10 +99,22 @@ msgstr ""
 #: website/templates/website/visi-misi.html:22
 #: website/templates/website/visi-misi.html:42
 #: website/templates/website/visi-misi.html:48
-#: website/templates/website/welcome.html:9
+#: website/templates/website/welcome.html:39
 msgid "Profile"
 msgstr "Profil"
 
 #: website/templates/website/welcome-admin.html:12
 msgid "Articles"
 msgstr "Daftar Artikel"
+
+#: website/templates/website/welcome.html:7
+msgid "Latest News"
+msgstr "Berita Terbaru"
+
+#: website/templates/website/welcome.html:20
+msgid "Posted on"
+msgstr "Diterbitkan"
+
+#: website/templates/website/welcome.html:24
+msgid "by"
+msgstr "oleh"

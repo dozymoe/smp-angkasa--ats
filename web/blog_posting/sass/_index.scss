@@ -1,0 +1,17 @@
+.front-blog-posts
+{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    & > li
+    {
+        border-top: 1px solid lightgray;
+        margin-top: 3em;
+
+        &:first-child
+        {
+            border-top: none;
+        }
+    }
+}

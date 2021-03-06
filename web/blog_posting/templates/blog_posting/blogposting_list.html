@@ -110,6 +110,15 @@
 {% endblock %}
 
 
+{% block topbar_right %}
+  {% url 'BlogPosting:Create' as url %}
+  {% trans "Create Article" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    add
+  {% endIconButton %}
+{% endblock %}
+
+
 {% block drawer %}
   {% url 'BlogPosting:Index' as url %}
   {% List_Item tag="a" href=url tabindex="0" %}

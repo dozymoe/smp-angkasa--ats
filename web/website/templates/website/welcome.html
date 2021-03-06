@@ -1,6 +1,36 @@
 {% extends "base_drawer.html" %}
 {% load i18n %}
-{% load materialweb %}
+{% load materialweb website_extras %}
+
+{% block content %}
+<section class="mdc-layout-grid__cell--span-12">
+  <h2>{% trans "Latest News" %}</h2>
+  <ul class="front-blog-posts">
+    {% for obj in blogposts %}
+      <li role="article">
+        <h3>
+          <a href="{% url 'BlogPosting:Display' obj.slug 'html' %}">
+            {{ obj.title }}
+          </a>
+        </h3>
+        {{ obj.summary | restify }}
+
+        <footer>
+          <p>
+            {% trans "Posted on" %}
+            <time datetime="{{ obj.published_at }}">
+              {{ obj.published_at | date:'j F' }}
+            </time>
+            {% trans "by" %}
+            {{ obj.created_by.username }}.
+          </p>
+        </footer>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}
+
 
 {% block drawer %}
   {% url 'ProfileMission' 'html' as url %}

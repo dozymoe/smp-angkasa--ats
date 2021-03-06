@@ -14,21 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls.i18n import i18n_patterns
-from django.urls import path
+from django.urls import include, path
 #-
 from website import views
 
 urlpatterns = [
-]
-
-urlpatterns += i18n_patterns(
+    path('index.<str:format>', views.Home.as_view(), name='Home'),
     path('visi-misi.<str:format>', views.VisiMisi.as_view(),
         name='ProfileMission'),
     path('ppdb.<str:format>', views.Ppdb.as_view(), name='Ppdb'),
+]
+
+urlpatterns += i18n_patterns(
+    path('blog-posts/', include('blog_posting.urls', namespace='BlogPosting')),
 
     prefix_default_language=False,
 )
 
 urlpatterns += [
-    path('', views.Home.as_view(), name='Home'),
+    path('', views.Home.as_view()),
 ]

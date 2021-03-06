@@ -1,13 +1,19 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'base_drawer.html' %}
 {% load i18n %}
 {% load materialweb website_extras %}
 
 {% block head_title %}{{ object.title }}{% endblock %}
-{% block drawer_title %}{% trans "Manage Articles" %}{% endblock %}
+
+
+{% block content %}
+<div class="mdc-layout-grid__cell--span-12">
+  {{ object.body | restify }}
+</div>
+{% endblock %}
 
 
 {% block topbar_left %}
-  {% url 'Home' as url %}
+  {% url 'Home' 'html' as url %}
   {% trans "Home Page" as label %}
   {% IconButton tag="a" href=url label=label class="material-icons" %}
     arrow_back
@@ -16,50 +22,32 @@
 
 
 {% block drawer %}
-  {% url 'BlogPosting:Index' as url %}
+  {% url 'ProfileMission' 'html' as url %}
   {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
     {% List_Text %}
-      {% trans "Index" %}
+      {% trans "Profile" %}
     {% endList_Text %}
   {% endList_Item %}
 
-  {% url 'BlogPosting:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
+  {% List_Item tag="a" href="#" tabindex="1" %}
     {% List_Text %}
-      {% trans "Create" %}
+      {% trans "Kegiatan" %}
     {% endList_Text %}
   {% endList_Item %}
 
-  {% url 'BlogPosting:Update' object.pk as url %}
+  {% url 'Ppdb' 'html' as url %}
   {% List_Item tag="a" href=url tabindex="2" %}
-    {% List_Image class="material-icons" %}
-      edit
-    {% endList_Image %}
     {% List_Text %}
-      {% trans "Edit" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'BlogPosting:Destroy' object.pk as url %}
-  {% List_Item tag="a" href=url tabindex="3" %}
-    {% List_Image class="material-icons" %}
-      delete
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Delete" %}
+      {% trans "PPDB" %}
     {% endList_Text %}
   {% endList_Item %}
 {% endblock %}
 
 
-{% block content %}
-<div class="mdc-layout-grid__cell--span-12">
-  {{ object.body | restify }}
-</div>
+{% block drawer_menu_website %}
+  {% List_Item tag="a" href="/contact-us" tabindex="3" %}
+    {% List_Text %}
+      {% trans "Contact Us" %}
+    {% endList_Text %}
+  {% endList_Item %}
 {% endblock %}
