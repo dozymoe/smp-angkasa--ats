@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-06 19:34+0700\n"
+"POT-Creation-Date: 2021-03-07 15:18+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,14 +33,12 @@ msgstr "Hapus Artikel"
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:8
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:8
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:6
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:56
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:6
 #: blog_posting/templates/blog_posting/blogposting_form.html:6
-#: blog_posting/templates/blog_posting/blogposting_form.html:56
-#: blog_posting/templates/blog_posting/blogposting_list.html:5
 #: blog_posting/templates/blog_posting/blogposting_list.html:6
-msgid "Manage Articles"
-msgstr "Administrasi Artikel"
+#: blog_posting/templates/blog_posting/blogposting_list.html:11
+msgid "Articles"
+msgstr "Artikel-Artikel"
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:17
 msgid "Do you really want to delete"
@@ -125,7 +123,6 @@ msgid "Unpublish"
 msgstr "Batal Tayang"
 
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:5
-#: blog_posting/templates/blog_posting/blogposting_form.html:5
 #: blog_posting/templates/blog_posting/blogposting_list.html:115
 msgid "Create Article"
 msgstr "Bikin Artikel"
@@ -148,9 +145,14 @@ msgid "Summary Preview"
 msgstr "Penampakan Deskripsi"
 
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:46
-#: blog_posting/templates/blog_posting/blogposting_form.html:46
 msgid "Submit"
 msgstr "Kirim"
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:56
+#: blog_posting/templates/blog_posting/blogposting_form.html:56
+#: blog_posting/templates/blog_posting/blogposting_list.html:5
+msgid "Manage Articles"
+msgstr "Administrasi Artikel"
 
 #: blog_posting/templates/blog_posting/blogposting_detail.html:28
 msgid "Profile"
@@ -168,9 +170,13 @@ msgstr ""
 msgid "Contact Us"
 msgstr "Hubungi Kami"
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:11
-msgid "Articles"
-msgstr "Artikel-Artikel"
+#: blog_posting/templates/blog_posting/blogposting_form.html:5
+msgid "Update Article"
+msgstr "Ubah Artikel"
+
+#: blog_posting/templates/blog_posting/blogposting_form.html:46
+msgid "Update"
+msgstr "Ubah"
 
 #: blog_posting/templates/blog_posting/blogposting_list.html:16
 msgid "Title"

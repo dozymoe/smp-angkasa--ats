@@ -4,6 +4,13 @@
 //-
 @import "../variables";
 
+.appbar-logo
+{
+    display: none;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
 .mdc-drawer__title
 {
     a
@@ -45,5 +52,13 @@
         {
             background-color: $primary-active;
         }
+    }
+}
+
+@media (min-width: 40em)
+{
+    .appbar-logo
+    {
+        display: inline;
     }
 }

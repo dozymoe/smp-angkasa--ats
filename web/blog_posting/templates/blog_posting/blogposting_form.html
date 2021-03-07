@@ -2,8 +2,8 @@
 {% load i18n %}
 {% load materialweb %}
 
-{% block head_title %}{% trans "Create Article" %}{% endblock %}
-{% block drawer_title %}{% trans "Manage Articles" %}{% endblock %}
+{% block head_title %}{% trans "Update Article" %}{% endblock %}
+{% block drawer_title %}{% trans "Articles" %}{% endblock %}
 
 
 {% block content %}
@@ -43,7 +43,7 @@
 
     <div class="mdc-layout-grid__cell--span-12">
       {% Button type="submit" mode="raised" %}
-        {% trans "Submit" %}
+        {% trans "Update" %}
       {% endButton %}
     </div>
   </div>

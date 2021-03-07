@@ -9,7 +9,7 @@ from blog_posting.models import BlogPosting
 _logger = logging.getLogger()
 
 
-@background(schedule=60)
+@background(schedule=10)
 def freeze_view(view_name, base_url, dest=None, **kwargs):
     generate_static_view(view_name, frozen_host=base_url, frozen_dest=dest,
             **kwargs)

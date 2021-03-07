@@ -18,6 +18,7 @@
         {% if title_content %}
           {{ title_content }}
         {% else %}
+          <img src="/assets/img/logo.png" width="40" class="appbar-logo">
           {{request.site.name}}
         {% endif %}
       {% endTopAppBar_Title %}
@@ -35,6 +36,7 @@
     {% block drawer_header %}
       {% Drawer_Header %}
         {% Drawer_Title %}
+          <img src="/assets/img/logo.png" width="40" class="appbar-logo">
           {% block drawer_title %}
             {{request.site.name}}
           {% endblock %}
