@@ -1,15 +1,20 @@
+from io import BytesIO
 import logging
+import os
 #-
 from background_task import background
+from django.apps import apps
 from django.conf import settings
+from django.core.files.base import ContentFile
 from frozen_django.main import generate_static_view
+from PIL import Image
 #-
 from blog_posting.models import BlogPosting
 
 _logger = logging.getLogger()
 
 
-@background(schedule=10)
+@background(schedule={'priority': 0})
 def freeze_view(view_name, base_url, dest=None, **kwargs):
     generate_static_view(view_name, frozen_host=base_url, frozen_dest=dest,
             **kwargs)
@@ -28,3 +33,26 @@ def freeze_all_views():
     for obj in BlogPosting.objects.filter(published_at__isnull=False).all():
         hosts_freeze_view('blog_posting.views.Display', slug=obj.slug,
                 format='html')
+
+
+@background(schedule={'priority': 3})
+def create_thumbnail(obj_info, source_field, target_field, estimate_size):
+    model = apps.get_model(obj_info[0], obj_info[1])
+    obj = model.objects.get(pk=obj_info[2])
+
+    source = getattr(obj, source_field)
+    target = getattr(obj, target_field)
+
+    filename, ext = os.path.splitext(source.name)
+    filename = '%s_%s%s' % (filename, target_field, ext.lower())
+
+    im = Image.open(source)
+    im.load()
+    im.thumbnail(estimate_size, Image.ANTIALIAS)
+    io = BytesIO()
+    im.save(io, im.format)
+    target.save(filename, ContentFile(io.getvalue()), save=False)
+    # Don't close the image
+    #im.close()
+
+    obj.save(update_fields=[target_field])

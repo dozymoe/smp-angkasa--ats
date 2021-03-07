@@ -57,7 +57,7 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
         ordering = ['-modified_at']
         rules_permissions = {
             'add': rules.is_authenticated,
-            'read': rules.is_staff,
+            'read': rules.always_allow,
             'change': rules.is_staff,
             'delete': rules.is_staff,
         }
