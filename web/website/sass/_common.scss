@@ -12,3 +12,7 @@ $mdc-typography-styles-body1: (
     font-size: functions.pxToRem(18px),
 );
 @import "@material/typography/mdc-typography";
+
+@import "../../../tmp/minimal.css";
+@import "../../../tmp/math.css";
+@import "../../../tmp/syntax.css";

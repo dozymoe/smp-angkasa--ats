@@ -35,6 +35,9 @@ web:
       options:
         config_file: "{_1}/webpack-{_2}.config.js"
         mode: production
+      rule_in:
+        - docutils/cp
+        - pygmentize/shell
       raw_depend_in:
         - package-{{PROJECT_VARIANT}}.json
         - "{_1}/webpack-{_2}.config.js"
