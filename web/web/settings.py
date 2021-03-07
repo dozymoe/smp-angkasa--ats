@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'background_task',
     'frozen_django',
+    'mailer',
     'materialweb',
     'modeltranslation',
     'rules',
@@ -187,6 +188,8 @@ FROZEN_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')
 
 # SMTP
 
+EMAIL_BACKEND = _config.get('smtp.backend',
+        'django.core.mail.backends.console.EmailBackend')
 EMAIL_HOST = _config.get('smtp.host')
 EMAIL_PORT = _config.get('smtp.port')
 EMAIL_HOST_USER = _config.get('smtp.username')

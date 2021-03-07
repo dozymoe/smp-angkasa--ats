@@ -4,6 +4,7 @@ django-allauth
 django-background-tasks
 django-dirtyfields
 django-honeypot
+django-mailer
 django-modeltranslation
 django-simple-captcha
 django-treebeard
