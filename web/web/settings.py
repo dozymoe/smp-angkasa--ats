@@ -236,4 +236,12 @@ RESTRUCTURED_TEXT = {
 }
 
 
+IMAGE_SIZES = (
+    ('image_xs', (300, 400), 320),
+    ('image_sm', (630, 840), 640),
+    ('image_md', (780, 1040), 800),
+    ('image_lg', (1020, 1360), 0),
+)
+
+
 _config = None # pylint:disable=invalid-name

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 #-
-from website import views_admin
+from website import views, views_admin
 
 urlpatterns = [
     path('account/', include('allauth.urls')),
@@ -29,6 +29,8 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('blog-posts/', include('blog_posting.urls_admin',
             namespace='BlogPosting')),
+    path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
+        name='EditorHelpText'),
 
     prefix_default_language=False,
 )

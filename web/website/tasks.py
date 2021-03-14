@@ -29,6 +29,7 @@ def freeze_all_views():
     hosts_freeze_view('website.views.Home', format='html')
     hosts_freeze_view('website.views.VisiMisi', format='html')
     hosts_freeze_view('website.views.Ppdb', format='html')
+    hosts_freeze_view('website.views.EditorHelpText', format='html')
 
     for obj in BlogPosting.objects.filter(published_at__isnull=False).all():
         hosts_freeze_view('blog_posting.views.Display', slug=obj.slug,
@@ -41,18 +42,22 @@ def create_thumbnail(obj_info, source_field, target_field, estimate_size):
     obj = model.objects.get(pk=obj_info[2])
 
     source = getattr(obj, source_field)
-    target = getattr(obj, target_field)
-
-    filename, ext = os.path.splitext(source.name)
-    filename = '%s_%s%s' % (filename, target_field, ext.lower())
-
     im = Image.open(source)
     im.load()
-    im.thumbnail(estimate_size, Image.ANTIALIAS)
-    io = BytesIO()
-    im.save(io, im.format)
-    target.save(filename, ContentFile(io.getvalue()), save=False)
-    # Don't close the image
-    #im.close()
+
+    if im.size[0] <= estimate_size[0] and im.size[1] <= estimate_size[1]:
+        setattr(obj, target_field, None)
+    else:
+        filename, ext = os.path.splitext(source.name)
+        filename = '%s_%s%s' % (filename, target_field, ext.lower())
+
+        im.thumbnail(estimate_size, Image.ANTIALIAS)
+        io = BytesIO()
+        im.save(io, im.format)
+
+        target = getattr(obj, target_field)
+        target.save(filename, ContentFile(io.getvalue()), save=False)
+        # Don't close the image
+        #im.close()
 
     obj.save(update_fields=[target_field])

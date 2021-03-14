@@ -10,8 +10,6 @@ from rules.contrib.models import RulesModel
 #-
 from thing_keyword.models import ThingKeywordField
 
-COVER_SIZE = (300, 600)
-
 
 class BlogPostingManager(models.Manager):
     def get_by_natural_key(self, key):
@@ -31,8 +29,6 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
             blank=True)
     image_height = models.SmallIntegerField(null=True, editable=False)
     image_width = models.SmallIntegerField(null=True, editable=False)
-    cover = models.ImageField(upload_to='blog_posting/cover/', null=True,
-            editable=False)
 
     published_at = models.DateTimeField(verbose_name="publish date",
             db_index=True, null=True, blank=True)
@@ -46,6 +42,15 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     modified_at = models.DateTimeField(auto_now=True, editable=False)
     deleted_at = models.DateTimeField(db_index=True, null=True, blank=True)
+
+    image_xs = models.ImageField(upload_to='blog_posting/image_xs/', null=True,
+            editable=False)
+    image_sm = models.ImageField(upload_to='blog_posting/image_sm/', null=True,
+            editable=False)
+    image_md = models.ImageField(upload_to='blog_posting/image_md/', null=True,
+            editable=False)
+    image_lg = models.ImageField(upload_to='blog_posting/image_lg/', null=True,
+            editable=False)
 
     objects = BlogPostingManager()
     keywords = GenericRelation(ThingKeywordField)

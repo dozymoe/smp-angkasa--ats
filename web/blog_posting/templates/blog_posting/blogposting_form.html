@@ -26,6 +26,11 @@
       {% Button type="button" title=title data-provide-rest-preview=form.body.id_for_label %}
         {% trans "Preview" %}
       {% endButton %}
+
+      {% url 'EditorHelpText' 'html' as url %}
+      {% Button tag="a" href=url target="_blank" %}
+        {% trans "Editing Help" %}
+      {% endButton %}
     </div>
 
     <div class="mdc-layout-grid__cell--span-6">
@@ -34,6 +39,11 @@
       {% trans "Summary Preview" as title %}
       {% Button type="button" title=title data-provide-rest-preview=form.summary.id_for_label %}
         {% trans "Preview" %}
+      {% endButton %}
+
+      {% url 'EditorHelpText' 'html' as url %}
+      {% Button tag="a" href=url target="_blank" %}
+        {% trans "Editing Help" %}
       {% endButton %}
     </div>
 

@@ -43,6 +43,7 @@
     "@material/select": "^9.0.0",
     "@material/shape": "^9.0.0",
     "@material/snackbar": "^9.0.0",
+    "@material/tab-bar": "^10.0.0",
     "@material/textfield": "^9.0.0",
     "@material/theme": "^9.0.0",
     "@material/top-app-bar": "^9.0.0",

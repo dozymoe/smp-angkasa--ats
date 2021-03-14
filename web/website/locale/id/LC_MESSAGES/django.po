@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-07 15:18+0700\n"
+"POT-Creation-Date: 2021-03-14 21:11+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,9 @@ msgstr "Kesalahan Internal"
 
 #: website/templates/base-admin.html:7 website/templates/base.html:33
 #: website/templates/base_drawer-admin.html:7
-#: website/templates/base_drawer.html:11 website/templates/website/ppdb.html:12
+#: website/templates/base_drawer.html:11
+#: website/templates/website/editor-helptext.html:173
+#: website/templates/website/ppdb.html:12
 #: website/templates/website/visi-misi.html:12
 msgid "Home Page"
 msgstr "Laman Muka"
@@ -49,6 +51,39 @@ msgstr "Tutup"
 #: website/templates/base_drawer.html:52
 msgid "Website"
 msgstr "Situs"
+
+#: website/templates/website/editor-helptext.html:6
+msgid "Text Editor Documentation"
+msgstr "Dokumentasi Penyunting Teks"
+
+#: website/templates/website/editor-helptext.html:12
+#: website/templates/website/editor-helptext.html:23
+msgid "Headings"
+msgstr "Bab atau Sub Bab"
+
+#: website/templates/website/editor-helptext.html:28
+msgid "Heading Size"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:32
+msgid "Formatting"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:90
+msgid "Markup"
+msgstr "Marka teks"
+
+#: website/templates/website/editor-helptext.html:91
+msgid "Inline markup"
+msgstr "Marka teks dalam kalimat"
+
+#: website/templates/website/editor-helptext.html:114
+msgid "Bulleted list"
+msgstr "Daftar"
+
+#: website/templates/website/editor-helptext.html:137
+msgid "Numbered list"
+msgstr "Daftar terurut"
 
 #: website/templates/website/ppdb.html:6
 msgid "Penerimaan Peserta Didik Baru"

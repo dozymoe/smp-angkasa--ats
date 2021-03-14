@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load materialweb website_extras %}
+
+{% block head_title %}
+  {% trans "Text Editor Documentation" %}
+{% endblock %}
+
+
+{% block content %}
+<section class="mdc-layout-grid__cell--span-12">
+  <h2>{% trans "Headings" %}</h2>
+  <p>
+    Untuk setiap huruf di dalam judul bab, tuliskan simbol (contohnya, = atau *)
+    dengan jumlah yang sama.
+  </p>
+  <p>
+    Mengenai simbol tersebut, karakter yang dipakai sebenarnya tidak penting,
+    urutan penggunaan simbol tersebut yang menjadikannya &lt;h1&gt; atau
+    &lt;h2&gt;. Ikuti penggunaan simbol di bawah agar menghasilkan teks yang
+    seragam.
+  </p>
+  {% trans "Headings" as label %}
+  {% Table label=label %}
+    {% Table_Head %}
+      {% Table_Head_Row %}
+        {% Table_Head_Col %}
+          {% trans "Heading Size" %}
+        {% endTable_Head_Col %}
+
+        {% Table_Head_Col %}
+          {% trans "Formatting" %}
+        {% endTable_Head_Col %}
+      {% endTable_Head_Row %}
+    {% endTable_Head %}
+    {% Table_Body %}
+      {% Table_Row %}
+        {% Table_ColHeader %}H1{% endTable_ColHeader %}
+        {% Table_Col %}
+          =======<br>
+          Heading<br>
+          =======
+        {% endTable_Col %}
+      {% endTable_Row %}
+
+      {% Table_Row %}
+        {% Table_ColHeader %}H2{% endTable_ColHeader %}
+        {% Table_Col %}
+          Heading<br>
+          =======
+        {% endTable_Col %}
+      {% endTable_Row %}
+
+      {% Table_Row %}
+        {% Table_ColHeader %}H3{% endTable_ColHeader %}
+        {% Table_Col %}
+          Heading<br>
+          -------
+        {% endTable_Col %}
+      {% endTable_Row %}
+
+      {% Table_Row %}
+        {% Table_ColHeader %}H4{% endTable_ColHeader %}
+        {% Table_Col %}
+          Heading<br>
+          ~~~~~~~
+        {% endTable_Col %}
+      {% endTable_Row %}
+
+      {% Table_Row %}
+        {% Table_ColHeader %}H5{% endTable_ColHeader %}
+        {% Table_Col %}
+          Heading<br>
+          *******
+        {% endTable_Col %}
+      {% endTable_Row %}
+
+      {% Table_Row %}
+        {% Table_ColHeader %}H6{% endTable_ColHeader %}
+        {% Table_Col %}
+          Heading<br>
+          ^^^^^^^
+        {% endTable_Col %}
+      {% endTable_Row %}
+    {% endTable_Body %}
+  {% endTable %}
+</section>
+
+<section class="mdc-layout-grid__cell--span-12">
+  <h2>{% trans "Markup" %}</h2>
+  <h3>{% trans "Inline markup" %}</h3>
+  <p>
+    Gunakan marka teks berikut untuk memberikan makna tambahan pada kalimat.
+  </p>
+  {% Table %}
+    {% Table_Body %}
+      {% Table_Row %}
+        {% Table_ColHeader %}**Text**{% endTable_ColHeader %}
+        {% Table_Col %}<b>Text</b>{% endTable_Col %}
+      {% endTable_Row %}
+
+      {% Table_Row %}
+        {% Table_ColHeader %}*Text*{% endTable_ColHeader %}
+        {% Table_Col %}<i>Text</i>{% endTable_Col %}
+      {% endTable_Row %}
+
+      {% Table_Row %}
+        {% Table_ColHeader %}``Text``{% endTable_ColHeader %}
+        {% Table_Col %}<code>Text</code>{% endTable_Col %}
+      {% endTable_Row %}
+    {% endTable_Body %}
+  {% endTable %}
+
+  <h3>{% trans "Bulleted list" %}</h3>
+  <p>Contoh:</p>
+  <pre><code>
+    - This is a bulleted list.
+    - It has two items, the second
+      item uses two lines.
+  </code></pre>
+  <p>Hasil:</p>
+  <ul>
+    <li>This is a bulleted list.</li>
+    <li>It has two items, the second item uses two lines.</li>
+  </ul>
+  <p>Contoh:</p>
+  <pre>
+    * This is a bulleted list too.
+    * The principle stays the same.
+  </pre>
+  <p>Hasil:</p>
+  <ul>
+    <li>This is a bulleted list too.</li>
+    <li>The principle stays the same.</li>
+  </ul>
+
+  <h3>{% trans "Numbered list" %}</h3>
+  <p>Contoh:</p>
+  <pre>
+    #. This is a numbered list.
+    #. Numbering is automatic.
+  </pre>
+  <p>Hasil:</p>
+  <ol>
+    <li>This is a numbered list.</li>
+    <li>Numbering is automatic.</li>
+  </ol>
+  <p>Contoh:</p>
+  <pre>
+    1. This is a numbered list too.
+    2. Use this format to specify the numbering.
+  </pre>
+  <p>Hasil:</p>
+  <ol>
+    <li>This is a numbered list too.</li>
+    <li>Use this format to specify the numbering.</li>
+  </ol>
+</section>
+
+<div class="mdc-layout-grid__cell--span-12">
+  <p>
+    Sumber:
+    <a href="https://www.odoo.com/documentation/user/14.0/contributing/documentation/rst_cheat_sheet.html">
+      Dokumentasi Odoo
+    </a>
+  </p>
+</div>
+{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' 'html' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    close
+  {% endIconButton %}
+{% endblock %}

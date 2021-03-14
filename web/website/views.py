@@ -20,3 +20,7 @@ class VisiMisi(TemplateView):
 
 class Ppdb(TemplateView):
     template_name = 'website/ppdb.html'
+
+
+class EditorHelpText(TemplateView):
+    template_name = 'website/editor-helptext.html'
