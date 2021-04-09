@@ -113,11 +113,11 @@
 
   <h3>{% trans "Bulleted list" %}</h3>
   <p>Contoh:</p>
-  <pre><code>
+  <pre>
     - This is a bulleted list.
     - It has two items, the second
       item uses two lines.
-  </code></pre>
+  </pre>
   <p>Hasil:</p>
   <ul>
     <li>This is a bulleted list.</li>
@@ -155,6 +155,132 @@
     <li>This is a numbered list too.</li>
     <li>Use this format to specify the numbering.</li>
   </ol>
+
+  <h3>{% trans "Nested list" %}</h3>
+  <p>Contoh:</p>
+  <pre>
+    - This is the first item of a bulleted list.
+
+      1. It has a nested numbered list
+      2. with two items.
+  </pre>
+  <p>Hasil:</p>
+  <ul>
+    <li>
+      This is the first item of a bulleted list.
+
+      <ol>
+        <li>It has a nested numbered list</li>
+        <li>with two items.</li>
+      </ol>
+    </li>
+  </ul>
+</section>
+
+<section class="mdc-layout-grid__cell--span-12">
+  <h2>{% trans "Hyperlinks" %}</h2>
+  <h3>{% trans "Hyperlink references" %}</h3>
+  <p>
+    Acuan tautan adalah tautan kepada sebuah URL dengan teks tersendiri,
+    penulisannya seperti ini: <code>`label &lt;URL&gt;`_</code>.
+  </p>
+  <p>
+    Diakhiri dengan garis bawah, kalau teksnya terdiri lebih dari satu kata maka
+    teks tersebut dikelompokkan menggunakan karakter <code>`</code>.
+  </p>
+  <p>Contoh:</p>
+  <pre>
+    For instance, `this is a hyperlink reference &lt;https://odoo.com&gt;`_.
+  </pre>
+  <p>Hasil:</p>
+  <p>
+    For instance, <a href="https://odoo.com">this is a hyperlink reference</a>.
+  </p>
+
+  <h3>{% trans "External hyperlink targets" %}</h3>
+  <p>
+    Dengan sumber acuan tautan, kita bisa buat pintasan untuk digunakan oleh
+    acuan tautan. Penulisannya seperti ini: <code>.. _target: URL</code>.
+  </p>
+  <p>
+    Ada dua cara untuk merujuk sebuah sumber acuan tautan, tergantung
+    penggunaannya:
+  </p>
+  <ol>
+    <li>
+      <code>target_</code> membuat tautan dengan nama target sebagai teksnya
+      dan URL sebagai tautannya. Perhatikan bahwa karakter garis bawah sekarang
+      ada di akhir kata "target"!
+    </li>
+    <li>
+      <code>`label &lt;target_&gt;`_</code> itu sama dengan yang sebelumnya,
+      tetapi tampilan teksnya diganti dengan <code>label</code>.
+    </li>
+  </ol>
+  <p>Contoh:</p>
+  <pre>
+    .. _proof-of-concept: https://en.wikipedia.org/wiki/Proof_of_concept
+
+    A proof-of-concept_ is a simplified version, a prototype of what is
+    expected to agree on the main lines of expected changes.
+    `PoC &lt;proof-of-concept_&gt;`_ is a common abbreviation.
+  </pre>
+  <p>Hasil:</p>
+  <p>
+    A <a href="https://en.wikipedia.org/wiki/Proof_of_concept">proof-of-concept
+    </a> is a simplified version, a prototype of what is expected to agree on
+    the main lines of expected changes.
+    <a href="https://en.wikipedia.org/wiki/Proof_of_concept">PoC</a> is a common
+    abbreviation.
+  </p>
+
+  <h3>{% trans "Internal hyperlink targets" %}</h3>
+  <p>
+    Sumber acuan tautan internal mengikuti penulisan yang sama dengan yang
+    external, tapi tanpa URL. Target dari tautannya ada di dalam dokumen itu
+    sendiri. Ketika pengguna mengklik acuan tautan, tampilan dokumennya bergeser
+    ke lokasi sumber acuan tautan di halaman yang sama.
+    Pola penulisannya adalah: <code>.. _target:</code>.
+  </p>
+  <p>
+    Ada dua cara merujuk ke sumber acuan, keduanya menggunakan kode
+    <code>ref</code>.
+  </p>
+  <ol>
+    <li>
+      <code>:ref:`target`</code> buat tautan ke jangkar dengan bab yang ada
+      di bawahnya digunakan sebagai teks tautan.
+    </li>
+    <li>
+      <code>:ref:`label &lt;target&gt;`</code> sama dengan di atas, tapi label
+      dijadikan teks tautan.
+    </li>
+  </ol>
+  <p>Contoh:</p>
+  <pre>
+    .. _sales/quotation/start-of-page:
+
+    This can easily be done by creating a new product, see :ref:`product` for
+    additional help.
+
+    .. _sales/quotation/product:
+
+    How to create a product?
+    =========================
+
+    As explained at the :ref:`start of the page
+    &lt;sales/quotation/start-of-page&gt;`, ...
+  </pre>
+  <p>Hasil:</p>
+  <p>
+    This can easily be done by creating a new product, see <a href="#">How to
+    create a product?</a> for additional help.
+  </p>
+  <p><strong>How to create a product?</strong></p>
+  <p>As explained at the <a href="#">start of the page</a>, ...</p>
+
+  <h3>{% trans "Implicit hyperlink targets" %}</h3>
+  <p></p>
 </section>
 
 <div class="mdc-layout-grid__cell--span-12">

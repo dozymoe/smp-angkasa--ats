@@ -4,6 +4,7 @@ import sys
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_FILES = [
     "etc/production/logging.json",
+    "etc/production/smtp.json",
     "etc/production/web/account.json",
     "etc/production/web/application.json",
     "etc/production/web/database.json",
