@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-14 21:11+0700\n"
+"POT-Creation-Date: 2021-04-17 19:06+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: blog_posting/models.py:20
+#: blog_posting/templates/blog_posting/blogposting_list.html:16
+msgid "Title"
+msgstr "Judul"
+
+#: blog_posting/models.py:21
+msgid "Body"
+msgstr "Konten"
+
+#: blog_posting/models.py:22
+msgid "Summary"
+msgstr "Deskripsi"
+
 #: blog_posting/models.py:25
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
@@ -24,6 +37,14 @@ msgid ""
 msgstr ""
 "Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
 "otomatis bila dibiarkan kosong."
+
+#: blog_posting/models.py:27
+msgid "Image"
+msgstr "Gambar"
+
+#: blog_posting/models.py:34
+msgid "Publish Date"
+msgstr "Ditayangkan Tanggal"
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:6
 msgid "Delete Article"
@@ -63,7 +84,7 @@ msgstr "Hapus"
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:45
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:45
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:11
-#: blog_posting/templates/blog_posting/blogposting_detail.html:17
+#: blog_posting/templates/blog_posting/blogposting_detail.html:27
 #: blog_posting/templates/blog_posting/blogposting_list.html:106
 msgid "Home Page"
 msgstr "Laman Muka"
@@ -71,9 +92,9 @@ msgstr "Laman Muka"
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:59
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:59
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:59
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:80
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:85
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:25
-#: blog_posting/templates/blog_posting/blogposting_form.html:80
+#: blog_posting/templates/blog_posting/blogposting_form.html:85
 #: blog_posting/templates/blog_posting/blogposting_list.html:129
 msgid "Index"
 msgstr "Katalog"
@@ -81,9 +102,9 @@ msgstr "Katalog"
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:69
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:69
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:69
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:90
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:95
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:35
-#: blog_posting/templates/blog_posting/blogposting_form.html:90
+#: blog_posting/templates/blog_posting/blogposting_form.html:95
 #: blog_posting/templates/blog_posting/blogposting_list.html:139
 msgid "Create"
 msgstr "Bikin"
@@ -127,53 +148,53 @@ msgstr "Batal Tayang"
 msgid "Create Article"
 msgstr "Bikin Artikel"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:25
-#: blog_posting/templates/blog_posting/blogposting_form.html:25
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:26
+#: blog_posting/templates/blog_posting/blogposting_form.html:26
 msgid "Body Preview"
 msgstr "Penampakan Konten"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:27
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:41
-#: blog_posting/templates/blog_posting/blogposting_form.html:27
-#: blog_posting/templates/blog_posting/blogposting_form.html:41
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:28
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:42
+#: blog_posting/templates/blog_posting/blogposting_form.html:28
+#: blog_posting/templates/blog_posting/blogposting_form.html:42
 msgid "Preview"
 msgstr "Penampakan"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:32
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:46
-#: blog_posting/templates/blog_posting/blogposting_form.html:32
-#: blog_posting/templates/blog_posting/blogposting_form.html:46
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:33
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:47
+#: blog_posting/templates/blog_posting/blogposting_form.html:33
+#: blog_posting/templates/blog_posting/blogposting_form.html:47
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:39
-#: blog_posting/templates/blog_posting/blogposting_form.html:39
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:40
+#: blog_posting/templates/blog_posting/blogposting_form.html:40
 msgid "Summary Preview"
 msgstr "Penampakan Deskripsi"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:56
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:61
 msgid "Submit"
 msgstr "Kirim"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:66
-#: blog_posting/templates/blog_posting/blogposting_form.html:66
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:71
+#: blog_posting/templates/blog_posting/blogposting_form.html:71
 #: blog_posting/templates/blog_posting/blogposting_list.html:5
 msgid "Manage Articles"
 msgstr "Administrasi Artikel"
 
-#: blog_posting/templates/blog_posting/blogposting_detail.html:28
+#: blog_posting/templates/blog_posting/blogposting_detail.html:38
 msgid "Profile"
 msgstr "Profil"
 
-#: blog_posting/templates/blog_posting/blogposting_detail.html:34
+#: blog_posting/templates/blog_posting/blogposting_detail.html:44
 msgid "Kegiatan"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_detail.html:41
+#: blog_posting/templates/blog_posting/blogposting_detail.html:51
 msgid "PPDB"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_detail.html:50
+#: blog_posting/templates/blog_posting/blogposting_detail.html:60
 msgid "Contact Us"
 msgstr "Hubungi Kami"
 
@@ -181,13 +202,9 @@ msgstr "Hubungi Kami"
 msgid "Update Article"
 msgstr "Ubah Artikel"
 
-#: blog_posting/templates/blog_posting/blogposting_form.html:56
+#: blog_posting/templates/blog_posting/blogposting_form.html:61
 msgid "Update"
 msgstr "Ubah"
-
-#: blog_posting/templates/blog_posting/blogposting_list.html:16
-msgid "Title"
-msgstr "Judul"
 
 #: blog_posting/templates/blog_posting/blogposting_list.html:20
 msgid "Status"

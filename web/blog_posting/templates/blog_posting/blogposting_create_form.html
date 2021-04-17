@@ -7,7 +7,8 @@
 
 
 {% block content %}
-<form action="" method="post" class="mdc-layout-grid__cell--span-12">
+<form action="" method="post" enctype="multipart/form-data"
+    class="mdc-layout-grid__cell--span-12">
   {% csrf_token %}
 
   <div class="mdc-layout-grid__inner">
@@ -45,6 +46,10 @@
       {% Button tag="a" href=url target="_blank" %}
         {% trans "Editing Help" %}
       {% endButton %}
+    </div>
+
+    <div class="mdc-layout-grid__cell--span-6">
+      {% TextField type="file" form.image mode="outlined" class="d-block" %}
     </div>
 
     {% if form.errors %}

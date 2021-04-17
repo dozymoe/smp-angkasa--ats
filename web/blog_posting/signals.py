@@ -12,10 +12,10 @@ def post_updated(sender, instance, **kwargs):
             return
 
     if 'image' in dirty and bool(instance.image):
-        for field, size, _ in settings.IMAGE_SIZES:
+        for name, size, _ in settings.IMAGE_SIZES:
             create_thumbnail(
                     ('blog_posting', 'BlogPosting', instance.pk),
-                    'image', field, size)
+                    'image', 'image_' + name, size)
 
     hosts_freeze_view('website.views.Home', format='html')
     hosts_freeze_view('blog_posting.views.Display', slug=instance.slug,

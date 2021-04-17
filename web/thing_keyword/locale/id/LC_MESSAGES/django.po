@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-25 15:44+0700\n"
+"POT-Creation-Date: 2021-04-17 19:06+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,3 +22,5 @@ msgid ""
 "Human friendly unique url to identify content, will automatically be filled "
 "if left empty."
 msgstr ""
+"Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
+"otomatis bila dibiarkan kosong."

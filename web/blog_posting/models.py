@@ -17,20 +17,21 @@ class BlogPostingManager(models.Manager):
 
 
 class BlogPosting(DirtyFieldsMixin, RulesModel):
-    title = models.CharField(max_length=65)
-    body = models.TextField()
-    summary = models.TextField(max_length=155)
+    title = models.CharField(verbose_name=_("Title"), max_length=65)
+    body = models.TextField(verbose_name=_("Body"))
+    summary = models.TextField(verbose_name=_("Summary"), max_length=155)
     slug = models.SlugField(max_length=64, unique=True, db_index=True,
             blank=True,
             help_text=_("Human friendly unique url to identify the content, "
             "will automatically be filled if left empty."))
-    image = models.ImageField(upload_to='blog_posting/original/',
+    image = models.ImageField(verbose_name=_("Image"),
+            upload_to='blog_posting/original/',
             width_field='image_width', height_field='image_height', null=True,
             blank=True)
     image_height = models.SmallIntegerField(null=True, editable=False)
     image_width = models.SmallIntegerField(null=True, editable=False)
 
-    published_at = models.DateTimeField(verbose_name="publish date",
+    published_at = models.DateTimeField(verbose_name=_("Publish Date"),
             db_index=True, null=True, blank=True)
     published_by = models.ForeignKey(settings.AUTH_USER_MODEL,
             on_delete=models.PROTECT, null=True, blank=True,
