@@ -57,10 +57,12 @@ web:
         - package-{{PROJECT_VARIANT}}.json
         - "{_1}/webpack-{_2}.config.js"
         - "{_1}/misc/**/*.js"
-        - "{_1}/website/js/**/*.jsx?"
-        - "{_1}/blog_posting/js/**/*.jsx?"
-        - lib/fireh_react/js/**/*.jsx?
-        - lib/react-materialweb/js/**/*.jsx?
+        - "{_1}/*/js/**/*.js"
+        - "{_1}/*/js/**/*.jsx"
+        - lib/fireh_react/**/*.js
+        - lib/fireh_react/**/*.jsx
+        - lib/react-materialweb/js/**/*.js
+        - lib/react-materialweb/js/**/*.jsx
       raw_extra_out:
         - var/{_1}/webpack-{_2}.meta.json
         - "{_1}/static/js/main.js"
