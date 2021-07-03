@@ -12,5 +12,6 @@ django-treebeard
 docutils
 Pillow
 python-dateutil
+python-magic
 rules
 yarl

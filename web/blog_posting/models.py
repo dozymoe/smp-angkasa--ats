@@ -96,6 +96,27 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
         return super().save(update_fields=update_fields, **kwargs)
 
 
+    def get_html_attr_srcset(self):
+        attribute_value = []
+        for name, size, _ in settings.IMAGE_SIZES:
+            attribute_value.append('%s %sw' % (
+                    getattr(self, 'image_%s' % name).url,
+                    size[0]))
+        return ', '.join(attribute_value)
+
+
+    def get_html_attr_sizes(self):
+        attribute_value = []
+        for _, size, viewport_width in settings.IMAGE_SIZES:
+            if viewport_width:
+                attribute_value.append('(max-width: %spx) %spx' % (
+                        viewport_width,
+                        size[0]))
+            else:
+                attribute_value.append('%spx' % size[0])
+        return ', '.join(attribute_value)
+
+
     @staticmethod
     def get_microdata_type():
         return 'http://schema.org/BlogPosting'

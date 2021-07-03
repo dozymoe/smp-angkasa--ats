@@ -8,6 +8,8 @@ from django.conf import settings
 from django.template.defaultfilters import stringfilter
 from django.utils.safestring import mark_safe
 from docutils.core import publish_parts
+#-
+from website.restructured_text.html_writer import HtmlWriter
 
 register = template.Library()
 _logger = logging.getLogger(__name__)
@@ -16,7 +18,7 @@ _logger = logging.getLogger(__name__)
 @register.filter(name='restify')
 @stringfilter
 def restructured_text(value):
-    parts = publish_parts(value, writer_name='html',
+    parts = publish_parts(value, writer=HtmlWriter(),
             settings_overrides=settings.RESTRUCTURED_TEXT)
     return mark_safe(parts['html_body'])
 

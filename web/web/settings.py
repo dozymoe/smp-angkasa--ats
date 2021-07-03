@@ -43,6 +43,7 @@ ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
 INSTALLED_APPS = [
     'blog_posting',
     'my_user',
+    'my_files',
     'thing_keyword',
     'website',
 
@@ -185,6 +186,7 @@ STATICFILES_DIRS = [
 
 FROZEN_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SMTP
 
@@ -232,6 +234,7 @@ BACKGROUND_TASK_RUN_ASYNC = True
 ## Editor
 
 RESTRUCTURED_TEXT = {
+    'initial_header_level': 2,
     'syntax_highlight': 'short',
 }
 

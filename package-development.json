@@ -36,6 +36,7 @@
     "@material/drawer": "^9.0.0",
     "@material/form-field": "^9.0.0",
     "@material/icon-button": "^9.0.0",
+    "@material/image-list": "^11.0.0",
     "@material/layout-grid": "^9.0.0",
     "@material/list": "^9.0.0",
     "@material/menu": "^9.0.0",
@@ -79,6 +80,7 @@
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
     "typeface-roboto": "^1.1.13",
+    "typeface-roboto-mono": "^1.1.13",
     "webpack": "^5.20.1",
     "webpack-cli": "^4.5.0",
     "webpack-manifest-plugin": "^3.0.0"

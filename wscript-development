@@ -81,14 +81,14 @@ def configure(ctx):
     #ctx.load('splint', tooldir=tools_dir)
     #ctx.load('stylelint', tooldir=tools_dir)
     #ctx.load('stylus', tooldir=tools_dir)
-    ctx.load('ttf2eot', tooldir=tools_dir)
-    ctx.load('ttf2svg', tooldir=tools_dir)
-    ctx.load('ttf2woff', tooldir=tools_dir)
+    #ctx.load('ttf2eot', tooldir=tools_dir)
+    #ctx.load('ttf2svg', tooldir=tools_dir)
+    #ctx.load('ttf2woff', tooldir=tools_dir)
     #ctx.load('uglify-js', tooldir=tools_dir)
     #ctx.load('unzip', tooldir=tools_dir)
     ctx.load('webpack', tooldir=tools_dir)
-    ctx.load('woff2svg', tooldir=tools_dir)
-    ctx.load('woff2ttf', tooldir=tools_dir)
+    #ctx.load('woff2svg', tooldir=tools_dir)
+    #ctx.load('woff2ttf', tooldir=tools_dir)
 
 
 from waflib.Build import BuildContext, CleanContext

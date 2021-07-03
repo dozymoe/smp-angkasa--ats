@@ -57,8 +57,8 @@ web:
         - package-{{PROJECT_VARIANT}}.json
         - "{_1}/webpack-{_2}.config.js"
         - "{_1}/misc/**/*.js"
-        - "{_1}/*/js/**/*.js"
-        - "{_1}/*/js/**/*.jsx"
+        - "{_1}/website/js/**/*.js"
+        - "{_1}/website/js/**/*.jsx"
         - lib/fireh_react/**/*.js
         - lib/fireh_react/**/*.jsx
         - lib/react-materialweb/js/**/*.js
@@ -72,6 +72,10 @@ web:
       raw_file_in: "{_1}/{_2}/**/*.py"
 
   misc:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
+  my_files:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
 
@@ -110,6 +114,7 @@ web:
       rule_in:
         - "{_1}/blog_posting/pylint"
         - "{_1}/misc/pylint"
+        - "{_1}/my_files/pylint"
         - "{_1}/my_user/pylint"
         - "{_1}/thing_keyword/pylint"
         - "{_1}/web/pylint"
@@ -214,20 +219,9 @@ node_modules:
       raw_file_in: "{_1}/{_2}/files/*"
       raw_file_out:
         - web/static/fonts/
-    woff2ttf:
-      raw_file_in: "{_1}/{_2}/files/*.woff"
+
+  typeface-roboto-mono:
+    cp:
+      raw_file_in: "{_1}/{_2}/files/*"
       raw_file_out:
         - web/static/fonts/
-    woff2svg:
-      raw_file_in: "{_1}/{_2}/files/*.woff"
-      raw_file_out:
-        - web/static/fonts/
-    eot:
-      woff2ttf:
-        raw_file_in: "{_1}/{_2}/files/*.woff"
-        raw_file_out: tmp/fonts/
-      ttf2eot:
-        rule_in: "{_1}/{_2}/{_3}/woff2ttf"
-        raw_file_in: tmp/fonts/*.ttf
-        raw_file_out:
-          - web/static/fonts/

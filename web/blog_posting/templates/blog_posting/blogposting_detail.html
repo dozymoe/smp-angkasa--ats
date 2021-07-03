@@ -10,8 +10,8 @@
   <div class="mdc-layout-grid__cell--span-12">
     <a href="{{object.image.url}}" target="_blank">
       <img src="{{object.image_lg.url}}"
-          srcset="{{object.image_xs.url}} 300w, {{object.image_sm.url}} 630w, {{object.image_md.url}} 780w, {{object.image_lg.url}} 1020w"
-          sizes="(max-width: 320px) 300px, (max-width: 640px) 630px, (max-width: 800px) 780px, 1020px"
+          srcset="{{object.get_html_attr_srcset}}"
+          sizes="{{object.get_html_attr_sizes}}"
           class="img-responsive">
     </a>
   </div>

@@ -7,8 +7,8 @@ def post_updated(sender, instance, **kwargs):
     dirty = instance.get_dirty_fields()
 
     # Ignore thumbnail images.
-    for field, _, _ in settings.IMAGE_SIZES:
-        if field in dirty:
+    for name, _, _ in settings.IMAGE_SIZES:
+        if 'image_' + name in dirty:
             return
 
     if 'image' in dirty and bool(instance.image):

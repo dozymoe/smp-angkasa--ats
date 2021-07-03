@@ -29,6 +29,8 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('blog-posts/', include('blog_posting.urls_admin',
             namespace='BlogPosting')),
+    path('files/', include('my_files.urls_admin',
+            namespace='MyFile')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
         name='EditorHelpText'),
 

@@ -1,3 +1,4 @@
+@use "sass:string";
 @use "@material/theme";
 
 .form-errors
@@ -12,4 +13,9 @@
 .form-group
 {
     margin: 1rem 0;
+}
+
+.mdc-text-field__input
+{
+    font-family: string.unquote('Roboto Mono, monospace');
 }

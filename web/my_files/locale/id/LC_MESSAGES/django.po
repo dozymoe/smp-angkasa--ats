@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-04 03:27+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: my_files/models.py:17
+msgid "Title"
+msgstr "Judul"
+
+#: my_files/models.py:19
+msgid "Mime Type"
+msgstr "Tipe Berkas"
+
+#: my_files/models.py:21
+msgid "Description"
+msgstr "Keterangan"
+
+#: my_files/models.py:22
+msgid "Alternate Text (alt text)"
+msgstr "Teks Alternatif (alt text)"
+
+#: my_files/models.py:24
+msgid "Only need to fill this if you were uploading an image."
+msgstr "Hanya diisi bila mengunggah gambar."
+
+#: my_files/models.py:26
+msgid "Content"
+msgstr "Isi"
+
+#: my_files/templates/my_files/myfile_create_form.html:5
+#: my_files/templates/my_files/myfile_list.html:110
+msgid "Create File"
+msgstr "Bikin Berkas"
+
+#: my_files/templates/my_files/myfile_create_form.html:6
+#: my_files/templates/my_files/myfile_list.html:6
+#: my_files/templates/my_files/myfile_list.html:26
+msgid "Files"
+msgstr "Berkas-Berkas"
+
+#: my_files/templates/my_files/myfile_create_form.html:22
+msgid "Description Preview"
+msgstr "Penampakan Keterangan"
+
+#: my_files/templates/my_files/myfile_create_form.html:24
+msgid "Preview"
+msgstr "Penampakan"
+
+#: my_files/templates/my_files/myfile_create_form.html:29
+msgid "Editing Help"
+msgstr "Bantuan Sunting"
+
+#: my_files/templates/my_files/myfile_create_form.html:43
+msgid "Submit"
+msgstr "Kirim"
+
+#: my_files/templates/my_files/myfile_create_form.html:53
+#: my_files/templates/my_files/myfile_list.html:5
+msgid "Manage Files"
+msgstr "Administrasi Berkas"
+
+#: my_files/templates/my_files/myfile_create_form.html:67
+#: my_files/templates/my_files/myfile_list.html:124
+msgid "Index"
+msgstr "Katalog"
+
+#: my_files/templates/my_files/myfile_create_form.html:77
+#: my_files/templates/my_files/myfile_list.html:134
+msgid "Create"
+msgstr "Bikin"
+
+#: my_files/templates/my_files/myfile_list.html:11
+msgid "Embedding files into your articles. Example:"
+msgstr "Cara menampilkan berkas di dalam artikel. Contoh:"
+
+#: my_files/templates/my_files/myfile_list.html:22
+msgid ""
+"The number <strong>4</strong> is from the ID column below, and <strong>alt</"
+"strong>, <strong>height</strong>, <strong>width</strong> were optional."
+msgstr ""
+"Angka <strong>4</strong> di atas diambil dari kolom ID di bawah, sementara "
+"<strong>alt</strong>, <strong>height</strong>, <strong>width</strong> "
+"sifatnya tidak wajib ada."
+
+#: my_files/templates/my_files/myfile_list.html:31
+msgid "ID"
+msgstr ""
+
+#: my_files/templates/my_files/myfile_list.html:34
+msgid "Filename"
+msgstr "Nama Berkas"
+
+#: my_files/templates/my_files/myfile_list.html:37
+msgid "Operations"
+msgstr "Aksi-Aksi"
+
+#: my_files/templates/my_files/myfile_list.html:60
+msgid "Open Menu"
+msgstr "Buka Menu"
+
+#: my_files/templates/my_files/myfile_list.html:72
+msgid "Download"
+msgstr "Unduh"
+
+#: my_files/templates/my_files/myfile_list.html:84
+msgid "Delete"
+msgstr "Hapus"
+
+#: my_files/templates/my_files/myfile_list.html:101
+msgid "Home Page"
+msgstr "Laman Muka"

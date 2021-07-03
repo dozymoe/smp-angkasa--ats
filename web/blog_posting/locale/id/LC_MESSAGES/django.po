@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-17 19:06+0700\n"
+"POT-Creation-Date: 2021-07-04 03:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,7 +76,7 @@ msgstr "Tanggal Dibikin"
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:89
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:89
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:55
-#: blog_posting/templates/blog_posting/blogposting_list.html:73
+#: blog_posting/templates/blog_posting/blogposting_list.html:89
 msgid "Delete"
 msgstr "Hapus"
 
@@ -126,7 +126,7 @@ msgid "Do you really want to publish"
 msgstr "Sungguh mau menayangkan"
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:35
-#: blog_posting/templates/blog_posting/blogposting_list.html:84
+#: blog_posting/templates/blog_posting/blogposting_list.html:72
 msgid "Publish"
 msgstr "Tayangkan"
 
@@ -139,7 +139,7 @@ msgid "Do you really want to unpublish"
 msgstr "Sungguh mau batal tayang"
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:35
-#: blog_posting/templates/blog_posting/blogposting_list.html:81
+#: blog_posting/templates/blog_posting/blogposting_list.html:69
 msgid "Unpublish"
 msgstr "Batal Tayang"
 
