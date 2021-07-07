@@ -15,4 +15,4 @@ class MyFilesConfig(AppConfig):
         pre_save.connect(file_updating, sender=models.MyFile)
         post_save.connect(file_updated, sender=models.MyFile)
 
-        directives.register_directive('embed_file', EmbedFileDirective)
+        directives.register_directive('webfile', EmbedFileDirective)

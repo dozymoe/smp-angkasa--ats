@@ -1,6 +1,6 @@
 {% extends 'base_drawer.html' %}
 {% load i18n %}
-{% load materialweb website_extras %}
+{% load materialweb website %}
 
 {% block head_title %}{{ object.title }}{% endblock %}
 
@@ -45,8 +45,7 @@
     {% endList_Text %}
   {% endList_Item %}
 
-  {% url 'Ppdb' 'html' as url %}
-  {% List_Item tag="a" href=url tabindex="2" %}
+  {% List_Item tag="a" href="/ppdb.html" tabindex="2" %}
     {% List_Text %}
       {% trans "PPDB" %}
     {% endList_Text %}

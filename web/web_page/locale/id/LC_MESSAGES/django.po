@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-08 04:09+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:26
+msgid "Title"
+msgstr "Judul"
+
+#: web_page/models.py:18
+msgid "Body"
+msgstr "Konten"
+
+#: web_page/models.py:21
+msgid ""
+"Human friendly unique url to identify the content, will automatically be "
+"filled if left empty."
+msgstr ""
+"Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
+"otomatis bila dibiarkan kosong."
+
+#: web_page/models.py:24
+msgid "Publish Date"
+msgstr "Ditayangkan Tanggal"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:6
+msgid "Delete Page"
+msgstr "Hapus Laman"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:8
+#: web_page/templates/web_page/webpage_confirm_publish.html:8
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:8
+#: web_page/templates/web_page/webpage_create_form.html:6
+#: web_page/templates/web_page/webpage_detail-admin.html:6
+#: web_page/templates/web_page/webpage_form.html:6
+#: web_page/templates/web_page/webpage_list.html:6
+#: web_page/templates/web_page/webpage_list.html:17
+msgid "Pages"
+msgstr "Laman-Laman"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:17
+msgid "Do you really want to delete"
+msgstr "Sungguh mau menghapus"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:22
+#: web_page/templates/web_page/webpage_confirm_publish.html:22
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:22
+msgid "Date Created"
+msgstr "Tanggal Dibikin"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:31
+#: web_page/templates/web_page/webpage_confirm_delete.html:85
+#: web_page/templates/web_page/webpage_confirm_publish.html:85
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:85
+#: web_page/templates/web_page/webpage_detail-admin.html:55
+#: web_page/templates/web_page/webpage_list.html:101
+msgid "Delete"
+msgstr "Hapus"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:41
+#: web_page/templates/web_page/webpage_confirm_publish.html:41
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:41
+#: web_page/templates/web_page/webpage_detail-admin.html:11
+#: web_page/templates/web_page/webpage_detail.html:17
+#: web_page/templates/web_page/webpage_list.html:118
+msgid "Home Page"
+msgstr "Laman Muka"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:55
+#: web_page/templates/web_page/webpage_confirm_publish.html:55
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:55
+#: web_page/templates/web_page/webpage_create_form.html:66
+#: web_page/templates/web_page/webpage_detail-admin.html:25
+#: web_page/templates/web_page/webpage_form.html:66
+#: web_page/templates/web_page/webpage_list.html:141
+msgid "Index"
+msgstr "Katalog"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:65
+#: web_page/templates/web_page/webpage_confirm_publish.html:65
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:65
+#: web_page/templates/web_page/webpage_create_form.html:76
+#: web_page/templates/web_page/webpage_detail-admin.html:35
+#: web_page/templates/web_page/webpage_form.html:76
+#: web_page/templates/web_page/webpage_list.html:151
+msgid "Create"
+msgstr "Bikin"
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:75
+#: web_page/templates/web_page/webpage_confirm_publish.html:75
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:75
+#: web_page/templates/web_page/webpage_detail-admin.html:45
+#: web_page/templates/web_page/webpage_list.html:75
+msgid "Edit"
+msgstr "Ubah"
+
+#: web_page/templates/web_page/webpage_confirm_publish.html:6
+msgid "Publish Page"
+msgstr "Tayangkan Laman"
+
+#: web_page/templates/web_page/webpage_confirm_publish.html:17
+msgid "Do you really want to publish"
+msgstr "Sungguh mau menayangkan"
+
+#: web_page/templates/web_page/webpage_confirm_publish.html:31
+#: web_page/templates/web_page/webpage_list.html:84
+msgid "Publish"
+msgstr "Tayangkan"
+
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:6
+msgid "Unpublish Page"
+msgstr "Batal Tayang Laman"
+
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:17
+msgid "Do you really want to unpublish"
+msgstr "Sungguh mau batal tayang"
+
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:31
+#: web_page/templates/web_page/webpage_list.html:81
+msgid "Unpublish"
+msgstr "Batal Tayang"
+
+#: web_page/templates/web_page/webpage_create_form.html:5
+#: web_page/templates/web_page/webpage_list.html:127
+msgid "Create Page"
+msgstr "Bikin Laman"
+
+#: web_page/templates/web_page/webpage_create_form.html:25
+#: web_page/templates/web_page/webpage_form.html:25
+msgid "Body Preview"
+msgstr "Penampakan Konten"
+
+#: web_page/templates/web_page/webpage_create_form.html:27
+#: web_page/templates/web_page/webpage_form.html:27
+msgid "Preview"
+msgstr "Penampakan"
+
+#: web_page/templates/web_page/webpage_create_form.html:32
+#: web_page/templates/web_page/webpage_form.html:32
+msgid "Editing Help"
+msgstr "Bantuan Sunting"
+
+#: web_page/templates/web_page/webpage_create_form.html:42
+msgid "Submit"
+msgstr "Kirim"
+
+#: web_page/templates/web_page/webpage_create_form.html:52
+#: web_page/templates/web_page/webpage_form.html:52
+#: web_page/templates/web_page/webpage_list.html:5
+msgid "Manage Pages"
+msgstr "Administrasi Laman"
+
+#: web_page/templates/web_page/webpage_detail.html:28
+msgid "Profile"
+msgstr "Profil"
+
+#: web_page/templates/web_page/webpage_detail.html:34
+msgid "Kegiatan"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_detail.html:41
+msgid "PPDB"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_detail.html:50
+msgid "Contact Us"
+msgstr "Hubungi Kami"
+
+#: web_page/templates/web_page/webpage_form.html:5
+msgid "Update Page"
+msgstr "Ubah Laman"
+
+#: web_page/templates/web_page/webpage_form.html:42
+msgid "Update"
+msgstr "Ubah"
+
+#: web_page/templates/web_page/webpage_list.html:11
+msgid "Linking pages in your articles. Example:"
+msgstr "Cara menampilkan tautan di dalam artikel. Contoh:"
+
+#: web_page/templates/web_page/webpage_list.html:13
+msgid "The number <strong>4</strong> is from the ID column below."
+msgstr "Angka <strong>4</strong> di atas diambil dari kolom ID di bawah."
+
+#: web_page/templates/web_page/webpage_list.html:22
+msgid "ID"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:30
+msgid "Status"
+msgstr "Status"
+
+#: web_page/templates/web_page/webpage_list.html:33
+msgid "Operations"
+msgstr "Aksi-Aksi"
+
+#: web_page/templates/web_page/webpage_list.html:53
+msgid "Published"
+msgstr "Ditayangkan"
+
+#: web_page/templates/web_page/webpage_list.html:55
+msgid "Not Published"
+msgstr "Belum Tayang"
+
+#: web_page/templates/web_page/webpage_list.html:62
+msgid "Open Menu"
+msgstr "Buka Menu"

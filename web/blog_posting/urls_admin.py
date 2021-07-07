@@ -11,6 +11,6 @@ urlpatterns = [
     path('<int:pk>/publish', views_admin.Publish.as_view(), name='Publish'),
     path('<int:pk>/unpublish', views_admin.Unpublish.as_view(),
         name='Unpublish'),
-    path('<str:slug>-<int:pk>', views_admin.Display.as_view(), name='Display'),
+    path('<str:slug>-<int:pk>', views_admin.Display.as_view(), name='Detail'),
     path('', views_admin.List.as_view(), name='Index'),
 ]

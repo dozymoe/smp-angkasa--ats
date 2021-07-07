@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const autoprefixer = require('autoprefixer');
 const noop = require('noop-webpack-plugin');
@@ -25,20 +24,6 @@ module.exports = (env, options) =>
         plugins: [
             new MiniCssExtractPlugin({
                 filename: 'css/[name].css',
-            }),
-            isDevelopment ? noop() : new OptimizeCssAssetsPlugin({
-                cssProcessor: require('cssnano'),
-                cssProcessorPluginOptions: {
-                    preset: [
-                        'default',
-                        {
-                            discardComments: {
-                                removeAll: true,
-                            },
-                        },
-                    ],
-                },
-                canPrint: true,
             }),
             new WebpackManifestPlugin({
                 fileName: path.resolve(__dirname,

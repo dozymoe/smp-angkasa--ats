@@ -14,13 +14,5 @@ class Home(TemplateView):
         return context
 
 
-class VisiMisi(TemplateView):
-    template_name = 'website/visi-misi.html'
-
-
-class Ppdb(TemplateView):
-    template_name = 'website/ppdb.html'
-
-
 class EditorHelpText(TemplateView):
     template_name = 'website/editor-helptext.html'

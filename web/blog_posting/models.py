@@ -2,7 +2,7 @@ from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
-#from django.urls import reverse
+from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 import rules
@@ -74,7 +74,7 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
 
 
     def get_absolute_url(self):
-        pass
+        return reverse('BlogPosting:Display', args=(self.slug, 'html'))
 
 
     def get_natural_key(self):

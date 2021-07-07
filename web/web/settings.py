@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'my_files',
     'thing_keyword',
     'website',
+    'web_page',
 
     'allauth',
     'allauth.account',
@@ -162,10 +163,12 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 USE_I18N = True
-LANGUAGE_CODE = 'id-id'
+LANGUAGE_CODE = 'id'
 LANGUAGES = (
     ('id', _("Bahasa Indonesia")),
     ('en', _("English")),
+    #('su', _("Sundanese")),
+    #('jv', _("Javanese")),
 )
 
 USE_L10N = True

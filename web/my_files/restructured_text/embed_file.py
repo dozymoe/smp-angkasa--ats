@@ -4,15 +4,10 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.parsers.rst.roles import set_classes
 #-
+from website.restructured_text.link_node import link
 from ..models import MyFile
 
 _logger = logging.getLogger(__name__)
-
-
-class link(nodes.General, nodes.Inline, nodes.Element):
-
-    def astext(self):
-        return self.get('alt', '')
 
 
 class EmbedFileDirective(Directive):
@@ -51,7 +46,9 @@ class EmbedFileDirective(Directive):
 
         if obj.mimetype.startswith('image/'):
             self.options['uri'] = obj.image_lg.url
-            if obj.alt_text:
+            if 'alt' in self.options:
+                pass
+            elif obj.alt_text:
                 self.options['alt'] = obj.alt_text
             elif obj.description:
                 self.options['alt'] = obj.description

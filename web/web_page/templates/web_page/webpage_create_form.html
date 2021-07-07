@@ -1,0 +1,79 @@
+{% extends 'base_drawer-admin.html' %}
+{% load i18n %}
+{% load materialweb %}
+
+{% block head_title %}{% trans "Create Page" %}{% endblock %}
+{% block drawer_title %}{% trans "Pages" %}{% endblock %}
+
+
+{% block content %}
+<form action="" method="post" class="mdc-layout-grid__cell--span-12">
+  {% csrf_token %}
+
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-6">
+      {% TextField form.title mode='outlined' autofocus="true" class="d-block" %}
+    </div>
+
+    <div class="mdc-layout-grid__cell--span-6">
+      {% TextField form.slug mode='outlined' class="d-block" %}
+    </div>
+
+    <div class="mdc-layout-grid__cell--span-12">
+      {% TextArea form.body mode='outlined' class="d-block" %}
+
+      {% trans "Body Preview" as title %}
+      {% Button type="button" title=title data-provide-rest-preview=form.body.id_for_label %}
+        {% trans "Preview" %}
+      {% endButton %}
+
+      {% url 'EditorHelpText' 'html' as url %}
+      {% Button tag="a" href=url target="_blank" %}
+        {% trans "Editing Help" %}
+      {% endButton %}
+    </div>
+
+    {% if form.errors %}
+      <div class="mdc-layout-grid__cell--span-12">{{form.errors}}</div>
+    {% endif %}
+
+    <div class="mdc-layout-grid__cell--span-12">
+      {% Button type="submit" mode="raised" %}
+        {% trans "Submit" %}
+      {% endButton %}
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'WebPage:Index' as url %}
+  {% trans "Manage Pages" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block drawer %}
+  {% url 'WebPage:Index' as url %}
+  {% List_Item tag="a" href=url tabindex="1" %}
+    {% List_Image class="material-icons" %}
+      toc
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Index" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'WebPage:Create' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Image class="material-icons" %}
+      add
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Create" %}
+    {% endList_Text %}
+  {% endList_Item %}
+{% endblock %}

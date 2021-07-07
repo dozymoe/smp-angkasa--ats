@@ -95,6 +95,10 @@ web:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
 
+  web_page:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
 
   collectstatic:
     shell:
@@ -119,6 +123,7 @@ web:
         - "{_1}/thing_keyword/pylint"
         - "{_1}/web/pylint"
         - "{_1}/website/pylint"
+        - "{_1}/web_page/pylint"
         - lib-py/django-materialweb/pylint
         - lib-py/frozen-django/pylint
 

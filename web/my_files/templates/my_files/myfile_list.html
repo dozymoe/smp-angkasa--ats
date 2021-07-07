@@ -1,6 +1,6 @@
 {% extends 'base_drawer-admin.html' %}
 {% load i18n %}
-{% load materialweb website_extras %}
+{% load materialweb website %}
 
 {% block head_title %}{% trans "Manage Files" %}{% endblock %}
 {% block drawer_title %}{% trans "Files" %}{% endblock %}
@@ -12,7 +12,7 @@
   <pre><code>
 Previous paragraph
 
-.. embed_file:: 4
+.. webfile:: 4
    :alt: Short description of the image
    :height: 100
    :width: 200

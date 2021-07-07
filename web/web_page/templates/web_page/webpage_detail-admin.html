@@ -1,0 +1,65 @@
+{% extends 'base_drawer-admin.html' %}
+{% load i18n %}
+{% load materialweb website %}
+
+{% block head_title %}{{ object.title }}{% endblock %}
+{% block drawer_title %}{% trans "Pages" %}{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block drawer %}
+  {% url 'WebPage:Index' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Image class="material-icons" %}
+      toc
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Index" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'WebPage:Create' as url %}
+  {% List_Item tag="a" href=url tabindex="1" %}
+    {% List_Image class="material-icons" %}
+      add
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Create" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'WebPage:Update' object.pk as url %}
+  {% List_Item tag="a" href=url tabindex="2" %}
+    {% List_Image class="material-icons" %}
+      edit
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Edit" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'WebPage:Destroy' object.pk as url %}
+  {% List_Item tag="a" href=url tabindex="3" %}
+    {% List_Image class="material-icons" %}
+      delete
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Delete" %}
+    {% endList_Text %}
+  {% endList_Item %}
+{% endblock %}
+
+
+{% block content %}
+<div class="mdc-layout-grid__cell--span-12">
+  {{ object.body | restify }}
+</div>
+{% endblock %}

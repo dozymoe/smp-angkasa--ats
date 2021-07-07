@@ -1,5 +1,5 @@
 {% load i18n static %}
-{% load materialweb %}
+{% load materialweb web_page %}
 
 <footer>
   <div class="mdc-layout-grid">
@@ -44,9 +44,7 @@
 
       <div class="mdc-layout-grid__cell--span-3">
         <p>
-          <a href="{% url 'Ppdb' 'html' %}">
-            Penerimaan Peserta Didik Baru (PPDB)
-          </a>
+          {% webpage 1 "Penerimaan Peserta Didik Baru (PPDB)" %}
         </p>
       </div>
     </div>

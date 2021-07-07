@@ -1,0 +1,154 @@
+{% extends 'base_drawer-admin.html' %}
+{% load i18n %}
+{% load materialweb website %}
+
+{% block head_title %}{% trans "Manage Pages" %}{% endblock %}
+{% block drawer_title %}{% trans "Pages" %}{% endblock %}
+
+
+{% block content %}
+<div class="mdc-layout-grid__cell--span-12">
+  <p>{% trans "Linking pages in your articles. Example:" %}</p>
+  <pre><code>Long paragraph ::webpage::4 long paragraph.</code></pre>
+  <p>{% trans "The number <strong>4</strong> is from the ID column below." %}</p>
+</div>
+
+<div class="mdc-layout-grid__cell--span-12">
+  {% trans "Pages" as label %}
+  {% Table row_selectable=True label=label class="w-100" %}
+    {% Table_Head %}
+      {% Table_Head_Row %}
+        {% Table_Head_Col %}
+          {% trans "ID" %}
+        {% endTable_Head_Col %}
+
+        {% Table_Head_Col %}
+          {% trans "Title" %}
+        {% endTable_Head_Col %}
+
+        {% Table_Head_Col %}
+          {% trans "Status" %}
+        {% endTable_Head_Col %}
+
+        {% trans "Operations" as label %}
+        {% Table_Head_Col class="autofit" %}
+          <span aria-label="{{label}}"></span>
+        {% endTable_Head_Col %}
+      {% endTable_Head_Row %}
+    {% endTable_Head %}
+
+    {% Table_Body %}
+      {% for obj in object_list %}
+        {% Table_Row %}
+          {% Table_Col %}{{obj.pk}}{% endTable_Col %}
+
+          {% Table_ColHeader %}
+            <a href="{% url 'WebPage:Detail' obj.slug obj.pk %}">
+              {{obj.title}}
+            </a>
+          {% endTable_ColHeader %}
+
+          {% Table_Col %}
+            {% if obj.published_at %}
+              {% trans "Published" %}
+            {% else %}
+              {% trans "Not Published" %}
+            {% endif %}
+          {% endTable_Col %}
+
+          {% Table_Col %}
+            {% html_id 'menuops-' obj.pk as menu_id %}
+            {% Menu_Anchor %}
+              {% trans "Open Menu" as label %}
+              {% IconButton type="button" label=label data-provide-menu=menu_id aria-haspopup="menu" class="material-icons" %}
+                more_vert
+              {% endIconButton %}
+
+              {% Menu id=menu_id %}
+                {% List tag="nav" %}
+                  {% url 'WebPage:Update' obj.pk as url %}
+                  {% List_Item tag="a" href=url tabindex="0" %}
+                    {% List_Image class="material-icons" %}
+                      edit
+                    {% endList_Image %}
+                    {% List_Text %}
+                      {% trans "Edit" %}
+                    {% endList_Text %}
+                  {% endList_Item %}
+
+                  {% if obj.published_at %}
+                      {% url 'WebPage:Unpublish' obj.pk as url %}
+                      {% trans "Unpublish"  as label %}
+                  {% else %}
+                      {% url 'WebPage:Publish' obj.pk as url %}
+                      {% trans "Publish" as label %}
+                  {% endif %}
+                  {% List_Item tag="a" href=url tabindex="1" %}
+                    {% List_Image class="material-icons" %}
+                      {% iif obj.published_at "visibility_off" "visibility" %}
+                    {% endList_Image %}
+                    {% List_Text %}{{ label }}{% endList_Text %}
+                  {% endList_Item %}
+
+                  {% List_Divider %}
+
+                  {% url 'WebPage:Destroy' obj.pk as url %}
+                  {% List_Item tag="a" href=url tabindex="2" %}
+                    {% List_Image class="material-icons" %}
+                      delete
+                    {% endList_Image %}
+                    {% List_Text %}
+                      {% trans "Delete" %}
+                    {% endList_Text %}
+                  {% endList_Item %}
+                {% endList %}
+              {% endMenu %}
+            {% endMenu_Anchor %}
+          {% endTable_Col %}
+        {% endTable_Row %}
+      {% endfor %}
+    {% endTable_Body %}
+  {% endTable %}
+</div>
+{% endblock %}
+
+
+{% block topbar_left %}
+  {% url 'Home' as url %}
+  {% trans "Home Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    arrow_back
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block topbar_right %}
+  {% url 'WebPage:Create' as url %}
+  {% trans "Create Page" as label %}
+  {% IconButton tag="a" href=url label=label class="material-icons" %}
+    add
+  {% endIconButton %}
+{% endblock %}
+
+
+{% block drawer %}
+  {% url 'WebPage:Index' as url %}
+  {% List_Item tag="a" href=url tabindex="0" %}
+    {% List_Image class="material-icons" %}
+      toc
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Index" %}
+    {% endList_Text %}
+  {% endList_Item %}
+
+  {% url 'WebPage:Create' as url %}
+  {% List_Item tag="a" href=url tabindex="1" %}
+    {% List_Image class="material-icons" %}
+      add
+    {% endList_Image %}
+    {% List_Text %}
+      {% trans "Create" %}
+    {% endList_Text %}
+  {% endList_Item %}
+{% endblock %}

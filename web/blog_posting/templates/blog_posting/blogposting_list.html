@@ -1,6 +1,6 @@
 {% extends 'base_drawer-admin.html' %}
 {% load i18n %}
-{% load materialweb website_extras %}
+{% load materialweb website %}
 
 {% block head_title %}{% trans "Manage Articles" %}{% endblock %}
 {% block drawer_title %}{% trans "Articles" %}{% endblock %}
@@ -8,10 +8,20 @@
 
 {% block content %}
 <div class="mdc-layout-grid__cell--span-12">
+  <p>{% trans "Linking blogs in your articles. Example:" %}</p>
+  <pre><code>Long paragraph ::webblog::4 long paragraph.</code></pre>
+  <p>{% trans "The number <strong>4</strong> is from the ID column below." %}</p>
+</div>
+
+<div class="mdc-layout-grid__cell--span-12">
   {% trans "Articles" as label %}
   {% Table row_selectable=True label=label class="w-100" %}
     {% Table_Head %}
       {% Table_Head_Row %}
+        {% Table_Head_Col %}
+          {% trans "ID" %}
+        {% endTable_Head_Col %}
+
         {% Table_Head_Col %}
           {% trans "Title" %}
         {% endTable_Head_Col %}
@@ -30,8 +40,10 @@
     {% Table_Body %}
       {% for obj in object_list %}
         {% Table_Row %}
+          {% Table_Col %}{{obj.pk}}{% endTable_Col %}
+
           {% Table_ColHeader %}
-            <a href="{% url 'BlogPosting:Display' obj.slug obj.pk %}">
+            <a href="{% url 'BlogPosting:Detail' obj.slug obj.pk %}">
               {{obj.title}}
             </a>
           {% endTable_ColHeader %}

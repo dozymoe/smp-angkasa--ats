@@ -62,7 +62,9 @@ class MyFile(DirtyFieldsMixin, RulesModel):
 
 
     def get_absolute_url(self):
-        pass
+        if self.is_image():
+            return self.image_lg.url
+        return self.databits.url
 
 
     def get_natural_key(self):

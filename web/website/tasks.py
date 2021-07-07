@@ -10,6 +10,7 @@ from frozen_django.main import generate_static_view
 from PIL import Image
 #-
 from blog_posting.models import BlogPosting
+from web_page.models import WebPage
 
 _logger = logging.getLogger()
 
@@ -28,11 +29,16 @@ def hosts_freeze_view(view_name, dest=None, **kwargs):
 def freeze_all_views():
     hosts_freeze_view('website.views.Home', format='html')
     hosts_freeze_view('website.views.VisiMisi', format='html')
-    hosts_freeze_view('website.views.Ppdb', format='html')
     hosts_freeze_view('website.views.EditorHelpText', format='html')
 
-    for obj in BlogPosting.objects.filter(published_at__isnull=False).all():
+    for obj in BlogPosting.objects.filter(published_at__isnull=False,
+            deleted_at__isnull=True).all():
         hosts_freeze_view('blog_posting.views.Display', slug=obj.slug,
+                format='html')
+
+    for obj in WebPage.objects.filter(published_at__isnull=False,
+            deleted_at__isnull=True).all():
+        hosts_freeze_view('web_page.views.Display', slug=obj.slug,
                 format='html')
 
 

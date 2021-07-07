@@ -15,20 +15,19 @@ Including another URLconf
 """
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import include, path
+from django.utils.translation import gettext_lazy as _
 #-
 from website import views
 
 urlpatterns = [
     path('index.<str:format>', views.Home.as_view(), name='Home'),
-    path('visi-misi.<str:format>', views.VisiMisi.as_view(),
-        name='ProfileMission'),
-    path('ppdb.<str:format>', views.Ppdb.as_view(), name='Ppdb'),
 ]
 
 urlpatterns += i18n_patterns(
-    path('blog-posts/', include('blog_posting.urls', namespace='BlogPosting')),
+    path(_('news/'), include('blog_posting.urls', namespace='BlogPosting')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
         name='EditorHelpText'),
+    path('', include('web_page.urls', namespace='WebPage')),
 
     prefix_default_language=False,
 )
