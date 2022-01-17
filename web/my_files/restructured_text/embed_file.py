@@ -1,5 +1,7 @@
 import logging
+import re
 #-
+from django.utils.translation import gettext as _
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.parsers.rst.roles import set_classes
@@ -8,6 +10,37 @@ from website.restructured_text.link_node import link
 from ..models import MyFile
 
 _logger = logging.getLogger(__name__)
+
+INLINE_PATTERN = re.compile(r'^(?P<text>.+)\s*<(?P<pk>\d+)>$')
+
+
+def parse_embed_file(obj_id, options, block_text=None):
+    try:
+        obj = MyFile.objects.get(pk=obj_id)
+    except MyFile.DoesNotExist:
+        return []
+
+    if obj.mimetype.startswith('image/'):
+        options['uri'] = obj.image_lg.url
+        if 'alt' in options:
+            pass
+        elif obj.alt_text:
+            options['alt'] = obj.alt_text
+        elif obj.description:
+            options['alt'] = obj.description
+        options['srcset'] = obj.get_html_attr_srcset()
+        options['sizes'] = obj.get_html_attr_sizes()
+        fn = nodes.image
+    else:
+        options['uri'] = obj.databits.url
+        options['target'] = '_blank'
+        if not 'alt' in options:
+            options['alt'] = obj.description
+        fn = link
+
+    set_classes(options)
+    node = fn(block_text, **options)
+    return [node]
 
 
 class EmbedFileDirective(Directive):
@@ -38,33 +71,50 @@ class EmbedFileDirective(Directive):
           * self.state_machine
 
         """
-        obj_id = int(self.arguments[0])
         try:
-            obj = MyFile.objects.get(pk=obj_id)
-        except MyFile.DoesNotExist:
-            return []
+            pk = int(self.arguments[0])
+            _nodes = parse_embed_file(pk, self.options, self.block_text)
+            if _nodes:
+                for node in _nodes:
+                    self.add_name(node)
+            else:
+                msg = self.state_machine.reporter.error(
+                        _("File with id:%s was not found.") % pk,
+                        line=self.lineno)
+                _nodes.append(msg)
+        except ValueError:
+            _nodes = []
+            msg = self.state_machine.reporter.error(
+                    _("%s is not a number.") % pk, line=self.lineno)
+            _nodes.append(msg)
+        return _nodes
 
-        if obj.mimetype.startswith('image/'):
-            self.options['uri'] = obj.image_lg.url
-            if 'alt' in self.options:
-                pass
-            elif obj.alt_text:
-                self.options['alt'] = obj.alt_text
-            elif obj.description:
-                self.options['alt'] = obj.description
-            self.options['srcset'] = obj.get_html_attr_srcset()
-            self.options['sizes'] = obj.get_html_attr_sizes()
 
-            set_classes(self.options)
-            image_node = nodes.image(self.block_text, **self.options)
-            self.add_name(image_node)
-            return [image_node]
+def embed_file_role(role, rawtext, text, lineno, inliner, options=None,
+        content=None):
+    if options is None:
+        options = {}
+    messages = []
 
-        self.options['uri'] = obj.databits.url
-        self.options['target'] = '_blank'
-        if not 'alt' in self.options:
-            self.options['alt'] = obj.description
-        set_classes(self.options)
-        link_node = link(self.block_text, **self.options)
-        self.add_name(link_node)
-        return [link_node]
+    # Accept text in the format of "long text <file_id>".
+    match = INLINE_PATTERN.match(text)
+    if match:
+        options['alt'] = match.group('text')
+        pk = match.group('pk')
+    else:
+        pk = text.strip()
+
+    try:
+        pk = int(pk)
+        _nodes = parse_embed_file(pk, options)
+        if not _nodes:
+            msg = inliner.reporter.error(
+                    _("File with id:%s was not found.") % pk,
+                    line=lineno)
+            messages.append(msg)
+    except ValueError:
+        _nodes = []
+        msg = inliner.reporter.error(_("%s is not a number.") % pk, line=lineno)
+        messages.append(msg)
+
+    return _nodes, messages

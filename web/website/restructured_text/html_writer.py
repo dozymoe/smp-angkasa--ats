@@ -1,3 +1,4 @@
+import logging
 import os
 import re
 import sys
@@ -6,13 +7,14 @@ from docutils import nodes
 from docutils.writers import html4css1
 from docutils.writers._html_base import PIL, url2pathname
 
+_logger = logging.getLogger(__name__)
+
 
 class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
 
     def visit_image(self, node):
         """ Please keep this copy in sync with: python_modules/docutils/writers/html4css1/__init__.py
         """ # pylint:disable=line-too-long
-
         atts = {}
         uri = node['uri']
         ext = os.path.splitext(uri)[1].lower()

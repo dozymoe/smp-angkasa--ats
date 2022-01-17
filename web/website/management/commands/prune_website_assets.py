@@ -17,7 +17,7 @@ class Command(BaseCommand):
 
         metafile = rootdir/'var'/project/'webpack-css.meta.json'
         if metafile.exists():
-            with open(metafile, 'r') as f:
+            with open(metafile, 'r', encoding='utf-8') as f:
                 meta = json.load(f)
                 filenames = [os.path.basename(x) for x in meta.values()]
 
@@ -35,7 +35,7 @@ class Command(BaseCommand):
 
         metafile = rootdir/'var'/project/'webpack-js.meta.json'
         if metafile.exists():
-            with open(metafile, 'r') as f:
+            with open(metafile, 'r', encoding='utf-8') as f:
                 meta = json.load(f)
                 filenames = [os.path.basename(x) for x in meta.values()]
 

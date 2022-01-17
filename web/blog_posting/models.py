@@ -20,8 +20,8 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
     title = models.CharField(verbose_name=_("Title"), max_length=65)
     body = models.TextField(verbose_name=_("Body"))
     summary = models.TextField(verbose_name=_("Summary"), max_length=155)
-    slug = models.SlugField(max_length=64, unique=True, db_index=True,
-            blank=True,
+    slug = models.SlugField(verbose_name=_("URL Name"), max_length=64,
+            unique=True, db_index=True, blank=True,
             help_text=_("Human friendly unique url to identify the content, "
             "will automatically be filled if left empty."))
     image = models.ImageField(verbose_name=_("Image"),

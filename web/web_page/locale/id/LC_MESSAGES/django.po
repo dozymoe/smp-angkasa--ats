@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 04:09+0700\n"
+"POT-Creation-Date: 2022-01-17 14:44+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:26
+#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:27
 msgid "Title"
 msgstr "Judul"
 
 #: web_page/models.py:18
 msgid "Body"
 msgstr "Konten"
+
+#: web_page/models.py:19
+msgid "URL Name"
+msgstr "Nama URL"
 
 #: web_page/models.py:21
 msgid ""
@@ -37,6 +41,16 @@ msgstr ""
 msgid "Publish Date"
 msgstr "Ditayangkan Tanggal"
 
+#: web_page/restructured_text/embed_page.py:52
+#, python-format
+msgid "Page with id:%s was not found."
+msgstr "Laman dengan nomor:%s tidak ada."
+
+#: web_page/restructured_text/embed_page.py:57
+#, python-format
+msgid "%s is not a number."
+msgstr "%s itu bukan angka."
+
 #: web_page/templates/web_page/webpage_confirm_delete.html:6
 msgid "Delete Page"
 msgstr "Hapus Laman"
@@ -48,7 +62,7 @@ msgstr "Hapus Laman"
 #: web_page/templates/web_page/webpage_detail-admin.html:6
 #: web_page/templates/web_page/webpage_form.html:6
 #: web_page/templates/web_page/webpage_list.html:6
-#: web_page/templates/web_page/webpage_list.html:17
+#: web_page/templates/web_page/webpage_list.html:18
 msgid "Pages"
 msgstr "Laman-Laman"
 
@@ -67,7 +81,7 @@ msgstr "Tanggal Dibikin"
 #: web_page/templates/web_page/webpage_confirm_publish.html:85
 #: web_page/templates/web_page/webpage_confirm_unpublish.html:85
 #: web_page/templates/web_page/webpage_detail-admin.html:55
-#: web_page/templates/web_page/webpage_list.html:101
+#: web_page/templates/web_page/webpage_list.html:102
 msgid "Delete"
 msgstr "Hapus"
 
@@ -76,7 +90,7 @@ msgstr "Hapus"
 #: web_page/templates/web_page/webpage_confirm_unpublish.html:41
 #: web_page/templates/web_page/webpage_detail-admin.html:11
 #: web_page/templates/web_page/webpage_detail.html:17
-#: web_page/templates/web_page/webpage_list.html:118
+#: web_page/templates/web_page/webpage_list.html:119
 msgid "Home Page"
 msgstr "Laman Muka"
 
@@ -86,7 +100,7 @@ msgstr "Laman Muka"
 #: web_page/templates/web_page/webpage_create_form.html:66
 #: web_page/templates/web_page/webpage_detail-admin.html:25
 #: web_page/templates/web_page/webpage_form.html:66
-#: web_page/templates/web_page/webpage_list.html:141
+#: web_page/templates/web_page/webpage_list.html:142
 msgid "Index"
 msgstr "Katalog"
 
@@ -96,7 +110,7 @@ msgstr "Katalog"
 #: web_page/templates/web_page/webpage_create_form.html:76
 #: web_page/templates/web_page/webpage_detail-admin.html:35
 #: web_page/templates/web_page/webpage_form.html:76
-#: web_page/templates/web_page/webpage_list.html:151
+#: web_page/templates/web_page/webpage_list.html:152
 msgid "Create"
 msgstr "Bikin"
 
@@ -104,7 +118,7 @@ msgstr "Bikin"
 #: web_page/templates/web_page/webpage_confirm_publish.html:75
 #: web_page/templates/web_page/webpage_confirm_unpublish.html:75
 #: web_page/templates/web_page/webpage_detail-admin.html:45
-#: web_page/templates/web_page/webpage_list.html:75
+#: web_page/templates/web_page/webpage_list.html:76
 msgid "Edit"
 msgstr "Ubah"
 
@@ -117,7 +131,7 @@ msgid "Do you really want to publish"
 msgstr "Sungguh mau menayangkan"
 
 #: web_page/templates/web_page/webpage_confirm_publish.html:31
-#: web_page/templates/web_page/webpage_list.html:84
+#: web_page/templates/web_page/webpage_list.html:85
 msgid "Publish"
 msgstr "Tayangkan"
 
@@ -130,12 +144,12 @@ msgid "Do you really want to unpublish"
 msgstr "Sungguh mau batal tayang"
 
 #: web_page/templates/web_page/webpage_confirm_unpublish.html:31
-#: web_page/templates/web_page/webpage_list.html:81
+#: web_page/templates/web_page/webpage_list.html:82
 msgid "Unpublish"
 msgstr "Batal Tayang"
 
 #: web_page/templates/web_page/webpage_create_form.html:5
-#: web_page/templates/web_page/webpage_list.html:127
+#: web_page/templates/web_page/webpage_list.html:128
 msgid "Create Page"
 msgstr "Bikin Laman"
 
@@ -192,30 +206,30 @@ msgstr "Ubah"
 msgid "Linking pages in your articles. Example:"
 msgstr "Cara menampilkan tautan di dalam artikel. Contoh:"
 
-#: web_page/templates/web_page/webpage_list.html:13
+#: web_page/templates/web_page/webpage_list.html:14
 msgid "The number <strong>4</strong> is from the ID column below."
 msgstr "Angka <strong>4</strong> di atas diambil dari kolom ID di bawah."
 
-#: web_page/templates/web_page/webpage_list.html:22
+#: web_page/templates/web_page/webpage_list.html:23
 msgid "ID"
 msgstr ""
 
-#: web_page/templates/web_page/webpage_list.html:30
+#: web_page/templates/web_page/webpage_list.html:31
 msgid "Status"
 msgstr "Status"
 
-#: web_page/templates/web_page/webpage_list.html:33
+#: web_page/templates/web_page/webpage_list.html:34
 msgid "Operations"
 msgstr "Aksi-Aksi"
 
-#: web_page/templates/web_page/webpage_list.html:53
+#: web_page/templates/web_page/webpage_list.html:54
 msgid "Published"
 msgstr "Ditayangkan"
 
-#: web_page/templates/web_page/webpage_list.html:55
+#: web_page/templates/web_page/webpage_list.html:56
 msgid "Not Published"
 msgstr "Belum Tayang"
 
-#: web_page/templates/web_page/webpage_list.html:62
+#: web_page/templates/web_page/webpage_list.html:63
 msgid "Open Menu"
 msgstr "Buka Menu"

@@ -15,12 +15,15 @@ register = template.Library()
 _logger = logging.getLogger(__name__)
 
 
-@register.filter(name='restify')
-@stringfilter
 def restructured_text(value):
     parts = publish_parts(value, writer=HtmlWriter(),
             settings_overrides=settings.RESTRUCTURED_TEXT)
     return mark_safe(parts['html_body'])
+
+@register.filter(name='restify')
+@stringfilter
+def restify(value):
+    return restructured_text(value)
 
 
 @register.filter
@@ -33,7 +36,8 @@ def fulluri(value, request):
 def stylesheets(module='main'):
     try:
         with open(os.path.join(os.environ['ROOT_DIR'], 'var',
-                os.environ['PROJECT_NAME'], 'webpack-css.meta.json')) as f:
+                os.environ['PROJECT_NAME'], 'webpack-css.meta.json'),
+                encoding='utf-8') as f:
             webpack = json.load(f, object_pairs_hook=OrderedDict)
     except OSError:
         return ''
@@ -49,7 +53,8 @@ def stylesheets(module='main'):
 def javascripts(module='main'):
     try:
         with open(os.path.join(os.environ['ROOT_DIR'], 'var',
-                os.environ['PROJECT_NAME'], 'webpack-js.meta.json')) as f:
+                os.environ['PROJECT_NAME'], 'webpack-js.meta.json'),
+                encoding='utf-8') as f:
             webpack = json.load(f, object_pairs_hook=OrderedDict)
     except OSError:
         return ''

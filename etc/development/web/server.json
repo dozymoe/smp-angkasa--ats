@@ -1,4 +1,4 @@
 {
-    "allowed_hosts": ["www.smpangkasa.sbj", "manage.smpangkasa.sbj"],
+    "allowed_hosts": ["www.smp-angkasa.test", "manage.smp-angkasa.test"],
     "public_root": "public/web"
 }

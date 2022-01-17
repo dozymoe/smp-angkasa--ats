@@ -4,7 +4,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const autoprefixer = require('autoprefixer');
-const noop = require('noop-webpack-plugin');
 
 
 process.traceDeprecation = true;
