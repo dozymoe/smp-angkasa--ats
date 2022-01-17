@@ -86,7 +86,8 @@ class MyFile(DirtyFieldsMixin, RulesModel):
             imgfield = getattr(self, 'image_%s' % name)
             if not imgfield:
                 continue
-            attribute_value.append('%s %sw' % (imgfield.url, size[0]))
+            attribute_value.append('%s %sw' % (
+                    reverse('MyFile:Display', args=(self.pk, name)), size[0]))
         return ', '.join(attribute_value)
 
 
