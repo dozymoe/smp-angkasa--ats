@@ -24,4 +24,4 @@ def serve_files(request, pk, style=None):
     else:
         field = obj.databits
     path = os.path.join(settings.MEDIA_ROOT, field.name)
-    return FileResponse(open(path, 'rb'), as_attachment=True)
+    return FileResponse(open(path, 'rb'))

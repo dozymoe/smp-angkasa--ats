@@ -43,7 +43,7 @@
           {% Table_Col %}{{obj.pk}}{% endTable_Col %}
 
           {% Table_ColHeader %}
-            <a href="{% url 'BlogPosting:Detail' obj.slug obj.pk %}">
+            <a href="{% url 'BlogPosting:Display' obj.slug 'html' %}">
               {{obj.title}}
             </a>
           {% endTable_ColHeader %}
