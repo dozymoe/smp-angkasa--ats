@@ -21,7 +21,12 @@ def parse_embed_file(obj_id, options, block_text=None):
         return []
 
     if obj.mimetype.startswith('image/'):
-        options['uri'] = obj.image_lg.url
+        if obj.image_lg:
+            imgfield = obj.image_lg
+        else:
+            imgfield = obj.databits
+        options['uri'] = imgfield.url
+
         if 'alt' in options:
             pass
         elif obj.alt_text:
