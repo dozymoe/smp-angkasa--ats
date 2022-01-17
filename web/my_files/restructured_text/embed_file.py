@@ -78,20 +78,21 @@ class EmbedFileDirective(Directive):
         """
         try:
             pk = int(self.arguments[0])
-            _nodes = parse_embed_file(pk, self.options, self.block_text)
-            if _nodes:
-                for node in _nodes:
-                    self.add_name(node)
-            else:
-                msg = self.state_machine.reporter.error(
-                        _("File with id:%s was not found.") % pk,
-                        line=self.lineno)
-                _nodes.append(msg)
         except ValueError:
-            _nodes = []
             msg = self.state_machine.reporter.error(
                     _("%s is not a number.") % pk, line=self.lineno)
-            _nodes.append(msg)
+            return [msg]
+
+        _nodes = parse_embed_file(pk, self.options, self.block_text)
+        if _nodes:
+            for node in _nodes:
+                self.add_name(node)
+        else:
+            msg = self.state_machine.reporter.error(
+                    _("File with id:%s was not found.") % pk,
+                    line=self.lineno)
+            return [msg]
+
         return _nodes
 
 

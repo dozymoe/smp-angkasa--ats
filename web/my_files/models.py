@@ -82,15 +82,19 @@ class MyFile(DirtyFieldsMixin, RulesModel):
     def get_html_attr_srcset(self):
         attribute_value = []
         for name, size, _ in settings.IMAGE_SIZES:
-            attribute_value.append('%s %sw' % (
-                    getattr(self, 'image_%s' % name).url,
-                    size[0]))
+            imgfield = getattr(self, 'image_%s' % name)
+            if not imgfield:
+                continue
+            attribute_value.append('%s %sw' % (imgfield.url, size[0]))
         return ', '.join(attribute_value)
 
 
     def get_html_attr_sizes(self):
         attribute_value = []
-        for _, size, viewport_width in settings.IMAGE_SIZES:
+        for name, size, viewport_width in settings.IMAGE_SIZES:
+            imgfield = getattr(self, 'image_%s' % name)
+            if not imgfield:
+                continue
             if viewport_width:
                 attribute_value.append('(max-width: %spx) %spx' % (
                         viewport_width,

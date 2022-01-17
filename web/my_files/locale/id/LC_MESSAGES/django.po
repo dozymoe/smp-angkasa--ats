@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 15:23+0700\n"
+"POT-Creation-Date: 2022-01-17 17:47+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,17 +41,17 @@ msgstr "Hanya diisi bila mengunggah gambar."
 msgid "Content"
 msgstr "Isi"
 
-#: my_files/restructured_text/embed_file.py:82
-#: my_files/restructured_text/embed_file.py:114
-#, python-format
-msgid "File with id:%s was not found."
-msgstr "Berkas dengan nomor:%s tidak ada."
-
-#: my_files/restructured_text/embed_file.py:88
-#: my_files/restructured_text/embed_file.py:109
+#: my_files/restructured_text/embed_file.py:83
+#: my_files/restructured_text/embed_file.py:115
 #, python-format
 msgid "%s is not a number."
 msgstr "%s itu bukan angka."
+
+#: my_files/restructured_text/embed_file.py:92
+#: my_files/restructured_text/embed_file.py:120
+#, python-format
+msgid "File with id:%s was not found."
+msgstr "Berkas dengan nomor:%s tidak ada."
 
 #: my_files/templates/my_files/myfile_confirm_delete.html:6
 msgid "Delete File"
