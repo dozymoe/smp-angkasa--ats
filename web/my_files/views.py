@@ -2,13 +2,26 @@ import logging
 import os
 #-
 from django.conf import settings
-from django.http import HttpResponse
-from django.utils.encoding import smart_str
+from django.http import FileResponse, Http404
+from django.shortcuts import get_object_or_404
+#-
+from my_files.models import MyFile
 
 _logger = logging.getLogger(__name__)
 
 
-def serve_files(request, path):
-    response = HttpResponse()
-    response['X-Sendfile'] = smart_str(os.path.join(settings.MEDIA_ROOT, path))
-    return response
+def serve_files(request, pk, style=None):
+    obj = get_object_or_404(MyFile, pk=pk)
+    if obj.is_image():
+        for imgsize in settings.IMAGE_SIZES:
+            if style == imgsize['0']:
+                break
+        else:
+            raise Http404
+        field = getattr(obj, 'image_' + style)
+        if not field:
+            field = obj.databits
+    else:
+        field = obj.databits
+    path = os.path.join(settings.MEDIA_ROOT, field)
+    return FileResponse(open(path, 'rb'), as_attachment=True)

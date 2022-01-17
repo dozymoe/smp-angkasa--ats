@@ -3,6 +3,7 @@ import os
 from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import rules
 from rules.contrib.models import RulesModel
@@ -63,8 +64,8 @@ class MyFile(DirtyFieldsMixin, RulesModel):
 
     def get_absolute_url(self):
         if self.is_image():
-            return self.image_lg.url
-        return self.databits.url
+            return reverse('MyFile:Display', args=(self.pk, 'lg'))
+        return reverse('MyFile:Display', args=(self.pk,))
 
 
     def get_natural_key(self):

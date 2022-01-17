@@ -1,6 +1,7 @@
 import logging
 import re
 #-
+from django.urls import reverse
 from django.utils.translation import gettext as _
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
@@ -21,11 +22,12 @@ def parse_embed_file(obj_id, options, block_text=None):
         return []
 
     if obj.mimetype.startswith('image/'):
-        if obj.image_lg:
-            imgfield = obj.image_lg
-        else:
-            imgfield = obj.databits
-        options['uri'] = imgfield.url
+        #if obj.image_lg:
+        #    imgfield = obj.image_lg
+        #else:
+        #    imgfield = obj.databits
+        #options['uri'] = imgfield.url
+        options['uri'] = reverse('MyFile:Display', args=(obj_id, 'lg'))
 
         if 'alt' in options:
             pass
@@ -37,7 +39,8 @@ def parse_embed_file(obj_id, options, block_text=None):
         options['sizes'] = obj.get_html_attr_sizes()
         fn = nodes.image
     else:
-        options['uri'] = obj.databits.url
+        #options['uri'] = obj.databits.url
+        options['uri'] = reverse('MyFile:Display', args=(obj_id,))
         options['target'] = '_blank'
         if not 'alt' in options:
             options['alt'] = obj.description

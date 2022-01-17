@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 17:47+0700\n"
+"POT-Creation-Date: 2022-01-18 02:19+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: my_files/models.py:17
+#: my_files/models.py:18
 msgid "Title"
 msgstr "Judul"
 
-#: my_files/models.py:19
+#: my_files/models.py:20
 msgid "Mime Type"
 msgstr "Tipe Berkas"
 
-#: my_files/models.py:21 my_files/templates/my_files/myfile_list.html:36
+#: my_files/models.py:22 my_files/templates/my_files/myfile_list.html:36
 msgid "Description"
 msgstr "Keterangan"
 
-#: my_files/models.py:22
+#: my_files/models.py:23
 msgid "Alternate Text (alt text)"
 msgstr "Teks Alternatif (alt text)"
 
-#: my_files/models.py:24
+#: my_files/models.py:25
 msgid "Only need to fill this if you were uploading an image."
 msgstr "Hanya diisi bila mengunggah gambar."
 
-#: my_files/models.py:26
+#: my_files/models.py:27
 msgid "Content"
 msgstr "Isi"
 
-#: my_files/restructured_text/embed_file.py:83
-#: my_files/restructured_text/embed_file.py:115
+#: my_files/restructured_text/embed_file.py:86
+#: my_files/restructured_text/embed_file.py:118
 #, python-format
 msgid "%s is not a number."
 msgstr "%s itu bukan angka."
 
-#: my_files/restructured_text/embed_file.py:92
-#: my_files/restructured_text/embed_file.py:120
+#: my_files/restructured_text/embed_file.py:95
+#: my_files/restructured_text/embed_file.py:123
 #, python-format
 msgid "File with id:%s was not found."
 msgstr "Berkas dengan nomor:%s tidak ada."

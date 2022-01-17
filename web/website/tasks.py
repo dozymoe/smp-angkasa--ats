@@ -54,15 +54,13 @@ def create_thumbnail(obj_info, source_field, target_field, estimate_size):
     if im.size[0] <= estimate_size[0] and im.size[1] <= estimate_size[1]:
         setattr(obj, target_field, None)
     else:
-        filename, ext = os.path.splitext(source.name)
-        filename = '%s_%s%s' % (filename, target_field, ext.lower())
-
         im.thumbnail(estimate_size, Image.ANTIALIAS)
         io = BytesIO()
         im.save(io, im.format)
 
         target = getattr(obj, target_field)
-        target.save(filename, ContentFile(io.getvalue()), save=False)
+        target.save(os.path.basename(source.name), ContentFile(io.getvalue()),
+                save=False)
         # Don't close the image
         #im.close()
 
