@@ -58,7 +58,7 @@ Next paragraph
           {% endTable_Col %}
 
           {% Table_ColHeader %}
-            <a href="{{ obj.databits.url }}" target="_blank">
+            <a href="{% url 'MyFile:Display' obj.pk %}" target="_blank">
               {{ obj.get_filename }}
             </a>
           {% endTable_ColHeader %}

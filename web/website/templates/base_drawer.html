@@ -49,6 +49,14 @@
       {% List_Divider tag="div" %}
       {% List_Group tag="div" %}
         {% List_Header tag='h6'%}
+          {% trans "Navigate" %}
+        {% endList_Header %}
+        {% block drawer_menu_main %}{% endblock %}
+      {% endList_Group %}
+
+      {% List_Divider tag="div" %}
+      {% List_Group tag="div" %}
+        {% List_Header tag='h6'%}
           {% trans "Website" %}
         {% endList_Header %}
         {% block drawer_menu_website %}{% endblock %}

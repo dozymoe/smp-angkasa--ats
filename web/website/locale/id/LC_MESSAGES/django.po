@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 04:10+0700\n"
+"POT-Creation-Date: 2022-01-18 05:04+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,20 +33,36 @@ msgid "Home Page"
 msgstr "Laman Muka"
 
 #: website/templates/base-admin.html:19
-#: website/templates/base_drawer-admin.html:21
+#: website/templates/base_drawer-admin.html:54
 msgid "Sign Out"
 msgstr "Keluar"
 
 #: website/templates/base-admin.html:25
-#: website/templates/base_drawer-admin.html:30
+#: website/templates/base_drawer-admin.html:63
 msgid "Sign In"
 msgstr "Masuk"
 
-#: website/templates/base.html:77 website/templates/base_drawer.html:80
+#: website/templates/base.html:77 website/templates/base_drawer.html:88
 msgid "Close"
 msgstr "Tutup"
 
+#: website/templates/base_drawer-admin.html:21
+msgid "Articles"
+msgstr "Artikel-Artikel"
+
+#: website/templates/base_drawer-admin.html:31
+msgid "Pages"
+msgstr "Laman-Laman"
+
+#: website/templates/base_drawer-admin.html:41
+msgid "Files"
+msgstr "Berkas-Berkas"
+
 #: website/templates/base_drawer.html:52
+msgid "Navigate"
+msgstr "Navigasi"
+
+#: website/templates/base_drawer.html:60
 msgid "Website"
 msgstr "Situs"
 
@@ -106,18 +122,6 @@ msgstr "Tentang sumber acuan tautan internal"
 #: website/templates/website/editor-helptext.html:282
 msgid "Implicit hyperlink targets"
 msgstr "Tentang sumber acuan tautan implisit"
-
-#: website/templates/website/welcome-admin.html:12
-msgid "Articles"
-msgstr "Artikel-Artikel"
-
-#: website/templates/website/welcome-admin.html:22
-msgid "Pages"
-msgstr "Laman-Laman"
-
-#: website/templates/website/welcome-admin.html:32
-msgid "Files"
-msgstr "Berkas-Berkas"
 
 #: website/templates/website/welcome.html:7
 msgid "Latest News"
