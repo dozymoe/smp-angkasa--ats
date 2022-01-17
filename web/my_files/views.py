@@ -14,7 +14,7 @@ def serve_files(request, pk, style=None):
     obj = get_object_or_404(MyFile, pk=pk)
     if obj.is_image():
         for imgsize in settings.IMAGE_SIZES:
-            if style == imgsize['0']:
+            if style == imgsize[0]:
                 break
         else:
             raise Http404
