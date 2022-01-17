@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 #-
+from my_files.views import serve_files
 from website import views, views_admin
 
 urlpatterns = [
     path('account/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('api/render-html', views_admin.ReSTPreview.as_view()),
+    path('uploads/<path:path>', serve_files),
 ]
 
 urlpatterns += i18n_patterns(

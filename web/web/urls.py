@@ -17,10 +17,12 @@ from django.conf.urls.i18n import i18n_patterns
 from django.urls import include, path
 from django.utils.translation import gettext as _
 #-
+from my_files.views import serve_files
 from website import views
 
 urlpatterns = [
     path('index.<str:format>', views.Home.as_view(), name='Home'),
+    path('uploads/<path:path>', serve_files),
 ]
 
 urlpatterns += i18n_patterns(
