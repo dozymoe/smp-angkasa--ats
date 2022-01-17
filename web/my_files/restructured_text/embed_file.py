@@ -94,7 +94,6 @@ def embed_file_role(role, rawtext, text, lineno, inliner, options=None,
         content=None):
     if options is None:
         options = {}
-    messages = []
 
     # Accept text in the format of "long text <file_id>".
     match = INLINE_PATTERN.match(text)
@@ -106,15 +105,14 @@ def embed_file_role(role, rawtext, text, lineno, inliner, options=None,
 
     try:
         pk = int(pk)
-        _nodes = parse_embed_file(pk, options)
-        if not _nodes:
-            msg = inliner.reporter.error(
-                    _("File with id:%s was not found.") % pk,
-                    line=lineno)
-            messages.append(msg)
     except ValueError:
-        _nodes = []
         msg = inliner.reporter.error(_("%s is not a number.") % pk, line=lineno)
-        messages.append(msg)
+        return [], [msg]
 
-    return _nodes, messages
+    _nodes = parse_embed_file(pk, options)
+    if not _nodes:
+        msg = inliner.reporter.error(_("File with id:%s was not found.") % pk,
+                line=lineno)
+        return [], [msg]
+
+    return _nodes, []
