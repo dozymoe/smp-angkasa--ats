@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-18 05:04+0700\n"
+"POT-Creation-Date: 2022-01-22 02:09+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,14 +139,9 @@ msgstr "oleh"
 msgid "Profile"
 msgstr "Profil"
 
-#: website/templates/website/welcome.html:45
-msgid "Kegiatan"
-msgstr ""
-
-#: website/templates/website/welcome.html:52
+#: website/templates/website/welcome.html:46
 msgid "PPDB"
 msgstr ""
 
-#: website/templates/website/welcome.html:61
-msgid "Contact Us"
-msgstr "Hubungi Kami"
+#~ msgid "Contact Us"
+#~ msgstr "Hubungi Kami"

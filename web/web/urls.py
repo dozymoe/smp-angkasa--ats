@@ -21,7 +21,11 @@ from django.utils.translation import gettext as _
 #-
 from website import views
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+    path('index.<str:format>', views.Home.as_view(), name='Home'),
+]
+
+urlpatterns += i18n_patterns(
     path(_('news/'), include('blog_posting.urls', namespace='BlogPosting')),
     path('files/', include('my_files.urls', namespace='MyFile')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
@@ -33,6 +37,5 @@ urlpatterns = i18n_patterns(
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += [
-    path('index.<str:format>', views.Home.as_view(), name='Home'),
     path('', views.Home.as_view()),
 ]

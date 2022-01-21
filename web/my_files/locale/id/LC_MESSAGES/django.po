@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-18 02:19+0700\n"
+"POT-Creation-Date: 2022-01-22 02:09+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,14 +41,14 @@ msgstr "Hanya diisi bila mengunggah gambar."
 msgid "Content"
 msgstr "Isi"
 
-#: my_files/restructured_text/embed_file.py:86
-#: my_files/restructured_text/embed_file.py:118
+#: my_files/restructured_text/embed_file.py:87
+#: my_files/restructured_text/embed_file.py:119
 #, python-format
 msgid "%s is not a number."
 msgstr "%s itu bukan angka."
 
-#: my_files/restructured_text/embed_file.py:95
-#: my_files/restructured_text/embed_file.py:123
+#: my_files/restructured_text/embed_file.py:96
+#: my_files/restructured_text/embed_file.py:124
 #, python-format
 msgid "File with id:%s was not found."
 msgstr "Berkas dengan nomor:%s tidak ada."

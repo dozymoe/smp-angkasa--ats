@@ -3,7 +3,7 @@ import logging
 from docutils.parsers.rst import Directive, directives
 from docutils.parsers.rst.roles import set_classes
 #-
-from website.restructured_text.link_node import link
+from website.restructured_text.nodes import link
 from ..models import BlogPosting
 
 _logger = logging.getLogger(__name__)

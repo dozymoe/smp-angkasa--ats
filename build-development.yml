@@ -183,6 +183,16 @@ web:
       - etc/{{PROJECT_VARIANT}}/{_1}/*.json
       - etc/{{PROJECT_VARIANT}}/{_1}/uwsgi.ini
 
+  worker:
+    runit_sv:
+      options:
+        command: restart
+        target: "{{HOME}}/service/smp-{_1}-worker/"
+        wait_sec: 120
+        force: true
+      rule_in:
+        - "{_1}/runit_sv"
+
   build:
     shell:
       options:

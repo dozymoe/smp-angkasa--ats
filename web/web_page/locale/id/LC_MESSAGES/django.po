@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 15:23+0700\n"
+"POT-Creation-Date: 2022-01-22 02:18+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,17 +182,9 @@ msgstr "Administrasi Laman"
 msgid "Profile"
 msgstr "Profil"
 
-#: web_page/templates/web_page/webpage_detail.html:34
-msgid "Kegiatan"
-msgstr ""
-
-#: web_page/templates/web_page/webpage_detail.html:41
+#: web_page/templates/web_page/webpage_detail.html:35
 msgid "PPDB"
 msgstr ""
-
-#: web_page/templates/web_page/webpage_detail.html:50
-msgid "Contact Us"
-msgstr "Hubungi Kami"
 
 #: web_page/templates/web_page/webpage_form.html:5
 msgid "Update Page"
@@ -233,3 +225,6 @@ msgstr "Belum Tayang"
 #: web_page/templates/web_page/webpage_list.html:63
 msgid "Open Menu"
 msgstr "Buka Menu"
+
+#~ msgid "Contact Us"
+#~ msgstr "Hubungi Kami"

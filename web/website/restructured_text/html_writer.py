@@ -105,6 +105,34 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
         self.body.append('</a>' + suffix)
 
 
+    def visit_video(self, node):
+        atts = {}
+        source_atts = {}
+
+        if 'width' in node:
+            atts['width'] = node['width']
+        if 'height' in node:
+            atts['height'] = node['height']
+        if 'class' in node:
+            atts['class'] = node['class']
+        if node.get('autoplay'):
+            atts['autoplay'] = 'autoplay'
+        if not node.get('nocontrols'):
+            atts['controls'] = ''
+        if 'type' in node:
+            source_atts['type'] = node['type']
+        source_atts['src'] = node['uri']
+
+        self.body.append(self.starttag(node, 'video', '\n', **atts))
+        self.body.append(self.emptytag(node, 'source', '\n', **source_atts))
+        if 'alt' in node:
+            self.body.append(node['alt'])
+
+
+    def depart_video(self, node):
+        self.body.append('</video>\n')
+
+
 class HtmlWriter(html4css1.Writer):
 
     def __init__(self):

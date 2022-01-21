@@ -7,7 +7,7 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.parsers.rst.roles import set_classes
 #-
-from website.restructured_text.link_node import link
+from website.restructured_text.nodes import link, video
 from ..models import MyFile
 
 _logger = logging.getLogger(__name__)
@@ -22,11 +22,6 @@ def parse_embed_file(obj_id, options, block_text=None):
         return []
 
     if obj.mimetype.startswith('image/'):
-        #if obj.image_lg:
-        #    imgfield = obj.image_lg
-        #else:
-        #    imgfield = obj.databits
-        #options['uri'] = imgfield.url
         options['uri'] = reverse('MyFile:Display', args=(obj_id, 'lg'))
 
         if 'alt' in options:
@@ -38,8 +33,14 @@ def parse_embed_file(obj_id, options, block_text=None):
         options['srcset'] = obj.get_html_attr_srcset()
         options['sizes'] = obj.get_html_attr_sizes()
         fn = nodes.image
+    elif obj.mimetype.startswith('video/'):
+        options['uri'] = reverse('MyFile:Display', args=(obj_id,))
+        options['type'] = obj.mimetype
+        if not 'alt' in options:
+            options['alt'] = obj.description
+        options['class'] = ['w-100']
+        fn = video
     else:
-        #options['uri'] = obj.databits.url
         options['uri'] = reverse('MyFile:Display', args=(obj_id,))
         options['target'] = '_blank'
         if not 'alt' in options:

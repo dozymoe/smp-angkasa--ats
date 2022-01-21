@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-18 02:19+0700\n"
+"POT-Creation-Date: 2022-01-22 02:09+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,6 @@ msgstr "Bahasa Indonesia"
 msgid "English"
 msgstr "Inggris"
 
-#: web/urls.py:25
+#: web/urls.py:29
 msgid "news/"
 msgstr "berita/"

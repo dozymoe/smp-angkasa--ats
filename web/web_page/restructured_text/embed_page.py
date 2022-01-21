@@ -4,7 +4,7 @@ import re
 from django.utils.translation import gettext as _
 from docutils.parsers.rst.roles import set_classes
 #-
-from website.restructured_text.link_node import link
+from website.restructured_text.nodes import link
 from ..models import WebPage
 
 _logger = logging.getLogger(__name__)
