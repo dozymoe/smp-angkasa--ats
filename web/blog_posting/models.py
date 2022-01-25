@@ -81,6 +81,10 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
         return (self.slug,)
 
 
+    def get_image_url(self):
+        return reverse('BlogPosting:Image', args=(self.slug, 'lg'))
+
+
     def save(self, update_fields=None, **kwargs):
         dirty = self.get_dirty_fields()
         if not update_fields is None:
@@ -99,15 +103,21 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
     def get_html_attr_srcset(self):
         attribute_value = []
         for name, size, _ in settings.IMAGE_SIZES:
+            imgfield = getattr(self, f'image_{name}')
+            if not imgfield:
+                continue
             attribute_value.append('%s %sw' % (
-                    getattr(self, 'image_%s' % name).url,
+                    reverse('BlogPosting:Image', args=(self.slug, name)),
                     size[0]))
         return ', '.join(attribute_value)
 
 
     def get_html_attr_sizes(self):
         attribute_value = []
-        for _, size, viewport_width in settings.IMAGE_SIZES:
+        for name, size, viewport_width in settings.IMAGE_SIZES:
+            imgfield = getattr(self, f'image_{name}')
+            if not imgfield:
+                continue
             if viewport_width:
                 attribute_value.append('(max-width: %spx) %spx' % (
                         viewport_width,

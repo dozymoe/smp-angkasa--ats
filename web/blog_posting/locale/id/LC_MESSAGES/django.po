@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-22 02:18+0700\n"
+"POT-Creation-Date: 2022-01-25 23:46+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: blog_posting/models.py:20
-#: blog_posting/templates/blog_posting/blogposting_list.html:26
+#: blog_posting/templates/blog_posting/blogposting_list.html:27
 msgid "Title"
 msgstr "Judul"
 
@@ -50,6 +50,16 @@ msgstr "Gambar"
 msgid "Publish Date"
 msgstr "Ditayangkan Tanggal"
 
+#: blog_posting/restructured_text/embed_blog.py:50
+#, python-format
+msgid "%s is not a number."
+msgstr "%s itu bukan angka."
+
+#: blog_posting/restructured_text/embed_blog.py:56
+#, python-format
+msgid "Article with id:%s was not found."
+msgstr "Artikel dengan id:%s tidak ditemukan."
+
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:6
 msgid "Delete Article"
 msgstr "Hapus Artikel"
@@ -61,7 +71,7 @@ msgstr "Hapus Artikel"
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:6
 #: blog_posting/templates/blog_posting/blogposting_form.html:6
 #: blog_posting/templates/blog_posting/blogposting_list.html:6
-#: blog_posting/templates/blog_posting/blogposting_list.html:17
+#: blog_posting/templates/blog_posting/blogposting_list.html:18
 msgid "Articles"
 msgstr "Artikel-Artikel"
 
@@ -80,7 +90,7 @@ msgstr "Tanggal Dibikin"
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:89
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:89
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:55
-#: blog_posting/templates/blog_posting/blogposting_list.html:101
+#: blog_posting/templates/blog_posting/blogposting_list.html:102
 msgid "Delete"
 msgstr "Hapus"
 
@@ -88,8 +98,8 @@ msgstr "Hapus"
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:45
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:45
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:11
-#: blog_posting/templates/blog_posting/blogposting_detail.html:27
-#: blog_posting/templates/blog_posting/blogposting_list.html:118
+#: blog_posting/templates/blog_posting/blogposting_detail.html:25
+#: blog_posting/templates/blog_posting/blogposting_list.html:119
 msgid "Home Page"
 msgstr "Laman Muka"
 
@@ -99,7 +109,7 @@ msgstr "Laman Muka"
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:85
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:25
 #: blog_posting/templates/blog_posting/blogposting_form.html:85
-#: blog_posting/templates/blog_posting/blogposting_list.html:141
+#: blog_posting/templates/blog_posting/blogposting_list.html:142
 msgid "Index"
 msgstr "Katalog"
 
@@ -109,7 +119,7 @@ msgstr "Katalog"
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:95
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:35
 #: blog_posting/templates/blog_posting/blogposting_form.html:95
-#: blog_posting/templates/blog_posting/blogposting_list.html:151
+#: blog_posting/templates/blog_posting/blogposting_list.html:152
 msgid "Create"
 msgstr "Bikin"
 
@@ -117,7 +127,7 @@ msgstr "Bikin"
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:79
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:79
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:45
-#: blog_posting/templates/blog_posting/blogposting_list.html:75
+#: blog_posting/templates/blog_posting/blogposting_list.html:76
 msgid "Edit"
 msgstr "Ubah"
 
@@ -130,7 +140,7 @@ msgid "Do you really want to publish"
 msgstr "Sungguh mau menayangkan"
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:35
-#: blog_posting/templates/blog_posting/blogposting_list.html:84
+#: blog_posting/templates/blog_posting/blogposting_list.html:85
 msgid "Publish"
 msgstr "Tayangkan"
 
@@ -143,12 +153,12 @@ msgid "Do you really want to unpublish"
 msgstr "Sungguh mau batal tayang"
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:35
-#: blog_posting/templates/blog_posting/blogposting_list.html:81
+#: blog_posting/templates/blog_posting/blogposting_list.html:82
 msgid "Unpublish"
 msgstr "Batal Tayang"
 
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:5
-#: blog_posting/templates/blog_posting/blogposting_list.html:127
+#: blog_posting/templates/blog_posting/blogposting_list.html:128
 msgid "Create Article"
 msgstr "Bikin Artikel"
 
@@ -186,11 +196,11 @@ msgstr "Kirim"
 msgid "Manage Articles"
 msgstr "Administrasi Artikel"
 
-#: blog_posting/templates/blog_posting/blogposting_detail.html:38
+#: blog_posting/templates/blog_posting/blogposting_detail.html:36
 msgid "Profile"
 msgstr "Profil"
 
-#: blog_posting/templates/blog_posting/blogposting_detail.html:44
+#: blog_posting/templates/blog_posting/blogposting_detail.html:42
 msgid "PPDB"
 msgstr ""
 
@@ -206,31 +216,31 @@ msgstr "Ubah"
 msgid "Linking blogs in your articles. Example:"
 msgstr "Cara menampilkan tautan di dalam artikel. Contoh:"
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:13
+#: blog_posting/templates/blog_posting/blogposting_list.html:14
 msgid "The number <strong>4</strong> is from the ID column below."
 msgstr "Angka <strong>4</strong> di atas diambil dari kolom ID di bawah."
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:22
+#: blog_posting/templates/blog_posting/blogposting_list.html:23
 msgid "ID"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:30
+#: blog_posting/templates/blog_posting/blogposting_list.html:31
 msgid "Status"
 msgstr "Status"
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:33
+#: blog_posting/templates/blog_posting/blogposting_list.html:34
 msgid "Operations"
 msgstr "Aksi-Aksi"
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:53
+#: blog_posting/templates/blog_posting/blogposting_list.html:54
 msgid "Published"
 msgstr "Ditayangkan"
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:55
+#: blog_posting/templates/blog_posting/blogposting_list.html:56
 msgid "Not Published"
 msgstr "Belum Tayang"
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:62
+#: blog_posting/templates/blog_posting/blogposting_list.html:63
 msgid "Open Menu"
 msgstr "Buka Menu"
 

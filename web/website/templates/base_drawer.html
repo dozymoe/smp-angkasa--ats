@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load materialweb website %}
+{% load materialweb website web_page %}
 
 {% block body %}
 <body class="mdc-typography has-drawer {% block body_classes %}{% endblock %}">
@@ -60,6 +60,14 @@
           {% trans "Website" %}
         {% endList_Header %}
         {% block drawer_menu_website %}{% endblock %}
+
+        {% webpage_url 4 as url %}
+        {% List_Item tag="a" href=url %}
+          {% List_Text %}
+            {% trans "Contact Us" %}
+          {% endList_Text %}
+        {% endList_Item %}
+
       {% endList_Group %}
     {% endDrawer_Content %}
   {% endDrawer %}

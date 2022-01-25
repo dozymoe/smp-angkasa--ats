@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-22 02:09+0700\n"
+"POT-Creation-Date: 2022-01-25 23:46+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,16 +33,16 @@ msgid "Home Page"
 msgstr "Laman Muka"
 
 #: website/templates/base-admin.html:19
-#: website/templates/base_drawer-admin.html:54
+#: website/templates/base_drawer-admin.html:64
 msgid "Sign Out"
 msgstr "Keluar"
 
 #: website/templates/base-admin.html:25
-#: website/templates/base_drawer-admin.html:63
+#: website/templates/base_drawer-admin.html:73
 msgid "Sign In"
 msgstr "Masuk"
 
-#: website/templates/base.html:77 website/templates/base_drawer.html:88
+#: website/templates/base.html:77 website/templates/base_drawer.html:96
 msgid "Close"
 msgstr "Tutup"
 
@@ -58,6 +58,10 @@ msgstr "Laman-Laman"
 msgid "Files"
 msgstr "Berkas-Berkas"
 
+#: website/templates/base_drawer-admin.html:51
+msgid "Slides"
+msgstr "Slide-Slide"
+
 #: website/templates/base_drawer.html:52
 msgid "Navigate"
 msgstr "Navigasi"
@@ -65,6 +69,10 @@ msgstr "Navigasi"
 #: website/templates/base_drawer.html:60
 msgid "Website"
 msgstr "Situs"
+
+#: website/templates/base_drawer.html:67
+msgid "Contact Us"
+msgstr "Hubungi Kami"
 
 #: website/templates/website/editor-helptext.html:6
 msgid "Text Editor Documentation"
@@ -142,6 +150,3 @@ msgstr "Profil"
 #: website/templates/website/welcome.html:46
 msgid "PPDB"
 msgstr ""
-
-#~ msgid "Contact Us"
-#~ msgstr "Hubungi Kami"

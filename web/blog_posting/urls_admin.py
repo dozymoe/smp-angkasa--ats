@@ -1,5 +1,6 @@
 from django.urls import path
 #-
+from . import views
 from . import views_admin
 
 app_name = 'blog_posting'
@@ -11,7 +12,11 @@ urlpatterns = [
     path('<int:pk>/publish', views_admin.Publish.as_view(), name='Publish'),
     path('<int:pk>/unpublish', views_admin.Unpublish.as_view(),
         name='Unpublish'),
+
     path('<str:slug>.<str:format>', views_admin.Display.as_view(),
         name='Display'),
+    path('<str:slug>/image-<str:style>', views.serve_files, name='Image'),
+    path('<str:slug>/image', views.serve_files, name='Image'),
+
     path('', views_admin.List.as_view(), name='Index'),
 ]

@@ -8,12 +8,10 @@
 {% block content %}
 {% if object.image %}
   <div class="mdc-layout-grid__cell--span-12">
-    <a href="{{object.image.url}}" target="_blank">
-      <img src="{{object.image_lg.url}}"
-          srcset="{{object.get_html_attr_srcset}}"
-          sizes="{{object.get_html_attr_sizes}}"
-          class="img-responsive">
-    </a>
+    <img src="{{object.get_image_url}}"
+        srcset="{{object.get_html_attr_srcset}}"
+        sizes="{{object.get_html_attr_sizes}}"
+        class="img-responsive">
   </div>
 {% endif %}
 <div class="mdc-layout-grid__cell--span-12">
