@@ -2,12 +2,12 @@ from io import BytesIO
 import logging
 import os
 #-
-from background_task import background
 from django.apps import apps
 from django.conf import settings
 from django.core.files.base import ContentFile
 from frozen_django.main import generate_static_view
 from PIL import Image
+from uwsgi_tasks import task, TaskExecutor
 #-
 from blog_posting.models import BlogPosting
 from web_page.models import WebPage
@@ -15,7 +15,7 @@ from web_page.models import WebPage
 _logger = logging.getLogger()
 
 
-@background(schedule={'priority': 0})
+@task(executor=TaskExecutor.SPOOLER)
 def freeze_view(view_name, base_url, dest=None, **kwargs):
     generate_static_view(view_name, frozen_host=base_url, frozen_dest=dest,
             **kwargs)
@@ -41,7 +41,7 @@ def freeze_all_views():
                 format='html')
 
 
-@background(schedule={'priority': 3})
+@task(executor=TaskExecutor.SPOOLER)
 def create_thumbnail(obj_info, source_field, target_field, estimate_size):
     model = apps.get_model(obj_info[0], obj_info[1])
     obj = model.objects.get(pk=obj_info[2])

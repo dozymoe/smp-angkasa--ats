@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'background_task',
     'frozen_django',
     'mailer',
     'materialweb',
