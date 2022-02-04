@@ -15,11 +15,11 @@ from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 #-
 from misc import configuration
-from .configuration import config_adapter
+from misc.django_configuration import django_conf_adapter
 
 # Setup config
 _config = {} # pylint:disable=invalid-name
-configuration.load_files_from_shell(_config, adapter=config_adapter)
+configuration.load_files_from_shell(_config, adapter=django_conf_adapter)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 ROOT_DIR = Path(os.environ['ROOT_DIR'])
@@ -110,7 +110,8 @@ WSGI_APPLICATION = 'web.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': _config.get('database.engine', 'django.db.backends.sqlite3'),
+        'ENGINE': 'django.db.backends.' + _config.get('database.engine',
+            'sqlite3'),
         'NAME': _config.get('database.name', BASE_DIR/'db.sqlite3'),
         'HOST': _config.get('database.host'),
         'USER': _config.get('database.username'),
