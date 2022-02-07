@@ -1,4 +1,3 @@
 {
-    "allowed_hosts": ["www.smp-angkasa.test", "manage.smp-angkasa.test"],
-    "public_root": "public/web"
+    "allowed_hosts": ["smp-angkasa.dozy.moe", "manage-smp-angkasa.dozy.moe"]
 }

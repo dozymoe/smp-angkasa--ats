@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 #-
 from blog_posting.models import BlogPosting
+from my_slide.models import MySlide
 
 
 class Home(TemplateView):
@@ -11,6 +12,9 @@ class Home(TemplateView):
         context['blogposts'] = BlogPosting.objects\
                 .filter(published_at__isnull=False)\
                 .all()[:10]
+        context['slides'] = MySlide.objects\
+                .filter(location='front')\
+                .all()[:20]
         return context
 
 

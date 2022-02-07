@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-25 23:46+0700\n"
+"POT-Creation-Date: 2022-02-08 04:00+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,22 +131,22 @@ msgstr "Tentang sumber acuan tautan internal"
 msgid "Implicit hyperlink targets"
 msgstr "Tentang sumber acuan tautan implisit"
 
-#: website/templates/website/welcome.html:7
+#: website/templates/website/welcome.html:21
 msgid "Latest News"
 msgstr "Berita Terbaru"
 
-#: website/templates/website/welcome.html:20
+#: website/templates/website/welcome.html:34
 msgid "Posted on"
 msgstr "Diterbitkan"
 
-#: website/templates/website/welcome.html:24
+#: website/templates/website/welcome.html:38
 msgid "by"
 msgstr "oleh"
 
-#: website/templates/website/welcome.html:39
+#: website/templates/website/welcome.html:53
 msgid "Profile"
 msgstr "Profil"
 
-#: website/templates/website/welcome.html:46
+#: website/templates/website/welcome.html:60
 msgid "PPDB"
 msgstr ""

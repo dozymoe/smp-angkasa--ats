@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'thing_keyword',
     'website',
     'web_page',
+    'my_slide',
 
     'allauth',
     'allauth.account',
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
     'mailer',
     'materialweb',
     'modeltranslation',
+    'rest_framework',
     'rules',
 
     'django.contrib.admin',
@@ -232,6 +234,12 @@ SOCIALACCOUNT_PROVIDERS = {
 ## Background Tasks
 
 BACKGROUND_TASK_RUN_ASYNC = True
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'website.pagination.DjangoPagination',
+    'PAGE_SIZE': 15
+}
 
 
 ## Editor

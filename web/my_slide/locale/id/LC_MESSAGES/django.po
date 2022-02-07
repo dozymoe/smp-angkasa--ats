@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-08 04:00+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: my_slide/models.py:12
+msgid "Front Page"
+msgstr "Laman Muka"
+
+#: my_slide/models.py:16
+msgid "Location"
+msgstr "Lokasi"
+
+#: my_slide/models.py:18
+msgid "Description"
+msgstr "Deskripsi"
+
+#: my_slide/models.py:20
+msgid "Image"
+msgstr "Gambar"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:6
+msgid "Delete Slide"
+msgstr "Hapus Slide"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:8
+#: my_slide/templates/my_slide/myslide_create_form.html:6
+#: my_slide/templates/my_slide/myslide_list.html:6
+#: my_slide/templates/my_slide/myslide_list.html:11
+msgid "Slides"
+msgstr "Slide-Slide"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:17
+msgid "Do you really want to delete"
+msgstr "Apa benar mau dihapus"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:26
+msgid "Date Created"
+msgstr "Tanggal Dibikin"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:35
+#: my_slide/templates/my_slide/myslide_list.html:66
+msgid "Delete"
+msgstr "Hapus"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:45
+#: my_slide/templates/my_slide/myslide_list.html:83
+msgid "Home Page"
+msgstr "Laman Muka"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:59
+#: my_slide/templates/my_slide/myslide_create_form.html:94
+#: my_slide/templates/my_slide/myslide_list.html:106
+msgid "Index"
+msgstr "Katalog"
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:69
+#: my_slide/templates/my_slide/myslide_create_form.html:104
+#: my_slide/templates/my_slide/myslide_list.html:116
+msgid "Create"
+msgstr "Bikin"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:5
+#: my_slide/templates/my_slide/myslide_list.html:92
+msgid "Create Slide"
+msgstr "Bikin Slide"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:43
+msgid "Choose"
+msgstr "Pilih"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:53
+msgid "Description Preview"
+msgstr "Penampakan Deskripsi"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:55
+msgid "Preview"
+msgstr "Penampakan"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:60
+msgid "Editing Help"
+msgstr "Bantuan Sunting"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:70
+msgid "Submit"
+msgstr "Kirim"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:80
+msgid "Manage Articles"
+msgstr "Administrasi Artikel"
+
+#: my_slide/templates/my_slide/myslide_list.html:5
+msgid "Manage Slides"
+msgstr "Administrasi Slide"
+
+#: my_slide/templates/my_slide/myslide_list.html:16
+msgid "location"
+msgstr "Lokasi"
+
+#: my_slide/templates/my_slide/myslide_list.html:19
+msgid "Filename"
+msgstr "Nama Berkas"
+
+#: my_slide/templates/my_slide/myslide_list.html:22
+msgid "Operations"
+msgstr "Aksi-Aksi"
+
+#: my_slide/templates/my_slide/myslide_list.html:43
+msgid "Open Menu"
+msgstr "Buka Menu"
+
+#: my_slide/templates/my_slide/myslide_list.html:56
+msgid "Edit"
+msgstr "Ubah"

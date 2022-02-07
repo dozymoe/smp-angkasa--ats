@@ -1,7 +1,7 @@
 {
-    "engine": "django.db.backends.postgresql",
-    "host": "127.0.0.1",
-    "name": "smp_angkasa",
-    "username": "local",
-    "password": "local"
+    "engine": "postgresql",
+    "host": "db.fireh.net",
+    "name": "dozymoe_smp_web",
+    "username": "fireh",
+    "password": "wfbdWfowayxVrCTRzkEcVEnmxR49cWJW"
 }

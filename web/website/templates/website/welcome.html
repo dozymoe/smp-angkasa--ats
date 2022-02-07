@@ -4,6 +4,20 @@
 
 {% block content %}
 <section class="mdc-layout-grid__cell--span-12">
+  {% if slides %}
+    <div class="carousel"
+        data-flickity='{"lazyLoad":true, "autoPlay":true, "wrapAround":true}'>
+      {% for slide in slides %}
+        <div class="carousel-cell">
+          <img data-flickity-lazyload="{{slide.image.get_absolute_url}}"
+              srcset="{{slide.image.get_html_attr_srcset}}"
+              sizes="{{slide.image.get_html_attr_sizes}}"
+              alt="{{slide.description}}" class="carousel-cell-imagea" />
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   <h2>{% trans "Latest News" %}</h2>
   <ul class="front-blog-posts">
     {% for obj in blogposts %}

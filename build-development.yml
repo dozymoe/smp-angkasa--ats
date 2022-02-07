@@ -79,6 +79,10 @@ web:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
 
+  my_slide:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
   my_user:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
@@ -124,6 +128,7 @@ web:
         - "{_1}/web/pylint"
         - "{_1}/website/pylint"
         - "{_1}/web_page/pylint"
+        - "{_1}/my_slide/pylint"
         - lib-py/django-materialweb/pylint
         - lib-py/frozen-django/pylint
 
@@ -183,16 +188,6 @@ web:
       - etc/{{PROJECT_VARIANT}}/{_1}/*.json
       - etc/{{PROJECT_VARIANT}}/{_1}/uwsgi.ini
 
-  worker:
-    runit_sv:
-      options:
-        command: restart
-        target: "{{HOME}}/service/smp-{_1}-worker/"
-        wait_sec: 120
-        force: true
-      rule_in:
-        - "{_1}/runit_sv"
-
   build:
     shell:
       options:
@@ -207,12 +202,6 @@ web:
       rule_in:
         - "{_1}/css/webpack"
         - "{_1}/js/webpack"
-
-  beep:
-    shell:
-      options:
-        command: say build angkasa {_1} completed
-      rule_in: "{_1}/runit_sv"
 
 
 node_modules:

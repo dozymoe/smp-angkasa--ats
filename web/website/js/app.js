@@ -3,6 +3,7 @@ import { create_application, run
 //-
 import WebsiteInit from './initialize.js';
 //-
+import MyFile from './modules/my_file/components.js';
 import Website from './modules/website/components.js';
 
 
@@ -12,6 +13,7 @@ const initializations = [
 
 
 const components = [
+    ...MyFile,
     ...Website,
 ];
 

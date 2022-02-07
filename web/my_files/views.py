@@ -21,7 +21,7 @@ def serve_files(request, pk, style=None):
                     break
             else:
                 raise Http404
-            field = getattr(obj, 'image_' + style)
+            field = getattr(obj, f'image_{style}')
             if not field:
                 field = obj.databits
     else:

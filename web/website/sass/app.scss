@@ -10,5 +10,12 @@ $fa-font-path: "/assets/fonts";
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/brands";
 
+@import "flickity/css/flickity.css";
+.carousel-cell > img
+{
+    height: 50vh;
+    max-height: 400px;
+}
+
 @import "./reset";
 @import "./index";

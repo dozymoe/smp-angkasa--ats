@@ -5,6 +5,8 @@ django-dirtyfields
 django-honeypot
 django-mailer
 django-modeltranslation
+djangorestframework
+django-rest-framework-rules
 django-simple-captcha
 django-treebeard
 docutils

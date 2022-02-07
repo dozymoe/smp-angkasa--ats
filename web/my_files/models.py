@@ -29,7 +29,7 @@ class MyFile(DirtyFieldsMixin, RulesModel):
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL,
             on_delete=models.PROTECT, db_index=True,
-            related_name='created_file')
+            related_name='created_files')
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     modified_at = models.DateTimeField(auto_now=True, editable=False)
     deleted_at = models.DateTimeField(db_index=True, null=True, blank=True)
@@ -83,7 +83,7 @@ class MyFile(DirtyFieldsMixin, RulesModel):
     def get_html_attr_srcset(self):
         attribute_value = []
         for name, size, _ in settings.IMAGE_SIZES:
-            imgfield = getattr(self, 'image_%s' % name)
+            imgfield = getattr(self, f'image_{name}')
             if not imgfield:
                 continue
             attribute_value.append('%s %sw' % (
@@ -94,7 +94,7 @@ class MyFile(DirtyFieldsMixin, RulesModel):
     def get_html_attr_sizes(self):
         attribute_value = []
         for name, size, viewport_width in settings.IMAGE_SIZES:
-            imgfield = getattr(self, 'image_%s' % name)
+            imgfield = getattr(self, f'image_{name}')
             if not imgfield:
                 continue
             if viewport_width:

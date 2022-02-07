@@ -1,3 +1,4 @@
+import 'flickity';
 import { MDCBanner } from '@material/banner';
 import { MDCCheckbox } from '@material/checkbox';
 import { MDCDataTable } from '@material/data-table';

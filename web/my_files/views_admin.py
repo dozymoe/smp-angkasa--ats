@@ -4,10 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 #from django.utils import timezone
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, DeleteView
-#from django.views.generic import CreateView, DeleteView, DetailView, ListView
-from django.views.generic import ListView
-#from django.views.generic import UpdateView
+from django.views.generic import CreateView, DeleteView, ListView
 from rules.contrib.views import AutoPermissionRequiredMixin
 #-
 from .models import MyFile

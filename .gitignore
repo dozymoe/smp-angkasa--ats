@@ -23,6 +23,12 @@
 *.pyc
 
 
+## vim
+
+*.swo
+*.swp
+
+
 ## waf
 
 /.BUILD/

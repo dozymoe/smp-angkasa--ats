@@ -24,7 +24,6 @@ module.exports = (env, options) =>
         },
         plugins: [
             new LodashModuleReplacementPlugin(),
-            new webpack.IgnorePlugin(/^\.\/locale$/),
             new webpack.ProvidePlugin({
                 $: 'jquery',
                 jQuery: 'jquery',
