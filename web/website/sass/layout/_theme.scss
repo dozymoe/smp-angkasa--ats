@@ -1,64 +1,19 @@
-@use "@material/theme";
-@use "@material/shape";
-@import "@material/typography/mdc-typography";
-//-
-@import "../variables";
-
 .appbar-logo
 {
-    display: none;
-    vertical-align: middle;
-    margin-right: 0.5em;
+    //vertical-align: middle;
+    margin: 1em;
 }
 
-.mdc-drawer__title
+body > footer
 {
-    a
-    {
-        text-decoration: none;
-    }
-}
-
-.mdc-drawer__content .mdc-list-item__ripple + .mdc-list-item__text
-{
-    margin-left: 2rem;
-}
-
-.mdc-list-item__graphic
-{
-    margin-right: 0;
-    width: 2rem;
-}
-
-#page-wrapper > footer
-{
-    @include theme.property(background-color, 'primary');
-    @include theme.property(color, 'on-primary');
+    background-color: $ui-04;
+    color: $text-04;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
 
     a
     {
-        @include theme.property(color, 'on-primary');
-    }
-
-    .contact-info
-    {
-        display: block;
-        padding: 0.5em 2px;
-        text-decoration: none;
-
-        &:active,
-        &:focus,
-        &:hover
-        {
-            background-color: $primary-active;
-        }
-    }
-}
-
-@media (min-width: 40em)
-{
-    .appbar-logo
-    {
-        display: inline;
+        color: $text-04;
     }
 }

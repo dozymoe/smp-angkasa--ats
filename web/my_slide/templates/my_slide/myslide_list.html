@@ -1,119 +1,73 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'my_slide/base-admin.html' %}
 {% load i18n %}
-{% load materialweb website %}
+{% load carbondesign website %}
 
 {% block head_title %}{% trans "Manage Slides" %}{% endblock %}
-{% block drawer_title %}{% trans "Slides" %}{% endblock %}
 
 
 {% block content %}
-<div class="mdc-layout-grid__cell--span-12">
-  {% trans "Slides" as label %}
-  {% Table row_selectable=True label=label class="w-100" %}
-    {% Table_Head %}
-      {% Table_Head_Row %}
-        {% Table_Head_Col %}
-          {% trans "location" %}
-        {% endTable_Head_Col %}
-        {% Table_Head_Col %}
-          {% trans "Filename" %}
-        {% endTable_Head_Col %}
+  <div>
+    {% iif is_paginated pager None as pager %}
+    {% Table %}
+      {% Slot 'title' %}
+        {% trans "Slides" %}
+      {% endSlot %}
 
-        {% trans "Operations" as label %}
-        {% Table_Head_Col class="autofit" %}
-          <span aria-label="{{label}}"></span>
-        {% endTable_Head_Col %}
-      {% endTable_Head_Row %}
-    {% endTable_Head %}
+      {% Slot 'toolbar' %}
+        {% url 'MySlide:Create' as url %}
+        {% Button tag="a" href=url icon_size=32 %}
+          {% Slot 'icon' %}
+            <path d="M17 15L17 7 15 7 15 15 7 15 7 17 15 17 15 25 17 25 17 17 25 17 25 15 17 15z"></path>
+          {% endSlot %}
+  
+          {% trans "Create Slide" %}
+        {% endButton %}
+      {% endSlot %}
 
-    {% Table_Body %}
+      {% Slot 'head' %}
+        <tr>
+          {% Th %}
+            {% trans "location" %}
+          {% endTh %}
+          {% Th %}
+            {% trans "Filename" %}
+          {% endTh %}
+          {% Th mode="menu" %}{% endTh %}
+        </tr>
+      {% endSlot %}
+  
       {% for obj in object_list %}
-        {% Table_Row %}
-          {% Table_Col %}
+        <tr>
+          {% Td %}
             {{ obj.location }}
-          {% endTable_Col %}
+          {% endTd %}
 
-          {% Table_Col %}
+          {% Td %}
             {{ obj.image.databits.name }}
-          {% endTable_Col %}
+          {% endTd %}
 
-          {% Table_Col %}
-            {% html_id 'menuops-' obj.pk as menu_id %}
-            {% Menu_Anchor %}
-              {% trans "Open Menu" as label %}
-              {% IconButton type="button" label=label data-provide-menu=menu_id aria-has-popup="menu" class="material-icons" %}
-                more_vert
-              {% endIconButton %}
+          {% Td mode="menu" %}
+            {% comment %}
+            {% url 'MySlide:Edit' obj.pk as url %}
+            {% TdOvButton tag="a" href=url %}
+              {% Slot 'icon' %}
+                <path d="M1 13H15V14H1zM12.7 4.5c.4-.4.4-1 0-1.4 0 0 0 0 0 0l-1.8-1.8c-.4-.4-1-.4-1.4 0 0 0 0 0 0 0L2 8.8V12h3.2L12.7 4.5zM10.2 2L12 3.8l-1.5 1.5L8.7 3.5 10.2 2zM3 11V9.2l5-5L9.8 6l-5 5H3z"></path>
+              {% endSlot %}
+              {% trans "Edit" %}
+            {% endTdOvButton %}
+            {% endcomment %}
 
-              {% Menu id=menu_id %}
-                {% List tag="nav" %}
-                  {% url 'MySlide:Edit' obj.pk as url %}
-                  {% List_Item tag="a" href=url tabindex="1" %}
-                    {% List_Image class="material-icons" %}
-                      edit
-                    {% endList_Image %}
-                    {% List_Text %}
-                      {% trans "Edit" %}
-                    {% endList_Text %}
-                  {% endList_Item %}
-
-                  {% url 'MySlide:Destroy' obj.pk as url %}
-                  {% List_Item tag="a" href=url tabindex="2" %}
-                    {% List_Image class="material-icons" %}
-                      delete
-                    {% endList_Image %}
-                    {% List_Text %}
-                      {% trans "Delete" %}
-                    {% endList_Text %}
-                  {% endList_Item %}
-                {% endList %}
-              {% endMenu %}
-            {% endMenu_Anchor %}
-          {% endTable_Col %}
-        {% endTable_Row %}
+            {% url 'MySlide:Destroy' obj.pk as url %}
+            {% TdOvButton tag="a" href=url %}
+              {% Slot 'icon' %}
+                <path d="M6 6H7V12H6zM9 6H10V12H9z"></path>
+                <path d="M2 3v1h1v10c0 .6.4 1 1 1h8c.6 0 1-.4 1-1V4h1V3H2zM4 14V4h8v10H4zM6 1H10V2H6z"></path>
+              {% endSlot %}
+              {% trans "Delete" %}
+            {% endTdOvButton %}
+          {% endTd %}
+        </tr>
       {% endfor %}
-    {% endTable_Body %}
-  {% endTable %}
-</div>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'Home' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block topbar_right %}
-  {% url 'MySlide:Create' as url %}
-  {% trans "Create Slide" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    add
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'MySlide:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'MySlide:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
+    {% endTable %}
+  </div>
 {% endblock %}

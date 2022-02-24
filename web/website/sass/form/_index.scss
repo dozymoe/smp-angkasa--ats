@@ -1,13 +1,8 @@
-@use "sass:string";
-@use "@material/theme";
-
 .form-errors
 {
     font-size: 0.8em;
     margin-left: 1em;
     padding-left: 0;
-
-    @include theme.property(color, 'error');
 }
 
 .form-group
@@ -15,7 +10,7 @@
     margin: 1rem 0;
 }
 
-.mdc-text-field__input
+.bx--text-area
 {
-    font-family: string.unquote('Roboto Mono, monospace');
+    font-family: monospace;
 }

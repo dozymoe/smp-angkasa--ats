@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-08 04:00+0700\n"
+"POT-Creation-Date: 2022-02-24 15:20+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,136 +17,128 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: website/templates/404.html:4 website/templates/404.html:12
+#: website/templates/404.html:4 website/templates/404.html:8
 msgid "Not Found"
 msgstr "Tidak Ditemukan"
 
-#: website/templates/500.html:4 website/templates/500.html:12
+#: website/templates/500.html:4 website/templates/500.html:9
 msgid "Server Error"
 msgstr "Kesalahan Internal"
 
-#: website/templates/base-admin.html:7 website/templates/base.html:33
-#: website/templates/base_drawer-admin.html:7
-#: website/templates/base_drawer.html:11
-#: website/templates/website/editor-helptext.html:299
-msgid "Home Page"
-msgstr "Laman Muka"
-
-#: website/templates/base-admin.html:19
-#: website/templates/base_drawer-admin.html:64
-msgid "Sign Out"
-msgstr "Keluar"
-
-#: website/templates/base-admin.html:25
-#: website/templates/base_drawer-admin.html:73
-msgid "Sign In"
-msgstr "Masuk"
-
-#: website/templates/base.html:77 website/templates/base_drawer.html:96
-msgid "Close"
-msgstr "Tutup"
-
-#: website/templates/base_drawer-admin.html:21
+#: website/templates/base-admin.html:9
 msgid "Articles"
 msgstr "Artikel-Artikel"
 
-#: website/templates/base_drawer-admin.html:31
+#: website/templates/base-admin.html:14
 msgid "Pages"
 msgstr "Laman-Laman"
 
-#: website/templates/base_drawer-admin.html:41
+#: website/templates/base-admin.html:19
 msgid "Files"
 msgstr "Berkas-Berkas"
 
-#: website/templates/base_drawer-admin.html:51
+#: website/templates/base-admin.html:24
 msgid "Slides"
 msgstr "Slide-Slide"
 
-#: website/templates/base_drawer.html:52
-msgid "Navigate"
-msgstr "Navigasi"
+#: website/templates/base-admin.html:35
+msgid "Sign Out"
+msgstr "Keluar"
 
-#: website/templates/base_drawer.html:60
-msgid "Website"
-msgstr "Situs"
+#: website/templates/base-admin.html:40
+msgid "Sign In"
+msgstr "Masuk"
 
-#: website/templates/base_drawer.html:67
-msgid "Contact Us"
-msgstr "Hubungi Kami"
+#: website/templates/base-anon.html:8
+msgid "Profile"
+msgstr "Profil"
+
+#: website/templates/base-anon.html:11
+msgid "PPDB"
+msgstr ""
 
 #: website/templates/website/editor-helptext.html:6
 msgid "Text Editor Documentation"
 msgstr "Dokumentasi Penyunting Teks"
 
 #: website/templates/website/editor-helptext.html:12
-#: website/templates/website/editor-helptext.html:23
 msgid "Headings"
 msgstr "Tentang Heading"
 
-#: website/templates/website/editor-helptext.html:28
+#: website/templates/website/editor-helptext.html:26
 msgid "Heading Size"
 msgstr "Tingkatan Heading"
 
-#: website/templates/website/editor-helptext.html:32
+#: website/templates/website/editor-helptext.html:27
 msgid "Formatting"
 msgstr "Penampilan"
 
-#: website/templates/website/editor-helptext.html:90
+#: website/templates/website/editor-helptext.html:71
 msgid "Markup"
 msgstr "Markah"
 
-#: website/templates/website/editor-helptext.html:91
+#: website/templates/website/editor-helptext.html:72
 msgid "Inline markup"
 msgstr "Markah dalam kalimat"
 
-#: website/templates/website/editor-helptext.html:114
+#: website/templates/website/editor-helptext.html:93
 msgid "Bulleted list"
 msgstr "Daftar"
 
-#: website/templates/website/editor-helptext.html:137
+#: website/templates/website/editor-helptext.html:116
 msgid "Numbered list"
 msgstr "Daftar terurut"
 
-#: website/templates/website/editor-helptext.html:159
+#: website/templates/website/editor-helptext.html:138
 msgid "Nested list"
 msgstr "Anakan daftar"
 
-#: website/templates/website/editor-helptext.html:181
+#: website/templates/website/editor-helptext.html:160
 msgid "Hyperlinks"
 msgstr "Tentang tautan"
 
-#: website/templates/website/editor-helptext.html:182
+#: website/templates/website/editor-helptext.html:161
 msgid "Hyperlink references"
 msgstr "Tentang acuan tautan"
 
-#: website/templates/website/editor-helptext.html:200
+#: website/templates/website/editor-helptext.html:179
 msgid "External hyperlink targets"
 msgstr "Tentang sumber acuan tautan eksternal"
 
-#: website/templates/website/editor-helptext.html:237
+#: website/templates/website/editor-helptext.html:216
 msgid "Internal hyperlink targets"
 msgstr "Tentang sumber acuan tautan internal"
 
-#: website/templates/website/editor-helptext.html:282
+#: website/templates/website/editor-helptext.html:261
 msgid "Implicit hyperlink targets"
 msgstr "Tentang sumber acuan tautan implisit"
 
-#: website/templates/website/welcome.html:21
+#: website/templates/website/welcome.html:6
 msgid "Latest News"
 msgstr "Berita Terbaru"
 
-#: website/templates/website/welcome.html:34
+#: website/templates/website/welcome.html:13
+msgid "Read more"
+msgstr ""
+
+#: website/templates/website/welcome.html:18
 msgid "Posted on"
 msgstr "Diterbitkan"
 
-#: website/templates/website/welcome.html:38
-msgid "by"
-msgstr "oleh"
+#~ msgid "Home Page"
+#~ msgstr "Laman Muka"
 
-#: website/templates/website/welcome.html:53
-msgid "Profile"
-msgstr "Profil"
+#~ msgid "Close"
+#~ msgstr "Tutup"
 
-#: website/templates/website/welcome.html:60
-msgid "PPDB"
-msgstr ""
+#~ msgid "Navigate"
+#~ msgstr "Navigasi"
+
+#~ msgid "Website"
+#~ msgstr "Situs"
+
+#~ msgid "Contact Us"
+#~ msgstr "Hubungi Kami"
+
+#~ msgid "by"
+#~ msgstr "oleh"

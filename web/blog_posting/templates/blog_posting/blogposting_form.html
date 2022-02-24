@@ -1,98 +1,69 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'blog_posting/base-admin-object.html' %}
 {% load i18n %}
-{% load materialweb %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Update Article" %}{% endblock %}
-{% block drawer_title %}{% trans "Articles" %}{% endblock %}
 
 
 {% block content %}
-<form action="" method="post" enctype="multipart/form-data"
-    class="mdc-layout-grid__cell--span-12">
+<form action="" method="post" enctype="multipart/form-data">
   {% csrf_token %}
 
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextField form.title mode='outlined' autofocus="true" class="d-block" %}
-    </div>
+  <div class="form-group">
+    {% TextInput form.title autofocus="true" %}
+  </div>
 
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextField form.slug mode='outlined' class="d-block" %}
-    </div>
+  <div class="form-group">
+    {% TextInput form.slug %}
+  </div>
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {% TextArea form.body mode='outlined' class="d-block" %}
+  <div class="form-group">
+    {% TextArea form.body %}
 
-      {% trans "Body Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.body.id_for_label %}
-        {% trans "Preview" %}
-      {% endButton %}
+    {% trans "Body Preview" as title %}
+    {% Button type="button" title=title data-provide-rest-preview=form.body.id_for_label %}
+      {% trans "Preview" %}
+    {% endButton %}
 
-      {% url 'EditorHelpText' 'html' as url %}
-      {% Button tag="a" href=url target="_blank" %}
-        {% trans "Editing Help" %}
-      {% endButton %}
-    </div>
+    {% url 'EditorHelpText' 'html' as url %}
+    {% Button tag="a" href=url target="_blank" %}
+      {% trans "Editing Help" %}
+    {% endButton %}
+  </div>
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {% TextArea form.summary mode='outlined' rows="4" class="text-editor d-block" %}
+  <div class="form-group">
+    {% TextArea form.summary mode='outlined' rows="4" class="text-editor d-block" %}
 
-      {% trans "Summary Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.summary.id_for_label %}
-        {% trans "Preview" %}
-      {% endButton %}
+    {% trans "Summary Preview" as title %}
+    {% Button type="button" title=title data-provide-rest-preview=form.summary.id_for_label %}
+      {% trans "Preview" %}
+    {% endButton %}
 
-      {% url 'EditorHelpText' 'html' as url %}
-      {% Button tag="a" href=url target="_blank" %}
-        {% trans "Editing Help" %}
-      {% endButton %}
-    </div>
+    {% url 'EditorHelpText' 'html' as url %}
+    {% Button tag="a" href=url target="_blank" %}
+      {% trans "Editing Help" %}
+    {% endButton %}
+  </div>
 
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextField type="file" form.image mode="outlined" class="d-block" %}
-    </div>
+  <div class="form-group">
+    {% TextInput type="file" form.image %}
+  </div>
 
-    {% if form.errors %}
-      <div class="mdc-layout-grid__cell--span-12">{{form.errors}}</div>
-    {% endif %}
+  {% if form.errors %}
+    <div class="form-group">{{form.errors}}</div>
+  {% endif %}
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {% Button type="submit" mode="raised" %}
-        {% trans "Update" %}
-      {% endButton %}
-    </div>
+  <div class="form-group">
+    {% Button type="submit" %}
+      {% trans "Update" %}
+    {% endButton %}
   </div>
 </form>
 {% endblock %}
 
 
-{% block topbar_left %}
-  {% url 'BlogPosting:Index' as url %}
-  {% trans "Manage Articles" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'BlogPosting:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'BlogPosting:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
+{% block jsmodal_1 %}
+  {% Modal id="modal-rest-preview" %}
+    {% Slot 'heading' %}{% trans "Preview" %}{% endSlot %}
+  {% endModal %}
 {% endblock %}

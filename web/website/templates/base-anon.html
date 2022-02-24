@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load carbondesign website web_page %}
+
+{% block navigation_site %}
+  {% UiNavSection %}
+    {% webpage_url 2 as url %}
+    {% UiNavItem href=url %}{% trans "Profile" %}{% endUiNavItem %}
+
+    {% webpage_url 1 as url %}
+    {% UiNavItem href=url %}{% trans "PPDB" %}{% endUiNavItem %}
+  {% endUiNavSection %}
+{% endblock %}
+
+
+{% block footer %}
+  {% include "website/footer.html" %}
+{% endblock %}

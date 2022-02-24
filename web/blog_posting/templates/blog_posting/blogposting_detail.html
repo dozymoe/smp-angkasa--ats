@@ -1,45 +1,20 @@
-{% extends 'base_drawer.html' %}
+{% extends 'base.html' %}
 {% load i18n %}
-{% load materialweb website %}
+{% load carbondesign website %}
 
 {% block head_title %}{{ object.title }}{% endblock %}
 
 
 {% block content %}
-{% if object.image %}
-  <div class="mdc-layout-grid__cell--span-12">
-    <img src="{{object.get_image_url}}"
-        srcset="{{object.get_html_attr_srcset}}"
-        sizes="{{object.get_html_attr_sizes}}"
-        class="img-responsive">
+  {% if object.image %}
+    <div>
+      <img src="{{object.get_image_url}}"
+          srcset="{{object.get_html_attr_srcset}}"
+          sizes="{{object.get_html_attr_sizes}}"
+          class="img-responsive">
+    </div>
+  {% endif %}
+  <div>
+    {{ object.body | restify }}
   </div>
-{% endif %}
-<div class="mdc-layout-grid__cell--span-12">
-  {{ object.body | restify }}
-</div>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'Home' 'html' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'ProfileMission' 'html' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Text %}
-      {% trans "Profile" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% List_Item tag="a" href="/ppdb.html" tabindex="2" %}
-    {% List_Text %}
-      {% trans "PPDB" %}
-    {% endList_Text %}
-  {% endList_Item %}
 {% endblock %}

@@ -2,9 +2,9 @@ lib-py:
   options:
     pylint_config_file: etc/pylint.rc
 
-  django-materialweb:
+  django-carbondesign:
     pylint:
-      raw_file_in: "{_1}/{_2}/materialweb/**/*.py"
+      raw_file_in: "{_1}/{_2}/carbondesign/**/*.py"
 
   frozen-django:
     pylint:
@@ -31,22 +31,53 @@ web:
     webpack_work_dir: "{_1}/"
 
   css:
-    webpack:
-      options:
-        config_file: "{_1}/webpack-{_2}.config.js"
-        mode: production
-      rule_in:
-        - docutils/cp
-        - pygmentize/shell
-      raw_depend_in:
-        - package-{{PROJECT_VARIANT}}.json
-        - "{_1}/webpack-{_2}.config.js"
-        - "{_1}/website/sass/**/*.scss"
-        - "{_1}/blog_posting/sass/**/*.scss"
-        - lib/react-materialweb/sass/**/*.scss
-      raw_extra_out:
-        - var/{_1}/webpack-{_2}.meta.json
-        - "{_1}/static/css/main.css"
+    sass:
+      shell:
+        options:
+          command: >
+            node_modules/sass/sass.js -Inode_modules
+            {_1}/website/sass/app.scss
+            tmp/{_1}-index-compiled.css
+        rule_in:
+          - docutils/cp
+          - pygmentize/shell
+        raw_depend_in:
+          - package-{{PROJECT_VARIANT}}.json
+          - "{_1}/website/sass/**/*.scss"
+          - "{_1}/blog_posting/sass/**/*.scss"
+        raw_extra_out: tmp/{_1}-index-compiled.css
+
+    postcss:
+      shell:
+        options:
+          command: >
+            node_modules/postcss-cli/index.js --use autoprefixer -m
+            -b 'last 10 version'
+            tmp/{_1}-index-compiled.css
+            -o tmp/{_1}-index-prefixed.css
+        rule_in: "{_1}/{_2}/sass/shell"
+        raw_extra_out: tmp/{_1}-index-prefixed.css
+
+    map:
+      cp:
+        rule_in: "{_1}/{_2}/postcss/shell"
+        raw_file_in: tmp/{_1}-index-prefixed.css.map
+        raw_file_out: "{_1}/static/css/main.css.map"
+
+    cp:
+      rule_in: "{_1}/{_2}/postcss/shell"
+      raw_file_in: tmp/{_1}-index-prefixed.css
+      raw_file_out: "{_1}/static/css/main.css"
+
+    minify:
+      shell:
+        options:
+          command: >
+            node_modules/csso-cli/bin/csso
+            -i tmp/{_1}-index-prefixed.css
+            -o {_1}/static/css/main.min.css
+        rule_in: "{_1}/{_2}/postcss/shell"
+        raw_extra_out: "{_1}/static/css/main.min.css"
 
   js:
     webpack:
@@ -57,12 +88,11 @@ web:
         - package-{{PROJECT_VARIANT}}.json
         - "{_1}/webpack-{_2}.config.js"
         - "{_1}/misc/**/*.js"
+        - "{_1}/my_slide/js/**/*.js"
         - "{_1}/website/js/**/*.js"
         - "{_1}/website/js/**/*.jsx"
-        - lib/fireh_react/**/*.js
-        - lib/fireh_react/**/*.jsx
-        - lib/react-materialweb/js/**/*.js
-        - lib/react-materialweb/js/**/*.jsx
+        - lib/fireh-mithril/**/*.js
+        - lib-py/django-carbondesign/carbondesign/mithril-js/**/*.js
       raw_extra_out:
         - var/{_1}/webpack-{_2}.meta.json
         - "{_1}/static/js/main.js"
@@ -109,7 +139,7 @@ web:
       options:
         command: ./run django-manage --project={_1} collectstatic --no-input
       rule_in:
-        - "{_1}/css/webpack"
+        - "{_1}/css/minify/shell"
         - "{_1}/js/webpack"
       raw_depend_in:
         - python_modules/django/contrib/admin/static/**/*
@@ -129,7 +159,7 @@ web:
         - "{_1}/website/pylint"
         - "{_1}/web_page/pylint"
         - "{_1}/my_slide/pylint"
-        - lib-py/django-materialweb/pylint
+        - lib-py/django-carbondesign/pylint
         - lib-py/frozen-django/pylint
 
   check_migration:
@@ -147,20 +177,31 @@ web:
         - "{_1}/check_migration/shell"
 
 
-  makemessages:
+  py_makemessages:
     shell:
       options:
-        command: ./run django-manage --project={_1} {_2} --symlinks -l id
+        command: ./run django-manage --project={_1} makemessages --symlinks -l id
       rule_in:
         - "{_1}/unit_test/shell"
       raw_depend_in:
         - "{_1}/*/templates/**/*.html"
 
+  js_makemessages:
+    shell:
+      options:
+        command: ./run django-manage --project={_1} makemessages --symlinks -d djangojs -l id
+      rule_in:
+        - "{_1}/js/webpack"
+      raw_depend_in:
+        - var/{_1}/webpack-js.meta.json
+
   prunemessages:
     shell:
       options:
         command: ./run django-manage --project={_1} prune_locale
-      rule_in: "{_1}/makemessages/shell"
+      rule_in:
+        -  "{_1}/js_makemessages/shell"
+        -  "{_1}/py_makemessages/shell"
 
   compilemessages:
     shell:
@@ -171,6 +212,17 @@ web:
       raw_depend_in:
         - "{_1}/**/*.po"
 
+  js_messages:
+    shell:
+      options:
+        command: ./run django-manage compilejsi18n
+      rule_in:
+        - "{_1}/prunemessages/shell"
+      raw_depend_in:
+        - "{_1}/{_1}/settings*.py"
+      raw_extra_out:
+        - public/{_1}/assets/jsi18n/en/djangojs.js
+
 
   runit_sv:
     options:
@@ -180,7 +232,6 @@ web:
       force: true
     rule_in:
       - "{_1}/compilemessages/shell"
-      - "{_1}/css/webpack"
       - "{_1}/js/webpack"
     raw_depend_in:
       - etc/runner-{{PROJECT_VARIANT}}.json
@@ -200,7 +251,6 @@ web:
       options:
         command: ./run django-manage --project={_1} {_2}
       rule_in:
-        - "{_1}/css/webpack"
         - "{_1}/js/webpack"
 
 
@@ -211,21 +261,3 @@ node_modules:
         raw_file_in: "{_1}/@fortawesome/{_2}-free/webfonts/*"
         raw_file_out:
           - web/static/fonts/
-
-  material-design-icons:
-    cp:
-      raw_file_in: "{_1}/{_2}/iconfont/MaterialIcons-Regular.*"
-      raw_file_out:
-        - web/static/fonts/
-
-  typeface-roboto:
-    cp:
-      raw_file_in: "{_1}/{_2}/files/*"
-      raw_file_out:
-        - web/static/fonts/
-
-  typeface-roboto-mono:
-    cp:
-      raw_file_in: "{_1}/{_2}/files/*"
-      raw_file_out:
-        - web/static/fonts/

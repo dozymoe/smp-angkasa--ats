@@ -1,92 +1,36 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'blog_posting/base-admin-object.html' %}
 {% load i18n %}
-{% load materialweb website %}
+{% load carbondesign website %}
 
 {% block head_title %}
   {% trans "Unpublish Article" %}
 {% endblock %}
-{% block drawer_title %}{% trans "Articles" %}{% endblock %}
 
 
 {% block content %}
-<form action="" method="post" class="mdc-layout-grid__cell--span-12">
+<form action="" method="post">
   {% csrf_token %}
 
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-12">
-      {% trans "Do you really want to unpublish" %}:
-      {{ object.title }}?
-    </div>
+  <div class="form-group">
+    {% trans "Do you really want to unpublish" %}: {{ object.title }}?
+  </div>
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {{ object.summary | restify }}
-    </div>
+  <div class="form-group">
+    {{ object.summary | restify }}
+  </div>
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {% trans "Date Created" %}: {{ object.created_at | date }}
-    </div>
+  <div class="form-group">
+    {% trans "Date Created" %}: {{ object.created_at | date }}
+  </div>
 
-    {% if form.errors %}
-      <div class="mdc-layout-grid__cell--span-12">{{form.errors}}</div>
-    {% endif %}
+  {% if form.errors %}
+    <div class="form-group">{{form.errors}}</div>
+  {% endif %}
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {% Button type="submit" mode="raised" %}
-        {% trans "Unpublish" %}
-      {% endButton %}
-    </div>
+  <div class="form-group">
+    {% Button type="submit" %}
+      {% trans "Unpublish" %}
+    {% endButton %}
   </div>
 </form>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'Home' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'BlogPosting:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'BlogPosting:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="2" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'BlogPosting:Update' object.pk as url %}
-  {% List_Item tag="a" href=url tabindex="3" %}
-    {% List_Image class="material-icons" %}
-      edit
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Edit" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'BlogPosting:Destroy' object.pk as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      delete
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Delete" %}
-    {% endList_Text %}
-  {% endList_Item %}
 {% endblock %}

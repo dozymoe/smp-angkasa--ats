@@ -1,21 +1,11 @@
-{% extends "base_drawer-admin.html" %}
+{% extends "base-admin.html" %}
 {% load i18n %}
-{% load materialweb %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
 
-{% block topbar_left %}
-  {% url 'account_login' as url %}
-  {% trans "Sign In" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %} 
-
-
 {% block content %}
-<div class="mdc-layout-grid__cell--span-12">
   {% if user.emailaddress_set.all %}
     <p>
       {% blocktrans %}
@@ -50,13 +40,13 @@
         {% endfor %}
 
         <div class="form-field buttonHolder">
-          {% Button type="submit" mode="raised" class="secondaryAction" name="action_primary" %}
+          {% Button type="submit" class="secondaryAction" name="action_primary" %}
             {% trans 'Make Primary' %}
           {% endButton %}
-          {% Button type="submit" mode="raised" class="secondaryAction" name="action_send" %}
+          {% Button type="submit" class="secondaryAction" name="action_send" %}
             {% trans 'Re-send Verification' %}
           {% endButton %}
-          {% Button type="submit" mode="raised" class="primaryAction" name="action_remove" %}
+          {% Button type="submit" class="primaryAction" name="action_remove" %}
             {% trans 'Remove' %}
           {% endButton %}
         </div>
@@ -93,7 +83,6 @@
       {% endButton %}
     </form>
   {% endif %}
-</div>
 {% endblock %}
 
 

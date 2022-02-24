@@ -1,88 +1,33 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'web_page/base-admin-object.html' %}
 {% load i18n %}
-{% load materialweb website %}
+{% load carbondesign website %}
 
 {% block head_title %}
   {% trans "Delete Page" %}
 {% endblock %}
-{% block drawer_title %}{% trans "Pages" %}{% endblock %}
 
 
 {% block content %}
-<form action="" method="post" class="mdc-layout-grid__cell--span-12">
-  {% csrf_token %}
-
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-12">
+  <form action="" method="post">
+    {% csrf_token %}
+  
+    <div class="form-group">
       {% trans "Do you really want to delete" %}:
       {{ object.title }}?
     </div>
 
-    <div class="mdc-layout-grid__cell--span-12">
+    <div class="form-group">
       {% trans "Date Created" %}: {{ object.created_at | date }}
     </div>
 
     {% if form.errors %}
-      <div class="mdc-layout-grid__cell--span-12">{{form.errors}}</div>
+      <div class="form-group">{{form.errors}}</div>
     {% endif %}
 
-    <div class="mdc-layout-grid__cell--span-12">
+    <div class="form-group">
       {% Button type="submit" mode="raised" %}
         {% trans "Delete" %}
       {% endButton %}
     </div>
-  </div>
-</form>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'Home' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'WebPage:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'WebPage:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="2" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'WebPage:Update' object.pk as url %}
-  {% List_Item tag="a" href=url tabindex="3" %}
-    {% List_Image class="material-icons" %}
-      edit
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Edit" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'WebPage:Destroy' object.pk as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      delete
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Delete" %}
-    {% endList_Text %}
-  {% endList_Item %}
+  </form>
 {% endblock %}

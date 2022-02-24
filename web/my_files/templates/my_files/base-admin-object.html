@@ -1,0 +1,20 @@
+{% extends 'base-admin.html' %}
+{% load i18n %}
+{% load carbondesign %}
+
+{% block navigation_app %}
+  {% url 'MyFile:Index' as url %}
+  {% UiNavItem href=url %}
+    {% trans "Index" %}
+  {% endUiNavItem %}
+
+  {% url 'MyFile:Create' as url %}
+  {% UiNavItem href=url %}
+    {% trans "Create" %}
+  {% endUiNavItem %}
+
+  {% url 'MyFile:Destroy' object.pk as url %}
+  {% UiNavItem href=url %}
+    {% trans "Delete" %}
+  {% endUiNavItem %}
+{% endblock %}

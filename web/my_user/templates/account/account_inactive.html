@@ -1,21 +1,10 @@
-{% extends "base_drawer-admin.html" %}
+{% extends "base-admin.html" %}
 {% load i18n %}
-{% load materialweb %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
 
-{% block topbar_left %}
-  {% url 'account_login' as url %}
-  {% trans "Sign In" as url %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %} 
-
-
 {% block content %}
-<div class="mdc-layout-grid__cell--span-12">
   <p>{% trans "This account is inactive." %}</p>
-</div>
 {% endblock %}

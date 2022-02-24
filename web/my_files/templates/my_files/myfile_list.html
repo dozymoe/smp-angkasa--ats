@@ -1,15 +1,14 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'my_files/base-admin.html' %}
 {% load i18n %}
-{% load materialweb website %}
+{% load carbondesign website %}
 
 {% block head_title %}{% trans "Manage Files" %}{% endblock %}
-{% block drawer_title %}{% trans "Files" %}{% endblock %}
 
 
 {% block content %}
-<div class="mdc-layout-grid__cell--span-12">
-  <p>{% trans "Embedding files into your articles. Example:" %}</p>
-  <pre><code>
+  <div>
+    <p>{% trans "Embedding files into your articles. Example:" %}</p>
+    <pre><code>
 Previous paragraph
 
 .. webfile:: 4
@@ -18,129 +17,71 @@ Previous paragraph
    :width: 200
 
 Next paragraph
-  </code></pre>
-  <pre><code>Text in paragraph :webfile:`4` next text in paragraph </code></pre>
-  <pre><code>Text in paragraph :webfile:`replace text with this &lt;4&gt;` next text in paragraph</code></pre>
-  <p>{% trans "The number <strong>4</strong> is from the ID column below, and <strong>alt</strong>, <strong>height</strong>, <strong>width</strong> were optional." %}</p>
-</div>
+    </code></pre>
+    <pre><code>Text in paragraph :webfile:`4` next text in paragraph</code></pre>
+    <pre><code>Text in paragraph :webfile:`replace text with this &lt;4&gt;` next text in paragraph</code></pre>
+    <p>{% trans "The number <strong>4</strong> is from the ID column below, and <strong>alt</strong>, <strong>height</strong>, <strong>width</strong> were optional." %}</p>
+  </div>
+  
+  <div>
+    {% iif is_paginated pager None as pager %}
+    {% Table pager=pager %}
+      {% Slot 'title' %}
+        {% trans "Files" %}
+      {% endSlot %}
 
-<div class="mdc-layout-grid__cell--span-12">
-  {% trans "Files" as label %}
-  {% Table row_selectable=True label=label class="w-100" %}
-    {% Table_Head %}
-      {% Table_Head_Row %}
-        {% Table_Head_Col %}
-          {% trans "ID" %}
-        {% endTable_Head_Col %}
-        {% Table_Head_Col %}
-          {% trans "Description" %}
-        {% endTable_Head_Col %}
-        {% Table_Head_Col %}
-          {% trans "Filename" %}
-        {% endTable_Head_Col %}
+      {% Slot 'toolbar' %}
+        {% url 'MyFile:Create' as url %}
+        {% Button tag="a" href=url icon_size=32 %}
+          {% Slot 'icon' %}
+            <path d="M17 15L17 7 15 7 15 15 7 15 7 17 15 17 15 25 17 25 17 17 25 17 25 15 17 15z"></path>
+          {% endSlot %}
 
-        {% trans "Operations" as label %}
-        {% Table_Head_Col class="autofit" %}
-          <span aria-label="{{label}}"></span>
-        {% endTable_Head_Col %}
-      {% endTable_Head_Row %}
-    {% endTable_Head %}
+          {% trans "Create File" %}
+        {% endButton %}
+      {% endSlot %}
 
-    {% Table_Body %}
+      {% Slot 'head' %}
+        <tr>
+          {% Th %}
+            {% trans "ID" %}
+          {% endTh %}
+          {% Th %}
+            {% trans "Description" %}
+          {% endTh %}
+          {% Th %}
+            {% trans "Filename" %}
+          {% endTh %}
+          {% Th mode="menu" %}{% endTh %}
+        </tr>
+      {% endSlot %}
+  
       {% for obj in object_list %}
-        {% Table_Row %}
-          {% Table_Col %}
-            {{ obj.pk }}
-          {% endTable_Col %}
+        <tr>
+          {% Td %}{{ obj.pk }}{% endTd %}
 
-          {% Table_Col %}
+          {% Td %}
             {{ obj.description | restify }}
-          {% endTable_Col %}
+          {% endTd %}
 
-          {% Table_ColHeader %}
+          {% Td %}
             <a href="{% url 'MyFile:Display' obj.pk %}" target="_blank">
               {{ obj.get_filename }}
             </a>
-          {% endTable_ColHeader %}
+          {% endTd %}
 
-          {% Table_Col %}
-            {% html_id 'menuops-' obj.pk as menu_id %}
-            {% Menu_Anchor %}
-              {% trans "Open Menu" as label %}
-              {% IconButton type="button" label=label data-provide-menu=menu_id aria-has-popup="menu" class="material-icons" %}
-                more_vert
-              {% endIconButton %}
+          {% Td mode="menu" %}
+            {% TdOvButton tag="a" href=obj.databits.url target="_blank" %}
+              {% trans "Download" %}
+            {% endTdOvButton %}
 
-              {% Menu id=menu_id %}
-                {% List tag="nav" %}
-                  {% List_Item tag="a" href=obj.databits.url tabindex="0" target="_blank" %}
-                    {% List_Image class="material-icons" %}
-                      file_download
-                    {% endList_Image %}
-                    {% List_Text %}
-                      {% trans "Download" %}
-                    {% endList_Text %}
-                  {% endList_Item %}
-
-                  {% List_Divider %}
-
-                  {% url 'MyFile:Destroy' obj.pk as url %}
-                  {% List_Item tag="a" href=url tabindex="1" %}
-                    {% List_Image class="material-icons" %}
-                      delete
-                    {% endList_Image %}
-                    {% List_Text %}
-                      {% trans "Delete" %}
-                    {% endList_Text %}
-                  {% endList_Item %}
-                {% endList %}
-              {% endMenu %}
-            {% endMenu_Anchor %}
-          {% endTable_Col %}
-        {% endTable_Row %}
+            {% url 'MyFile:Destroy' obj.pk as url %}
+            {% TdOvButton tag="a" href=url %}
+              {% trans "Delete" %}
+            {% endTdOvButton %}
+          {% endTd %}
+        </tr>
       {% endfor %}
-    {% endTable_Body %}
-  {% endTable %}
-</div>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'Home' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block topbar_right %}
-  {% url 'MyFile:Create' as url %}
-  {% trans "Create File" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    add
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'MyFile:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'MyFile:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
+    {% endTable %}
+  </div>
 {% endblock %}

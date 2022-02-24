@@ -37,5 +37,5 @@ urlpatterns += i18n_patterns(
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += [
-    path('', views.Home.as_view()),
+    path('', views.Home.as_view(), name='Home'),
 ]

@@ -8,6 +8,7 @@ django-modeltranslation
 djangorestframework
 django-rest-framework-rules
 django-simple-captcha
+django-statici18n
 django-treebeard
 docutils
 Pillow

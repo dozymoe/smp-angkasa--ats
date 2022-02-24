@@ -1,7 +1,7 @@
 {% spaceless %}
 
   {% load i18n static %}
-  {% load materialweb website %}
+  {% load website carbondesign %}
 
   {% captureas title_content %}{% spaceless %}
     {% block head_title %}{% endblock %}
@@ -22,96 +22,76 @@
   <link rel="shortcut icon" href="/favicon.ico">
   {% block head_meta %}{% endblock %}
   {% block head_styles %}{% stylesheets %}{% endblock %}
+  <script src="{{STATIC_URL}}jsi18n/{{ LANGUAGE_CODE }}/djangojs.js"></script>
   {% block head_scripts %}{% javascripts %}{% endblock %}
 </head>
-{% block body %}
-  <body class="mdc-typography {% block body_classes %}{% endblock %}">
-    {% TopAppBar %}
-      {% TopAppBar_Left %}
-        {% block topbar_left %}
-          {% url 'Home' as url %}
-          {% trans "Home Page" as label %}
-          {% IconButton tag="a" href=url label=label class="material-icons" %}
-            home
-          {% endIconButton %}
-        {% endblock %}
+<body class="{% block body_classes %}{% endblock %}">
+  {% block body %}
+    {% url 'Home' as url %}
+    {% UiShell label=request.site.name href=url %}
+      {% Slot 'navigation' %}
+        <img src="/assets/img/logo.png" width="64" class="appbar-logo">
 
-        {% TopAppBar_Title tag="h1" %}
-          {% if title_content %}
-            {{ title_content }}
-          {% else %}
-            <img src="/assets/img/logo.png" width="40" class="appbar-logo">
-            {{request.site.name}}
-          {% endif %}
-        {% endTopAppBar_Title %}
-      {% endTopAppBar_Left %}
+        {% block navigation_app %}{% endblock %}
+        {% block navigation_all_apps %}{% endblock %}
+        {% block navigation_site %}{% endblock %}
+        {% block navigation_user %}{% endblock %}
+      {% endSlot %}
 
-      {% block topbar_right_wrapper %}
-        {% TopAppBar_Right id="topbar-right-menu" %}
-          {% block topbar_right %}{% endblock %}
-        {% endTopAppBar_Right %}
-      {% endblock %}
-    {% endTopAppBar %}
+      {% Slot 'links' %}
+        {% block links %}{% endblock %}
+      {% endSlot %}
 
-    <div id="page-wrapper">
-      <main class="mdc-top-app-bar--fixed-adjust">
-        <div class="mdc-layout-grid">
-          {% if messages %}
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell">
-                {% flash_messages messages DEFAULT_MESSAGE_LEVELS.DEBUG DEFAULT_MESSAGE_LEVELS.WARNING as msgs %}
-                {% for msg in msgs %}
-                  {% Snackbar %}
-                    {% Snackbar_Content %}{{msg}}{% endSnackbar_Content %}
-                  {% endSnackbar %}
-                {% endfor %}
+      {% Slot 'actions' id="uishell-actions" %}{% endSlot %}
 
-                {% flash_messages messages DEFAULT_MESSAGE_LEVELS.WARNING DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
-                {% for msg in msgs %}
-                  {% Banner %}
-                    {% Banner_Content %}
-                      {% Banner_Text %}{{msg}}{% endBanner_Text %}
-                    {% endBanner_Content %}
-                    {% Banner_Actions %}
-                      {% Button type="button" class="mdc-banner__primary-action" %}
-                        {% trans "Close" %}
-                      {% endButton %}
-                    {% endBanner_Actions %}
-                  {% endBanner %}
-                {% endfor %}
-
-                {% flash_messages messages DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
-                {% if msgs %}
-                  <aside role="alert">
-                    <h2>Messages:</h2>
-                    <ul>
-                      {% for msg in msgs %}
-                        <li>{{msg}}</li>
-                      {% endfor %}
-                    </ul>
-                  </aside>
-                {% endif %}
+      {% if messages %}
+        {% flash_messages messages DEFAULT_MESSAGE_LEVELS.DEBUG DEFAULT_MESSAGE_LEVELS.WARNING as msgs %}
+        {% if msgs %}
+          <aside>
+            {% for msg in msgs %}
+              <div>
+                <div>{{msg}}</div>
               </div>
-            </div>
-          {% endif %}
+            {% endfor %}
+          </aside>
+        {% endif %}
 
-          <div class="mdc-layout-grid__inner">
-            {% block content %}
-              <div class="mdc-layout-grid__cell">
-                <p>Under construction.</p>
+        {% flash_messages messages DEFAULT_MESSAGE_LEVELS.WARNING DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
+        {% if msgs %}
+          <aside>
+            {% for msg in msgs %}
+              <div>
+                <div>{{msg}}</div>
               </div>
-            {% endblock %}
-          </div>
-        </div>
-        {% block jscontent %}
-          <div id="js_app"></div>
+            {% endfor %}
+          </aside>
+        {% endif %}
+
+        {% flash_messages messages DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
+        {% if msgs %}
+          <aside role="alert">
+            <h2>Messages:</h2>
+            <ul>
+              {% for msg in msgs %}
+                <li>{{msg}}</li>
+              {% endfor %}
+            </ul>
+          </aside>
+        {% endif %}
+      {% endif %}
+
+      {% block banner %}{% endblock %}
+      <main>
+        {% block content %}
+          <p>Under construction.</p>
         {% endblock %}
+        {% block jscontent %}<div id="js_app"></div>{% endblock %}
       </main>
       {% block extra_body %}{% endblock %}
-      {% block footer %}
-        {% include "website/footer.html" %}
-      {% endblock %}
-    </div>
-    <div id="js_modal"></div>
-  </body>
-{% endblock %}
+    {% endUiShell %}
+  {% endblock %}
+  {% block footer %}{% endblock %}
+  <div id="js_modal-1">{% block jsmodal_1 %}{% endblock %}</div>
+  <div id="js_modal-2">{% block jsmodal_2 %}{% endblock %}</div>
+  <div id="js_modal-3">{% block jsmodal_3 %}{% endblock %}</div>
+</body>

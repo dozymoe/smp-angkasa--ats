@@ -1,38 +1,10 @@
-{% extends 'base_drawer.html' %}
+{% extends 'base.html' %}
 {% load i18n %}
-{% load materialweb website web_page %}
+{% load carbondesign website %}
 
 {% block head_title %}{{ object.title }}{% endblock %}
 
 
 {% block content %}
-<div class="mdc-layout-grid__cell--span-12">
   {{ object.body | restify }}
-</div>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'Home' 'html' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% webpage_url 2 as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Text %}
-      {% trans "Profile" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% webpage_url 1 as url %}
-  {% List_Item tag="a" href=url tabindex="2" %}
-    {% List_Text %}
-      {% trans "PPDB" %}
-    {% endList_Text %}
-  {% endList_Item %}
 {% endblock %}

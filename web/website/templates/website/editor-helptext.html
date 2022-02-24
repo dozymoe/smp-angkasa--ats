@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load materialweb website %}
+{% load carbondesign website %}
 
 {% block head_title %}
   {% trans "Text Editor Documentation" %}
@@ -8,7 +8,7 @@
 
 
 {% block content %}
-<section class="mdc-layout-grid__cell--span-12">
+<section>
   <h2>{% trans "Headings" %}</h2>
   <p>
     Untuk setiap huruf di dalam judul bab, tuliskan simbol (contohnya, = atau *)
@@ -20,96 +20,75 @@
     &lt;h2&gt;. Ikuti penggunaan simbol di bawah agar menghasilkan teks yang
     seragam.
   </p>
-  {% trans "Headings" as label %}
-  {% Table label=label %}
-    {% Table_Head %}
-      {% Table_Head_Row %}
-        {% Table_Head_Col %}
-          {% trans "Heading Size" %}
-        {% endTable_Head_Col %}
-
-        {% Table_Head_Col %}
-          {% trans "Formatting" %}
-        {% endTable_Head_Col %}
-      {% endTable_Head_Row %}
-    {% endTable_Head %}
-    {% Table_Body %}
-      {% Table_Row %}
-        {% Table_ColHeader %}H1{% endTable_ColHeader %}
-        {% Table_Col %}
-          =======<br>
+  <table>
+    <thead>
+      <tr>
+        <th>{% trans "Heading Size" %}</th>
+        <th>{% trans "Formatting" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>H2</th>
+        <td>
           Heading<br>
           =======
-        {% endTable_Col %}
-      {% endTable_Row %}
-
-      {% Table_Row %}
-        {% Table_ColHeader %}H2{% endTable_ColHeader %}
-        {% Table_Col %}
-          Heading<br>
-          =======
-        {% endTable_Col %}
-      {% endTable_Row %}
-
-      {% Table_Row %}
-        {% Table_ColHeader %}H3{% endTable_ColHeader %}
-        {% Table_Col %}
+        </td>
+      </tr>
+      <tr>
+        <th>H3</th>
+        <td>
           Heading<br>
           -------
-        {% endTable_Col %}
-      {% endTable_Row %}
-
-      {% Table_Row %}
-        {% Table_ColHeader %}H4{% endTable_ColHeader %}
-        {% Table_Col %}
+        </td>
+      </tr>
+      <tr>
+        <th>H4</th>
+        <td>
           Heading<br>
           ~~~~~~~
-        {% endTable_Col %}
-      {% endTable_Row %}
-
-      {% Table_Row %}
-        {% Table_ColHeader %}H5{% endTable_ColHeader %}
-        {% Table_Col %}
+        </td>
+      </tr>
+      <tr>
+        <th>H5</th>
+        <td>
           Heading<br>
           *******
-        {% endTable_Col %}
-      {% endTable_Row %}
-
-      {% Table_Row %}
-        {% Table_ColHeader %}H6{% endTable_ColHeader %}
-        {% Table_Col %}
+        </td>
+      </tr>
+      <tr>
+        <th>H6</th>
+        <td>
           Heading<br>
           ^^^^^^^
-        {% endTable_Col %}
-      {% endTable_Row %}
-    {% endTable_Body %}
-  {% endTable %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
-<section class="mdc-layout-grid__cell--span-12">
+<section>
   <h2>{% trans "Markup" %}</h2>
   <h3>{% trans "Inline markup" %}</h3>
   <p>
     Gunakan marka teks berikut untuk memberikan makna tambahan pada kalimat.
   </p>
-  {% Table %}
-    {% Table_Body %}
-      {% Table_Row %}
-        {% Table_ColHeader %}**Text**{% endTable_ColHeader %}
-        {% Table_Col %}<b>Text</b>{% endTable_Col %}
-      {% endTable_Row %}
-
-      {% Table_Row %}
-        {% Table_ColHeader %}*Text*{% endTable_ColHeader %}
-        {% Table_Col %}<i>Text</i>{% endTable_Col %}
-      {% endTable_Row %}
-
-      {% Table_Row %}
-        {% Table_ColHeader %}``Text``{% endTable_ColHeader %}
-        {% Table_Col %}<code>Text</code>{% endTable_Col %}
-      {% endTable_Row %}
-    {% endTable_Body %}
-  {% endTable %}
+  <table>
+    <tbody>
+      <tr>
+        <th>**Text**</th>
+        <td><b>Text</b></td>
+      </tr>
+      <tr>
+        <th>*Text*</th>
+        <td><i>Text</i></td>
+      </tr>
+      <tr>
+        <th>``Text``</th>
+        <td><code>Text</code></td>
+      </tr>
+    </tbody>
+  </table>
 
   <h3>{% trans "Bulleted list" %}</h3>
   <p>Contoh:</p>
@@ -280,10 +259,9 @@
   <p>As explained at the <a href="#">start of the page</a>, ...</p>
 
   <h3>{% trans "Implicit hyperlink targets" %}</h3>
-  <p></p>
 </section>
 
-<div class="mdc-layout-grid__cell--span-12">
+<div>
   <p>
     Sumber:
     <a href="https://www.odoo.com/documentation/user/14.0/contributing/documentation/rst_cheat_sheet.html">
@@ -291,13 +269,4 @@
     </a>
   </p>
 </div>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'Home' 'html' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    close
-  {% endIconButton %}
 {% endblock %}

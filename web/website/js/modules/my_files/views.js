@@ -3,7 +3,7 @@ import { showModal } from '../../../../../lib/fireh_react/core/views.jsx';
 import { SelectFile } from './views/modals.jsx';
 
 
-export function InjectSelectFile(app, element)
+export function InjectSelectFile(element, app)
 {
     element.addEventListener('click', function()
     {

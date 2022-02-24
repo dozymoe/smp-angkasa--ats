@@ -1,4 +1,4 @@
-import { InjectSelectFile } from './views.js';
+import { InjectSelectFile } from './views';
 
 export default [
     {

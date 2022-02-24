@@ -1,21 +1,11 @@
-{% extends "base_drawer-admin.html" %}
+{% extends "base-admin.html" %}
 {% load i18n %}
-{% load materialweb %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
 
-{% block topbar_left %}
-  {% url 'account_login' as url %}
-  {% trans "Sign In" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %} 
-
-
 {% block content %}
-<div class="mdc-layout-grid__cell--span-12">
   <p>
     {% blocktrans %}
       We have sent an e-mail to you for verification. Follow the link
@@ -23,5 +13,4 @@
       not receive it within a few minutes.
     {% endblocktrans %}
   </p>
-</div>
 {% endblock %}

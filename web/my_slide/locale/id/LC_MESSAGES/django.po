@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-08 04:00+0700\n"
+"POT-Creation-Date: 2022-02-24 15:20+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,96 +33,86 @@ msgstr "Deskripsi"
 msgid "Image"
 msgstr "Gambar"
 
+#: my_slide/templates/my_slide/base-admin-object.html:8
+#: my_slide/templates/my_slide/base-admin.html:8
+msgid "Index"
+msgstr "Katalog"
+
+#: my_slide/templates/my_slide/base-admin-object.html:13
+#: my_slide/templates/my_slide/base-admin.html:13
+msgid "Create"
+msgstr "Bikin"
+
+#: my_slide/templates/my_slide/base-admin-object.html:18
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:33
+#: my_slide/templates/my_slide/myslide_list.html:67
+msgid "Delete"
+msgstr "Hapus"
+
 #: my_slide/templates/my_slide/myslide_confirm_delete.html:6
 msgid "Delete Slide"
 msgstr "Hapus Slide"
 
-#: my_slide/templates/my_slide/myslide_confirm_delete.html:8
-#: my_slide/templates/my_slide/myslide_create_form.html:6
-#: my_slide/templates/my_slide/myslide_list.html:6
-#: my_slide/templates/my_slide/myslide_list.html:11
-msgid "Slides"
-msgstr "Slide-Slide"
-
-#: my_slide/templates/my_slide/myslide_confirm_delete.html:17
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:15
 msgid "Do you really want to delete"
 msgstr "Apa benar mau dihapus"
 
-#: my_slide/templates/my_slide/myslide_confirm_delete.html:26
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:24
 msgid "Date Created"
 msgstr "Tanggal Dibikin"
 
-#: my_slide/templates/my_slide/myslide_confirm_delete.html:35
-#: my_slide/templates/my_slide/myslide_list.html:66
-msgid "Delete"
-msgstr "Hapus"
-
-#: my_slide/templates/my_slide/myslide_confirm_delete.html:45
-#: my_slide/templates/my_slide/myslide_list.html:83
-msgid "Home Page"
-msgstr "Laman Muka"
-
-#: my_slide/templates/my_slide/myslide_confirm_delete.html:59
-#: my_slide/templates/my_slide/myslide_create_form.html:94
-#: my_slide/templates/my_slide/myslide_list.html:106
-msgid "Index"
-msgstr "Katalog"
-
-#: my_slide/templates/my_slide/myslide_confirm_delete.html:69
-#: my_slide/templates/my_slide/myslide_create_form.html:104
-#: my_slide/templates/my_slide/myslide_list.html:116
-msgid "Create"
-msgstr "Bikin"
-
 #: my_slide/templates/my_slide/myslide_create_form.html:5
-#: my_slide/templates/my_slide/myslide_list.html:92
+#: my_slide/templates/my_slide/myslide_list.html:23
 msgid "Create Slide"
 msgstr "Bikin Slide"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:43
+#: my_slide/templates/my_slide/myslide_create_form.html:26
 msgid "Choose"
 msgstr "Pilih"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:53
+#: my_slide/templates/my_slide/myslide_create_form.html:36
 msgid "Description Preview"
 msgstr "Penampakan Deskripsi"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:55
+#: my_slide/templates/my_slide/myslide_create_form.html:38
 msgid "Preview"
 msgstr "Penampakan"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:60
+#: my_slide/templates/my_slide/myslide_create_form.html:43
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:70
+#: my_slide/templates/my_slide/myslide_create_form.html:53
 msgid "Submit"
 msgstr "Kirim"
-
-#: my_slide/templates/my_slide/myslide_create_form.html:80
-msgid "Manage Articles"
-msgstr "Administrasi Artikel"
 
 #: my_slide/templates/my_slide/myslide_list.html:5
 msgid "Manage Slides"
 msgstr "Administrasi Slide"
 
-#: my_slide/templates/my_slide/myslide_list.html:16
+#: my_slide/templates/my_slide/myslide_list.html:13
+msgid "Slides"
+msgstr "Slide-Slide"
+
+#: my_slide/templates/my_slide/myslide_list.html:30
 msgid "location"
 msgstr "Lokasi"
 
-#: my_slide/templates/my_slide/myslide_list.html:19
+#: my_slide/templates/my_slide/myslide_list.html:33
 msgid "Filename"
 msgstr "Nama Berkas"
 
-#: my_slide/templates/my_slide/myslide_list.html:22
-msgid "Operations"
-msgstr "Aksi-Aksi"
+#~ msgid "Edit"
+#~ msgstr "Ubah"
 
-#: my_slide/templates/my_slide/myslide_list.html:43
-msgid "Open Menu"
-msgstr "Buka Menu"
+#~ msgid "Operations"
+#~ msgstr "Aksi-Aksi"
 
-#: my_slide/templates/my_slide/myslide_list.html:56
-msgid "Edit"
-msgstr "Ubah"
+#~ msgid "Open Menu"
+#~ msgstr "Buka Menu"
+
+#~ msgid "Home Page"
+#~ msgstr "Laman Muka"
+
+#~ msgid "Manage Articles"
+#~ msgstr "Administrasi Artikel"

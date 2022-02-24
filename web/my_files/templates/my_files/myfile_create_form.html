@@ -1,80 +1,52 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'my_files/base-admin.html' %}
 {% load i18n %}
-{% load materialweb %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Create File" %}{% endblock %}
-{% block drawer_title %}{% trans "Files" %}{% endblock %}
 
 
 {% block content %}
-<form action="" method="post" enctype="multipart/form-data"
-    class="mdc-layout-grid__cell--span-12">
+<form action="" method="post" enctype="multipart/form-data">
   {% csrf_token %}
 
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-12">
-      {% TextField type="file" form.databits mode="outlined" required=True class="d-block" %}
-    </div>
-
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextArea form.description mode='outlined' rows="4" class="text-editor d-block" %}
-
-      {% trans "Description Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.description.id_for_label %}
-        {% trans "Preview" %}
-      {% endButton %}
-
-      {% url 'EditorHelpText' 'html' as url %}
-      {% Button tag="a" href=url target="_blank" %}
-        {% trans "Editing Help" %}
-      {% endButton %}
-    </div>
-
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextArea form.alt_text mode='outlined' rows="4" class="d-block" %}
-    </div>
-
-    {% if form.errors %}
-      <div class="mdc-layout-grid__cell--span-12">{{form.errors}}</div>
-    {% endif %}
-
-    <div class="mdc-layout-grid__cell--span-12">
-      {% Button type="submit" mode="raised" %}
-        {% trans "Submit" %}
-      {% endButton %}
-    </div>
+  <div class="form-group">
+    {% TextInput type="file" form.databits required=True %}
   </div>
+
+  <div class="form-group">
+    {% TextArea form.description rows="4" class="text-editor" %}
+
+    {% trans "Description Preview" as title %}
+    {% Button type="button" title=title data-provide-rest-preview=form.description.id_for_label %}
+      {% trans "Preview" %}
+    {% endButton %}
+
+    {% url 'EditorHelpText' 'html' as url %}
+    {% Button tag="a" href=url target="_blank" %}
+      {% trans "Editing Help" %}
+    {% endButton %}
+  </div>
+
+  <div class="form-group">
+    {% TextArea form.alt_text rows="4" %}
+  </div>
+
+  {% if form.errors %}
+    <div class="form-group">{{form.errors}}</div>
+  {% endif %}
+
+  <div class="form-group">
+    {% Button type="submit" %}
+      {% trans "Submit" %}
+    {% endButton %}
+  </div>
+</div>
 </form>
 {% endblock %}
 
 
-{% block topbar_left %}
-  {% url 'MyFile:Index' as url %}
-  {% trans "Manage Files" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'MyFile:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'MyFile:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
+{% block jsmodal_1 %}
+  {% Modal id="modal-rest-preview" %}
+    {% Slot 'heading' %}{% trans "Preview" %}{% endSlot %}
+  {% endModal %}
 {% endblock %}

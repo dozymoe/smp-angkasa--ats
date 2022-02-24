@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
-
 process.traceDeprecation = true;
 
 module.exports = (env, options) =>
@@ -14,27 +13,38 @@ module.exports = (env, options) =>
             main: [path.resolve(__dirname, 'website/js/app.js')],
         },
         output: {
-            path: path.resolve(__dirname, 'static'),
-            publicPath: '/assets/',
-            filename: 'js/[name].js',
+            path: path.resolve(__dirname, 'static/js'),
+            publicPath: '/assets/js/',
+            filename: '[name].js',
         },
         resolve: {
             alias: {
             },
         },
         plugins: [
+            new webpack.DefinePlugin({
+                __DEV__: isDevelopment,
+            }),
             new LodashModuleReplacementPlugin(),
             new webpack.ProvidePlugin({
                 $: 'jquery',
                 jQuery: 'jquery',
                 'window.jQuery': 'jquery',
+                /*'window.pluralidx': 'pluralidx',
+                'window.gettext': 'gettext',
+                'window.ngettext': 'ngettext',
+                'window.gettext_noop': 'gettext_noop',
+                'window.pgettext': 'pgettext',
+                'window.npgettext': 'npgettext',
+                'window.interpolate': 'interpolate',
+                'window.get_format': 'get_format',*/
             }),
             new WebpackManifestPlugin({
                 fileName: path.resolve(__dirname,
                     '../var/web/webpack-js.meta.json'),
                 sort: (a, b) =>
                     {
-                        const order = ['runtime', 'polyfill', 'base', 'react'];
+                        const order = ['runtime', 'polyfill', 'base'];
                         let namea = a.name.split('.')[0];
                         let nameb = b.name.split('.')[0];
                         let indexa = order.indexOf(namea);
@@ -59,18 +69,12 @@ module.exports = (env, options) =>
             rules: [
                 {
                     test: /\.css$/,
-                    use: ['null-loader'],
+                    loader: 'null-loader',
                 },
                 {
                     test: /\.svg$/,
-                    use: [
-                        {
-                            loader: 'html-loader',
-                            options: {
-                                minimize: true,
-                            },
-                        },
-                    ],
+                    loader: 'html-loader',
+                    options: {minimize: true},
                 },
                 {
                     test: /\.html$/,
@@ -106,9 +110,22 @@ module.exports = (env, options) =>
                                         {loose: true},
                                     ],
                                     [
+                                        '@babel/plugin-proposal-private-methods',
+                                        {loose: true},
+                                    ],
+                                    [
+                                        '@babel/plugin-proposal-private-property-in-object',
+                                        {loose: true},
+                                    ],
+                                    [
                                         '@babel/plugin-transform-regenerator',
                                         {generators: true},
                                     ],
+                                    [
+                                        '@babel/plugin-transform-react-jsx',
+                                        {pragma: 'm', pragmaFrag: "'['"},
+                                    ],
+                                    '@babel/plugin-syntax-dynamic-import',
                                     'lodash',
                                 ],
                             },
@@ -143,6 +160,14 @@ module.exports = (env, options) =>
                                     ],
                                     [
                                         '@babel/plugin-proposal-class-properties',
+                                        {loose: true},
+                                    ],
+                                    [
+                                        '@babel/plugin-proposal-private-methods',
+                                        {loose: true},
+                                    ],
+                                    [
+                                        '@babel/plugin-proposal-private-property-in-object',
                                         {loose: true},
                                     ],
                                     [

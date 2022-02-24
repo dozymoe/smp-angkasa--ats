@@ -1,22 +1,12 @@
-{% extends "base_drawer-admin.html" %}
+{% extends "base-admin.html" %}
 {% load i18n %}
 {% load account %}
-{% load materialweb %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
 
 
-{% block topbar_left %}
-  {% url 'account_login' as url %}
-  {% trans "Sign In" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %} 
-
-
 {% block content %}
-<div class="mdc-layout-grid__cell--span-12">
   {% if confirmation %}
     {% user_display confirmation.email_address.user as user_display %}
 
@@ -30,7 +20,7 @@
     <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
       {% csrf_token %}
 
-      {% Button type="submit" mode="raised" %}
+      {% Button type="submit" %}
         {% trans 'Confirm' %}
       {% endButton %}
     </form>
@@ -47,5 +37,4 @@
     </p>
 
   {% endif %}
-</div>
 {% endblock %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-22 02:18+0700\n"
+"POT-Creation-Date: 2022-02-24 15:20+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:27
+#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:40
 msgid "Title"
 msgstr "Judul"
 
@@ -51,87 +51,51 @@ msgstr "%s itu bukan angka."
 msgid "Page with id:%s was not found."
 msgstr "Laman dengan nomor:%s tidak ada."
 
-#: web_page/templates/web_page/webpage_confirm_delete.html:6
-msgid "Delete Page"
-msgstr "Hapus Laman"
+#: web_page/templates/web_page/base-admin-object.html:8
+#: web_page/templates/web_page/base-admin.html:8
+msgid "Index"
+msgstr "Katalog"
 
-#: web_page/templates/web_page/webpage_confirm_delete.html:8
-#: web_page/templates/web_page/webpage_confirm_publish.html:8
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:8
-#: web_page/templates/web_page/webpage_create_form.html:6
-#: web_page/templates/web_page/webpage_detail-admin.html:6
-#: web_page/templates/web_page/webpage_form.html:6
-#: web_page/templates/web_page/webpage_list.html:6
-#: web_page/templates/web_page/webpage_list.html:18
-msgid "Pages"
-msgstr "Laman-Laman"
+#: web_page/templates/web_page/base-admin-object.html:13
+#: web_page/templates/web_page/base-admin.html:13
+msgid "Create"
+msgstr "Bikin"
 
-#: web_page/templates/web_page/webpage_confirm_delete.html:17
-msgid "Do you really want to delete"
-msgstr "Sungguh mau menghapus"
+#: web_page/templates/web_page/base-admin-object.html:18
+#: web_page/templates/web_page/webpage_list.html:73
+msgid "Edit"
+msgstr "Ubah"
 
-#: web_page/templates/web_page/webpage_confirm_delete.html:22
-#: web_page/templates/web_page/webpage_confirm_publish.html:22
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:22
-msgid "Date Created"
-msgstr "Tanggal Dibikin"
-
-#: web_page/templates/web_page/webpage_confirm_delete.html:31
-#: web_page/templates/web_page/webpage_confirm_delete.html:85
-#: web_page/templates/web_page/webpage_confirm_publish.html:85
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:85
-#: web_page/templates/web_page/webpage_detail-admin.html:55
+#: web_page/templates/web_page/base-admin-object.html:23
+#: web_page/templates/web_page/webpage_confirm_delete.html:29
 #: web_page/templates/web_page/webpage_list.html:102
 msgid "Delete"
 msgstr "Hapus"
 
-#: web_page/templates/web_page/webpage_confirm_delete.html:41
-#: web_page/templates/web_page/webpage_confirm_publish.html:41
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:41
-#: web_page/templates/web_page/webpage_detail-admin.html:11
-#: web_page/templates/web_page/webpage_detail.html:17
-#: web_page/templates/web_page/webpage_list.html:119
-msgid "Home Page"
-msgstr "Laman Muka"
+#: web_page/templates/web_page/webpage_confirm_delete.html:6
+msgid "Delete Page"
+msgstr "Hapus Laman"
 
-#: web_page/templates/web_page/webpage_confirm_delete.html:55
-#: web_page/templates/web_page/webpage_confirm_publish.html:55
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:55
-#: web_page/templates/web_page/webpage_create_form.html:66
-#: web_page/templates/web_page/webpage_detail-admin.html:25
-#: web_page/templates/web_page/webpage_form.html:66
-#: web_page/templates/web_page/webpage_list.html:142
-msgid "Index"
-msgstr "Katalog"
+#: web_page/templates/web_page/webpage_confirm_delete.html:15
+msgid "Do you really want to delete"
+msgstr "Sungguh mau menghapus"
 
-#: web_page/templates/web_page/webpage_confirm_delete.html:65
-#: web_page/templates/web_page/webpage_confirm_publish.html:65
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:65
-#: web_page/templates/web_page/webpage_create_form.html:76
-#: web_page/templates/web_page/webpage_detail-admin.html:35
-#: web_page/templates/web_page/webpage_form.html:76
-#: web_page/templates/web_page/webpage_list.html:152
-msgid "Create"
-msgstr "Bikin"
-
-#: web_page/templates/web_page/webpage_confirm_delete.html:75
-#: web_page/templates/web_page/webpage_confirm_publish.html:75
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:75
-#: web_page/templates/web_page/webpage_detail-admin.html:45
-#: web_page/templates/web_page/webpage_list.html:76
-msgid "Edit"
-msgstr "Ubah"
+#: web_page/templates/web_page/webpage_confirm_delete.html:20
+#: web_page/templates/web_page/webpage_confirm_publish.html:20
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:20
+msgid "Date Created"
+msgstr "Tanggal Dibikin"
 
 #: web_page/templates/web_page/webpage_confirm_publish.html:6
 msgid "Publish Page"
 msgstr "Tayangkan Laman"
 
-#: web_page/templates/web_page/webpage_confirm_publish.html:17
+#: web_page/templates/web_page/webpage_confirm_publish.html:15
 msgid "Do you really want to publish"
 msgstr "Sungguh mau menayangkan"
 
-#: web_page/templates/web_page/webpage_confirm_publish.html:31
-#: web_page/templates/web_page/webpage_list.html:85
+#: web_page/templates/web_page/webpage_confirm_publish.html:29
+#: web_page/templates/web_page/webpage_list.html:81
 msgid "Publish"
 msgstr "Tayangkan"
 
@@ -139,92 +103,97 @@ msgstr "Tayangkan"
 msgid "Unpublish Page"
 msgstr "Batal Tayang Laman"
 
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:17
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:15
 msgid "Do you really want to unpublish"
 msgstr "Sungguh mau batal tayang"
 
-#: web_page/templates/web_page/webpage_confirm_unpublish.html:31
-#: web_page/templates/web_page/webpage_list.html:82
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:29
+#: web_page/templates/web_page/webpage_list.html:78
 msgid "Unpublish"
 msgstr "Batal Tayang"
 
 #: web_page/templates/web_page/webpage_create_form.html:5
-#: web_page/templates/web_page/webpage_list.html:128
+#: web_page/templates/web_page/webpage_list.html:30
 msgid "Create Page"
 msgstr "Bikin Laman"
 
-#: web_page/templates/web_page/webpage_create_form.html:25
-#: web_page/templates/web_page/webpage_form.html:25
+#: web_page/templates/web_page/webpage_create_form.html:23
+#: web_page/templates/web_page/webpage_form.html:23
 msgid "Body Preview"
 msgstr "Penampakan Konten"
 
-#: web_page/templates/web_page/webpage_create_form.html:27
-#: web_page/templates/web_page/webpage_form.html:27
+#: web_page/templates/web_page/webpage_create_form.html:25
+#: web_page/templates/web_page/webpage_create_form.html:49
+#: web_page/templates/web_page/webpage_form.html:25
+#: web_page/templates/web_page/webpage_form.html:49
 msgid "Preview"
 msgstr "Penampakan"
 
-#: web_page/templates/web_page/webpage_create_form.html:32
-#: web_page/templates/web_page/webpage_form.html:32
+#: web_page/templates/web_page/webpage_create_form.html:30
+#: web_page/templates/web_page/webpage_form.html:30
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: web_page/templates/web_page/webpage_create_form.html:42
+#: web_page/templates/web_page/webpage_create_form.html:40
 msgid "Submit"
 msgstr "Kirim"
-
-#: web_page/templates/web_page/webpage_create_form.html:52
-#: web_page/templates/web_page/webpage_form.html:52
-#: web_page/templates/web_page/webpage_list.html:5
-msgid "Manage Pages"
-msgstr "Administrasi Laman"
-
-#: web_page/templates/web_page/webpage_detail.html:28
-msgid "Profile"
-msgstr "Profil"
-
-#: web_page/templates/web_page/webpage_detail.html:35
-msgid "PPDB"
-msgstr ""
 
 #: web_page/templates/web_page/webpage_form.html:5
 msgid "Update Page"
 msgstr "Ubah Laman"
 
-#: web_page/templates/web_page/webpage_form.html:42
+#: web_page/templates/web_page/webpage_form.html:40
 msgid "Update"
 msgstr "Ubah"
 
-#: web_page/templates/web_page/webpage_list.html:11
+#: web_page/templates/web_page/webpage_list.html:5
+msgid "Manage Pages"
+msgstr "Administrasi Laman"
+
+#: web_page/templates/web_page/webpage_list.html:10
 msgid "Linking pages in your articles. Example:"
 msgstr "Cara menampilkan tautan di dalam artikel. Contoh:"
 
-#: web_page/templates/web_page/webpage_list.html:14
+#: web_page/templates/web_page/webpage_list.html:13
 msgid "The number <strong>4</strong> is from the ID column below."
 msgstr "Angka <strong>4</strong> di atas diambil dari kolom ID di bawah."
 
-#: web_page/templates/web_page/webpage_list.html:23
+#: web_page/templates/web_page/webpage_list.html:20
+msgid "Pages"
+msgstr "Laman-Laman"
+
+#: web_page/templates/web_page/webpage_list.html:37
 msgid "ID"
 msgstr ""
 
-#: web_page/templates/web_page/webpage_list.html:31
+#: web_page/templates/web_page/webpage_list.html:43
 msgid "Status"
 msgstr "Status"
 
-#: web_page/templates/web_page/webpage_list.html:34
-msgid "Operations"
-msgstr "Aksi-Aksi"
-
-#: web_page/templates/web_page/webpage_list.html:54
+#: web_page/templates/web_page/webpage_list.html:61
 msgid "Published"
 msgstr "Ditayangkan"
 
-#: web_page/templates/web_page/webpage_list.html:56
+#: web_page/templates/web_page/webpage_list.html:63
 msgid "Not Published"
 msgstr "Belum Tayang"
 
-#: web_page/templates/web_page/webpage_list.html:63
-msgid "Open Menu"
-msgstr "Buka Menu"
+#, fuzzy
+#~| msgid "Create Page"
+#~ msgid "Create Article"
+#~ msgstr "Bikin Laman"
+
+#~ msgid "Home Page"
+#~ msgstr "Laman Muka"
+
+#~ msgid "Operations"
+#~ msgstr "Aksi-Aksi"
+
+#~ msgid "Open Menu"
+#~ msgstr "Buka Menu"
+
+#~ msgid "Profile"
+#~ msgstr "Profil"
 
 #~ msgid "Contact Us"
 #~ msgstr "Hubungi Kami"

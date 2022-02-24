@@ -1,34 +1,44 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load materialweb %}
+{% load carbondesign %}
 
-{% block topbar_left %}
-  {% url 'Home' as url %}
-  {% trans "Home Page" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    home
-  {% endIconButton %}
+{% block navigation_all_apps %}
+  {% UiNavSection %}
+    {% url 'BlogPosting:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Articles" %}
+    {% endUiNavItem %}
+  
+    {% url 'WebPage:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Pages" %}
+    {% endUiNavItem %}
+  
+    {% url 'MyFile:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Files" %}
+    {% endUiNavItem %}
+  
+    {% url 'MySlide:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Slides" %}
+    {% endUiNavItem %}
+  {% endUiNavSection %}
 {% endblock %}
 
 
-{% block topbar_right_wrapper %}
-  {% TopAppBar_Right id="topbar-right-menu" %}
-    {% block topbar_right %}{% endblock %}
+{% block navigation_user %}
+  {% UiNavSection %}
     {% if user.is_authenticated %}
       {% url 'account_logout' as url %}
-      {% trans "Sign Out" as label %}
-      {% IconButton tag="a" href=url label=label %}
-        <i class="fa fa-sign-out-alt"></i>
-      {% endIconButton %}
+      {% UiNavItem href=url %}
+        {% trans "Sign Out" %}
+      {% endUiNavItem %}
     {% else %}
       {% url 'account_login' as url %}
-      {% trans "Sign In" as label %}
-      {% IconButton tag="a" href=url label=label %}
-        <i class="fa fa-sign-in-alt"></i>
-      {% endIconButton %}
+      {% UiNavItem href=url %}
+        {% trans "Sign In" %}
+      {% endUiNavItem %}
     {% endif %}
-  {% endTopAppBar_Right %}
+  {% endUiNavSection %}
 {% endblock %}
-
-
-{% block footer %}{% endblock %}

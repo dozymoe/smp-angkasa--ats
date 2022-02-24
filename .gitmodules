@@ -1,15 +1,30 @@
 [submodule "lib/fireh_runner"]
 	path = lib/fireh_runner
 	url = https://github.com/dozymoe/fireh_runner
+    shallow = true
 [submodule "lib-py/django-materialweb"]
 	path = lib-py/django-materialweb
 	url = https://github.com/dozymoe/django-materialweb
+    shallow = true
 [submodule "lib-py/frozen-django"]
 	path = lib-py/frozen-django
 	url = https://github.com/dozymoe/frozen-django
+    shallow = true
 [submodule "lib/react-materialweb"]
 	path = lib/react-materialweb
 	url = https://github.com/dozymoe/react-materialweb
+    shallow = true
 [submodule "lib/fireh_react"]
 	path = lib/fireh_react
 	url = https://github.com/dozymoe/fireh_react
+    shallow = true
+[submodule "lib-py/django-carbondesign"]
+	path = lib-py/django-carbondesign
+	url = https://github.com/dozymoe/django-carbondesign
+	branch = main
+    shallow = true
+[submodule "lib/fireh-mithril"]
+	path = lib/fireh-mithril
+	url = https://github.com/dozymoe/fireh-mithril
+	branch = main
+    shallow = true

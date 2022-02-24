@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-24 15:42+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: my_slide/js/views/file-select-modal.js:36
+msgid "File Select"
+msgstr "Pilih Berkas"
+
+#: my_slide/js/views/file-select-modal.js:66
+msgid "Slides"
+msgstr "Slide-Slide"
+
+#: my_slide/js/views/file-select-modal.js:72
+msgid "Id"
+msgstr "Id"
+
+#: my_slide/js/views/file-select-modal.js:73
+msgid "Image"
+msgstr "Gambar"
+
+#: my_slide/js/views/file-select-modal.js:74
+msgid "Description"
+msgstr "Deskripsi"
+
+#: my_slide/js/views/file-select-modal.js:99
+msgid "Select"
+msgstr "Pilih"
+
+#: my_slide/js/views/rest-preview-modal.js:28
+msgid "Preview"
+msgstr "Penampakan"

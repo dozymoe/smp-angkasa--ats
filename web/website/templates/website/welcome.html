@@ -1,9 +1,33 @@
-{% extends "base_drawer.html" %}
+{% extends "base-anon.html" %}
 {% load i18n %}
-{% load materialweb website web_page %}
+{% load carbondesign website %}
 
 {% block content %}
-<section class="mdc-layout-grid__cell--span-12">
+  <h2>{% trans "Latest News" %}</h2>
+  <ul class="front-blog-posts">
+    {% for obj in blogposts %}
+      <li role="article">
+        {{ obj.summary | restify }}
+        <p>
+          <a href="{% url 'BlogPosting:Display' obj.slug 'html' %}">
+            {% trans "Read more" %}
+          </a>
+        </p>
+        <footer>
+          <p>
+            {% trans "Posted on" %}
+            <time datetime="{{ obj.published_at }}">
+              {{ obj.published_at | date:'j F' }}
+            </time>.
+          </p>
+        </footer>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
+{% block banner %}
   {% if slides %}
     <div class="carousel"
         data-flickity='{"lazyLoad":true, "autoPlay":true, "wrapAround":true}'>
@@ -17,47 +41,4 @@
       {% endfor %}
     </div>
   {% endif %}
-
-  <h2>{% trans "Latest News" %}</h2>
-  <ul class="front-blog-posts">
-    {% for obj in blogposts %}
-      <li role="article">
-        <h3>
-          <a href="{% url 'BlogPosting:Display' obj.slug 'html' %}">
-            {{ obj.title }}
-          </a>
-        </h3>
-        {{ obj.summary | restify }}
-
-        <footer>
-          <p>
-            {% trans "Posted on" %}
-            <time datetime="{{ obj.published_at }}">
-              {{ obj.published_at | date:'j F' }}
-            </time>
-            {% trans "by" %}
-            {{ obj.created_by.username }}.
-          </p>
-        </footer>
-      </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endblock %}
-
-
-{% block drawer %}
-  {% webpage_url 2 as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Text %}
-      {% trans "Profile" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% webpage_url 1 as url %}
-  {% List_Item tag="a" href=url tabindex="2" %}
-    {% List_Text %}
-      {% trans "PPDB" %}
-    {% endList_Text %}
-  {% endList_Item %}
 {% endblock %}

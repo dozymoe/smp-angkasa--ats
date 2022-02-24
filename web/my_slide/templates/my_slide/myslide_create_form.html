@@ -1,54 +1,37 @@
-{% extends 'base_drawer-admin.html' %}
+{% extends 'my_slide/base-admin.html' %}
 {% load i18n %}
-{% load materialweb %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Create Slide" %}{% endblock %}
-{% block drawer_title %}{% trans "Slides" %}{% endblock %}
 
 
 {% block content %}
-<form action="" method="post" class="mdc-layout-grid__cell--span-12">
-  {% csrf_token %}
+  <form action="" method="post">
+    {% csrf_token %}
 
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-6">
-      {% TextField form.location mode='outlined' autofocus="true" class="d-block" %}
+    <div class="form-group">
+      {% TextInput form.location autofocus="true" %}
     </div>
 
-    <div class="mdc-layout-grid__cell--span-6">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-9">
-          <label class="mdc-text-field mdc-text-field--outlined d-block">
+    <div class="form-group">
+      {% Grid class="ph-0 mw-none" %}
+        {% Row %}
+          {% Col lg=10 %}
             <input type="hidden" name="image" id="image">
-            <input type="text" readonly required placeholder="Image"
-                id="image-caption" class="mdc-text-field__input">
-            <span class="mdc-notched-outline mdc-notched-outline--upgraded">
-              <span class="mdc-notched-outline__leading"></span>
-              <span class="mdc-notched-outline__notch">
-                <span id="id_slug-label" class="mdc-floating-label">
-                  Image
-                </span>
-              </span>
-              <span class="mdc-notched-outline__trailing"></span>
-            </span>
-          </label>
-        </div>
-        <div class="mdc-layout-grid__cell--span-3">
-          <div class="mdc-touch-target-wrapper">
-            <button type="button"
-                data-provide-select_file="image"
-                data-select_file-label="image-caption"
-                class="mdc-button mdc-button--touch mdc-button--outlined">
-              <span class="mdc-button__ripple"></span>
+            {% TextInput form.image widget="input" id="image-caption" name="" readonly="" %}
+          {% endCol %}
+
+          {% Col lg=2 %}
+            {% Button type="button" data-provide-select_file="image" data-select_file-label="image-caption" %}
               {% trans "Choose" %}
-            </button>
-          </div>
-        </div>
-      </div>
+            {% endButton %}
+          {% endCol %}
+        {% endRow %}
+      {% endGrid %}
     </div>
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {% TextArea form.description mode='outlined' class="d-block" %}
+    <div class="form-group">
+      {% TextArea form.description %}
 
       {% trans "Description Preview" as title %}
       {% Button type="button" title=title data-provide-rest-preview=form.description.id_for_label %}
@@ -62,46 +45,13 @@
     </div>
 
     {% if form.errors %}
-      <div class="mdc-layout-grid__cell--span-12">{{form.errors}}</div>
+      <div class="form-group">{{form.errors}}</div>
     {% endif %}
 
-    <div class="mdc-layout-grid__cell--span-12">
-      {% Button type="submit" mode="raised" %}
+    <div class="form-group">
+      {% Button type="submit" %}
         {% trans "Submit" %}
       {% endButton %}
     </div>
-  </div>
-</form>
-{% endblock %}
-
-
-{% block topbar_left %}
-  {% url 'MyFile:Index' as url %}
-  {% trans "Manage Articles" as label %}
-  {% IconButton tag="a" href=url label=label class="material-icons" %}
-    arrow_back
-  {% endIconButton %}
-{% endblock %}
-
-
-{% block drawer %}
-  {% url 'MyFile:Index' as url %}
-  {% List_Item tag="a" href=url tabindex="1" %}
-    {% List_Image class="material-icons" %}
-      toc
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Index" %}
-    {% endList_Text %}
-  {% endList_Item %}
-
-  {% url 'MyFile:Create' as url %}
-  {% List_Item tag="a" href=url tabindex="0" %}
-    {% List_Image class="material-icons" %}
-      add
-    {% endList_Image %}
-    {% List_Text %}
-      {% trans "Create" %}
-    {% endList_Text %}
-  {% endList_Item %}
+  </form>
 {% endblock %}

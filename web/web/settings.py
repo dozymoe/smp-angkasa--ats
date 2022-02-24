@@ -42,22 +42,23 @@ ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
 
 INSTALLED_APPS = [
     'blog_posting',
-    'my_user',
     'my_files',
-    'thing_keyword',
-    'website',
-    'web_page',
     'my_slide',
+    'my_user',
+    'thing_keyword',
+    'web_page',
+    'website',
 
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'frozen_django',
     'mailer',
-    'materialweb',
+    'carbondesign',
     'modeltranslation',
     'rest_framework',
     'rules',
+    'statici18n',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -66,6 +67,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+]
+STATICI18N_PACKAGES = [
+    'blog_posting',
+    'my_user',
+    'my_files',
+    'thing_keyword',
+    'website',
+    'web_page',
+    'my_slide',
 ]
 
 MIDDLEWARE = [
@@ -95,10 +105,12 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.request',
+                'django.template.context_processors.static',
             ],
         },
     },

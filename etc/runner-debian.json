@@ -23,7 +23,7 @@
             "": {
                 "shell_env": {
                     "PYTHONPATH": [
-                        "lib-py/django-materialweb",
+                        "lib-py/django-carbondesign",
                         "lib-py/frozen-django"
                     ]
                 }
