@@ -184,6 +184,7 @@ web:
       rule_in:
         - "{_1}/unit_test/shell"
       raw_depend_in:
+        - lib/misc/locale/**/*.po
         - "{_1}/*/templates/**/*.html"
 
   js_makemessages:
@@ -193,6 +194,7 @@ web:
       rule_in:
         - "{_1}/js/webpack"
       raw_depend_in:
+        - lib/misc/locale/**/*.po
         - var/{_1}/webpack-js.meta.json
 
   prunemessages:

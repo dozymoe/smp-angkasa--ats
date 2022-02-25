@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 15:42+0700\n"
+"POT-Creation-Date: 2022-02-25 13:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,66 +17,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: misc/carbondesign-js/data-table.js:21
-msgid "Table Action Bar"
-msgstr ""
-
-#: misc/carbondesign-js/data-table.js:22
-msgid "items selected"
-msgstr ""
-
 #: misc/carbondesign-js/data-table.js:23
+msgid "Table Action Bar"
+msgstr "Aksi Tabel"
+
+#: misc/carbondesign-js/data-table.js:24
+msgid "items selected"
+msgstr "baris-baris terpilih"
+
+#: misc/carbondesign-js/data-table.js:25
 msgid "Overflow"
-msgstr ""
-
-#: misc/carbondesign-js/data-table.js:277
-msgid "Items per page"
-msgstr ""
-
-#: misc/carbondesign-js/data-table.js:278
-msgid "select number of items per page"
-msgstr ""
+msgstr "Luapan"
 
 #: misc/carbondesign-js/data-table.js:279
-msgid "select page number to view"
-msgstr ""
+msgid "Items per page"
+msgstr "Baris per halaman"
 
 #: misc/carbondesign-js/data-table.js:280
-msgid "Backward button"
-msgstr ""
+msgid "select number of items per page"
+msgstr "pilih jumlah baris per halaman"
 
 #: misc/carbondesign-js/data-table.js:281
+msgid "select page number to view"
+msgstr "pilih halaman yang ingin dilihat"
+
+#: misc/carbondesign-js/data-table.js:282
+msgid "Backward button"
+msgstr "Sebelumnya"
+
+#: misc/carbondesign-js/data-table.js:283
 msgid "Forward button"
-msgstr ""
+msgstr "Selanjutnya"
 
-#: misc/carbondesign-js/data-table.js:491
+#: misc/carbondesign-js/data-table.js:493
 msgid " of "
-msgstr ""
+msgstr " dari "
 
-#: misc/carbondesign-js/data-table.js:497
+#: misc/carbondesign-js/data-table.js:499
 msgid " items"
-msgstr ""
-
-#: misc/carbondesign-js/data-table.js:515
-msgid "of "
-msgstr ""
+msgstr " baris"
 
 #: misc/carbondesign-js/data-table.js:517
+msgid "of "
+msgstr "dari "
+
+#: misc/carbondesign-js/data-table.js:519
 msgid " pages"
-msgstr ""
+msgstr " halaman"
 
-#: misc/carbondesign-js/data-table.js:759
+#: misc/carbondesign-js/data-table.js:761
 msgid "Search"
-msgstr ""
+msgstr "Cari"
 
-#: misc/carbondesign-js/data-table.js:760
+#: misc/carbondesign-js/data-table.js:762
 msgid "Clear search input"
-msgstr ""
+msgstr "Hapus teks pencarian"
 
 #: misc/carbondesign-js/modal.js:14
 msgid "close modal"
-msgstr ""
+msgstr "tutup dialog"
 
 #: misc/carbondesign-js/modal.js:142
 msgid "Show modal"
-msgstr ""
+msgstr "Buka dialog"

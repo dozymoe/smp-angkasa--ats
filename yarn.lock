@@ -4013,6 +4013,11 @@ minizlib@^2.1.1:
     minipass "^3.0.0"
     yallist "^4.0.0"
 
+mithril-node-render@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/mithril-node-render/-/mithril-node-render-3.0.2.tgz#6410170081db6a050c75f626bca3e3ae46b61a44"
+  integrity sha512-8GZfFWW7h1YjO8s9fe+vHpWG3zacGIytQ/FBKxlynHlwknp1KLRHM6MtrtbMy72dVdQOiYw7wyfZXD0IrvpQOQ==
+
 mithril@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/mithril/-/mithril-2.0.4.tgz#d125969d992b924c7185d24ff92d997e5c00116b"
