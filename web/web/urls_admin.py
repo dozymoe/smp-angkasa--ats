@@ -27,6 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/render-html', views_admin.ReSTPreview.as_view()),
     path('api/files/', include('my_files.urls_api', namespace='MyFileApi')),
+    path('api/web_pages/', include('web_page.urls_api',
+            namespace='WebPageApi')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -37,6 +39,8 @@ urlpatterns += i18n_patterns(
     path('files/', include('my_files.urls_admin',
             namespace='MyFile')),
     path('slides/', include('my_slide.urls_admin', namespace='MySlide')),
+    path('front-contents/', include('my_front_content.urls_admin',
+            namespace='FrontContent')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
         name='EditorHelpText'),
 

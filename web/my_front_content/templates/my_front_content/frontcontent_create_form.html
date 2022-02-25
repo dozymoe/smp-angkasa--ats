@@ -1,0 +1,41 @@
+{% extends 'blog_posting/base-admin.html' %}
+{% load i18n %}
+{% load carbondesign %}
+
+{% block head_title %}
+  {% trans "Create Featured Content" %}
+{% endblock %}
+
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+      {% Grid class="ph-0 mw-none" %}
+        {% Row %}
+          {% Col lg=10 %}
+            <input type="hidden" name="content" id="content">
+            {% TextInput form.content widget="input" id="content-caption" name="" readonly="" %}
+          {% endCol %}
+
+          {% Col lg=2 %}
+            {% Button type="button" data-provide-select_page="content" data-select_page-label="content-caption" %}
+              {% trans "Choose" %}
+            {% endButton %}
+          {% endCol %}
+        {% endRow %}
+      {% endGrid %}
+    </div>
+  
+    {% if form.errors %}
+      <div class="form-group">{{form.errors}}</div>
+    {% endif %}
+  
+    <div class="form-group">
+      {% Button type="submit" %}
+        {% trans "Submit" %}
+      {% endButton %}
+    </div>
+  </form>
+{% endblock %}

@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 19:32+0700\n"
+"POT-Creation-Date: 2022-02-25 19:26+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web/settings.py:183
-msgid "Bahasa Indonesia"
-msgstr "Bahasa Indonesia"
+#: my_front_content/js/views/page-select-modal.js:36
+msgid "Page Select"
+msgstr ""
 
-#: web/settings.py:184
-msgid "English"
-msgstr "Inggris"
+#: my_front_content/js/views/page-select-modal.js:66
+msgid "Pages"
+msgstr ""
 
-#: web/urls.py:29
-msgid "news/"
-msgstr "berita/"
+#: my_front_content/js/views/page-select-modal.js:72
+msgid "Id"
+msgstr ""
+
+#: my_front_content/js/views/page-select-modal.js:73
+msgid "Title"
+msgstr ""
+
+#: my_front_content/js/views/page-select-modal.js:74
+msgid "Summary"
+msgstr ""
+
+#: my_front_content/js/views/page-select-modal.js:90
+msgid "Select"
+msgstr ""

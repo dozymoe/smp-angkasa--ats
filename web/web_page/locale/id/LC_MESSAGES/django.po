@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 15:20+0700\n"
+"POT-Creation-Date: 2022-02-25 19:32+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,14 @@ msgid "Body"
 msgstr "Konten"
 
 #: web_page/models.py:19
+msgid "Summary"
+msgstr "Ringkasan"
+
+#: web_page/models.py:20
 msgid "URL Name"
 msgstr "Nama URL"
 
-#: web_page/models.py:21
+#: web_page/models.py:22
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
 "filled if left empty."
@@ -37,7 +41,7 @@ msgstr ""
 "Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
 "otomatis bila dibiarkan kosong."
 
-#: web_page/models.py:24
+#: web_page/models.py:25
 msgid "Publish Date"
 msgstr "Ditayangkan Tanggal"
 
@@ -123,18 +127,27 @@ msgid "Body Preview"
 msgstr "Penampakan Konten"
 
 #: web_page/templates/web_page/webpage_create_form.html:25
-#: web_page/templates/web_page/webpage_create_form.html:49
+#: web_page/templates/web_page/webpage_create_form.html:39
+#: web_page/templates/web_page/webpage_create_form.html:63
 #: web_page/templates/web_page/webpage_form.html:25
-#: web_page/templates/web_page/webpage_form.html:49
+#: web_page/templates/web_page/webpage_form.html:39
+#: web_page/templates/web_page/webpage_form.html:63
 msgid "Preview"
 msgstr "Penampakan"
 
 #: web_page/templates/web_page/webpage_create_form.html:30
+#: web_page/templates/web_page/webpage_create_form.html:44
 #: web_page/templates/web_page/webpage_form.html:30
+#: web_page/templates/web_page/webpage_form.html:44
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: web_page/templates/web_page/webpage_create_form.html:40
+#: web_page/templates/web_page/webpage_create_form.html:37
+#: web_page/templates/web_page/webpage_form.html:37
+msgid "Summary Preview"
+msgstr "Penampakan Ringkasan"
+
+#: web_page/templates/web_page/webpage_create_form.html:54
 msgid "Submit"
 msgstr "Kirim"
 
@@ -142,7 +155,7 @@ msgstr "Kirim"
 msgid "Update Page"
 msgstr "Ubah Laman"
 
-#: web_page/templates/web_page/webpage_form.html:40
+#: web_page/templates/web_page/webpage_form.html:54
 msgid "Update"
 msgstr "Ubah"
 
@@ -177,23 +190,3 @@ msgstr "Ditayangkan"
 #: web_page/templates/web_page/webpage_list.html:63
 msgid "Not Published"
 msgstr "Belum Tayang"
-
-#, fuzzy
-#~| msgid "Create Page"
-#~ msgid "Create Article"
-#~ msgstr "Bikin Laman"
-
-#~ msgid "Home Page"
-#~ msgstr "Laman Muka"
-
-#~ msgid "Operations"
-#~ msgstr "Aksi-Aksi"
-
-#~ msgid "Open Menu"
-#~ msgstr "Buka Menu"
-
-#~ msgid "Profile"
-#~ msgstr "Profil"
-
-#~ msgid "Contact Us"
-#~ msgstr "Hubungi Kami"

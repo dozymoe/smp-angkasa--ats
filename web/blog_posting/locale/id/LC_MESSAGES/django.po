@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 15:20+0700\n"
+"POT-Creation-Date: 2022-02-25 19:32+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,18 +195,3 @@ msgstr "Ditayangkan"
 #: blog_posting/templates/blog_posting/blogposting_list.html:63
 msgid "Not Published"
 msgstr "Belum Tayang"
-
-#~ msgid "Home Page"
-#~ msgstr "Laman Muka"
-
-#~ msgid "Operations"
-#~ msgstr "Aksi-Aksi"
-
-#~ msgid "Open Menu"
-#~ msgstr "Buka Menu"
-
-#~ msgid "Profile"
-#~ msgstr "Profil"
-
-#~ msgid "Contact Us"
-#~ msgstr "Hubungi Kami"

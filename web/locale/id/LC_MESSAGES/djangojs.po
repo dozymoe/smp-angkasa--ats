@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 15:42+0700\n"
+"POT-Creation-Date: 2022-02-25 19:26+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,15 +71,35 @@ msgid " pages"
 msgstr ""
 
 #: static/js/main.js:1
-msgid "File Select"
+msgid "Page Select"
 msgstr ""
 
 #: static/js/main.js:1
-msgid "Slides"
+msgid "Pages"
 msgstr ""
 
 #: static/js/main.js:1
 msgid "Id"
+msgstr ""
+
+#: static/js/main.js:1
+msgid "Title"
+msgstr ""
+
+#: static/js/main.js:1
+msgid "Summary"
+msgstr ""
+
+#: static/js/main.js:1
+msgid "Select"
+msgstr ""
+
+#: static/js/main.js:1
+msgid "File Select"
+msgstr ""
+
+#: static/js/main.js:1
+msgid "Images"
 msgstr ""
 
 #: static/js/main.js:1
@@ -88,10 +108,6 @@ msgstr ""
 
 #: static/js/main.js:1
 msgid "Description"
-msgstr ""
-
-#: static/js/main.js:1
-msgid "Select"
 msgstr ""
 
 #: static/js/main.js:1

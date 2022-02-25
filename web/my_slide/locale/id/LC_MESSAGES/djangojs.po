@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 15:42+0700\n"
+"POT-Creation-Date: 2022-02-25 19:26+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,12 @@ msgid "File Select"
 msgstr "Pilih Berkas"
 
 #: my_slide/js/views/file-select-modal.js:66
-msgid "Slides"
-msgstr "Slide-Slide"
+msgid "Images"
+msgstr "Gambar-Gambar"
 
 #: my_slide/js/views/file-select-modal.js:72
 msgid "Id"
-msgstr "Id"
+msgstr ""
 
 #: my_slide/js/views/file-select-modal.js:73
 msgid "Image"

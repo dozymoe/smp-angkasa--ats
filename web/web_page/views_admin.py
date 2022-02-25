@@ -22,7 +22,7 @@ class List(ListView):
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
     model = WebPage
-    fields = ['title', 'body', 'slug']
+    fields = ['title', 'body', 'summary', 'slug']
     template_name_suffix = '_create_form'
 
     def form_valid(self, form):
@@ -43,7 +43,7 @@ class Display(DetailView):
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
     model = WebPage
-    fields = ['title', 'body', 'slug']
+    fields = ['title', 'body', 'summary', 'slug']
 
     def get_success_url(self):
         return reverse('WebPage:Index')

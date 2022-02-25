@@ -16,6 +16,7 @@ class WebPageManager(models.Manager):
 class WebPage(DirtyFieldsMixin, RulesModel):
     title = models.CharField(verbose_name=_("Title"), max_length=65)
     body = models.TextField(verbose_name=_("Body"))
+    summary = models.TextField(verbose_name=_("Summary"), default='')
     slug = models.SlugField(verbose_name=_("URL Name"), max_length=64,
             unique=True, db_index=True, blank=True,
             help_text=_("Human friendly unique url to identify the content, "

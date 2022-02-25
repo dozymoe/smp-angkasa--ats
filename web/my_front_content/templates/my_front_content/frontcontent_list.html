@@ -1,0 +1,66 @@
+{% extends 'blog_posting/base-admin.html' %}
+{% load i18n %}
+{% load carbondesign website %}
+
+{% block head_title %}{% trans "Manage Featured Contents" %}{% endblock %}
+
+
+{% block content %}
+  {% iif is_paginated pager None as pager %}
+  {% Table pager=pager %}
+    {% Slot 'title' %}
+      {% trans "Featured Contents" %}
+    {% endSlot %}
+
+    {% Slot 'toolbar' %}
+      {% url 'FrontContent:Create' as url %}
+      {% Button tag="a" href=url icon_size=32 %}
+        {% Slot 'icon' %}
+          <path d="M17 15L17 7 15 7 15 15 7 15 7 17 15 17 15 25 17 25 17 17 25 17 25 15 17 15z"></path>
+        {% endSlot %}
+
+        {% trans "Create Featured Content" %}
+      {% endButton %}
+    {% endSlot %}
+
+    {% Slot 'head' %}
+      <tr>
+        {% Th %}
+          {% trans "ID" %}
+        {% endTh %}
+        {% Th %}
+          {% trans "Title" %}
+        {% endTh %}
+        {% Th %}
+          {% trans "Summary" %}
+        {% endTh %}
+        {% Th mode="menu" %}{% endTh %}
+      </tr>
+    {% endSlot %}
+
+    {% for obj in object_list %}
+      <tr>
+        {% Td %}{{obj.pk}}{% endTd %}
+
+        {% Td %}
+          {{obj}}
+        {% endTd %}
+
+        {% Td %}
+          {{obj.content.summary | restify}}
+        {% endTd %}
+
+        {% Td mode="menu" %}
+          {% url 'FrontContent:Destroy' obj.pk as url %}
+          {% TdOvButton tag="a" href=url %}
+            {% Slot 'icon' %}
+              <path d="M6 6H7V12H6zM9 6H10V12H9z"></path>
+              <path d="M2 3v1h1v10c0 .6.4 1 1 1h8c.6 0 1-.4 1-1V4h1V3H2zM4 14V4h8v10H4zM6 1H10V2H6z"></path>
+            {% endSlot %}
+            {% trans "Delete" %}
+          {% endTdOvButton %}
+        {% endTd %}
+      </tr>
+    {% endfor %}
+  {% endTable %}
+{% endblock %}

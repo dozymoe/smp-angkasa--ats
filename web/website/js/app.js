@@ -4,6 +4,7 @@ import WebsiteInit from './initialize';
 import MyFile from './modules/my_files/components';
 import Website from './modules/website/components';
 //-
+import FrontContentPages from '../../my_front_content/js/pages';
 import SlidePages from '../../my_slide/js/pages';
 
 
@@ -20,6 +21,7 @@ const components = [
 
 
 const pages = [
+    ...FrontContentPages,
     ...SlidePages,
 ];
 

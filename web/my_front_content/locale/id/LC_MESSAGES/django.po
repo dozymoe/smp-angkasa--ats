@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-25 19:32+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: my_front_content/models.py:12
+msgid "Content"
+msgstr ""
+
+#: my_front_content/templates/my_front_content/base-admin-object.html:9
+#: my_front_content/templates/my_front_content/base-admin.html:9
+msgid "Index"
+msgstr "Katalog"
+
+#: my_front_content/templates/my_front_content/base-admin-object.html:14
+#: my_front_content/templates/my_front_content/base-admin.html:14
+msgid "Create"
+msgstr "Bikin"
+
+#: my_front_content/templates/my_front_content/base-admin-object.html:19
+#: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:32
+#: my_front_content/templates/my_front_content/frontcontent_list.html:60
+msgid "Delete"
+msgstr "Hapus"
+
+#: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:6
+msgid "Delete Featured Content"
+msgstr "Hapus Fitur Konten"
+
+#: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:15
+msgid "Do you really want to delete"
+msgstr "Sungguh mau menghapus"
+
+#: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:23
+msgid "Date Created"
+msgstr "Tanggal Dibikin"
+
+#: my_front_content/templates/my_front_content/frontcontent_create_form.html:6
+#: my_front_content/templates/my_front_content/frontcontent_list.html:22
+msgid "Create Featured Content"
+msgstr "Bikin Fitur Konten"
+
+#: my_front_content/templates/my_front_content/frontcontent_create_form.html:24
+msgid "Choose"
+msgstr ""
+
+#: my_front_content/templates/my_front_content/frontcontent_create_form.html:37
+msgid "Submit"
+msgstr "Kirim"
+
+#: my_front_content/templates/my_front_content/frontcontent_list.html:5
+msgid "Manage Featured Contents"
+msgstr "Administrasi Fitur Konten"
+
+#: my_front_content/templates/my_front_content/frontcontent_list.html:12
+msgid "Featured Contents"
+msgstr "Konten-Konten Fitur"
+
+#: my_front_content/templates/my_front_content/frontcontent_list.html:29
+msgid "ID"
+msgstr ""
+
+#: my_front_content/templates/my_front_content/frontcontent_list.html:32
+msgid "Title"
+msgstr ""
+
+#: my_front_content/templates/my_front_content/frontcontent_list.html:35
+msgid "Summary"
+msgstr "Ringkasan"
+
+#~ msgid "Preview"
+#~ msgstr "Penampakan"
+
+#~ msgid "Body Preview"
+#~ msgstr "Penampakan Konten"
+
+#~ msgid "Editing Help"
+#~ msgstr "Bantuan Sunting"
+
+#~ msgid "Published"
+#~ msgstr "Ditayangkan"
+
+#~ msgid "Not Published"
+#~ msgstr "Belum Tayang"
+
+#~ msgid "Edit"
+#~ msgstr "Ubah"
+
+#~ msgid "Unpublish"
+#~ msgstr "Batal Tayang"
+
+#~ msgid "Publish"
+#~ msgstr "Tayangkan"
+
+#~ msgid "Update Featured Content"
+#~ msgstr "Ubah Fitur Konten"
+
+#~ msgid "Update"
+#~ msgstr "Ubah"
+
+#~ msgid "Publish Featured Content"
+#~ msgstr "Tayangkan Fitur Konten"
+
+#~ msgid "Do you really want to publish"
+#~ msgstr "Sungguh mau menayangkan"
+
+#~ msgid "Unpublish Front Content"
+#~ msgstr "Batal Tayang Fitur Konten"
+
+#~ msgid "Do you really want to unpublish"
+#~ msgstr "Sungguh mau batal tayang"
+
+#~ msgid "Body"
+#~ msgstr "Konten"
+
+#~ msgid "Publish Date"
+#~ msgstr "Ditayangkan Tanggal"

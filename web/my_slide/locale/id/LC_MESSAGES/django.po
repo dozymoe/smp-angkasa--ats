@@ -101,18 +101,3 @@ msgstr "Lokasi"
 #: my_slide/templates/my_slide/myslide_list.html:33
 msgid "Filename"
 msgstr "Nama Berkas"
-
-#~ msgid "Edit"
-#~ msgstr "Ubah"
-
-#~ msgid "Operations"
-#~ msgstr "Aksi-Aksi"
-
-#~ msgid "Open Menu"
-#~ msgstr "Buka Menu"
-
-#~ msgid "Home Page"
-#~ msgstr "Laman Muka"
-
-#~ msgid "Manage Articles"
-#~ msgstr "Administrasi Artikel"

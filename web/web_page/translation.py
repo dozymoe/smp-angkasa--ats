@@ -4,4 +4,4 @@ from . import models
 
 @register(models.WebPage)
 class WebPageTranslationOptions(TranslationOptions):
-    fields = ('title', 'body', 'slug')
+    fields = ('title', 'body', 'summary', 'slug')

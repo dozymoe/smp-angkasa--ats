@@ -25,8 +25,7 @@
     "Id": "Id",
     "Image": "Gambar",
     "Preview": "Penampakan",
-    "Select": "Pilih",
-    "Slides": "Slide-Slide"
+    "Select": "Pilih"
   };
   for (var key in newcatalog) {
     django.catalog[key] = newcatalog[key];

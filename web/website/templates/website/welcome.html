@@ -41,4 +41,20 @@
       {% endfor %}
     </div>
   {% endif %}
+
+  {% if front_contents %}
+    {% Grid class="featured-content" %}
+      {% Row %}
+        {% for content in front_contents %}
+          {% Col lg=4 %}
+            <h2>{{content.content.title}}</h2>
+            {{content.content.summary | restify}}
+            <p>
+              <a href="{{content.url}}">{% trans "Read more" %}</a>
+            </p>
+          {% endCol %}
+        {% endfor %}
+      {% endRow %}
+    {% endGrid %}
+  {% endif %}
 {% endblock %}

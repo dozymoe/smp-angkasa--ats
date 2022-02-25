@@ -1,0 +1,17 @@
+{% extends 'base-admin.html' %}
+{% load i18n %}
+{% load carbondesign %}
+
+{% block navigation_app %}
+  {% UiNavSection %}
+    {% url 'FrontContent:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Index" %}
+    {% endUiNavItem %}
+
+    {% url 'FrontContent:Create' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Create" %}
+    {% endUiNavItem %}
+  {% endUiNavSection %}
+{% endblock %}

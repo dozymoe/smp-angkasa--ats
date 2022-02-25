@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 #-
 from blog_posting.models import BlogPosting
+from my_front_content.models import FrontContent
 from my_slide.models import MySlide
 
 
@@ -15,6 +16,7 @@ class Home(TemplateView):
         context['slides'] = MySlide.objects\
                 .filter(location='front')\
                 .all()[:20]
+        context['front_contents'] = FrontContent.objects.all()[:3]
         return context
 
 

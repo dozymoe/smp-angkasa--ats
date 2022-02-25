@@ -23,6 +23,11 @@
     {% UiNavItem href=url %}
       {% trans "Slides" %}
     {% endUiNavItem %}
+  
+    {% url 'FrontContent:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Front Contents" %}
+    {% endUiNavItem %}
   {% endUiNavSection %}
 {% endblock %}
 

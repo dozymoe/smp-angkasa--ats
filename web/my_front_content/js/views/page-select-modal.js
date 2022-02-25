@@ -11,7 +11,7 @@ import { Table, Th, Td, TdOvButton
        } from '../../../misc/carbondesign-js/data-table';
 import { get_pager } from '../../../website/js/misc/pagination';
 
-const ATTRIBUTE_NAME = 'data-provide-select_file';
+const ATTRIBUTE_NAME = 'data-provide-select_page';
 
 
 const StoreActions =
@@ -28,12 +28,12 @@ const StoreActions =
 }
 
 
-export class FileSelectModal
+export class PageSelectModal
 {
     constructor(app)
     {
         this.app = app;
-        this.txt_title = gettext("File Select");
+        this.txt_title = gettext("Page Select");
     }
 
     oninit(vnode)
@@ -63,15 +63,15 @@ m(Modal, null, [
       pager_size: state.pager.pagination.per_page,
     },
     [
-      m(Slot, {name: 'title'}, gettext("Images")),
+      m(Slot, {name: 'title'}, gettext("Pages")),
       m(Slot,
         {
           name: 'head',
         },
         [
           m(Th, null, gettext("Id")),
-          m(Th, null, gettext("Image")),
-          m(Th, null, gettext("Description")),
+          m(Th, null, gettext("Title")),
+          m(Th, null, gettext("Summary")),
           m(Th, {mode: 'menu'}),
         ]),
 
@@ -79,17 +79,8 @@ m(Modal, null, [
         m('tr', null,
           [
             m(Td, null, obj.id),
-            m(Td, null,
-              m('img',
-                {
-                  height: 100,
-                  src: obj.attr_src,
-                  srcset: obj.attr_srcset,
-                  sizes: obj.attr_sizes,
-                  style: {margin: 4},
-                  alt: obj.alt_text,
-                })),
-            m(Td, null, obj.description),
+            m(Td, null, obj.title),
+            m(Td, null, obj.summary),
             m(Td, {mode: 'menu'},
               [
                 m(TdOvButton,
@@ -133,9 +124,9 @@ m(Modal, null, [
         let elValue = document.getElementById(this.button.getAttribute(
                 ATTRIBUTE_NAME));
         let elLabel = document.getElementById(this.button.getAttribute(
-                'data-select_file-label'));
+                'data-select_page-label'));
         elValue.value = obj.id;
-        elLabel.value = obj.description;
+        elLabel.value = obj.title;
         this.component.hide();
     }
 
@@ -147,7 +138,7 @@ m(Modal, null, [
 
         this.component.show();
 
-        let resp = await msgbus('/api/files/').get();
+        let resp = await msgbus('/api/web_pages/').get();
         let body = await resp.json();
         this.actions.setPager(get_pager(body));
         this.actions.setObjects(body.results);

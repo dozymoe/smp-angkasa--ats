@@ -109,6 +109,10 @@ web:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
 
+  my_front_content:
+    pylint:
+      raw_file_in: "{_1}/{_2}/**/*.py"
+
   my_slide:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
@@ -153,6 +157,7 @@ web:
         - "{_1}/blog_posting/pylint"
         - "{_1}/misc/pylint"
         - "{_1}/my_files/pylint"
+        - "{_1}/my_front_content/pylint"
         - "{_1}/my_user/pylint"
         - "{_1}/thing_keyword/pylint"
         - "{_1}/web/pylint"
