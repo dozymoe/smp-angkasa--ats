@@ -12,19 +12,15 @@ _logger = logging.getLogger(__name__)
 
 def serve_files(request, pk, style=None):
     obj = get_object_or_404(MyFile, pk=pk)
-    if obj.is_image():
-        if style is None:
-            field = obj.databits
+    filename = obj.databits.name
+    if obj.is_image() and style:
+        for imgsize in settings.IMAGE_SIZES:
+            if style == imgsize[0]:
+                break
         else:
-            for imgsize in settings.IMAGE_SIZES:
-                if style == imgsize[0]:
-                    break
-            else:
-                raise Http404
-            field = getattr(obj, f'image_{style}')
-            if not field:
-                field = obj.databits
-    else:
-        field = obj.databits
-    path = os.path.join(settings.MEDIA_ROOT, field.name)
+            raise Http404
+        field = getattr(obj, f'image_{style}')
+        if field:
+            filename = field.name
+    path = os.path.join(settings.MEDIA_ROOT, filename)
     return FileResponse(open(path, 'rb'))

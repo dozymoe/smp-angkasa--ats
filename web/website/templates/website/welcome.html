@@ -2,28 +2,58 @@
 {% load i18n %}
 {% load carbondesign website %}
 
+{% block body_classes %}front-page{% endblock %}
+
+
 {% block content %}
-  <h2>{% trans "Latest News" %}</h2>
-  <ul class="front-blog-posts">
-    {% for obj in blogposts %}
-      <li role="article">
-        {{ obj.summary | restify }}
-        <p>
-          <a href="{% url 'BlogPosting:Display' obj.slug 'html' %}">
-            {% trans "Read more" %}
-          </a>
-        </p>
-        <footer>
-          <p>
-            {% trans "Posted on" %}
-            <time datetime="{{ obj.published_at }}">
-              {{ obj.published_at | date:'j F' }}
-            </time>.
-          </p>
-        </footer>
-      </li>
-    {% endfor %}
-  </ul>
+  {% Grid %}
+    {% Row %}
+      {% Col lg=8 %}
+        {% Grid class="ph-0" %}
+          {% Row %}
+            {% Col lg=12 %}
+              <h2>{% trans "Latest News" %}</h2>
+            {% endCol %}
+          {% endRow %}
+          {% Row tag="ul" class="font-blog-posts" %}
+            {% for obj in blogposts %}
+              {% Col lg=6 tag="li" role="article" %}
+                {% if obj.image %}
+                  <img src="{{obj.get_image_url}}"
+                      srcset="{{obj.get_html_attr_srcset}}"
+                      sizes="{{obj.get_html_attr_sizes}}"
+                      class="img-responsive">
+                {% endif %}
+                <h3>{{obj.title}}</h3>
+                <p>
+                  {% trans "Posted on" %}
+                  <time datetime="{{ obj.published_at }}">
+                    {{ obj.published_at | date:'j F' }}
+                  </time>.
+                </p>
+                {{ obj.summary | restify }}
+                <footer>
+                  <a href="{{obj.get_absolute_url}}">
+                    {% trans "Read more" %}
+                  </a>
+                </footer>
+              {% endCol %}
+            {% endfor %}
+          {% endRow %}
+        {% endGrid %}
+      {% endCol %}
+
+      {% Col lg=4 %}
+        {% Grid class="ph-0" %}
+          {% Row %}
+            {% Col lg=12 %}
+              <h2>{% trans "Events" %}</h2>
+            {% endCol %}
+          {% endRow %}
+        {% endGrid %}
+      {% endCol %}
+    {% endRow %}
+  {% endGrid %}
 {% endblock %}
 
 
@@ -47,13 +77,12 @@
       {% Row %}
         {% for content in front_contents %}
           {% Col lg=4 %}
-            <h2>{{content.content.title}}</h2>
-            {{content.content.summary | restify}}
-            <p>
+            <h2>
               <a href="{{content.content.get_absolute_url}}">
-                {% trans "Read more" %}
+                {{content.content.title}}
               </a>
-            </p>
+            </h2>
+            {{content.content.summary | restify}}
           {% endCol %}
         {% endfor %}
       {% endRow %}

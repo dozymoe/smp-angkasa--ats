@@ -31653,6 +31653,34 @@ th.autofit {
     max-width: 780px;
   }
 }
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+body.front-page .carousel {
+  margin-bottom: 4rem;
+}
+
+body.front-page .featured-content {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+body.front-page .featured-content h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin-bottom: 1.5rem;
+}
+body.front-page .featured-content h2 a {
+  text-decoration: none;
+}
+body.front-page .featured-content .document {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.28572;
+  letter-spacing: 0.16px;
+}
+
 .front-blog-posts {
   list-style: none;
   margin-left: 0;

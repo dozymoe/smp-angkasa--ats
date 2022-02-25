@@ -41,11 +41,14 @@ def stylesheets(module='main'):
             webpack = json.load(f, object_pairs_hook=OrderedDict)
     except OSError:
         return ''
+    base_dir = os.path.join(os.environ['ROOT_DIR'], 'web', 'static', 'css')
     html = []
     for key, value in webpack.items():
         if not key.endswith('.css'):
             continue
-        html.append('<link href="%s" rel="stylesheet"/>' % value)
+        mtime = os.path.getmtime(os.path.join(base_dir, key))
+        hmtime = hex(int(mtime))[2:]
+        html.append(f'<link href="{value}?v={hmtime}" rel="stylesheet"/>')
     return mark_safe('\n'.join(html))
 
 
@@ -60,9 +63,9 @@ def javascripts(module='main'):
         return ''
     html = []
     for key, value in webpack.items():
-        if not key.endswith('.js'):
+        if not (key == 'js' or key.endswith('.js')):
             continue
-        html.append('<script src="%s"></script>' % value)
+        html.append(f'<script src="{value}"></script>')
     return mark_safe('\n'.join(html))
 
 

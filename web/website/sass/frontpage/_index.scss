@@ -1,0 +1,27 @@
+@use 'carbon-components/src/globals/scss/typography';
+@use 'carbon-components/src/globals/scss/spacing';
+
+body.front-page .carousel
+{
+    margin-bottom: spacing.$layout-lg;
+}
+body.front-page .featured-content
+{
+    margin-bottom: spacing.$layout-lg;
+    margin-top: spacing.$layout-lg;
+
+    h2
+    {
+        @include typography.type-style('productive-heading-03');
+        margin-bottom: spacing.$spacing-lg;
+
+        a
+        {
+            text-decoration: none;
+        }
+    }
+    .document
+    {
+        @include typography.type-style('body-short-01');
+    }
+}

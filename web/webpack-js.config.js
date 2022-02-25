@@ -15,7 +15,7 @@ module.exports = (env, options) =>
         output: {
             path: path.resolve(__dirname, 'static/js'),
             publicPath: '/assets/js/',
-            filename: '[name].js',
+            filename: '[chunkhash].js',
         },
         resolve: {
             alias: {
@@ -189,15 +189,15 @@ module.exports = (env, options) =>
                 cacheGroups: {
                     base: {
                         name: 'base',
-                        test: /[\\/]node_modules[\\/](@material|lodash)[\\/]/,
+                        test: /[\\/]node_modules[\\/](@carbon|carbon-components|lodash)[\\/]/,
                     },
                     polyfill: {
                         name: 'polyfill',
                         test: /[\\/]node_modules[\\/](core-js|regenerator-runtime|element-closest-polyfill)[\\/]/,
                     },
-                    react: {
-                        name: 'react',
-                        test: /[\\/]node_modules[\\/](mobx|mobx-react|react|react-dom|react-router|react-router-dom|preact|preact-compat)[\\/]/,
+                    fw: {
+                        name: 'fw',
+                        test: /[\\/]node_modules[\\/](unistore|mithril|mithril-node-render)[\\/]/,
                     },
                 },
             },
