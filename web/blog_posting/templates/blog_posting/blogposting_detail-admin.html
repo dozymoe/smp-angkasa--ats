@@ -14,7 +14,8 @@
           class="img-responsive">
     </div>
   {% endif %}
+  <h1>{{object.title}}</h1>
   <div class="form-group">
-    {{ object.body | restify }}
+    {{object.body | restify}}
   </div>
 {% endblock %}

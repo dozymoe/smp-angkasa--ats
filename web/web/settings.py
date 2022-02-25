@@ -260,6 +260,7 @@ REST_FRAMEWORK = {
 RESTRUCTURED_TEXT = {
     'initial_header_level': 2,
     'syntax_highlight': 'short',
+    'doctitle_xform': False,
 }
 
 
