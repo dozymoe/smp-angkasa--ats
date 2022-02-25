@@ -50,7 +50,9 @@
             <h2>{{content.content.title}}</h2>
             {{content.content.summary | restify}}
             <p>
-              <a href="{{content.url}}">{% trans "Read more" %}</a>
+              <a href="{{content.content.get_absolute_url}}">
+                {% trans "Read more" %}
+              </a>
             </p>
           {% endCol %}
         {% endfor %}

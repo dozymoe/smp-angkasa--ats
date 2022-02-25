@@ -22,8 +22,8 @@
   var newcatalog = {
     "Description": "Deskripsi",
     "File Select": "Pilih Berkas",
-    "Id": "Id",
     "Image": "Gambar",
+    "Images": "Gambar-Gambar",
     "Preview": "Penampakan",
     "Select": "Pilih"
   };
