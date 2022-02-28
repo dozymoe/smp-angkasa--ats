@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-01 01:52+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: my_event/models.py:17 my_event/templates/my_event/event_list.html:43
+msgid "Started At"
+msgstr "Waktu Mulai"
+
+#: my_event/models.py:19 my_event/templates/my_event/event_list.html:46
+msgid "Stopped At"
+msgstr "Waktu Selesai"
+
+#: my_event/models.py:22 my_event/templates/my_event/event_list.html:40
+msgid "Title"
+msgstr "Judul"
+
+#: my_event/models.py:23
+msgid "Body"
+msgstr "Konten"
+
+#: my_event/models.py:24
+msgid "Summary"
+msgstr "Deskripsi"
+
+#: my_event/models.py:25
+msgid "URL Name"
+msgstr "Name URL"
+
+#: my_event/models.py:27
+msgid ""
+"Human friendly unique url to identify the content, will automatically be "
+"filled if left empty."
+msgstr ""
+"Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
+"otomatis bila dibiarkan kosong."
+
+#: my_event/models.py:30
+msgid "Publish Date"
+msgstr "Ditayangkan Tanggal"
+
+#: my_event/restructured_text/embed_event.py:50
+#, python-format
+msgid "%s is not a number."
+msgstr "%s itu bukan angka."
+
+#: my_event/restructured_text/embed_event.py:56
+#, python-format
+msgid "Event with id:%s was not found."
+msgstr "Kegiatan dengan id:%s tidak ditemukan."
+
+#: my_event/templates/my_event/base-admin-object.html:9
+#: my_event/templates/my_event/base-admin.html:9
+msgid "Index"
+msgstr "Katalog"
+
+#: my_event/templates/my_event/base-admin-object.html:14
+#: my_event/templates/my_event/base-admin.html:14
+msgid "Create"
+msgstr "Bikin"
+
+#: my_event/templates/my_event/base-admin-object.html:19
+#: my_event/templates/my_event/event_list.html:87
+msgid "Edit"
+msgstr "Ubah"
+
+#: my_event/templates/my_event/base-admin-object.html:24
+#: my_event/templates/my_event/event_confirm_delete.html:32
+#: my_event/templates/my_event/event_list.html:116
+msgid "Delete"
+msgstr "Hapus"
+
+#: my_event/templates/my_event/event_confirm_delete.html:6
+msgid "Delete Event"
+msgstr "Hapus Kegiatan"
+
+#: my_event/templates/my_event/event_confirm_delete.html:15
+msgid "Do you really want to delete"
+msgstr "Sungguh mau menghapus"
+
+#: my_event/templates/my_event/event_confirm_delete.html:23
+#: my_event/templates/my_event/event_confirm_publish.html:24
+#: my_event/templates/my_event/event_confirm_unpublish.html:23
+msgid "Date Created"
+msgstr "Tanggal Dibikin"
+
+#: my_event/templates/my_event/event_confirm_publish.html:6
+msgid "Publish Event"
+msgstr "Tayangkan Kegiatan"
+
+#: my_event/templates/my_event/event_confirm_publish.html:15
+msgid "Do you really want to publish"
+msgstr "Sungguh mau menayangkan"
+
+#: my_event/templates/my_event/event_confirm_publish.html:33
+#: my_event/templates/my_event/event_list.html:95
+msgid "Publish"
+msgstr "Tayangkan"
+
+#: my_event/templates/my_event/event_confirm_unpublish.html:6
+msgid "Unpublish Event"
+msgstr "Batal Tayang Kegiatan"
+
+#: my_event/templates/my_event/event_confirm_unpublish.html:15
+msgid "Do you really want to unpublish"
+msgstr "Sungguh mau batal tayang"
+
+#: my_event/templates/my_event/event_confirm_unpublish.html:32
+#: my_event/templates/my_event/event_list.html:92
+msgid "Unpublish"
+msgstr "Batal Tayang"
+
+#: my_event/templates/my_event/event_create_form.html:6
+#: my_event/templates/my_event/event_list.html:30
+msgid "Create Event"
+msgstr "Bikin Kegiatan"
+
+#: my_event/templates/my_event/event_create_form.html:33
+#: my_event/templates/my_event/event_form.html:33
+msgid "Body Preview"
+msgstr "Penampakan Konten"
+
+#: my_event/templates/my_event/event_create_form.html:35
+#: my_event/templates/my_event/event_create_form.html:49
+#: my_event/templates/my_event/event_create_form.html:73
+#: my_event/templates/my_event/event_form.html:35
+#: my_event/templates/my_event/event_form.html:49
+#: my_event/templates/my_event/event_form.html:73
+msgid "Preview"
+msgstr "Penampakan"
+
+#: my_event/templates/my_event/event_create_form.html:40
+#: my_event/templates/my_event/event_create_form.html:54
+#: my_event/templates/my_event/event_form.html:40
+#: my_event/templates/my_event/event_form.html:54
+msgid "Editing Help"
+msgstr "Bantuan Sunting"
+
+#: my_event/templates/my_event/event_create_form.html:47
+#: my_event/templates/my_event/event_form.html:47
+msgid "Summary Preview"
+msgstr "Penampakan Deskripsi"
+
+#: my_event/templates/my_event/event_create_form.html:64
+msgid "Submit"
+msgstr "Kirim"
+
+#: my_event/templates/my_event/event_form.html:6
+msgid "Update Event"
+msgstr "Ubah Kegiatan"
+
+#: my_event/templates/my_event/event_form.html:64
+msgid "Update"
+msgstr "Ubah"
+
+#: my_event/templates/my_event/event_list.html:5
+msgid "Manage Events"
+msgstr "Administrasi Kegiatan"
+
+#: my_event/templates/my_event/event_list.html:10
+msgid "Linking events in your articles. Example:"
+msgstr "Cara menampilkan tautan di dalam artikel. Contoh:"
+
+#: my_event/templates/my_event/event_list.html:13
+msgid "The number <strong>4</strong> is from the ID column below."
+msgstr "Angka <strong>4</strong> di atas diambil dari kolom ID di bawah."
+
+#: my_event/templates/my_event/event_list.html:20
+msgid "Events"
+msgstr "Kegiatan-Kegiatan"
+
+#: my_event/templates/my_event/event_list.html:37
+msgid "ID"
+msgstr ""
+
+#: my_event/templates/my_event/event_list.html:49
+msgid "Status"
+msgstr ""
+
+#: my_event/templates/my_event/event_list.html:75
+msgid "Published"
+msgstr "Ditayangkan"
+
+#: my_event/templates/my_event/event_list.html:77
+msgid "Not Published"
+msgstr "Belum Tayang"

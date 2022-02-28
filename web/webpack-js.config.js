@@ -189,11 +189,11 @@ module.exports = (env, options) =>
                 cacheGroups: {
                     base: {
                         name: 'base',
-                        test: /[\\/]node_modules[\\/](@carbon|carbon-components|lodash)[\\/]/,
+                        test: /[\\/]node_modules[\\/](@carbon|carbon-components|lodash|jquery)[\\/]/,
                     },
                     polyfill: {
                         name: 'polyfill',
-                        test: /[\\/]node_modules[\\/](core-js|regenerator-runtime|element-closest-polyfill)[\\/]/,
+                        test: /[\\/]node_modules[\\/](core-js|regenerator-runtime|element-closest-polyfill|flatpickr)[\\/]/,
                     },
                     fw: {
                         name: 'fw',

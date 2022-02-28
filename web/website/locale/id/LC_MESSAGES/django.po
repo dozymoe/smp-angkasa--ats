@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 23:20+0700\n"
+"POT-Creation-Date: 2022-03-01 01:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,26 +30,31 @@ msgid "Articles"
 msgstr "Artikel-Artikel"
 
 #: website/templates/base-admin.html:14
+#: website/templates/website/welcome.html:50
+msgid "Events"
+msgstr "Info Kegiatan"
+
+#: website/templates/base-admin.html:19
 msgid "Pages"
 msgstr "Laman-Laman"
 
-#: website/templates/base-admin.html:19
+#: website/templates/base-admin.html:24
 msgid "Files"
 msgstr "Berkas-Berkas"
 
-#: website/templates/base-admin.html:24
+#: website/templates/base-admin.html:29
 msgid "Slides"
 msgstr "Slide-Slide"
 
-#: website/templates/base-admin.html:29
+#: website/templates/base-admin.html:34
 msgid "Front Contents"
 msgstr "Konten-Konten Fitur"
 
-#: website/templates/base-admin.html:40
+#: website/templates/base-admin.html:45
 msgid "Sign Out"
 msgstr "Keluar"
 
-#: website/templates/base-admin.html:45
+#: website/templates/base-admin.html:50
 msgid "Sign In"
 msgstr "Masuk"
 
@@ -126,9 +131,14 @@ msgid "Posted on"
 msgstr "Diterbitkan"
 
 #: website/templates/website/welcome.html:37
+#: website/templates/website/welcome.html:73
 msgid "Read more"
 msgstr "Baca Selengkapnya"
 
-#: website/templates/website/welcome.html:50
-msgid "Events"
-msgstr "Info Kegiatan"
+#: website/templates/website/welcome.html:58
+msgid "Started at"
+msgstr "Dimulai"
+
+#: website/templates/website/welcome.html:64
+msgid "Stopped at"
+msgstr "Selesai"

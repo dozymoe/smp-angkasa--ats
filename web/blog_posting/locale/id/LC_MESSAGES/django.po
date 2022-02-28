@@ -186,7 +186,7 @@ msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_list.html:43
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_list.html:61
 msgid "Published"

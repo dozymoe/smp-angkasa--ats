@@ -42,6 +42,7 @@ ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
 
 INSTALLED_APPS = [
     'blog_posting',
+    'my_event',
     'my_files',
     'my_front_content',
     'my_slide',

@@ -16,7 +16,7 @@ def webpage(pk, alt=None):
         obj = None
 
     if obj is None or obj.published_at is None or obj.deleted_at is not None:
-        return ':webpage:%s' % pk
+        return ':webpage:`%s`' % pk
 
     url = obj.get_absolute_url()
     if alt:

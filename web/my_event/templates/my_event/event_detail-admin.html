@@ -1,0 +1,13 @@
+{% extends 'my_event/base-admin-object.html' %}
+{% load i18n %}
+{% load carbondesign website %}
+
+{% block head_title %}{{object.title}}{% endblock %}
+
+
+{% block content %}
+  <h1>{{object.title}}</h1>
+  <div class="form-group">
+    {{object.body | restify}}
+  </div>
+{% endblock %}

@@ -13,15 +13,15 @@
 
   <div class="form-group">
     {% trans "Do you really want to publish" %}:
-    {{ object.title }}?
+    {{object}}?
   </div>
 
   <div class="form-group">
-    {{ object.summary | restify }}
+    {{object.summary | restify}}
   </div>
 
   <div class="form-group">
-    {% trans "Date Created" %}: {{ object.created_at | date }}
+    {% trans "Date Created" %}: {{object.created_at | date}}
   </div>
 
   {% if form.errors %}

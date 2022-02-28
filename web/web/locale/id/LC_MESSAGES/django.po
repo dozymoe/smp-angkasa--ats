@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 19:32+0700\n"
+"POT-Creation-Date: 2022-03-01 01:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web/settings.py:183
+#: web/settings.py:184
 msgid "Bahasa Indonesia"
 msgstr "Bahasa Indonesia"
 
-#: web/settings.py:184
+#: web/settings.py:185
 msgid "English"
 msgstr "Inggris"
 
 #: web/urls.py:29
 msgid "news/"
 msgstr "berita/"
+
+#: web/urls.py:30
+msgid "events/"
+msgstr "kegiatan/"
+
+#: web/urls.py:31
+msgid "files/"
+msgstr "berkas/"

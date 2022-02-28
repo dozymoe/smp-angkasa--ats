@@ -1,0 +1,75 @@
+{% extends 'my_event/base-admin.html' %}
+{% load i18n %}
+{% load carbondesign %}
+
+{% block head_title %}
+  {% trans "Create Event" %}
+{% endblock %}
+
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+
+  <div class="form-group">
+    {% TextInput form.title autofocus="true" %}
+  </div>
+
+  <div class="form-group">
+    {% TextInput form.slug %}
+  </div>
+
+  <div class="form-group">
+    {% DatePicker form.started_at %}
+  </div>
+
+  <div class="form-group">
+    {% DatePicker form.stopped_at %}
+  </div>
+
+  <div class="form-group">
+    {% TextArea form.body %}
+
+    {% trans "Body Preview" as title %}
+    {% Button type="button" title=title data-provide-rest-preview=form.body.id_for_label %}
+      {% trans "Preview" %}
+    {% endButton %}
+
+    {% url 'EditorHelpText' 'html' as url %}
+    {% Button tag="a" href=url target="_blank" %}
+      {% trans "Editing Help" %}
+    {% endButton %}
+  </div>
+
+  <div class="form-group">
+    {% TextArea form.summary rows="4" class="text-editor" %}
+
+    {% trans "Summary Preview" as title %}
+    {% Button type="button" title=title data-provide-rest-preview=form.summary.id_for_label %}
+      {% trans "Preview" %}
+    {% endButton %}
+
+    {% url 'EditorHelpText' 'html' as url %}
+    {% Button tag="a" href=url target="_blank" %}
+      {% trans "Editing Help" %}
+    {% endButton %}
+  </div>
+
+  {% if form.errors %}
+    <div class="form-group">{{form.errors}}</div>
+  {% endif %}
+
+  <div class="form-group">
+    {% Button type="submit" %}
+      {% trans "Submit" %}
+    {% endButton %}
+  </div>
+</form>
+{% endblock %}
+
+
+{% block jsmodal_1 %}
+  {% Modal id="modal-rest-preview" %}
+    {% Slot 'heading' %}{% trans "Preview" %}{% endSlot %}
+  {% endModal %}
+{% endblock %}

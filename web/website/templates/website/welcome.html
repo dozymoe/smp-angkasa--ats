@@ -15,7 +15,7 @@
               <h2>{% trans "Latest News" %}</h2>
             {% endCol %}
           {% endRow %}
-          {% Row tag="ul" class="font-blog-posts" %}
+          {% Row tag="ul" class="front-blog-posts" %}
             {% for obj in blogposts %}
               {% Col lg=6 tag="li" role="article" %}
                 {% if obj.image %}
@@ -49,6 +49,32 @@
             {% Col lg=12 %}
               <h2>{% trans "Events" %}</h2>
             {% endCol %}
+          {% endRow %}
+          {% Row tag="ul" class="font-events" %}
+            {% for obj in events %}
+              {% Col lg=6 tag="li" role="article" %}
+                <h3>{{obj.title}}</h3>
+                <p>
+                  {% trans "Started at" %}
+                  <time datetime="{{obj.started_at}}">
+                    {{ obj.started_at | date:'j F' }}
+                  </time>
+                  {% if obj.stopped_at %}
+                    <br/>
+                    {% trans "Stopped at" %}
+                    <time datetime="{{obj.stopped_at}}">
+                      {{ obj.stopped_at | date:'j F' }}
+                    </time>
+                  {% endif %}
+                </p>
+                {{ obj.summary | restify }}
+                <footer>
+                  <a href="{{obj.get_absolute_url}}">
+                    {% trans "Read more" %}
+                  </a>
+                </footer>
+              {% endCol %}
+            {% endfor %}
           {% endRow %}
         {% endGrid %}
       {% endCol %}

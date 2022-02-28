@@ -9,6 +9,11 @@
       {% trans "Articles" %}
     {% endUiNavItem %}
   
+    {% url 'Event:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Events" %}
+    {% endUiNavItem %}
+  
     {% url 'WebPage:Index' as url %}
     {% UiNavItem href=url %}
       {% trans "Pages" %}

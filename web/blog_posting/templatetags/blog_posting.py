@@ -16,7 +16,7 @@ def webblog(pk, alt=None):
         obj = None
 
     if obj is None or obj.published_at is None or obj.deleted_at is not None:
-        return '::webblog::%s' % pk
+        return ':webblog:`%s`' % pk
 
     url = obj.get_absolute_url()
     if alt:

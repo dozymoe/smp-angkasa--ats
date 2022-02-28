@@ -13,7 +13,7 @@ def webfile(pk, alt=None):
     try:
         obj = MyFile.objects.get(pk=obj_id)
     except MyFile.DoesNotExist:
-        return '::webfile::%s' % pk
+        return ':webfile:`%s`' % pk
 
     if obj.mimetype.startswith('image/'):
         url = obj.image_lg.url

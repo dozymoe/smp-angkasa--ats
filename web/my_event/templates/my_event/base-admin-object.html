@@ -1,0 +1,27 @@
+{% extends 'base-admin.html' %}
+{% load i18n %}
+{% load carbondesign %}
+
+{% block navigation_app %}
+  {% UiNavSection %}
+    {% url 'Event:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Index" %}
+    {% endUiNavItem %}
+
+    {% url 'Event:Create' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Create" %}
+    {% endUiNavItem %}
+
+    {% url 'Event:Update' object.pk as url %}
+    {% UiNavItem href=url %}
+      {% trans "Edit" %}
+    {% endUiNavItem %}
+
+    {% url 'Event:Destroy' object.pk as url %}
+    {% UiNavItem href=url %}
+      {% trans "Delete" %}
+    {% endUiNavItem %}
+  {% endUiNavSection %}
+{% endblock %}

@@ -35,6 +35,7 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += i18n_patterns(
     path('blog-posts/', include('blog_posting.urls_admin',
             namespace='BlogPosting')),
+    path('events/', include('my_event.urls_admin', namespace='Event')),
     path('web-pages/', include('web_page.urls_admin', namespace='WebPage')),
     path('files/', include('my_files.urls_admin',
             namespace='MyFile')),
