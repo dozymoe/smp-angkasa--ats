@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 15:20+0700\n"
+"POT-Creation-Date: 2022-03-01 20:38+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,14 @@ msgid "Location"
 msgstr "Lokasi"
 
 #: my_slide/models.py:18
+msgid "Position"
+msgstr "Posisi"
+
+#: my_slide/models.py:20
 msgid "Description"
 msgstr "Deskripsi"
 
-#: my_slide/models.py:20
+#: my_slide/models.py:22
 msgid "Image"
 msgstr "Gambar"
 
@@ -101,3 +105,19 @@ msgstr "Lokasi"
 #: my_slide/templates/my_slide/myslide_list.html:33
 msgid "Filename"
 msgstr "Nama Berkas"
+
+#: my_slide/templates/my_slide/myslide_list.html:77
+msgid "Move First"
+msgstr "Pindah Pertama"
+
+#: my_slide/templates/my_slide/myslide_list.html:87
+msgid "Move Up"
+msgstr "Pindah Naik"
+
+#: my_slide/templates/my_slide/myslide_list.html:97
+msgid "Move Down"
+msgstr "Pindah Turun"
+
+#: my_slide/templates/my_slide/myslide_list.html:107
+msgid "Move Last"
+msgstr "Pindah Terakhir"

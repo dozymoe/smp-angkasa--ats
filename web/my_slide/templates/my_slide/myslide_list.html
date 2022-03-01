@@ -65,6 +65,48 @@
               {% endSlot %}
               {% trans "Delete" %}
             {% endTdOvButton %}
+
+            {% with request.get_full_path|urlencode as nexturl %}
+              {% url 'MySlide:MoveFirst' obj.pk as baseurl %}
+              {% with baseurl|add:'?next='|add:nexturl as url %}
+                {% TdOvButton tag="a" href=url %}
+                  {% Slot 'icon' %}
+                    <path d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"/>
+                  {% endSlot %}
+                  {% trans "Move First" %}
+                {% endTdOvButton %}
+              {% endwith %}
+
+              {% url 'MySlide:MoveUp' obj.pk as baseurl %}
+              {% with baseurl|add:'?next='|add:nexturl as url %}
+                {% TdOvButton tag="a" href=url %}
+                  {% Slot 'icon' %}
+                    <path d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"/>
+                  {% endSlot %}
+                  {% trans "Move Up" %}
+                {% endTdOvButton %}
+              {% endwith %}
+
+              {% url 'MySlide:MoveDown' obj.pk as baseurl %}
+              {% with baseurl|add:'?next='|add:nexturl as url %}
+                {% TdOvButton tag="a" href=url %}
+                  {% Slot 'icon' %}
+                    <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"/>
+                  {% endSlot %}
+                  {% trans "Move Down" %}
+                {% endTdOvButton %}
+              {% endwith %}
+
+              {% url 'MySlide:MoveLast' obj.pk as baseurl %}
+              {% with baseurl|add:'?next='|add:nexturl as url %}
+                {% TdOvButton tag="a" href=url %}
+                  {% Slot 'icon' %}
+                    <path d="M12.3 9.3L8.5 13.1 8.5 1 7.5 1 7.5 13.1 3.7 9.3 3 10 8 15 13 10z"/>
+                  {% endSlot %}
+                  {% trans "Move Last" %}
+                {% endTdOvButton %}
+              {% endwith %}
+            {% endwith %}
           {% endTd %}
         </tr>
       {% endfor %}

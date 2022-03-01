@@ -25,8 +25,11 @@ class Home(TemplateView):
                 .all()[:10]
         context['slides'] = MySlide.objects\
                 .filter(location='front')\
+                .order_by('position', '-created_at')\
                 .all()[:20]
-        context['front_contents'] = FrontContent.objects.all()[:3]
+        context['front_contents'] = FrontContent.objects\
+                .order_by('position', '-created_at')\
+                .all()[:3]
         return context
 
 

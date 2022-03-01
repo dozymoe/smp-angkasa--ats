@@ -15,6 +15,8 @@ AVAILABLE_SLIDES = (
 class MySlide(DirtyFieldsMixin, RulesModel):
     location = models.CharField(verbose_name=_("Location"), max_length=12,
             choices=AVAILABLE_SLIDES, db_index=True)
+    position = models.PositiveIntegerField(verbose_name=_("Position"),
+            db_index=True, default=0)
     description = models.TextField(verbose_name=_("Description"), null=True,
             blank=True)
     image = models.ForeignKey(MyFile, verbose_name=_("Image"),

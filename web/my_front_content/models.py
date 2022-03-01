@@ -11,6 +11,8 @@ from web_page.models import WebPage
 class FrontContent(DirtyFieldsMixin, RulesModel):
     content = models.ForeignKey(WebPage, verbose_name=_("Content"),
             on_delete=models.CASCADE)
+    position = models.PositiveIntegerField(verbose_name=_("Position"),
+            db_index=True, default=0)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL,
             on_delete=models.PROTECT, db_index=True,
