@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-02 02:59+0700\n"
+"POT-Creation-Date: 2022-03-02 04:29+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,12 +135,3 @@ msgstr "Nama Berkas"
 #: my_files/templates/my_files/myfile_list.html:78
 msgid "Download"
 msgstr "Unduh"
-
-#~ msgid "Home Page"
-#~ msgstr "Laman Muka"
-
-#~ msgid "Operations"
-#~ msgstr "Aksi-Aksi"
-
-#~ msgid "Open Menu"
-#~ msgstr "Buka Menu"

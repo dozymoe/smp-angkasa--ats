@@ -217,10 +217,11 @@ web:
   compilemessages:
     shell:
       options:
-        command: ./run django-manage --project={_1} {_2}
+        command: ./run django-admin --project={_1} {_2}
       rule_in:
         - "{_1}/prunemessages/shell"
       raw_depend_in:
+        - lib-py/django-carbondesign/carbondesign/**/*.po
         - "{_1}/**/*.po"
 
   js_messages:

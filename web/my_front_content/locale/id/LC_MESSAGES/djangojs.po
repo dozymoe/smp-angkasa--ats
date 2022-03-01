@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -20,11 +19,11 @@ msgstr ""
 
 #: my_front_content/js/views/page-select-modal.js:36
 msgid "Page Select"
-msgstr ""
+msgstr "Pilih Laman"
 
 #: my_front_content/js/views/page-select-modal.js:66
 msgid "Pages"
-msgstr ""
+msgstr "Laman-Laman"
 
 #: my_front_content/js/views/page-select-modal.js:72
 msgid "Id"
@@ -32,12 +31,12 @@ msgstr ""
 
 #: my_front_content/js/views/page-select-modal.js:73
 msgid "Title"
-msgstr ""
+msgstr "Judul"
 
 #: my_front_content/js/views/page-select-modal.js:74
 msgid "Summary"
-msgstr ""
+msgstr "Ringkasan"
 
 #: my_front_content/js/views/page-select-modal.js:90
 msgid "Select"
-msgstr ""
+msgstr "Pilih"
