@@ -86,7 +86,7 @@
 {% block banner %}
   {% if slides %}
     <div class="carousel"
-        data-flickity='{"lazyLoad":true, "autoPlay":true, "wrapAround":true}'>
+        data-flickity='{"lazyLoad":true, "autoPlay":true, "fade":true}'>
       {% for slide in slides %}
         <div class="carousel-cell">
           <img data-flickity-lazyload="{{slide.image.get_absolute_url}}"
