@@ -95,7 +95,6 @@ web:
         - lib-py/django-carbondesign/carbondesign/mithril-js/**/*.js
       raw_extra_out:
         - var/{_1}/webpack-{_2}.meta.json
-        - "{_1}/static/js/main.js"
 
   blog_posting:
     pylint:
