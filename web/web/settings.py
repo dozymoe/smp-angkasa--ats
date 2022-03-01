@@ -202,6 +202,9 @@ MEDIA_ROOT = ROOT_DIR/'var'/'web'/'uploads'
 STATICFILES_DIRS = [
     BASE_DIR/'static',
 ]
+SVG_DIRS = [
+    ROOT_DIR/'web'/'static_svg',
+]
 
 FROZEN_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')
 

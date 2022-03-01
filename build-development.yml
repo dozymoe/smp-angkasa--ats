@@ -266,6 +266,15 @@ web:
 
 
 node_modules:
+  '@carbon':
+    icons:
+      svg:
+        cp:
+          options:
+            _source_basedir_: "{_1}/{_2}/{_3}/{_4}/"
+          raw_file_in: "{_1}/{_2}/{_3}/{_4}/**/*.svg"
+          raw_file_out: web/static_svg/carbon/
+
   fontawesome:
     fonts:
       cp:

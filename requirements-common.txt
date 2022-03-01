@@ -11,6 +11,7 @@ django-simple-captcha
 django-statici18n
 django-treebeard
 docutils
+lxml
 Pillow
 python-dateutil
 python-magic

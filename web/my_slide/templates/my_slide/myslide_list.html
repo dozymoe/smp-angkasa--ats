@@ -6,110 +6,107 @@
 
 
 {% block content %}
-  <div>
-    {% iif is_paginated pager None as pager %}
-    {% Table %}
-      {% Slot 'title' %}
-        {% trans "Slides" %}
-      {% endSlot %}
+  {% iif is_paginated pager None as pager %}
+  {% Table %}
+    {% Slot 'title' %}
+      {% trans "Slides" %}
+    {% endSlot %}
 
-      {% Slot 'toolbar' %}
-        {% url 'MySlide:Create' as url %}
-        {% Button tag="a" href=url icon_size=32 %}
-          {% Slot 'icon' %}
-            <path d="M17 15L17 7 15 7 15 15 7 15 7 17 15 17 15 25 17 25 17 17 25 17 25 15 17 15z"></path>
-          {% endSlot %}
-  
-          {% trans "Create Slide" %}
-        {% endButton %}
-      {% endSlot %}
+    {% Slot 'toolbar' %}
+      {% url 'MySlide:Create' as url %}
+      {% Button tag="a" href=url icon_size=32 %}
+        {% Slot 'icon' %}
+          {% svg 'carbon/32/add.svg' %}
+        {% endSlot %}
 
-      {% Slot 'head' %}
-        <tr>
-          {% Th %}
-            {% trans "location" %}
-          {% endTh %}
-          {% Th %}
-            {% trans "Filename" %}
-          {% endTh %}
-          {% Th mode="menu" %}{% endTh %}
-        </tr>
-      {% endSlot %}
-  
-      {% for obj in object_list %}
-        <tr>
-          {% Td %}
-            {{ obj.location }}
-          {% endTd %}
+        {% trans "Create Slide" %}
+      {% endButton %}
+    {% endSlot %}
 
-          {% Td %}
-            {{ obj.image.databits.name }}
-          {% endTd %}
+    {% Slot 'head' %}
+      <tr>
+        {% Th %}
+          {% trans "location" %}
+        {% endTh %}
+        {% Th %}
+          {% trans "Filename" %}
+        {% endTh %}
+        {% Th mode="menu" %}{% endTh %}
+      </tr>
+    {% endSlot %}
 
-          {% Td mode="menu" %}
-            {% comment %}
-            {% url 'MySlide:Edit' obj.pk as url %}
-            {% TdOvButton tag="a" href=url %}
-              {% Slot 'icon' %}
-                <path d="M1 13H15V14H1zM12.7 4.5c.4-.4.4-1 0-1.4 0 0 0 0 0 0l-1.8-1.8c-.4-.4-1-.4-1.4 0 0 0 0 0 0 0L2 8.8V12h3.2L12.7 4.5zM10.2 2L12 3.8l-1.5 1.5L8.7 3.5 10.2 2zM3 11V9.2l5-5L9.8 6l-5 5H3z"></path>
-              {% endSlot %}
-              {% trans "Edit" %}
-            {% endTdOvButton %}
-            {% endcomment %}
+    {% for obj in object_list %}
+      <tr>
+        {% Td %}
+          {{ obj.location }}
+        {% endTd %}
 
-            {% url 'MySlide:Destroy' obj.pk as url %}
-            {% TdOvButton tag="a" href=url %}
-              {% Slot 'icon' %}
-                <path d="M6 6H7V12H6zM9 6H10V12H9z"></path>
-                <path d="M2 3v1h1v10c0 .6.4 1 1 1h8c.6 0 1-.4 1-1V4h1V3H2zM4 14V4h8v10H4zM6 1H10V2H6z"></path>
-              {% endSlot %}
-              {% trans "Delete" %}
-            {% endTdOvButton %}
+        {% Td %}
+          {{ obj.image.databits.name }}
+        {% endTd %}
 
-            {% with request.get_full_path|urlencode as nexturl %}
-              {% url 'MySlide:MoveFirst' obj.pk as baseurl %}
-              {% with baseurl|add:'?next='|add:nexturl as url %}
-                {% TdOvButton tag="a" href=url %}
-                  {% Slot 'icon' %}
-                    <path d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"/>
-                  {% endSlot %}
-                  {% trans "Move First" %}
-                {% endTdOvButton %}
-              {% endwith %}
+        {% Td mode="menu" %}
+          {% comment %}
+          {% url 'MySlide:Edit' obj.pk as url %}
+          {% TdOvButton tag="a" href=url %}
+            {% Slot 'icon' %}
+              {% svg 'carbon/32/edit.svg' %}
+            {% endSlot %}
+            {% trans "Edit" %}
+          {% endTdOvButton %}
+          {% endcomment %}
 
-              {% url 'MySlide:MoveUp' obj.pk as baseurl %}
-              {% with baseurl|add:'?next='|add:nexturl as url %}
-                {% TdOvButton tag="a" href=url %}
-                  {% Slot 'icon' %}
-                    <path d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"/>
-                  {% endSlot %}
-                  {% trans "Move Up" %}
-                {% endTdOvButton %}
-              {% endwith %}
+          {% url 'MySlide:Destroy' obj.pk as url %}
+          {% TdOvButton tag="a" href=url %}
+            {% Slot 'icon' %}
+              {% svg 'carbon/32/trash-can.svg' %}
+            {% endSlot %}
+            {% trans "Delete" %}
+          {% endTdOvButton %}
 
-              {% url 'MySlide:MoveDown' obj.pk as baseurl %}
-              {% with baseurl|add:'?next='|add:nexturl as url %}
-                {% TdOvButton tag="a" href=url %}
-                  {% Slot 'icon' %}
-                    <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"/>
-                  {% endSlot %}
-                  {% trans "Move Down" %}
-                {% endTdOvButton %}
-              {% endwith %}
-
-              {% url 'MySlide:MoveLast' obj.pk as baseurl %}
-              {% with baseurl|add:'?next='|add:nexturl as url %}
-                {% TdOvButton tag="a" href=url %}
-                  {% Slot 'icon' %}
-                    <path d="M12.3 9.3L8.5 13.1 8.5 1 7.5 1 7.5 13.1 3.7 9.3 3 10 8 15 13 10z"/>
-                  {% endSlot %}
-                  {% trans "Move Last" %}
-                {% endTdOvButton %}
-              {% endwith %}
+          {% with request.get_full_path|urlencode as nexturl %}
+            {% url 'MySlide:MoveFirst' obj.pk as baseurl %}
+            {% with baseurl|add:'?next='|add:nexturl as url %}
+              {% TdOvButton tag="a" href=url %}
+                {% Slot 'icon' %}
+                  {% svg 'carbon/32/up-to-top.svg' %}
+                {% endSlot %}
+                {% trans "Move First" %}
+              {% endTdOvButton %}
             {% endwith %}
-          {% endTd %}
-        </tr>
-      {% endfor %}
-    {% endTable %}
-  </div>
+
+            {% url 'MySlide:MoveUp' obj.pk as baseurl %}
+            {% with baseurl|add:'?next='|add:nexturl as url %}
+              {% TdOvButton tag="a" href=url %}
+                {% Slot 'icon' %}
+                  {% svg 'carbon/32/chevron--up.svg' %}
+                {% endSlot %}
+                {% trans "Move Up" %}
+              {% endTdOvButton %}
+            {% endwith %}
+
+            {% url 'MySlide:MoveDown' obj.pk as baseurl %}
+            {% with baseurl|add:'?next='|add:nexturl as url %}
+              {% TdOvButton tag="a" href=url %}
+                {% Slot 'icon' %}
+                  {% svg 'carbon/32/chevron--down.svg' %}
+                {% endSlot %}
+                {% trans "Move Down" %}
+              {% endTdOvButton %}
+            {% endwith %}
+
+            {% url 'MySlide:MoveLast' obj.pk as baseurl %}
+            {% with baseurl|add:'?next='|add:nexturl as url %}
+              {% TdOvButton tag="a" href=url %}
+                {% Slot 'icon' %}
+                  {% svg 'carbon/32/down-to-bottom.svg' %}
+                {% endSlot %}
+                {% trans "Move Last" %}
+              {% endTdOvButton %}
+            {% endwith %}
+          {% endwith %}
+        {% endTd %}
+      </tr>
+    {% endfor %}
+  {% endTable %}
 {% endblock %}

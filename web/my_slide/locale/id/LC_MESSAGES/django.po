@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-01 20:38+0700\n"
+"POT-Creation-Date: 2022-03-02 02:59+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Bikin"
 
 #: my_slide/templates/my_slide/base-admin-object.html:18
 #: my_slide/templates/my_slide/myslide_confirm_delete.html:33
-#: my_slide/templates/my_slide/myslide_list.html:67
+#: my_slide/templates/my_slide/myslide_list.html:65
 msgid "Delete"
 msgstr "Hapus"
 
@@ -66,7 +66,7 @@ msgid "Date Created"
 msgstr "Tanggal Dibikin"
 
 #: my_slide/templates/my_slide/myslide_create_form.html:5
-#: my_slide/templates/my_slide/myslide_list.html:23
+#: my_slide/templates/my_slide/myslide_list.html:22
 msgid "Create Slide"
 msgstr "Bikin Slide"
 
@@ -94,30 +94,30 @@ msgstr "Kirim"
 msgid "Manage Slides"
 msgstr "Administrasi Slide"
 
-#: my_slide/templates/my_slide/myslide_list.html:13
+#: my_slide/templates/my_slide/myslide_list.html:12
 msgid "Slides"
 msgstr "Slide-Slide"
 
-#: my_slide/templates/my_slide/myslide_list.html:30
+#: my_slide/templates/my_slide/myslide_list.html:29
 msgid "location"
 msgstr "Lokasi"
 
-#: my_slide/templates/my_slide/myslide_list.html:33
+#: my_slide/templates/my_slide/myslide_list.html:32
 msgid "Filename"
 msgstr "Nama Berkas"
 
-#: my_slide/templates/my_slide/myslide_list.html:77
+#: my_slide/templates/my_slide/myslide_list.html:75
 msgid "Move First"
 msgstr "Pindah Pertama"
 
-#: my_slide/templates/my_slide/myslide_list.html:87
+#: my_slide/templates/my_slide/myslide_list.html:85
 msgid "Move Up"
 msgstr "Pindah Naik"
 
-#: my_slide/templates/my_slide/myslide_list.html:97
+#: my_slide/templates/my_slide/myslide_list.html:95
 msgid "Move Down"
 msgstr "Pindah Turun"
 
-#: my_slide/templates/my_slide/myslide_list.html:107
+#: my_slide/templates/my_slide/myslide_list.html:105
 msgid "Move Last"
 msgstr "Pindah Terakhir"

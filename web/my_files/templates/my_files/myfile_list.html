@@ -34,7 +34,7 @@ Next paragraph
         {% url 'MyFile:Create' as url %}
         {% Button tag="a" href=url icon_size=32 %}
           {% Slot 'icon' %}
-            <path d="M17 15L17 7 15 7 15 15 7 15 7 17 15 17 15 25 17 25 17 17 25 17 25 15 17 15z"></path>
+            {% svg 'carbon/32/add.svg' %}
           {% endSlot %}
 
           {% trans "Create File" %}
@@ -72,11 +72,17 @@ Next paragraph
 
           {% Td mode="menu" %}
             {% TdOvButton tag="a" href=obj.databits.url target="_blank" %}
+              {% Slot 'icon' %}
+                {% svg 'carbon/32/download.svg' %}
+              {% endSlot %}
               {% trans "Download" %}
             {% endTdOvButton %}
 
             {% url 'MyFile:Destroy' obj.pk as url %}
             {% TdOvButton tag="a" href=url %}
+              {% Slot 'icon' %}
+                {% svg 'carbon/32/trash-can.svg' %}
+              {% endSlot %}
               {% trans "Delete" %}
             {% endTdOvButton %}
           {% endTd %}

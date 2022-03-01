@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-24 15:20+0700\n"
+"POT-Creation-Date: 2022-03-02 02:59+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgstr "Bikin"
 
 #: my_files/templates/my_files/base-admin-object.html:18
 #: my_files/templates/my_files/myfile_confirm_delete.html:29
-#: my_files/templates/my_files/myfile_list.html:80
+#: my_files/templates/my_files/myfile_list.html:86
 msgid "Delete"
 msgstr "Hapus"
 
@@ -132,41 +132,9 @@ msgstr ""
 msgid "Filename"
 msgstr "Nama Berkas"
 
-#: my_files/templates/my_files/myfile_list.html:75
+#: my_files/templates/my_files/myfile_list.html:78
 msgid "Download"
 msgstr "Unduh"
-
-#: my_files/templates/my_files/verified_email_required.html:5
-msgid "Verify Your E-mail Address"
-msgstr ""
-
-#: my_files/templates/my_files/verified_email_required.html:12
-msgid ""
-"\n"
-"      This part of the site requires us to verify that you are who you "
-"claim\n"
-"      to be. For this purpose, we require that you verify ownership of your\n"
-"      e-mail address.\n"
-"    "
-msgstr ""
-
-#: my_files/templates/my_files/verified_email_required.html:20
-msgid ""
-"\n"
-"      We have sent an e-mail to you for verification. Please click on the\n"
-"      link inside this e-mail. Please contact us if you do not receive it\n"
-"      within a few minutes.\n"
-"    "
-msgstr ""
-
-#: my_files/templates/my_files/verified_email_required.html:28
-#, python-format
-msgid ""
-"\n"
-"      <strong>Note:</strong> you can still\n"
-"      <a href=\"%(email_url)s\">change your e-mail address</a>.\n"
-"    "
-msgstr ""
 
 #~ msgid "Home Page"
 #~ msgstr "Laman Muka"

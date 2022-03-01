@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 19:32+0700\n"
+"POT-Creation-Date: 2022-03-02 02:59+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,7 +77,7 @@ msgstr "Ubah"
 
 #: blog_posting/templates/blog_posting/base-admin-object.html:24
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:32
-#: blog_posting/templates/blog_posting/blogposting_list.html:102
+#: blog_posting/templates/blog_posting/blogposting_list.html:99
 msgid "Delete"
 msgstr "Hapus"
 

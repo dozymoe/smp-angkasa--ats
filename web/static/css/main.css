@@ -32278,6 +32278,10 @@ body {
   margin: 1em;
 }
 
+.bx--header {
+  background-color: #303f9f;
+}
+
 body > footer {
   background-color: #303f9f;
   color: #fff;
