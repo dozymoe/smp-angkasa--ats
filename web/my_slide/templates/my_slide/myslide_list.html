@@ -43,7 +43,7 @@
 
         {% Td %}
           {% Link href=obj.image.get_absolute_url %}
-            {{obj.image.description | restify}}
+            {{obj.image.pk}}:&nbsp; {{obj.image.description | restify}}
           {% endLink %}
         {% endTd %}
 

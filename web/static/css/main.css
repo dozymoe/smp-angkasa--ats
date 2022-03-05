@@ -32117,6 +32117,10 @@ body {
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
+.bx--link > .document {
+  margin-top: -0.2em;
+}
+
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */

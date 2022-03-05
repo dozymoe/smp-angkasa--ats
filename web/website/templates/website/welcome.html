@@ -93,9 +93,11 @@
               srcset="{{slide.image.get_html_attr_srcset}}"
               sizes="{{slide.image.get_html_attr_sizes}}"
               alt="{{slide.image.alt_text}}" />
-          <div class="text-overlay">
-            {{slide.description | restify}}
-          </div>
+          {% if slide.description %}
+            <div class="text-overlay">
+              {{slide.description | restify}}
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>

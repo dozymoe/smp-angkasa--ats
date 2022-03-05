@@ -43,8 +43,9 @@ web:
           - pygmentize/shell
         raw_depend_in:
           - package-{{PROJECT_VARIANT}}.json
-          - "{_1}/website/sass/**/*.scss"
           - "{_1}/blog_posting/sass/**/*.scss"
+          - "{_1}/carbondesign/sass/**/*.scss"
+          - "{_1}/website/sass/**/*.scss"
         raw_extra_out: tmp/{_1}-index-compiled.css
 
     postcss:
