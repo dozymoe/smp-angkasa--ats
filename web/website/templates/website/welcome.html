@@ -92,7 +92,10 @@
           <img data-flickity-lazyload="{{slide.image.get_absolute_url}}"
               srcset="{{slide.image.get_html_attr_srcset}}"
               sizes="{{slide.image.get_html_attr_sizes}}"
-              alt="{{slide.description}}" class="carousel-cell-imagea" />
+              alt="{{slide.image.alt_text}}" />
+          <div class="text-overlay">
+            {{slide.description | restify}}
+          </div>
         </div>
       {% endfor %}
     </div>

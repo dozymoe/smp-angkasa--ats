@@ -64,7 +64,7 @@ class MyFile(DirtyFieldsMixin, RulesModel):
 
     def get_absolute_url(self):
         if self.is_image():
-            return reverse('MyFile:Display', args=(self.pk, 'lg'))
+            return reverse('MyFile:Display', args=(self.pk, 'xs'))
         return reverse('MyFile:Display', args=(self.pk,))
 
 

@@ -11,21 +11,13 @@
   <form action="" method="post">
     {% csrf_token %}
 
-    <div class="form-group">
-      {% Grid class="ph-0 mw-none" %}
-        {% Row %}
-          {% Col lg=10 %}
-            <input type="hidden" name="content" id="content">
-            {% TextInput form.content widget="input" id="content-caption" name="" readonly="" %}
-          {% endCol %}
+    <div class="form-group input-button-pairing">
+      <input type="hidden" name="content" id="content">
+      {% TextInput form.content widget="input" id="content-caption" name="" readonly="" %}
 
-          {% Col lg=2 %}
-            {% Button type="button" data-provide-select_page="content" data-select_page-label="content-caption" %}
-              {% trans "Choose" %}
-            {% endButton %}
-          {% endCol %}
-        {% endRow %}
-      {% endGrid %}
+      {% Button field=True type="button" data-provide-select_page="content" data-select_page-label="content-caption" %}
+        {% trans "Choose" %}
+      {% endButton %}
     </div>
   
     {% if form.errors %}

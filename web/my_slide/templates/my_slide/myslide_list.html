@@ -38,23 +38,23 @@
     {% for obj in object_list %}
       <tr>
         {% Td %}
-          {{ obj.location }}
+          {{obj.get_location_display}}
         {% endTd %}
 
         {% Td %}
-          {{ obj.image.databits.name }}
+          {% Link href=obj.image.get_absolute_url %}
+            {{obj.image.description | restify}}
+          {% endLink %}
         {% endTd %}
 
         {% Td mode="menu" %}
-          {% comment %}
-          {% url 'MySlide:Edit' obj.pk as url %}
+          {% url 'MySlide:Update' obj.pk as url %}
           {% TdOvButton tag="a" href=url %}
             {% Slot 'icon' %}
               {% svg 'carbon/32/edit.svg' %}
             {% endSlot %}
             {% trans "Edit" %}
           {% endTdOvButton %}
-          {% endcomment %}
 
           {% url 'MySlide:Destroy' obj.pk as url %}
           {% TdOvButton tag="a" href=url %}

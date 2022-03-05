@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-02 04:29+0700\n"
+"POT-Creation-Date: 2022-03-05 19:11+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,11 +58,11 @@ msgstr "Tanggal Dibikin"
 msgid "Create Featured Content"
 msgstr "Bikin Fitur Konten"
 
-#: my_front_content/templates/my_front_content/frontcontent_create_form.html:24
+#: my_front_content/templates/my_front_content/frontcontent_create_form.html:19
 msgid "Choose"
 msgstr "Pilih"
 
-#: my_front_content/templates/my_front_content/frontcontent_create_form.html:37
+#: my_front_content/templates/my_front_content/frontcontent_create_form.html:29
 msgid "Submit"
 msgstr "Kirim"
 

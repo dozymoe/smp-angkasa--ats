@@ -31202,19 +31202,6 @@ https://flickity.metafizzy.co
   z-index: 1;
 }
 
-.carousel-cell {
-  height: 400px;
-  height: 50vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.carousel-cell > img {
-  display: block;
-  max-height: 100%;
-}
-
 body {
   margin: 0;
 }
@@ -32071,6 +32058,137 @@ body {
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-end-p1 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-end-p2 {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* Stroke animations */
+@keyframes init-stroke {
+  0% {
+    stroke-dashoffset: 276.4608;
+  }
+  100% {
+    stroke-dashoffset: 52.527552;
+  }
+}
+@keyframes stroke-end {
+  0% {
+    stroke-dashoffset: 52.527552;
+  }
+  100% {
+    stroke-dashoffset: 276.4608;
+  }
+}
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
@@ -32272,6 +32390,10 @@ body {
 @import "../../../lib/react-materialweb/sass/select";
 @import "../../../lib/react-materialweb/sass/snackbar";
 */
+.bx--text-area {
+  font-family: monospace;
+}
+
 .form-errors {
   font-size: 0.8em;
   margin-left: 1em;
@@ -32282,8 +32404,13 @@ body {
   margin: 1rem 0;
 }
 
-.bx--text-area {
-  font-family: monospace;
+.input-button-pairing {
+  display: flex;
+  flex-wrap: wrap;
+}
+.input-button-pairing > button {
+  margin-top: auto;
+  margin-left: 4px;
 }
 
 .d-block {
@@ -32336,37 +32463,41 @@ body > .bx--content {
   flex-grow: 1;
 }
 
+.img-responsive {
+  width: 100%;
+}
+
 td.autofit,
 th.autofit {
   white-space: nowrap;
   width: 72px;
 }
 
-.img-responsive {
-  width: 100%;
-  max-width: 1020px;
-}
-
-@media (max-width: 320px) {
-  .img-responsive {
-    max-width: 300px;
-  }
-}
-@media (max-width: 640px) {
-  .img-responsive {
-    max-width: 630px;
-  }
-}
-@media (max-width: 800px) {
-  .img-responsive {
-    max-width: 780px;
-  }
-}
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 body.front-page .carousel {
   margin-bottom: 4rem;
+}
+body.front-page .carousel .carousel-cell {
+  max-height: 400px;
+  max-height: 50vh;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body.front-page .carousel .carousel-cell > img {
+  display: block;
+  width: 100%;
+}
+body.front-page .carousel .text-overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  left: 10%;
+  max-width: 40%;
+  padding: 1em;
+  position: absolute;
+  top: 10%;
 }
 
 body.front-page .featured-content {

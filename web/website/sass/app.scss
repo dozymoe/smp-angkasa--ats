@@ -13,22 +13,5 @@ $fa-font-path: "/assets/fonts";
 @import "flickity/css/flickity";
 @import "flickity-fade/flickity-fade";
 
-.carousel-cell
-{
-    height: 400px;
-    height: 50vh;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    > img
-    {
-        display: block;
-        max-height: 100%;
-    }
-}
-
 @import "./reset";
 @import "./index";

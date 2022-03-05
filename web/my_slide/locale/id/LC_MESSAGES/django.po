@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-02 04:29+0700\n"
+"POT-Creation-Date: 2022-03-05 19:11+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Bikin"
 
 #: my_slide/templates/my_slide/base-admin-object.html:18
 #: my_slide/templates/my_slide/myslide_confirm_delete.html:33
-#: my_slide/templates/my_slide/myslide_list.html:65
+#: my_slide/templates/my_slide/myslide_list.html:64
 msgid "Delete"
 msgstr "Hapus"
 
@@ -70,25 +70,39 @@ msgstr "Tanggal Dibikin"
 msgid "Create Slide"
 msgstr "Bikin Slide"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:26
+#: my_slide/templates/my_slide/myslide_create_form.html:21
+#: my_slide/templates/my_slide/myslide_form.html:21
 msgid "Choose"
 msgstr "Pilih"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:36
+#: my_slide/templates/my_slide/myslide_create_form.html:28
+#: my_slide/templates/my_slide/myslide_form.html:28
 msgid "Description Preview"
 msgstr "Penampakan Deskripsi"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:38
+#: my_slide/templates/my_slide/myslide_create_form.html:30
+#: my_slide/templates/my_slide/myslide_form.html:30
 msgid "Preview"
 msgstr "Penampakan"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:43
+#: my_slide/templates/my_slide/myslide_create_form.html:35
+#: my_slide/templates/my_slide/myslide_form.html:35
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:53
+#: my_slide/templates/my_slide/myslide_create_form.html:45
 msgid "Submit"
 msgstr "Kirim"
+
+#: my_slide/templates/my_slide/myslide_form.html:5
+#, fuzzy
+#| msgid "Create Slide"
+msgid "Update Slide"
+msgstr "Bikin Slide"
+
+#: my_slide/templates/my_slide/myslide_form.html:45
+msgid "Update"
+msgstr ""
 
 #: my_slide/templates/my_slide/myslide_list.html:5
 msgid "Manage Slides"
@@ -106,18 +120,22 @@ msgstr "Lokasi"
 msgid "Filename"
 msgstr "Nama Berkas"
 
-#: my_slide/templates/my_slide/myslide_list.html:75
+#: my_slide/templates/my_slide/myslide_list.html:56
+msgid "Edit"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:74
 msgid "Move First"
 msgstr "Pindah Pertama"
 
-#: my_slide/templates/my_slide/myslide_list.html:85
+#: my_slide/templates/my_slide/myslide_list.html:84
 msgid "Move Up"
 msgstr "Pindah Naik"
 
-#: my_slide/templates/my_slide/myslide_list.html:95
+#: my_slide/templates/my_slide/myslide_list.html:94
 msgid "Move Down"
 msgstr "Pindah Turun"
 
-#: my_slide/templates/my_slide/myslide_list.html:105
+#: my_slide/templates/my_slide/myslide_list.html:104
 msgid "Move Last"
 msgstr "Pindah Terakhir"

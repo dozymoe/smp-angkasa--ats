@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load carbondesign %}
 
-{% block head_title %}{% trans "Create Slide" %}{% endblock %}
+{% block head_title %}{% trans "Update Slide" %}{% endblock %}
 
 
 {% block content %}
@@ -15,7 +15,7 @@
 
     <div class="form-group input-button-pairing">
       <input type="hidden" name="image" id="image">
-      {% TextInput form.image widget="input" id="image-caption" name="" readonly="" %}
+      {% TextInput form.image widget="input" id="image-caption" name="" readonly="" value=form.instance.image.description %}
 
       {% Button field=True type="button" data-provide-select_file="image" data-select_file-label="image-caption" %}
         {% trans "Choose" %}
@@ -42,7 +42,7 @@
 
     <div class="form-group">
       {% Button type="submit" %}
-        {% trans "Submit" %}
+        {% trans "Update" %}
       {% endButton %}
     </div>
   </form>
