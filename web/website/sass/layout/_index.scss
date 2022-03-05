@@ -18,7 +18,12 @@ body > .bx--content
     flex-grow: 1;
 }
 
-.img-responsive
+img.img-circle
+{
+    border-radius: 50%;
+}
+
+img.img-responsive
 {
     width: 100%;
 }
