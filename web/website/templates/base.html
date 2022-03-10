@@ -29,6 +29,10 @@
   {% block body %}
     {% url 'Home' as url %}
     {% UiShell label=request.site.name href=url %}
+      {% Slot 'title_prefix' %}
+        <img src="/assets/img/logo.png" height="32" class="d-inline">
+      {% endSlot %}
+
       {% Slot 'navigation' %}
         <img src="/assets/img/logo.png" width="64" class="appbar-logo">
 
@@ -44,41 +48,13 @@
 
       {% Slot 'actions' id="uishell-actions" %}{% endSlot %}
 
-      {% if messages %}
-        {% flash_messages messages DEFAULT_MESSAGE_LEVELS.DEBUG DEFAULT_MESSAGE_LEVELS.WARNING as msgs %}
-        {% if msgs %}
-          <aside>
-            {% for msg in msgs %}
-              <div>
-                <div>{{msg}}</div>
-              </div>
-            {% endfor %}
-          </aside>
-        {% endif %}
-
-        {% flash_messages messages DEFAULT_MESSAGE_LEVELS.WARNING DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
-        {% if msgs %}
-          <aside>
-            {% for msg in msgs %}
-              <div>
-                <div>{{msg}}</div>
-              </div>
-            {% endfor %}
-          </aside>
-        {% endif %}
-
-        {% flash_messages messages DEFAULT_MESSAGE_LEVELS.ERROR as msgs %}
-        {% if msgs %}
-          <aside role="alert">
-            <h2>Messages:</h2>
-            <ul>
-              {% for msg in msgs %}
-                <li>{{msg}}</li>
-              {% endfor %}
-            </ul>
-          </aside>
-        {% endif %}
-      {% endif %}
+      {% for msg in messages %}
+        {% Notification mode='toast' variant=msg.level %}
+          {% NotificationSubtitle %}
+            {{msg.message}}
+          {% endNotificationSubtitle %}
+        {% endNotification %}
+      {% endfor %}
 
       {% block banner %}{% endblock %}
       <main>

@@ -23459,22 +23459,6 @@ a.bx--navigation-link:focus {
   min-height: 1.5rem;
 }
 
-/*
-@use "./variables";
-@use "@material/theme" with
-(
-    $primary: variables.$primary,
-    $secondary: variables.$secondary,
-    $surface: variables.$surface,
-    $background: variables.$background,
-);
-
-@use "@material/typography/functions";
-$mdc-typography-styles-body1: (
-    font-size: functions.pxToRem(18px),
-);
-@import "@material/typography/mdc-typography";
-*/
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
@@ -32419,6 +32403,10 @@ body {
 
 .d-block {
   display: block;
+}
+
+.d-inline {
+  display: inline;
 }
 
 .mw-none {

@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 ]
 STATICI18N_PACKAGES = [
+    'carbondesign',
     'blog_posting',
     'my_user',
     'my_files',
@@ -107,11 +108,11 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
-                'django.template.context_processors.request',
                 'django.template.context_processors.static',
             ],
         },
@@ -150,7 +151,7 @@ LOGGING = {
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_USER_MODEL = 'my_user.User'
-AUTH_PASSWORD_VALIDATORS = (
+AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', # pylint:disable=line-too-long
     },
@@ -163,7 +164,7 @@ AUTH_PASSWORD_VALIDATORS = (
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', # pylint:disable=line-too-long
     },
-)
+]
 
 LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/'

@@ -20,12 +20,28 @@
   django.catalog = django.catalog || {};
   
   var newcatalog = {
+    " items": " baris",
+    " of ": " dari ",
+    " pages": " halaman",
+    "Backward button": "Tombol mundur",
+    "Clear search input": "Bersihkan pencarian",
     "Description": "Deskripsi",
     "File Select": "Pilih Berkas",
+    "Forward button": "Tombol maju",
     "Image": "Gambar",
     "Images": "Gambar-Gambar",
+    "Items per page": "Baris per halaman",
+    "Overflow": "Luapan",
     "Preview": "Penampakan",
-    "Select": "Pilih"
+    "Search": "Pencarian",
+    "Select": "Pilih",
+    "Show modal": "Buka dialog",
+    "Table Action Bar": "Bagian Aksi Tabel",
+    "close modal": "tutup dialog",
+    "items selected": "baris dipilih",
+    "of ": "dari ",
+    "select number of items per page": "pilih jumlah baris per halaman",
+    "select page number to view": "pilihan halaman untuk ditampilkan"
   };
   for (var key in newcatalog) {
     django.catalog[key] = newcatalog[key];

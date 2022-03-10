@@ -30,14 +30,6 @@ module.exports = (env, options) =>
                 $: 'jquery',
                 jQuery: 'jquery',
                 'window.jQuery': 'jquery',
-                /*'window.pluralidx': 'pluralidx',
-                'window.gettext': 'gettext',
-                'window.ngettext': 'ngettext',
-                'window.gettext_noop': 'gettext_noop',
-                'window.pgettext': 'pgettext',
-                'window.npgettext': 'npgettext',
-                'window.interpolate': 'interpolate',
-                'window.get_format': 'get_format',*/
             }),
             new WebpackManifestPlugin({
                 fileName: path.resolve(__dirname,

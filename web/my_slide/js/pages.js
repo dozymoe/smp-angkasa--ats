@@ -6,7 +6,7 @@ export default [
         component: CreatePage,
     },
     {
-        path: '/slides/:pk/edit',
+        path: '/slides/:pk(\\d+)/edit',
         component: CreatePage,
     },
 ]

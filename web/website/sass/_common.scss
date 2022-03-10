@@ -66,23 +66,6 @@ $carbon--theme: map-merge($carbon--theme--g10, (
 
 @import "carbon-components/src/globals/scss/styles";
 
-/*
-@use "./variables";
-@use "@material/theme" with
-(
-    $primary: variables.$primary,
-    $secondary: variables.$secondary,
-    $surface: variables.$surface,
-    $background: variables.$background,
-);
-
-@use "@material/typography/functions";
-$mdc-typography-styles-body1: (
-    font-size: functions.pxToRem(18px),
-);
-@import "@material/typography/mdc-typography";
-*/
-
 $feature-flags: (
   grid-columns-16: true,
 );

@@ -34,9 +34,10 @@ def fulluri(value, request):
 
 @register.simple_tag
 def stylesheets(module='main'):
+    project = os.environ['PROJECT_NAME']
     try:
-        with open(os.path.join(os.environ['ROOT_DIR'], 'var',
-                os.environ['PROJECT_NAME'], 'webpack-css.meta.json'),
+        with open(os.path.join(os.environ['ROOT_DIR'], 'var', project,
+                'webpack-css.meta.json'),
                 encoding='utf-8') as f:
             webpack = json.load(f, object_pairs_hook=OrderedDict)
     except OSError:
@@ -54,9 +55,10 @@ def stylesheets(module='main'):
 
 @register.simple_tag
 def javascripts(module='main'):
+    project = os.environ['PROJECT_NAME']
     try:
-        with open(os.path.join(os.environ['ROOT_DIR'], 'var',
-                os.environ['PROJECT_NAME'], 'webpack-js.meta.json'),
+        with open(os.path.join(os.environ['ROOT_DIR'], 'var', project,
+                'webpack-js.meta.json'),
                 encoding='utf-8') as f:
             webpack = json.load(f, object_pairs_hook=OrderedDict)
     except OSError:
