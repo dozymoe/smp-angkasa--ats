@@ -1,7 +1,7 @@
 import CarbonDesignInit from './initialize-carbondesign';
 import WebsiteInit from './initialize';
 //-
-import MyFile from './modules/my_files/components';
+//import MyFile from './modules/my_files/components';
 import Website from './modules/website/components';
 //-
 import FrontContentPages from '../../my_front_content/js/pages';
@@ -15,7 +15,7 @@ const initializations = [
 
 
 const components = [
-    //...MyFile,
+//    ...MyFile,
     ...Website,
 ];
 

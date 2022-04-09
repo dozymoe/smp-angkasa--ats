@@ -5,8 +5,8 @@ import createStore from 'unistore';
 import { mapActions } from 'unistore/src/util';
 //--
 import { msgbus } from '../../../misc/msgbus';
-import { Slot } from '../../../misc/carbondesign-js/base';
-import { Modal } from '../../../misc/carbondesign-js/modal';
+import { Slot } from '../../../carbondesign/mithril-js/base';
+import { Modal } from '../../../carbondesign/mithril-js/modal';
 
 const ATTRIBUTE_NAME = 'data-provide-rest-preview';
 

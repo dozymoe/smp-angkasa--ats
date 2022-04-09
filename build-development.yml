@@ -84,7 +84,7 @@ web:
     webpack:
       options:
         config_file: "{_1}/webpack-{_2}.config.js"
-        mode: production
+        mode: development
       raw_depend_in:
         - package-{{PROJECT_VARIANT}}.json
         - "{_1}/webpack-{_2}.config.js"
@@ -93,6 +93,7 @@ web:
         - "{_1}/website/js/**/*.js"
         - "{_1}/website/js/**/*.jsx"
         - lib/fireh-mithril/**/*.js
+        - lib-py/django-carbondesign/carbondesign/js/**/*.js
         - lib-py/django-carbondesign/carbondesign/mithril-js/**/*.js
       raw_extra_out:
         - var/{_1}/webpack-{_2}.meta.json
@@ -218,7 +219,7 @@ web:
   compilemessages:
     shell:
       options:
-        command: ./run django-admin --project={_1} {_2}
+        command: ./run django-admin --project={_1} {_2} -i '*.virtualenv*'
       rule_in:
         - "{_1}/prunemessages/shell"
       raw_depend_in:

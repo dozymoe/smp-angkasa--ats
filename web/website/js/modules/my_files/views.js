@@ -1,5 +1,3 @@
-import { showModal } from '../../../../../lib/fireh_react/core/views.jsx';
-//-
 import { SelectFile } from './views/modals.jsx';
 
 

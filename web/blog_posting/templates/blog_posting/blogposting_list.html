@@ -14,13 +14,12 @@
   </div>
   
   <div>
-    {% iif is_paginated pager None as pager %}
-    {% Table pager=pager %}
+    {% Table visible_overflow=True %}
       {% Slot 'title' %}
         {% trans "Articles" %}
       {% endSlot %}
   
-      {% Slot 'toolbar' %}
+      {% Slot 'toolbar_actions' %}
         {% url 'BlogPosting:Create' as url %}
         {% Button tag="a" href=url icon_size=32 %}
           {% Slot 'icon' %}
@@ -29,6 +28,10 @@
 
           {% trans "Create Article" %}
         {% endButton %}
+      {% endSlot %}
+
+      {% Slot 'pagination' %}
+        {% Pagination pager=page_obj %}
       {% endSlot %}
   
       {% Slot 'head' %}
@@ -103,4 +106,14 @@
       {% endfor %}
     {% endTable %}
   </div>
+{% endblock %}
+
+
+{% block breadcrumb %}
+  {% Breadcrumb current=True %}
+    {% url 'Home' as url %}
+    {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
+    {% url 'BlogPosting:Index' as url %}
+    {% BreadcrumbItem href=url current=True %}{% trans "Articles" %}{% endBreadcrumbItem %}
+  {% endBreadcrumb %}
 {% endblock %}

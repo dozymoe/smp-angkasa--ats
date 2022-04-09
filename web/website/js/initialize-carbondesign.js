@@ -1,10 +1,13 @@
-import init_checkbox from '../../misc/carbondesign-js/auto/checkbox';
-import init_data_table from '../../misc/carbondesign-js/auto/data-table';
-import init_date_picker from '../../misc/carbondesign-js/auto/date-picker';
-import init_file_uploader from '../../misc/carbondesign-js/auto/file-uploader';
-import init_overflow_menu from '../../misc/carbondesign-js/auto/overflow-menu';
-import init_text_input from '../../misc/carbondesign-js/auto/text-input';
-import init_ui_shell from '../../misc/carbondesign-js/auto/ui-shell';
+import init_checkbox from '../../carbondesign/js/checkbox';
+import init_data_table from '../../carbondesign/js/data-table';
+import init_date_picker from '../../carbondesign/js/date-picker';
+import init_file_uploader from '../../carbondesign/js/file-uploader';
+import init_notification from '../../carbondesign/js/notification';
+import init_overflow_menu from '../../carbondesign/js/overflow-menu';
+import init_pagination from '../../carbondesign/js/pagination';
+import init_text_input from '../../carbondesign/js/text-input';
+import init_ui_shell from '../../carbondesign/js/ui-shell';
+
 
 export default function(app)
 {
@@ -12,7 +15,9 @@ export default function(app)
     init_data_table();
     init_date_picker();
     init_file_uploader();
+    init_notification();
     init_overflow_menu();
+    init_pagination();
     init_text_input();
     init_ui_shell();
 }

@@ -6,13 +6,12 @@
 
 
 {% block content %}
-  {% iif is_paginated pager None as pager %}
-  {% Table %}
+  {% Table visible_overflow=True %}
     {% Slot 'title' %}
       {% trans "Slides" %}
     {% endSlot %}
 
-    {% Slot 'toolbar' %}
+    {% Slot 'toolbar_actions' %}
       {% url 'MySlide:Create' as url %}
       {% Button tag="a" href=url icon_size=32 %}
         {% Slot 'icon' %}
@@ -21,6 +20,10 @@
 
         {% trans "Create Slide" %}
       {% endButton %}
+    {% endSlot %}
+
+    {% Slot 'pagination' %}
+      {% Pagination pager=page_obj %}
     {% endSlot %}
 
     {% Slot 'head' %}

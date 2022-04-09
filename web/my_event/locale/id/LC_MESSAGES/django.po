@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-02 04:29+0700\n"
+"POT-Creation-Date: 2022-04-09 10:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: my_event/models.py:17 my_event/templates/my_event/event_list.html:43
+#: my_event/models.py:17 my_event/templates/my_event/event_list.html:46
 msgid "Started At"
 msgstr "Waktu Mulai"
 
-#: my_event/models.py:19 my_event/templates/my_event/event_list.html:46
+#: my_event/models.py:19 my_event/templates/my_event/event_list.html:49
 msgid "Stopped At"
 msgstr "Waktu Selesai"
 
-#: my_event/models.py:22 my_event/templates/my_event/event_list.html:40
+#: my_event/models.py:22 my_event/templates/my_event/event_list.html:43
 msgid "Title"
 msgstr "Judul"
 
@@ -74,13 +74,13 @@ msgid "Create"
 msgstr "Bikin"
 
 #: my_event/templates/my_event/base-admin-object.html:19
-#: my_event/templates/my_event/event_list.html:87
+#: my_event/templates/my_event/event_list.html:90
 msgid "Edit"
 msgstr "Ubah"
 
 #: my_event/templates/my_event/base-admin-object.html:24
 #: my_event/templates/my_event/event_confirm_delete.html:32
-#: my_event/templates/my_event/event_list.html:113
+#: my_event/templates/my_event/event_list.html:116
 msgid "Delete"
 msgstr "Hapus"
 
@@ -107,7 +107,7 @@ msgid "Do you really want to publish"
 msgstr "Sungguh mau menayangkan"
 
 #: my_event/templates/my_event/event_confirm_publish.html:33
-#: my_event/templates/my_event/event_list.html:95
+#: my_event/templates/my_event/event_list.html:98
 msgid "Publish"
 msgstr "Tayangkan"
 
@@ -120,12 +120,12 @@ msgid "Do you really want to unpublish"
 msgstr "Sungguh mau batal tayang"
 
 #: my_event/templates/my_event/event_confirm_unpublish.html:32
-#: my_event/templates/my_event/event_list.html:92
+#: my_event/templates/my_event/event_list.html:95
 msgid "Unpublish"
 msgstr "Batal Tayang"
 
 #: my_event/templates/my_event/event_create_form.html:6
-#: my_event/templates/my_event/event_list.html:30
+#: my_event/templates/my_event/event_list.html:29
 msgid "Create Event"
 msgstr "Bikin Kegiatan"
 
@@ -179,22 +179,22 @@ msgstr "Cara menampilkan tautan di dalam artikel. Contoh:"
 msgid "The number <strong>4</strong> is from the ID column below."
 msgstr "Angka <strong>4</strong> di atas diambil dari kolom ID di bawah."
 
-#: my_event/templates/my_event/event_list.html:20
+#: my_event/templates/my_event/event_list.html:19
 msgid "Events"
 msgstr "Kegiatan-Kegiatan"
 
-#: my_event/templates/my_event/event_list.html:37
+#: my_event/templates/my_event/event_list.html:40
 msgid "ID"
 msgstr ""
 
-#: my_event/templates/my_event/event_list.html:49
+#: my_event/templates/my_event/event_list.html:52
 msgid "Status"
 msgstr ""
 
-#: my_event/templates/my_event/event_list.html:75
+#: my_event/templates/my_event/event_list.html:78
 msgid "Published"
 msgstr "Ditayangkan"
 
-#: my_event/templates/my_event/event_list.html:77
+#: my_event/templates/my_event/event_list.html:80
 msgid "Not Published"
 msgstr "Belum Tayang"

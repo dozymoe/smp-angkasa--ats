@@ -1,19 +1,4 @@
 @charset "UTF-8";
-/*
-@use "@material/theme/color-palette";
-
-$primary-light: color-palette.$indigo-300;
-$primary: color-palette.$indigo-700;
-$primary-dark: color-palette.$indigo-900;
-$primary-active: color-palette.$indigo-800;
-
-$secondary-light: color-palette.$orange-200;
-$secondary: color-palette.$orange-500;
-$secondary-dark: color-palette.$orange-800;
-
-$surface: color-palette.$light-blue-100;
-$background: color-palette.$blue-50;
-*/
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
@@ -24640,37 +24625,6 @@ span.linenos.special {
 }
 
 /* Literal.Number.Integer.Long */
-@font-face {
-  font-family: "Material Icons";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/assets/fonts/MaterialIcons-Regular.eot");
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("/assets/fonts/MaterialIcons-Regular.woff2") format("woff2"), url("/assets/fonts/MaterialIcons-Regular.woff") format("woff"), url("/assets/fonts/MaterialIcons-Regular.ttf") format("truetype"), url("/assets/fonts/MaterialIcons-Regular.svg#MaterialIcons-Regular") format("svg");
-}
-.material-icons {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: "liga";
-}
-
 /* roboto-100normal - latin */
 @font-face {
   font-family: "Roboto";
@@ -32367,17 +32321,6 @@ body {
   margin: 1rem;
 }
 
-/*
-@import "../../../lib/react-materialweb/sass/banner";
-@import "../../../lib/react-materialweb/sass/card";
-@import "../../../lib/react-materialweb/sass/dialog";
-@import "../../../lib/react-materialweb/sass/drawer";
-@import "../../../lib/react-materialweb/sass/icon-button";
-@import "../../../lib/react-materialweb/sass/image-list";
-@import "../../../lib/react-materialweb/sass/list";
-@import "../../../lib/react-materialweb/sass/select";
-@import "../../../lib/react-materialweb/sass/snackbar";
-*/
 .bx--text-area {
   font-family: monospace;
 }
@@ -32461,12 +32404,6 @@ img.img-circle {
 
 img.img-responsive {
   width: 100%;
-}
-
-td.autofit,
-th.autofit {
-  white-space: nowrap;
-  width: 72px;
 }
 
 /* stylelint-disable-line no-invalid-position-at-import-rule */

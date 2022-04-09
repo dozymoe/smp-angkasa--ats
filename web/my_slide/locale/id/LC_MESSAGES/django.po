@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 19:11+0700\n"
+"POT-Creation-Date: 2022-04-09 10:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Bikin"
 
 #: my_slide/templates/my_slide/base-admin-object.html:18
 #: my_slide/templates/my_slide/myslide_confirm_delete.html:33
-#: my_slide/templates/my_slide/myslide_list.html:64
+#: my_slide/templates/my_slide/myslide_list.html:67
 msgid "Delete"
 msgstr "Hapus"
 
@@ -66,7 +66,7 @@ msgid "Date Created"
 msgstr "Tanggal Dibikin"
 
 #: my_slide/templates/my_slide/myslide_create_form.html:5
-#: my_slide/templates/my_slide/myslide_list.html:22
+#: my_slide/templates/my_slide/myslide_list.html:21
 msgid "Create Slide"
 msgstr "Bikin Slide"
 
@@ -108,34 +108,34 @@ msgstr ""
 msgid "Manage Slides"
 msgstr "Administrasi Slide"
 
-#: my_slide/templates/my_slide/myslide_list.html:12
+#: my_slide/templates/my_slide/myslide_list.html:11
 msgid "Slides"
 msgstr "Slide-Slide"
 
-#: my_slide/templates/my_slide/myslide_list.html:29
+#: my_slide/templates/my_slide/myslide_list.html:32
 msgid "location"
 msgstr "Lokasi"
 
-#: my_slide/templates/my_slide/myslide_list.html:32
+#: my_slide/templates/my_slide/myslide_list.html:35
 msgid "Filename"
 msgstr "Nama Berkas"
 
-#: my_slide/templates/my_slide/myslide_list.html:56
+#: my_slide/templates/my_slide/myslide_list.html:59
 msgid "Edit"
 msgstr ""
 
-#: my_slide/templates/my_slide/myslide_list.html:74
+#: my_slide/templates/my_slide/myslide_list.html:77
 msgid "Move First"
 msgstr "Pindah Pertama"
 
-#: my_slide/templates/my_slide/myslide_list.html:84
+#: my_slide/templates/my_slide/myslide_list.html:87
 msgid "Move Up"
 msgstr "Pindah Naik"
 
-#: my_slide/templates/my_slide/myslide_list.html:94
+#: my_slide/templates/my_slide/myslide_list.html:97
 msgid "Move Down"
 msgstr "Pindah Turun"
 
-#: my_slide/templates/my_slide/myslide_list.html:104
+#: my_slide/templates/my_slide/myslide_list.html:107
 msgid "Move Last"
 msgstr "Pindah Terakhir"

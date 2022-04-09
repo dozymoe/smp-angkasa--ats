@@ -143,7 +143,6 @@ module.exports = (env, options) =>
                                             },
                                         },
                                     ],
-                                    '@babel/preset-react',
                                 ],
                                 plugins: [
                                     [

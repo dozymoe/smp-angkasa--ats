@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 13:28+0700\n"
+"POT-Creation-Date: 2022-04-08 20:11+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,61 +17,95 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: misc/carbondesign-js/breadcrumb.js:13
+msgid "breadcrumb"
+msgstr ""
+
+#: misc/carbondesign-js/code_snippet.js:12
+#: misc/carbondesign-js/copy_button.js:9
+msgid "Copied!"
+msgstr ""
+
+#: misc/carbondesign-js/code_snippet.js:13
+msgid "Copy code"
+msgstr ""
+
+#: misc/carbondesign-js/code_snippet.js:14
+#, fuzzy
+#| msgid "Show modal"
+msgid "Show more"
+msgstr "Buka dialog"
+
+#: misc/carbondesign-js/code_snippet.js:15
+msgid "Show more icon"
+msgstr ""
+
+#: misc/carbondesign-js/code_snippet.js:16
+#, fuzzy
+#| msgid "Show modal"
+msgid "Show less"
+msgstr "Buka dialog"
+
+#: misc/carbondesign-js/combo_box.js:12 misc/carbondesign-js/data-table.js:596
+#: misc/carbondesign-js/list_box.js:13 misc/carbondesign-js/multi_select.js:12
+#: misc/carbondesign-js/uishell.js:18
+msgid "Open menu"
+msgstr ""
+
+#: misc/carbondesign-js/combo_box.js:13
+msgid "Clear all"
+msgstr ""
+
 #: misc/carbondesign-js/data-table.js:23
 msgid "Table Action Bar"
 msgstr "Aksi Tabel"
 
 #: misc/carbondesign-js/data-table.js:24
+msgid "Cancel"
+msgstr ""
+
+#: misc/carbondesign-js/data-table.js:25
 msgid "items selected"
 msgstr "baris-baris terpilih"
 
-#: misc/carbondesign-js/data-table.js:25
+#: misc/carbondesign-js/data-table.js:26
+#: misc/carbondesign-js/overflow_menu.js:13
 msgid "Overflow"
 msgstr "Luapan"
 
-#: misc/carbondesign-js/data-table.js:279
-msgid "Items per page"
-msgstr "Baris per halaman"
-
-#: misc/carbondesign-js/data-table.js:280
-msgid "select number of items per page"
-msgstr "pilih jumlah baris per halaman"
-
-#: misc/carbondesign-js/data-table.js:281
-msgid "select page number to view"
-msgstr "pilih halaman yang ingin dilihat"
-
-#: misc/carbondesign-js/data-table.js:282
-msgid "Backward button"
-msgstr "Sebelumnya"
-
-#: misc/carbondesign-js/data-table.js:283
-msgid "Forward button"
-msgstr "Selanjutnya"
-
-#: misc/carbondesign-js/data-table.js:493
-msgid " of "
-msgstr " dari "
-
-#: misc/carbondesign-js/data-table.js:499
-msgid " items"
-msgstr " baris"
-
-#: misc/carbondesign-js/data-table.js:517
-msgid "of "
-msgstr "dari "
-
-#: misc/carbondesign-js/data-table.js:519
-msgid " pages"
-msgstr " halaman"
-
-#: misc/carbondesign-js/data-table.js:761
+#: misc/carbondesign-js/data-table.js:756 misc/carbondesign-js/search.js:15
+#: misc/carbondesign-js/toolbar.js:34
 msgid "Search"
 msgstr "Cari"
 
-#: misc/carbondesign-js/data-table.js:762
+#: misc/carbondesign-js/data-table.js:757 misc/carbondesign-js/search.js:12
+#: misc/carbondesign-js/toolbar.js:31
 msgid "Clear search input"
 msgstr "Hapus teks pencarian"
+
+#: misc/carbondesign-js/file_uploader.js:9
+msgid "Drag and drop files here or upload"
+msgstr ""
+
+#: misc/carbondesign-js/file_uploader.js:10
+msgid "Remove uploaded file"
+msgstr ""
+
+#: misc/carbondesign-js/inline_loading.js:9
+msgid "Loading data..."
+msgstr ""
+
+#: misc/carbondesign-js/inline_loading.js:10
+msgid "Data loaded."
+msgstr ""
+
+#: misc/carbondesign-js/inline_loading.js:11
+msgid "Loading data failed."
+msgstr ""
+
+#: misc/carbondesign-js/loading.js:11
+msgid "Loading"
+msgstr ""
 
 #: misc/carbondesign-js/modal.js:14
 msgid "close modal"
@@ -80,3 +114,158 @@ msgstr "tutup dialog"
 #: misc/carbondesign-js/modal.js:142
 msgid "Show modal"
 msgstr "Buka dialog"
+
+#: misc/carbondesign-js/multi_select.js:13
+#: misc/carbondesign-js/uishell--action.js:25
+#: misc/carbondesign-js/uishell.js:19
+msgid "Close menu"
+msgstr ""
+
+#: misc/carbondesign-js/multi_select.js:14
+msgid "Multi select options"
+msgstr ""
+
+#: misc/carbondesign-js/multi_select.js:15
+msgid "Clear all selected items"
+msgstr ""
+
+#: misc/carbondesign-js/multi_select.js:16
+#, fuzzy
+#| msgid "Clear search input"
+msgid "Clear selection"
+msgstr "Hapus teks pencarian"
+
+#: misc/carbondesign-js/multi_select.js:17
+msgid "Filter..."
+msgstr ""
+
+#: misc/carbondesign-js/notification.js:15
+#, fuzzy
+#| msgid "close modal"
+msgid "close"
+msgstr "tutup dialog"
+
+#: misc/carbondesign-js/number_input.js:12
+msgid "increase number input"
+msgstr ""
+
+#: misc/carbondesign-js/number_input.js:13
+msgid "decrease number input"
+msgstr ""
+
+#: misc/carbondesign-js/pagination.js:15
+msgid "Items per page"
+msgstr "Baris per halaman"
+
+#: misc/carbondesign-js/pagination.js:16
+msgid "select number of items per page"
+msgstr "pilih jumlah baris per halaman"
+
+#: misc/carbondesign-js/pagination.js:17
+msgid "select page number to view"
+msgstr "pilih halaman yang ingin dilihat"
+
+#: misc/carbondesign-js/pagination.js:18
+msgid "Backward button"
+msgstr "Sebelumnya"
+
+#: misc/carbondesign-js/pagination.js:19
+msgid "Forward button"
+msgstr "Selanjutnya"
+
+#: misc/carbondesign-js/pagination.js:250
+#, fuzzy
+#| msgid " pages"
+msgid "of {total} pages"
+msgstr " halaman"
+
+#: misc/carbondesign-js/pagination_nav.js:11
+msgid "pagination"
+msgstr ""
+
+#: misc/carbondesign-js/pagination_nav.js:12
+msgid "Previous page"
+msgstr ""
+
+#: misc/carbondesign-js/pagination_nav.js:13
+#, fuzzy
+#| msgid " pages"
+msgid "Next page"
+msgstr " halaman"
+
+#: misc/carbondesign-js/pagination_nav.js:14
+#, fuzzy
+#| msgid " pages"
+msgid "page"
+msgstr " halaman"
+
+#: misc/carbondesign-js/select.js:13
+msgid "Choose an option"
+msgstr ""
+
+#: misc/carbondesign-js/slider.js:11
+msgid "slider"
+msgstr ""
+
+#: misc/carbondesign-js/tag.js:13
+msgid "Clear filter"
+msgstr ""
+
+#: misc/carbondesign-js/tile.js:13
+msgid "tile"
+msgstr ""
+
+#: misc/carbondesign-js/time_picker.js:12
+msgid "Select AM/PM"
+msgstr ""
+
+#: misc/carbondesign-js/time_picker.js:13
+msgid "Select time zone"
+msgstr ""
+
+#: misc/carbondesign-js/toggle.js:11
+msgid "Off"
+msgstr ""
+
+#: misc/carbondesign-js/toggle.js:12
+msgid "on"
+msgstr ""
+
+#: misc/carbondesign-js/toolbar.js:30
+#, fuzzy
+#| msgid "Search"
+msgid "Toolbar Search"
+msgstr "Cari"
+
+#: misc/carbondesign-js/toolbar.js:118
+msgid "List of options"
+msgstr ""
+
+#: misc/carbondesign-js/uishell.js:17
+msgid "Skip to main content"
+msgstr ""
+
+#: misc/carbondesign-js/uishell.js:470
+msgid "Side navigation"
+msgstr ""
+
+#: misc/carbondesign-js/uishell.js:471
+msgid "Close the side navigation menu"
+msgstr ""
+
+#: misc/carbondesign-js/uishell.js:472
+msgid "Toggle the expansion state of the navigation"
+msgstr ""
+
+#: misc/carbondesign-js/uishell.js:473
+msgid "Switcher"
+msgstr ""
+
+#~ msgid " of "
+#~ msgstr " dari "
+
+#~ msgid " items"
+#~ msgstr " baris"
+
+#~ msgid "of "
+#~ msgstr "dari "

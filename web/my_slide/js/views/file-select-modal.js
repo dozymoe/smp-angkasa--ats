@@ -5,10 +5,11 @@ import createStore from 'unistore';
 import { mapActions } from 'unistore/src/util';
 //--
 import { msgbus } from '../../../misc/msgbus';
-import { Slot } from '../../../misc/carbondesign-js/base';
-import { Modal } from '../../../misc/carbondesign-js/modal';
+import { Slot } from '../../../carbondesign/mithril-js/base';
+import { Modal } from '../../../carbondesign/mithril-js/modal';
 import { Table, Th, Td, TdOvButton
-       } from '../../../misc/carbondesign-js/data-table';
+       } from '../../../carbondesign/mithril-js/data-table';
+import { Pagination } from '../../../carbondesign/mithril-js/pagination';
 import { get_pager } from '../../../website/js/misc/pagination';
 
 const ATTRIBUTE_NAME = 'data-provide-select_file';
@@ -57,17 +58,10 @@ m(Modal, null, [
   m(Slot,
     {name: 'heading'},
     this.txt_title),
-  m(Table,
-    {
-      pager: state.pager,
-      pager_size: state.pager.pagination.per_page,
-    },
+  m(Table, null,
     [
       m(Slot, {name: 'title'}, gettext("Images")),
-      m(Slot,
-        {
-          name: 'head',
-        },
+      m(Slot, {name: 'head'},
         [
           m(Th, null, gettext("Id")),
           m(Th, null, gettext("Image")),
@@ -100,6 +94,12 @@ m(Modal, null, [
               ]),
           ])
         ),
+      m(Slot, {name: 'pagination'},
+        m(Pagination,
+          {
+            pager: state.pager,
+            pager_size: state.pager.pagination.per_page,
+          })),
     ]),
   ])
 //##

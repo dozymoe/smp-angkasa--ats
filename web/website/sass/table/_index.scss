@@ -1,8 +1,0 @@
-@use "@material/icon-button/variables" as Btn;
-
-td.autofit,
-th.autofit
-{
-    white-space: nowrap;
-    width: Btn.$icon-size * 3;
-}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-02 04:29+0700\n"
+"POT-Creation-Date: 2022-04-09 10:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:40
+#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:43
 msgid "Title"
 msgstr "Judul"
 
@@ -66,13 +66,13 @@ msgid "Create"
 msgstr "Bikin"
 
 #: web_page/templates/web_page/base-admin-object.html:18
-#: web_page/templates/web_page/webpage_list.html:73
+#: web_page/templates/web_page/webpage_list.html:76
 msgid "Edit"
 msgstr "Ubah"
 
 #: web_page/templates/web_page/base-admin-object.html:23
 #: web_page/templates/web_page/webpage_confirm_delete.html:29
-#: web_page/templates/web_page/webpage_list.html:99
+#: web_page/templates/web_page/webpage_list.html:102
 msgid "Delete"
 msgstr "Hapus"
 
@@ -99,7 +99,7 @@ msgid "Do you really want to publish"
 msgstr "Sungguh mau menayangkan"
 
 #: web_page/templates/web_page/webpage_confirm_publish.html:29
-#: web_page/templates/web_page/webpage_list.html:81
+#: web_page/templates/web_page/webpage_list.html:84
 msgid "Publish"
 msgstr "Tayangkan"
 
@@ -112,12 +112,12 @@ msgid "Do you really want to unpublish"
 msgstr "Sungguh mau batal tayang"
 
 #: web_page/templates/web_page/webpage_confirm_unpublish.html:29
-#: web_page/templates/web_page/webpage_list.html:78
+#: web_page/templates/web_page/webpage_list.html:81
 msgid "Unpublish"
 msgstr "Batal Tayang"
 
 #: web_page/templates/web_page/webpage_create_form.html:5
-#: web_page/templates/web_page/webpage_list.html:30
+#: web_page/templates/web_page/webpage_list.html:29
 msgid "Create Page"
 msgstr "Bikin Laman"
 
@@ -171,22 +171,22 @@ msgstr "Cara menampilkan tautan di dalam artikel. Contoh:"
 msgid "The number <strong>4</strong> is from the ID column below."
 msgstr "Angka <strong>4</strong> di atas diambil dari kolom ID di bawah."
 
-#: web_page/templates/web_page/webpage_list.html:20
+#: web_page/templates/web_page/webpage_list.html:19
 msgid "Pages"
 msgstr "Laman-Laman"
 
-#: web_page/templates/web_page/webpage_list.html:37
+#: web_page/templates/web_page/webpage_list.html:40
 msgid "ID"
 msgstr ""
 
-#: web_page/templates/web_page/webpage_list.html:43
+#: web_page/templates/web_page/webpage_list.html:46
 msgid "Status"
 msgstr "Status"
 
-#: web_page/templates/web_page/webpage_list.html:61
+#: web_page/templates/web_page/webpage_list.html:64
 msgid "Published"
 msgstr "Ditayangkan"
 
-#: web_page/templates/web_page/webpage_list.html:63
+#: web_page/templates/web_page/webpage_list.html:66
 msgid "Not Published"
 msgstr "Belum Tayang"

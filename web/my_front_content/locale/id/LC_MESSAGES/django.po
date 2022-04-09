@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 19:11+0700\n"
+"POT-Creation-Date: 2022-04-09 10:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr "Bikin"
 
 #: my_front_content/templates/my_front_content/base-admin-object.html:19
 #: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:32
-#: my_front_content/templates/my_front_content/frontcontent_list.html:59
+#: my_front_content/templates/my_front_content/frontcontent_list.html:62
 msgid "Delete"
 msgstr "Hapus"
 
@@ -54,7 +54,7 @@ msgid "Date Created"
 msgstr "Tanggal Dibikin"
 
 #: my_front_content/templates/my_front_content/frontcontent_create_form.html:6
-#: my_front_content/templates/my_front_content/frontcontent_list.html:22
+#: my_front_content/templates/my_front_content/frontcontent_list.html:21
 msgid "Create Featured Content"
 msgstr "Bikin Fitur Konten"
 
@@ -70,34 +70,34 @@ msgstr "Kirim"
 msgid "Manage Featured Contents"
 msgstr "Administrasi Fitur Konten"
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:12
+#: my_front_content/templates/my_front_content/frontcontent_list.html:11
 msgid "Featured Contents"
 msgstr "Konten-Konten Fitur"
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:29
+#: my_front_content/templates/my_front_content/frontcontent_list.html:32
 msgid "ID"
 msgstr ""
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:32
+#: my_front_content/templates/my_front_content/frontcontent_list.html:35
 msgid "Title"
 msgstr "Judul"
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:35
+#: my_front_content/templates/my_front_content/frontcontent_list.html:38
 msgid "Summary"
 msgstr "Ringkasan"
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:69
+#: my_front_content/templates/my_front_content/frontcontent_list.html:72
 msgid "Move First"
 msgstr "Pindah Pertama"
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:79
+#: my_front_content/templates/my_front_content/frontcontent_list.html:82
 msgid "Move Up"
 msgstr "Pindah Naik"
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:89
+#: my_front_content/templates/my_front_content/frontcontent_list.html:92
 msgid "Move Down"
 msgstr "Pindah Turun"
 
-#: my_front_content/templates/my_front_content/frontcontent_list.html:99
+#: my_front_content/templates/my_front_content/frontcontent_list.html:102
 msgid "Move Last"
 msgstr "Pindah Terakhir"

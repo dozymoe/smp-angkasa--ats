@@ -43,7 +43,7 @@ urlpatterns += i18n_patterns(
     path('front-contents/', include('my_front_content.urls_admin',
             namespace='FrontContent')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
-        name='EditorHelpText'),
+            name='EditorHelpText'),
 
     prefix_default_language=False,
 )
@@ -55,5 +55,6 @@ urlpatterns += [
 
 urlpatterns += [
     path('dashboard/', views_admin.Home.as_view()),
-    path('', views_admin.Home.as_view(), name='Home'),
+    path('', views_admin.Home.as_view(), name='Home',
+            kwargs={'format': 'html'}),
 ]

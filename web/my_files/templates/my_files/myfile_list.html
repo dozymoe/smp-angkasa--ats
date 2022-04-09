@@ -24,13 +24,12 @@ Next paragraph
   </div>
   
   <div>
-    {% iif is_paginated pager None as pager %}
-    {% Table pager=pager %}
+    {% Table visible_overflow=True %}
       {% Slot 'title' %}
         {% trans "Files" %}
       {% endSlot %}
 
-      {% Slot 'toolbar' %}
+      {% Slot 'toolbar_actions' %}
         {% url 'MyFile:Create' as url %}
         {% Button tag="a" href=url icon_size=32 %}
           {% Slot 'icon' %}
@@ -39,6 +38,10 @@ Next paragraph
 
           {% trans "Create File" %}
         {% endButton %}
+      {% endSlot %}
+
+      {% Slot 'pagination' %}
+        {% Pagination pager=page_obj %}
       {% endSlot %}
 
       {% Slot 'head' %}

@@ -27,7 +27,7 @@
 </head>
 <body class="{% block body_classes %}{% endblock %}">
   {% block body %}
-    {% url 'Home' as url %}
+    {% url 'Home' format='html' as url %}
     {% UiShell label=request.site.name href=url %}
       {% Slot 'title_prefix' %}
         <img src="/assets/img/logo.png" height="32" class="d-inline">
@@ -55,6 +55,8 @@
           {% endNotificationSubtitle %}
         {% endNotification %}
       {% endfor %}
+
+      {% block breadcrumb %}{% endblock %}
 
       {% block banner %}{% endblock %}
       <main>

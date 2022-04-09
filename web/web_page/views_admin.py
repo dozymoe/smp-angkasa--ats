@@ -16,7 +16,10 @@ _logger = logging.getLogger(__name__)
 @method_decorator(login_required, name='dispatch')
 class List(ListView):
     model = WebPage
-    paginate_by = 15
+    paginate_by = 10
+
+    def get_paginate_by(self, queryset):
+        return self.request.GET.get('pagesize', self.paginate_by)
 
 
 @method_decorator(login_required, name='dispatch')

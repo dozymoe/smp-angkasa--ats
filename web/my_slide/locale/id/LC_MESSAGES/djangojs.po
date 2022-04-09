@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 19:26+0700\n"
+"POT-Creation-Date: 2022-04-09 10:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: my_slide/js/views/file-select-modal.js:36
+#: my_slide/js/views/file-select-modal.js:37
 msgid "File Select"
 msgstr "Pilih Berkas"
 
-#: my_slide/js/views/file-select-modal.js:66
+#: my_slide/js/views/file-select-modal.js:63
 msgid "Images"
 msgstr "Gambar-Gambar"
 
-#: my_slide/js/views/file-select-modal.js:72
+#: my_slide/js/views/file-select-modal.js:66
 msgid "Id"
 msgstr ""
 
-#: my_slide/js/views/file-select-modal.js:73
+#: my_slide/js/views/file-select-modal.js:67
 msgid "Image"
 msgstr "Gambar"
 
-#: my_slide/js/views/file-select-modal.js:74
+#: my_slide/js/views/file-select-modal.js:68
 msgid "Description"
 msgstr "Deskripsi"
 
-#: my_slide/js/views/file-select-modal.js:99
+#: my_slide/js/views/file-select-modal.js:93
 msgid "Select"
 msgstr "Pilih"
 
