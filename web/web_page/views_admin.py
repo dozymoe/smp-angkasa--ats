@@ -8,6 +8,7 @@ from django.views.generic import CreateView, DeleteView, DetailView, ListView
 from django.views.generic import UpdateView
 from rules.contrib.views import AutoPermissionRequiredMixin
 #-
+from .forms import WebPageForm
 from .models import WebPage
 
 _logger = logging.getLogger(__name__)
@@ -25,7 +26,7 @@ class List(ListView):
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
     model = WebPage
-    fields = ['title', 'body', 'summary', 'slug']
+    form_class = WebPageForm
     template_name_suffix = '_create_form'
 
     def form_valid(self, form):
@@ -46,7 +47,7 @@ class Display(DetailView):
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
     model = WebPage
-    fields = ['title', 'body', 'summary', 'slug']
+    form_class = WebPageForm
 
     def get_success_url(self):
         return reverse('WebPage:Index')

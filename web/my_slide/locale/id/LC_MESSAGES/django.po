@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 10:28+0700\n"
+"POT-Creation-Date: 2022-04-16 02:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,39 +70,42 @@ msgstr "Tanggal Dibikin"
 msgid "Create Slide"
 msgstr "Bikin Slide"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:21
-#: my_slide/templates/my_slide/myslide_form.html:21
-msgid "Choose"
-msgstr "Pilih"
-
-#: my_slide/templates/my_slide/myslide_create_form.html:28
-#: my_slide/templates/my_slide/myslide_form.html:28
-msgid "Description Preview"
-msgstr "Penampakan Deskripsi"
+#: my_slide/templates/my_slide/myslide_create_form.html:12
+#: my_slide/templates/my_slide/myslide_form.html:12
+msgid "Language"
+msgstr "Bahasa"
 
 #: my_slide/templates/my_slide/myslide_create_form.html:30
 #: my_slide/templates/my_slide/myslide_form.html:30
+msgid "Choose"
+msgstr "Pilih"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:38
+#: my_slide/templates/my_slide/myslide_form.html:38
+msgid "Description Preview"
+msgstr "Penampakan Deskripsi"
+
+#: my_slide/templates/my_slide/myslide_create_form.html:40
+#: my_slide/templates/my_slide/myslide_form.html:40
 msgid "Preview"
 msgstr "Penampakan"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:35
-#: my_slide/templates/my_slide/myslide_form.html:35
+#: my_slide/templates/my_slide/myslide_create_form.html:45
+#: my_slide/templates/my_slide/myslide_form.html:45
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: my_slide/templates/my_slide/myslide_create_form.html:45
+#: my_slide/templates/my_slide/myslide_create_form.html:56
 msgid "Submit"
 msgstr "Kirim"
 
 #: my_slide/templates/my_slide/myslide_form.html:5
-#, fuzzy
-#| msgid "Create Slide"
 msgid "Update Slide"
 msgstr "Bikin Slide"
 
-#: my_slide/templates/my_slide/myslide_form.html:45
+#: my_slide/templates/my_slide/myslide_form.html:56
 msgid "Update"
-msgstr ""
+msgstr "Ubah"
 
 #: my_slide/templates/my_slide/myslide_list.html:5
 msgid "Manage Slides"
@@ -122,7 +125,7 @@ msgstr "Nama Berkas"
 
 #: my_slide/templates/my_slide/myslide_list.html:59
 msgid "Edit"
-msgstr ""
+msgstr "Ubah"
 
 #: my_slide/templates/my_slide/myslide_list.html:77
 msgid "Move First"

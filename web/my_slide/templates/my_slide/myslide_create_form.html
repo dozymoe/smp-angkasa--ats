@@ -1,32 +1,42 @@
 {% extends 'my_slide/base-admin.html' %}
 {% load i18n %}
-{% load carbondesign %}
+{% load carbondesign website %}
 
 {% block head_title %}{% trans "Create Slide" %}{% endblock %}
 
 
 {% block content %}
-  <form action="" method="post">
-    {% csrf_token %}
+<form action="" method="post">
+  {% csrf_token %}
 
-    <div class="form-group">
-      {% TextInput form.location autofocus="true" %}
-    </div>
+  {% trans "Language" as label %}
+  {% ContentSwitcher label=label %}
+    {% for item in LANGUAGES %}
+      {% ContentSwitcherItem target=".swt-{{item.0}}" active=forloop.first type="button" %}
+        {{item.1}}
+      {% endContentSwitcherItem %}
+    {% endfor %}
+  {% endContentSwitcher %}
 
-    <div class="form-group input-button-pairing">
-      <input type="hidden" name="image" id="image">
-      {% TextInput form.image widget="input" id="image-caption" name="" readonly="" %}
+  <div class="form-group">
+    {% Select form.location autofocus="true" with_empty=False %}
+  </div>
 
-      {% Button field=True type="button" data-provide-select_file="image" data-select_file-label="image-caption" %}
-        {% trans "Choose" %}
-      {% endButton %}
-    </div>
+  <div class="form-group input-button-pairing">
+    <input type="hidden" name="image" id="image">
+    {% TextInput form.image widget="input" id="image-caption" name="" readonly="" %}
 
-    <div class="form-group">
-      {% TextArea form.description %}
+    {% Button field=True type="button" data-provide-select_file="image" data-select_file-label="image-caption" %}
+      {% trans "Choose" %}
+    {% endButton %}
+  </div>
+
+  {% for item in LANGUAGES %}
+    <div class="form-group swt-{{item.0}}">
+      {% TextArea form.{{'description'|transfield:item.0}} %}
 
       {% trans "Description Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.description.id_for_label %}
+      {% Button type="button" title=title data-provide-rest-preview=form.{{'description'|transfield:item.0}}.id_for_label %}
         {% trans "Preview" %}
       {% endButton %}
 
@@ -35,15 +45,16 @@
         {% trans "Editing Help" %}
       {% endButton %}
     </div>
+  {% endfor %}
 
-    {% if form.errors %}
-      <div class="form-group">{{form.errors}}</div>
-    {% endif %}
+  {% if form.errors %}
+    <div class="form-group">{{form.errors}}</div>
+  {% endif %}
 
-    <div class="form-group">
-      {% Button type="submit" %}
-        {% trans "Submit" %}
-      {% endButton %}
-    </div>
-  </form>
+  <div class="form-group">
+    {% Button type="submit" %}
+      {% trans "Submit" %}
+    {% endButton %}
+  </div>
+</form>
 {% endblock %}

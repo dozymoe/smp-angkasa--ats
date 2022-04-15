@@ -2,38 +2,42 @@
 {% load i18n %}
 {% load carbondesign %}
 
-{% block navigation_all_apps %}
-  {% UiNavSection %}
-    {% url 'BlogPosting:Index' as url %}
-    {% UiNavItem href=url %}
-      {% trans "Articles" %}
-    {% endUiNavItem %}
-  
-    {% url 'Event:Index' as url %}
-    {% UiNavItem href=url %}
-      {% trans "Events" %}
-    {% endUiNavItem %}
-  
-    {% url 'WebPage:Index' as url %}
-    {% UiNavItem href=url %}
-      {% trans "Pages" %}
-    {% endUiNavItem %}
-  
-    {% url 'MyFile:Index' as url %}
-    {% UiNavItem href=url %}
-      {% trans "Files" %}
-    {% endUiNavItem %}
-  
-    {% url 'MySlide:Index' as url %}
-    {% UiNavItem href=url %}
-      {% trans "Slides" %}
-    {% endUiNavItem %}
-  
-    {% url 'FrontContent:Index' as url %}
-    {% UiNavItem href=url %}
-      {% trans "Front Contents" %}
-    {% endUiNavItem %}
-  {% endUiNavSection %}
+{% block links %}
+  {% UiLink %}
+    {% trans "Content" %}
+
+    {% Slot 'submenu' %}
+      {% url 'BlogPosting:Index' as url %}
+      {% UiLink href=url %}
+        {% trans "Article" %}
+      {% endUiLink %}
+    
+      {% url 'Event:Index' as url %}
+      {% UiLink href=url %}
+        {% trans "Event" %}
+      {% endUiLink %}
+    
+      {% url 'WebPage:Index' as url %}
+      {% UiLink href=url %}
+        {% trans "Page" %}
+      {% endUiLink %}
+    
+      {% url 'MyFile:Index' as url %}
+      {% UiLink href=url %}
+        {% trans "File" %}
+      {% endUiLink %}
+    
+      {% url 'MySlide:Index' as url %}
+      {% UiLink href=url %}
+        {% trans "Slide" %}
+      {% endUiLink %}
+    
+      {% url 'FrontContent:Index' as url %}
+      {% UiLink href=url %}
+        {% trans "Front Content" %}
+      {% endUiLink %}
+    {% endSlot %}
+  {% endUiLink %}
 {% endblock %}
 
 

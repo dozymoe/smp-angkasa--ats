@@ -1,5 +1,5 @@
-import { attach_modal } from '../../misc/modal';
 import { msgbus } from '../../../../misc/msgbus';
+import { attach_modal } from '../../misc/modal';
 
 
 export function InjectReSTPreview(element, app)

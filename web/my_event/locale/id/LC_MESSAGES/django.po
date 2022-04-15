@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 10:28+0700\n"
+"POT-Creation-Date: 2022-04-16 02:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,33 +129,38 @@ msgstr "Batal Tayang"
 msgid "Create Event"
 msgstr "Bikin Kegiatan"
 
-#: my_event/templates/my_event/event_create_form.html:29
-#: my_event/templates/my_event/event_form.html:29
+#: my_event/templates/my_event/event_create_form.html:14
+#: my_event/templates/my_event/event_form.html:14
+msgid "Language"
+msgstr "Bahasa"
+
+#: my_event/templates/my_event/event_create_form.html:41
+#: my_event/templates/my_event/event_form.html:41
 msgid "Body Preview"
 msgstr "Penampakan Konten"
 
-#: my_event/templates/my_event/event_create_form.html:31
-#: my_event/templates/my_event/event_create_form.html:45
-#: my_event/templates/my_event/event_create_form.html:69
-#: my_event/templates/my_event/event_form.html:31
-#: my_event/templates/my_event/event_form.html:45
-#: my_event/templates/my_event/event_form.html:69
+#: my_event/templates/my_event/event_create_form.html:43
+#: my_event/templates/my_event/event_create_form.html:57
+#: my_event/templates/my_event/event_create_form.html:82
+#: my_event/templates/my_event/event_form.html:43
+#: my_event/templates/my_event/event_form.html:57
+#: my_event/templates/my_event/event_form.html:82
 msgid "Preview"
 msgstr "Penampakan"
 
-#: my_event/templates/my_event/event_create_form.html:36
-#: my_event/templates/my_event/event_create_form.html:50
-#: my_event/templates/my_event/event_form.html:36
-#: my_event/templates/my_event/event_form.html:50
+#: my_event/templates/my_event/event_create_form.html:48
+#: my_event/templates/my_event/event_create_form.html:62
+#: my_event/templates/my_event/event_form.html:48
+#: my_event/templates/my_event/event_form.html:62
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: my_event/templates/my_event/event_create_form.html:43
-#: my_event/templates/my_event/event_form.html:43
+#: my_event/templates/my_event/event_create_form.html:55
+#: my_event/templates/my_event/event_form.html:55
 msgid "Summary Preview"
 msgstr "Penampakan Deskripsi"
 
-#: my_event/templates/my_event/event_create_form.html:60
+#: my_event/templates/my_event/event_create_form.html:73
 msgid "Submit"
 msgstr "Kirim"
 
@@ -163,7 +168,7 @@ msgstr "Kirim"
 msgid "Update Event"
 msgstr "Ubah Kegiatan"
 
-#: my_event/templates/my_event/event_form.html:60
+#: my_event/templates/my_event/event_form.html:73
 msgid "Update"
 msgstr "Ubah"
 

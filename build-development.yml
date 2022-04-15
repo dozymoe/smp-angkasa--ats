@@ -84,7 +84,7 @@ web:
     webpack:
       options:
         config_file: "{_1}/webpack-{_2}.config.js"
-        mode: development
+        mode: production
       raw_depend_in:
         - package-{{PROJECT_VARIANT}}.json
         - "{_1}/webpack-{_2}.config.js"

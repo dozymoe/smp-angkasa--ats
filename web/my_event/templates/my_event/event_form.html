@@ -1,6 +1,6 @@
 {% extends 'my_event/base-admin-object.html' %}
 {% load i18n %}
-{% load carbondesign %}
+{% load carbondesign website %}
 
 {% block head_title %}
   {% trans "Update Event" %}
@@ -11,45 +11,58 @@
 <form action="" method="post">
   {% csrf_token %}
 
-  <div class="form-group">
-    {% TextInput form.title autofocus="true" %}
-  </div>
+  {% trans "Language" as label %}
+  {% ContentSwitcher label=label %}
+    {% for item in LANGUAGES %}
+      {% ContentSwitcherItem target=".swt-{{item.0}}" active=forloop.first type="button" %}
+        {{item.1}}
+      {% endContentSwitcherItem %}
+    {% endfor %}
+  {% endContentSwitcher %}
 
-  <div class="form-group">
-    {% TextInput form.slug %}
-  </div>
+  {% for item in LANGUAGES %}
+    <div class="form-group swt-{{item.0}}">
+      {% TextInput form.{{'title'|transfield:item.0}} autofocus="true" %}
+    </div>
+
+    <div class="form-group swt-{{item.0}}">
+      {% TextInput form.{{'slug'|transfield:item.0}} %}
+    </div>
+  {% endfor %}
 
   <div class="form-group">
     {% RangeDatePicker form.started_at form.stopped_at %}
   </div>
 
-  <div class="form-group">
-    {% TextArea form.body %}
+  {% for item in LANGUAGES %}
+    <div class="form-group swt-{{item.0}}">
+      {% TextArea form.{{'body'|transfield:item.0}} %}
 
-    {% trans "Body Preview" as title %}
-    {% Button type="button" title=title data-provide-rest-preview=form.body.id_for_label %}
-      {% trans "Preview" %}
-    {% endButton %}
+      {% trans "Body Preview" as title %}
+      {% Button type="button" title=title data-provide-rest-preview=form.{{'body'|transfield:item.0}}.id_for_label %}
+        {% trans "Preview" %}
+      {% endButton %}
 
-    {% url 'EditorHelpText' 'html' as url %}
-    {% Button tag="a" href=url target="_blank" %}
-      {% trans "Editing Help" %}
-    {% endButton %}
-  </div>
+      {% url 'EditorHelpText' 'html' as url %}
+      {% Button tag="a" href=url target="_blank" %}
+        {% trans "Editing Help" %}
+      {% endButton %}
+    </div>
 
-  <div class="form-group">
-    {% TextArea form.summary rows="4" class="text-editor" %}
+    <div class="form-group swt-{{item.0}}">
+      {% TextArea form.{{'summary'|transfield:item.0}} rows="4" class="text-editor d-block" %}
 
-    {% trans "Summary Preview" as title %}
-    {% Button type="button" title=title data-provide-rest-preview=form.summary.id_for_label %}
-      {% trans "Preview" %}
-    {% endButton %}
+      {% trans "Summary Preview" as title %}
+      {% Button type="button" title=title data-provide-rest-preview=form.{{'summary'|transfield:item.0}}.id_for_label %}
+        {% trans "Preview" %}
+      {% endButton %}
 
-    {% url 'EditorHelpText' 'html' as url %}
-    {% Button tag="a" href=url target="_blank" %}
-      {% trans "Editing Help" %}
-    {% endButton %}
-  </div>
+      {% url 'EditorHelpText' 'html' as url %}
+      {% Button tag="a" href=url target="_blank" %}
+        {% trans "Editing Help" %}
+      {% endButton %}
+    </div>
+  {% endfor %}
 
   {% if form.errors %}
     <div class="form-group">{{form.errors}}</div>

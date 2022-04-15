@@ -7,6 +7,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DeleteView, ListView
 from rules.contrib.views import AutoPermissionRequiredMixin
 #-
+from .forms import MyFileForm
 from .models import MyFile
 
 _logger = logging.getLogger(__name__)
@@ -24,7 +25,7 @@ class List(ListView):
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
     model = MyFile
-    fields = ('databits', 'description', 'alt_text')
+    form_class = MyFileForm
     template_name_suffix = '_create_form'
 
     def form_valid(self, form):

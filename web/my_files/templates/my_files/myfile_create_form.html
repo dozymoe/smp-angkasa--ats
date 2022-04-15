@@ -1,6 +1,6 @@
 {% extends 'my_files/base-admin.html' %}
 {% load i18n %}
-{% load carbondesign %}
+{% load carbondesign website %}
 
 {% block head_title %}{% trans "Create File" %}{% endblock %}
 
@@ -9,27 +9,38 @@
 <form action="" method="post" enctype="multipart/form-data">
   {% csrf_token %}
 
-  <div class="form-group">
-    {% TextInput form.databits %}
-  </div>
+  {% trans "Language" as label %}
+  {% ContentSwitcher label=label %}
+    {% for item in LANGUAGES %}
+      {% ContentSwitcherItem target=".swt-{{item.0}}" active=forloop.first type="button" %}
+        {{item.1}}
+      {% endContentSwitcherItem %}
+    {% endfor %}
+  {% endContentSwitcher %}
 
   <div class="form-group">
-    {% TextArea form.description rows="4" class="text-editor" %}
-
-    {% trans "Description Preview" as title %}
-    {% Button type="button" title=title data-provide-rest-preview=form.description.id_for_label %}
-      {% trans "Preview" %}
-    {% endButton %}
-
-    {% url 'EditorHelpText' 'html' as url %}
-    {% Button tag="a" href=url target="_blank" %}
-      {% trans "Editing Help" %}
-    {% endButton %}
+    {% TextInput form.databits autofocus="true" %}
   </div>
 
-  <div class="form-group">
-    {% TextArea form.alt_text rows="4" %}
-  </div>
+  {% for item in LANGUAGES %}
+    <div class="form-group swt-{{item.0}}">
+      {% TextArea form.{{'description'|transfield:item.0}} rows="4" class="text-editor" %}
+
+      {% trans "Description Preview" as title %}
+      {% Button type="button" title=title data-provide-rest-preview=form.{{'description'|transfield:item.0}}.id_for_label %}
+        {% trans "Preview" %}
+      {% endButton %}
+
+      {% url 'EditorHelpText' 'html' as url %}
+      {% Button tag="a" href=url target="_blank" %}
+        {% trans "Editing Help" %}
+      {% endButton %}
+    </div>
+
+    <div class="form-group swt-{{item.0}}">
+      {% TextArea form.{{'alt_text'|transfield:item.0}} rows="4" %}
+    </div>
+  {% endfor %}
 
   {% if form.errors %}
     <div class="form-group">{{form.errors}}</div>

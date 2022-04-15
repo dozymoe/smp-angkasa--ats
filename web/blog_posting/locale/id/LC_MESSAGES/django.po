@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 10:28+0700\n"
+"POT-Creation-Date: 2022-04-16 02:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgstr "Katalog"
 
 #: blog_posting/templates/blog_posting/base-admin-object.html:14
 #: blog_posting/templates/blog_posting/base-admin.html:14
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:81
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:92
 msgid "Create"
 msgstr "Bikin"
 
@@ -100,9 +100,9 @@ msgstr "Tanggal Dibikin"
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:44
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:45
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:44
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:79
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:90
 #: blog_posting/templates/blog_posting/blogposting_detail-admin.html:29
-#: blog_posting/templates/blog_posting/blogposting_form.html:77
+#: blog_posting/templates/blog_posting/blogposting_form.html:88
 #: blog_posting/templates/blog_posting/blogposting_list.html:19
 #: blog_posting/templates/blog_posting/blogposting_list.html:117
 msgid "Articles"
@@ -141,33 +141,38 @@ msgstr "Batal Tayang"
 msgid "Create Article"
 msgstr "Bikin Artikel"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:25
-#: blog_posting/templates/blog_posting/blogposting_form.html:23
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:14
+#: blog_posting/templates/blog_posting/blogposting_form.html:12
+msgid "Language"
+msgstr "Bahasa"
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:35
+#: blog_posting/templates/blog_posting/blogposting_form.html:33
 msgid "Body Preview"
 msgstr "Penampakan Konten"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:27
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:41
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:69
-#: blog_posting/templates/blog_posting/blogposting_form.html:25
-#: blog_posting/templates/blog_posting/blogposting_form.html:39
-#: blog_posting/templates/blog_posting/blogposting_form.html:67
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:37
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:51
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:80
+#: blog_posting/templates/blog_posting/blogposting_form.html:35
+#: blog_posting/templates/blog_posting/blogposting_form.html:49
+#: blog_posting/templates/blog_posting/blogposting_form.html:78
 msgid "Preview"
 msgstr "Penampakan"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:32
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:46
-#: blog_posting/templates/blog_posting/blogposting_form.html:30
-#: blog_posting/templates/blog_posting/blogposting_form.html:44
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:42
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:56
+#: blog_posting/templates/blog_posting/blogposting_form.html:40
+#: blog_posting/templates/blog_posting/blogposting_form.html:54
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:39
-#: blog_posting/templates/blog_posting/blogposting_form.html:37
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:49
+#: blog_posting/templates/blog_posting/blogposting_form.html:47
 msgid "Summary Preview"
 msgstr "Penampakan Deskripsi"
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:60
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:71
 msgid "Submit"
 msgstr "Kirim"
 
@@ -175,8 +180,8 @@ msgstr "Kirim"
 msgid "Update Article"
 msgstr "Ubah Artikel"
 
-#: blog_posting/templates/blog_posting/blogposting_form.html:58
-#: blog_posting/templates/blog_posting/blogposting_form.html:81
+#: blog_posting/templates/blog_posting/blogposting_form.html:69
+#: blog_posting/templates/blog_posting/blogposting_form.html:92
 msgid "Update"
 msgstr "Ubah"
 

@@ -8,6 +8,7 @@ from django.views.generic import CreateView, DeleteView, DetailView, ListView
 from django.views.generic import UpdateView
 from rules.contrib.views import AutoPermissionRequiredMixin
 #-
+from .forms import BlogPostingForm
 from .models import BlogPosting
 
 _logger = logging.getLogger(__name__)
@@ -25,7 +26,7 @@ class List(ListView):
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
     model = BlogPosting
-    fields = ['title', 'body', 'summary', 'slug', 'image']
+    form_class = BlogPostingForm
     template_name_suffix = '_create_form'
 
     def form_valid(self, form):
@@ -46,7 +47,7 @@ class Display(DetailView):
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
     model = BlogPosting
-    fields = ['title', 'body', 'summary', 'slug', 'image']
+    form_class = BlogPostingForm
 
     def get_success_url(self):
         return reverse('BlogPosting:Index')

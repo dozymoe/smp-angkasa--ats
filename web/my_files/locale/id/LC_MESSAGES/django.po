@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 10:28+0700\n"
+"POT-Creation-Date: 2022-04-16 02:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Hanya diisi bila mengunggah gambar."
 
 #: my_files/models.py:27
 msgid "Content"
-msgstr "Isi"
+msgstr "Konten"
 
 #: my_files/restructured_text/embed_file.py:87
 #: my_files/restructured_text/embed_file.py:119
@@ -86,20 +86,24 @@ msgstr "Tanggal Dibikin"
 msgid "Create File"
 msgstr "Bikin Berkas"
 
-#: my_files/templates/my_files/myfile_create_form.html:19
+#: my_files/templates/my_files/myfile_create_form.html:12
+msgid "Language"
+msgstr "Bahasa"
+
+#: my_files/templates/my_files/myfile_create_form.html:29
 msgid "Description Preview"
 msgstr "Penampakan Keterangan"
 
-#: my_files/templates/my_files/myfile_create_form.html:21
-#: my_files/templates/my_files/myfile_create_form.html:50
+#: my_files/templates/my_files/myfile_create_form.html:31
+#: my_files/templates/my_files/myfile_create_form.html:61
 msgid "Preview"
 msgstr "Penampakan"
 
-#: my_files/templates/my_files/myfile_create_form.html:26
+#: my_files/templates/my_files/myfile_create_form.html:36
 msgid "Editing Help"
 msgstr "Bantuan Sunting"
 
-#: my_files/templates/my_files/myfile_create_form.html:40
+#: my_files/templates/my_files/myfile_create_form.html:51
 msgid "Submit"
 msgstr "Kirim"
 

@@ -31270,6 +31270,20 @@ body {
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
 @keyframes fpFadeInDown {
   from {
     transform: translate3d(0, -20px, 0);
@@ -32116,6 +32130,10 @@ body {
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
+.bx--modal-content--overflow-indicator {
+  background-image: linear-gradient(to bottom, transparent, transparent, #fff);
+}
+
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
@@ -32313,12 +32331,40 @@ body {
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 /* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+/* stylelint-disable-line no-invalid-position-at-import-rule */
+.bx--header,
 .bx--panel--overlay {
+  color: #c6c6c6;
+}
+.bx--header button,
+.bx--panel--overlay button {
   color: #c6c6c6;
 }
 
 .bx--panel--overlay-inner {
   margin: 1rem;
+}
+
+.bx--panel-switcher__subheader,
+.bx--panel-switcher__item {
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+.bx--panel-switcher__subheader:last-child,
+.bx--panel-switcher__item:last-child {
+  padding-bottom: 1.5rem;
+}
+
+.bx--panel-switcher__item label {
+  color: #c6c6c6;
 }
 
 .bx--text-area {
@@ -32382,6 +32428,10 @@ body > footer {
 }
 body > footer a {
   color: #fff;
+}
+
+.bx--breadcrumb {
+  margin-bottom: 2rem;
 }
 
 html {

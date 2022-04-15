@@ -59,6 +59,7 @@
     "Show modal": "Buka dialog",
     "Show more": "Tampilkan lebih",
     "Show more icon": "Tampilkan tambahan icon",
+    "Show password": "Tampilkan kata kunci",
     "Side navigation": "Navigasi samping",
     "Skip to main content": "Loncat ke konten",
     "Switcher": "Penampil",

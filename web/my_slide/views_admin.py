@@ -8,6 +8,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from rules.contrib.views import AutoPermissionRequiredMixin
 #-
+from .forms import MySlideForm
 from .models import MySlide
 
 _logger = logging.getLogger(__name__)
@@ -26,7 +27,7 @@ class List(ListView):
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
     model = MySlide
-    fields = ['location', 'image', 'description']
+    form_class = MySlideForm
     template_name_suffix = '_create_form'
 
     def form_valid(self, form):
@@ -41,7 +42,7 @@ class Create(CreateView):
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
     model = MySlide
-    fields = ['location', 'image', 'description']
+    form_class = MySlideForm
 
     def get_success_url(self):
         return reverse('MySlide:Index')

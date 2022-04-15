@@ -184,8 +184,8 @@ LANGUAGE_CODE = 'id'
 LANGUAGES = (
     ('id', _("Bahasa Indonesia")),
     ('en', _("English")),
-    #('su', _("Sundanese")),
-    #('jv', _("Javanese")),
+    ('su', _("Sundanese")),
+    ('jv', _("Javanese")),
 )
 
 USE_L10N = True
