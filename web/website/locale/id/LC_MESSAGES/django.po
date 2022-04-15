@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:28+0700\n"
+"POT-Creation-Date: 2022-04-16 02:48+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,19 +45,23 @@ msgstr "Laman"
 msgid "File"
 msgstr "Berkas"
 
-#: website/templates/base-admin.html:32
+#: website/templates/base-admin.html:33
+msgid "Front Page"
+msgstr "Laman Muka"
+
+#: website/templates/base-admin.html:38
 msgid "Slide"
 msgstr ""
 
-#: website/templates/base-admin.html:37
-msgid "Front Content"
-msgstr "Konten Fitur"
+#: website/templates/base-admin.html:43
+msgid "Featured"
+msgstr "Fitur"
 
-#: website/templates/base-admin.html:49
+#: website/templates/base-admin.html:55
 msgid "Sign Out"
 msgstr "Keluar"
 
-#: website/templates/base-admin.html:54
+#: website/templates/base-admin.html:60
 msgid "Sign In"
 msgstr "Masuk"
 

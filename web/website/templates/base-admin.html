@@ -26,7 +26,13 @@
       {% UiLink href=url %}
         {% trans "File" %}
       {% endUiLink %}
-    
+    {% endSlot %}
+  {% endUiLink %}
+
+  {% UiLink %}
+    {% trans "Front Page" %}
+
+    {% Slot 'submenu' %}
       {% url 'MySlide:Index' as url %}
       {% UiLink href=url %}
         {% trans "Slide" %}
@@ -34,7 +40,7 @@
     
       {% url 'FrontContent:Index' as url %}
       {% UiLink href=url %}
-        {% trans "Front Content" %}
+        {% trans "Featured" %}
       {% endUiLink %}
     {% endSlot %}
   {% endUiLink %}
