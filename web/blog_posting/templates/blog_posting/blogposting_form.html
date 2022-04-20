@@ -1,6 +1,6 @@
 {% extends 'blog_posting/base-admin-object.html' %}
 {% load i18n %}
-{% load carbondesign website %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Update Article" %}{% endblock %}
 
@@ -20,18 +20,18 @@
 
   {% for item in LANGUAGES %}
     <div class="form-group swt-{{item.0}}">
-      {% TextInput form.{{'title'|transfield:item.0}} autofocus="true" %}
+      {% TextInput form.title_{{item.0}} autofocus="true" label_suffix=" - {{item.1}}" %}
     </div>
 
     <div class="form-group swt-{{item.0}}">
-      {% TextInput form.{{'slug'|transfield:item.0}} %}
+      {% TextInput form.slug_{{item.0}} label_suffix=" - {{item.1}}" %}
     </div>
 
     <div class="form-group swt-{{item.0}}">
-      {% TextArea form.{{'body'|transfield:item.0}} %}
+      {% TextArea form.body_{{item.0}} label_suffix=" - {{item.1}}" %}
 
       {% trans "Body Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.{{'body'|transfield:item.0}}.id_for_label %}
+      {% Button type="button" title=title data-provide-rest-preview=form.body_{{item.0}}.id_for_label %}
         {% trans "Preview" %}
       {% endButton %}
 
@@ -42,10 +42,10 @@
     </div>
 
     <div class="form-group swt-{{item.0}}">
-      {% TextArea form.{{'summary'|transfield:item.0}} rows="4" class="text-editor d-block" %}
+      {% TextArea form.summary_{{item.0}} rows="4" class="text-editor" label_suffix=" - {{item.1}}" %}
 
       {% trans "Summary Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.{{'summary'|transfield:item.0}}.id_for_label %}
+      {% Button type="button" title=title data-provide-rest-preview=form.summary_{{item.0}}.id_for_label %}
         {% trans "Preview" %}
       {% endButton %}
 

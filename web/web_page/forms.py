@@ -5,5 +5,7 @@ from .models import WebPage
 class WebPageForm(ModelForm):
     class Meta:
         model = WebPage
-        exclude = []
-        #fields = ['title', 'body', 'summary', 'slug']
+        fields = [*WebPage.title.fields,
+                *WebPage.body.fields,
+                *WebPage.summary.fields,
+                *WebPage.slug.fields]

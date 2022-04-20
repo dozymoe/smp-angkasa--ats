@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: my_slide/models.py:14
+msgid "Front Page"
+msgstr ""
+
+#: my_slide/models.py:20
+msgid "Location"
+msgstr ""
+
+#: my_slide/models.py:22
+msgid "Position"
+msgstr ""
+
+#: my_slide/models.py:26
+msgid "Description"
+msgstr ""
+
+#: my_slide/models.py:30
+msgid "Image"
+msgstr ""
+
+#: my_slide/templates/my_slide/base-admin-object.html:8
+#: my_slide/templates/my_slide/base-admin.html:8
+msgid "Index"
+msgstr ""
+
+#: my_slide/templates/my_slide/base-admin-object.html:13
+#: my_slide/templates/my_slide/base-admin.html:13
+msgid "Create"
+msgstr ""
+
+#: my_slide/templates/my_slide/base-admin-object.html:18
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:33
+#: my_slide/templates/my_slide/myslide_list.html:67
+msgid "Delete"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:6
+msgid "Delete Slide"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:15
+msgid "Do you really want to delete"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:24
+msgid "Date Created"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_create_form.html:5
+#: my_slide/templates/my_slide/myslide_list.html:21
+msgid "Create Slide"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_create_form.html:12
+#: my_slide/templates/my_slide/myslide_form.html:12
+msgid "Language"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_create_form.html:30
+#: my_slide/templates/my_slide/myslide_form.html:30
+msgid "Choose"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_create_form.html:38
+#: my_slide/templates/my_slide/myslide_form.html:38
+msgid "Description Preview"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_create_form.html:40
+#: my_slide/templates/my_slide/myslide_form.html:40
+msgid "Preview"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_create_form.html:45
+#: my_slide/templates/my_slide/myslide_form.html:45
+msgid "Editing Help"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_create_form.html:56
+msgid "Submit"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_form.html:5
+msgid "Update Slide"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_form.html:56
+msgid "Update"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:5
+msgid "Manage Slides"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:11
+msgid "Slides"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:32
+msgid "location"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:35
+msgid "Filename"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:59
+msgid "Edit"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:77
+msgid "Move First"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:87
+msgid "Move Up"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:97
+msgid "Move Down"
+msgstr ""
+
+#: my_slide/templates/my_slide/myslide_list.html:107
+msgid "Move Last"
+msgstr ""

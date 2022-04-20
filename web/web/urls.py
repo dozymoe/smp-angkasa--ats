@@ -16,27 +16,31 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
-from django.urls import include, path
-from django.utils.translation import gettext as _
+from django.urls import include, path, re_path
+from django.utils.translation import gettext_lazy as _
 #-
 from website import views
 
 urlpatterns = [
-    path('index.<str:format>', views.Home.as_view(), name='Home'),
+    re_path(r'^i18n/', include('django.conf.urls.i18n')),
+
+    path('news/', include('blog_posting.urls', namespace='BlogPosting')),
 ]
 
 urlpatterns += i18n_patterns(
-    path(_('news/'), include('blog_posting.urls', namespace='BlogPosting')),
-    path(_('events/'), include('my_event.urls', namespace='Event')),
+    path(_('news/'), include('blog_posting.urls_lang',
+        namespace='BlogPostingLang')),
+    path(_('events/'), include('my_event.urls_lang', namespace='EventLang')),
     path(_('files/'), include('my_files.urls', namespace='MyFile')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
         name='EditorHelpText'),
-    path('', include('web_page.urls', namespace='WebPage')),
+    path('index.<str:format>', views.Home.as_view(), name='HomeLang'),
+    path('', include('web_page.urls_lang', namespace='WebPageLang')),
 
-    prefix_default_language=False,
+    prefix_default_language=True,
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += [
-    path('', views.Home.as_view(), name='Home'),
+    path('', views.home, name='Home'),
 ]

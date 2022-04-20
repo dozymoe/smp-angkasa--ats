@@ -1,3 +1,5 @@
+from django.urls import reverse
+from django.shortcuts import redirect
 from django.utils import timezone
 from django.views.generic import TemplateView
 #-
@@ -15,11 +17,14 @@ class Home(TemplateView):
         now = timezone.now()
 
         context['blogposts'] = BlogPosting.objects\
-                .filter(published_at__isnull=False)\
+                .filter(
+                    published_at__isnull=False,
+                    deleted_at__isnull=True)\
                 .all()[:10]
         context['events'] = Event.objects\
                 .filter(
                     published_at__isnull=False,
+                    deleted_at__isnull=True,
                     started_at__gte=now)\
                 .order_by('started_at')\
                 .all()[:10]
@@ -35,3 +40,7 @@ class Home(TemplateView):
 
 class EditorHelpText(TemplateView):
     template_name = 'website/editor-helptext.html'
+
+
+def home(request):
+    return redirect(reverse('HomeLang', args=('html',)))

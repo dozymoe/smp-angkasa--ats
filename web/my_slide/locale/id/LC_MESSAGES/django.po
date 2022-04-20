@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:28+0700\n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: my_slide/models.py:12
+#: my_slide/models.py:14
 msgid "Front Page"
 msgstr "Laman Muka"
 
-#: my_slide/models.py:16
+#: my_slide/models.py:20
 msgid "Location"
 msgstr "Lokasi"
 
-#: my_slide/models.py:18
+#: my_slide/models.py:22
 msgid "Position"
 msgstr "Posisi"
 
-#: my_slide/models.py:20
+#: my_slide/models.py:26
 msgid "Description"
 msgstr "Deskripsi"
 
-#: my_slide/models.py:22
+#: my_slide/models.py:30
 msgid "Image"
 msgstr "Gambar"
 

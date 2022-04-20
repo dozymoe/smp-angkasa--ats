@@ -5,5 +5,8 @@ from .models import BlogPosting
 class BlogPostingForm(ModelForm):
     class Meta:
         model = BlogPosting
-        exclude = []
-        #fields = ['title', 'body', 'summary', 'slug', 'image']
+        fields = ['image',
+                *BlogPosting.title.fields,
+                *BlogPosting.slug.fields,
+                *BlogPosting.body.fields,
+                *BlogPosting.summary.fields]

@@ -2,7 +2,6 @@ from django.apps import AppConfig
 from django.db.models.signals import post_save, post_delete
 from docutils.parsers.rst import roles
 
-
 class BlogPostingConfig(AppConfig):
     name = 'blog_posting'
 

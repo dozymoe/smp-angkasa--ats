@@ -1,6 +1,6 @@
 {% extends 'my_slide/base-admin.html' %}
 {% load i18n %}
-{% load carbondesign website %}
+{% load carbondesign %}
 
 {% block head_title %}{% trans "Create Slide" %}{% endblock %}
 
@@ -33,10 +33,10 @@
 
   {% for item in LANGUAGES %}
     <div class="form-group swt-{{item.0}}">
-      {% TextArea form.{{'description'|transfield:item.0}} %}
+      {% TextArea form.description_{{item.0}} %}
 
       {% trans "Description Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.{{'description'|transfield:item.0}}.id_for_label %}
+      {% Button type="button" title=title data-provide-rest-preview=form.description_{{item.0}}.id_for_label %}
         {% trans "Preview" %}
       {% endButton %}
 

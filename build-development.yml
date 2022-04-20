@@ -191,7 +191,7 @@ web:
   py_makemessages:
     shell:
       options:
-        command: ./run django-manage --project={_1} makemessages --symlinks -l id
+        command: ./run django-manage --project={_1} makemessages --symlinks -l id -l jv -l su -i '*.virtualenv*'
       rule_in:
         - "{_1}/unit_test/shell"
       raw_depend_in:
@@ -201,7 +201,7 @@ web:
   js_makemessages:
     shell:
       options:
-        command: ./run django-manage --project={_1} makemessages --symlinks -d djangojs -l id
+        command: ./run django-manage --project={_1} makemessages --symlinks -d djangojs -l id -l jv -l su -i '*.virtualenv*'
       rule_in:
         - "{_1}/js/webpack"
       raw_depend_in:

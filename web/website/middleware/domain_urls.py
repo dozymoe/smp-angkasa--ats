@@ -10,7 +10,8 @@ class DomainUrlsMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.site.id == 1:
+        request.is_admin = request.site.id == 1
+        if request.is_admin:
             request.urlconf = settings.ROOT_URLCONF + '_admin'
         else:
             request.urlconf = settings.ROOT_URLCONF

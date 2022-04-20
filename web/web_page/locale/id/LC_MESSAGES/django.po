@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:28+0700\n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web_page/models.py:17 web_page/templates/web_page/webpage_list.html:43
+#: web_page/models.py:28 web_page/templates/web_page/webpage_list.html:43
 msgid "Title"
 msgstr "Judul"
 
-#: web_page/models.py:18
+#: web_page/models.py:33
 msgid "Body"
 msgstr "Konten"
 
-#: web_page/models.py:19
+#: web_page/models.py:37
 msgid "Summary"
 msgstr "Ringkasan"
 
-#: web_page/models.py:20
+#: web_page/models.py:40
 msgid "URL Name"
 msgstr "Nama URL"
 
-#: web_page/models.py:22
+#: web_page/models.py:42
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
 "filled if left empty."
@@ -41,7 +41,7 @@ msgstr ""
 "Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
 "otomatis bila dibiarkan kosong."
 
-#: web_page/models.py:25
+#: web_page/models.py:47
 msgid "Publish Date"
 msgstr "Ditayangkan Tanggal"
 

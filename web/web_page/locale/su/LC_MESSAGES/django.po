@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: web_page/models.py:28 web_page/templates/web_page/webpage_list.html:43
+msgid "Title"
+msgstr ""
+
+#: web_page/models.py:33
+msgid "Body"
+msgstr ""
+
+#: web_page/models.py:37
+msgid "Summary"
+msgstr ""
+
+#: web_page/models.py:40
+msgid "URL Name"
+msgstr ""
+
+#: web_page/models.py:42
+msgid ""
+"Human friendly unique url to identify the content, will automatically be "
+"filled if left empty."
+msgstr ""
+
+#: web_page/models.py:47
+msgid "Publish Date"
+msgstr ""
+
+#: web_page/restructured_text/embed_page.py:50
+#, python-format
+msgid "%s is not a number."
+msgstr ""
+
+#: web_page/restructured_text/embed_page.py:55
+#, python-format
+msgid "Page with id:%s was not found."
+msgstr ""
+
+#: web_page/templates/web_page/base-admin-object.html:8
+#: web_page/templates/web_page/base-admin.html:8
+msgid "Index"
+msgstr ""
+
+#: web_page/templates/web_page/base-admin-object.html:13
+#: web_page/templates/web_page/base-admin.html:13
+msgid "Create"
+msgstr ""
+
+#: web_page/templates/web_page/base-admin-object.html:18
+#: web_page/templates/web_page/webpage_list.html:76
+msgid "Edit"
+msgstr ""
+
+#: web_page/templates/web_page/base-admin-object.html:23
+#: web_page/templates/web_page/webpage_confirm_delete.html:29
+#: web_page/templates/web_page/webpage_list.html:102
+msgid "Delete"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:6
+msgid "Delete Page"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:15
+msgid "Do you really want to delete"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_delete.html:20
+#: web_page/templates/web_page/webpage_confirm_publish.html:20
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:20
+msgid "Date Created"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_publish.html:6
+msgid "Publish Page"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_publish.html:15
+msgid "Do you really want to publish"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_publish.html:29
+#: web_page/templates/web_page/webpage_list.html:84
+msgid "Publish"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:6
+msgid "Unpublish Page"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:15
+msgid "Do you really want to unpublish"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:29
+#: web_page/templates/web_page/webpage_list.html:81
+msgid "Unpublish"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_create_form.html:5
+#: web_page/templates/web_page/webpage_list.html:29
+msgid "Create Page"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_create_form.html:12
+#: web_page/templates/web_page/webpage_form.html:12
+msgid "Language"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_create_form.html:33
+#: web_page/templates/web_page/webpage_form.html:33
+msgid "Body Preview"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_create_form.html:35
+#: web_page/templates/web_page/webpage_create_form.html:49
+#: web_page/templates/web_page/webpage_create_form.html:74
+#: web_page/templates/web_page/webpage_form.html:35
+#: web_page/templates/web_page/webpage_form.html:49
+#: web_page/templates/web_page/webpage_form.html:74
+msgid "Preview"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_create_form.html:40
+#: web_page/templates/web_page/webpage_create_form.html:54
+#: web_page/templates/web_page/webpage_form.html:40
+#: web_page/templates/web_page/webpage_form.html:54
+msgid "Editing Help"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_create_form.html:47
+#: web_page/templates/web_page/webpage_form.html:47
+msgid "Summary Preview"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_create_form.html:65
+msgid "Submit"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_form.html:5
+msgid "Update Page"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_form.html:65
+msgid "Update"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:5
+msgid "Manage Pages"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:10
+msgid "Linking pages in your articles. Example:"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:13
+msgid "The number <strong>4</strong> is from the ID column below."
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:19
+msgid "Pages"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:40
+msgid "ID"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:46
+msgid "Status"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:64
+msgid "Published"
+msgstr ""
+
+#: web_page/templates/web_page/webpage_list.html:66
+msgid "Not Published"
+msgstr ""

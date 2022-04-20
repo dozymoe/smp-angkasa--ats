@@ -1,14 +1,21 @@
+import logging
+#-
 from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.urls import reverse
+from django.utils import translation
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 import rules
 from rules.contrib.models import RulesModel
+from translated_fields import TranslatedField, to_attribute
 #-
 from thing_keyword.models import ThingKeywordField
+from website.mixins import MultilingualMixin, attrgetter
+
+_logger = logging.getLogger(__name__)
 
 
 class BlogPostingManager(models.Manager):
@@ -16,14 +23,30 @@ class BlogPostingManager(models.Manager):
         return self.get(slug=key)
 
 
-class BlogPosting(DirtyFieldsMixin, RulesModel):
-    title = models.CharField(verbose_name=_("Title"), max_length=65)
-    body = models.TextField(verbose_name=_("Body"))
-    summary = models.TextField(verbose_name=_("Summary"), max_length=155)
-    slug = models.SlugField(verbose_name=_("URL Name"), max_length=64,
-            unique=True, db_index=True, blank=True,
-            help_text=_("Human friendly unique url to identify the content, "
-            "will automatically be filled if left empty."))
+class BlogPosting(DirtyFieldsMixin, MultilingualMixin, RulesModel):
+    REQUIRED_TRANSLATED_FIELDS = ('title', 'body', 'summary', 'slug')
+
+    title = TranslatedField(
+            models.CharField(verbose_name=_("Title"), max_length=65,
+                blank=True),
+            {settings.LANGUAGE_CODE: {'blank': False}},
+            attrgetter=attrgetter)
+    body = TranslatedField(
+            models.TextField(verbose_name=_("Body"), blank=True),
+            {settings.LANGUAGE_CODE: {'blank': False}},
+            attrgetter=attrgetter)
+    summary = TranslatedField(
+            models.TextField(verbose_name=_("Summary"), blank=True),
+            {settings.LANGUAGE_CODE: {'blank': False}},
+            attrgetter=attrgetter)
+    slug = TranslatedField(
+            models.SlugField(verbose_name=_("URL Name"), max_length=64,
+                unique=True, db_index=True, blank=True, null=True,
+                help_text=_("Human friendly unique url to identify the "
+                "content, will automatically be filled if left empty.")),
+            {settings.LANGUAGE_CODE: {'null': False}},
+            attrgetter=attrgetter)
+
     image = models.ImageField(verbose_name=_("Image"),
             upload_to='blog_posting/original/',
             width_field='image_width', height_field='image_height', null=True,
@@ -74,7 +97,8 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
 
 
     def get_absolute_url(self):
-        return reverse('BlogPosting:Display', args=(self.slug, 'html'))
+        with translation.override(self.valid_language()):
+            return reverse('BlogPostingLang:Display', args=(self.slug, 'html'))
 
 
     def get_natural_key(self):
@@ -82,7 +106,11 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
 
 
     def get_image_url(self):
-        return reverse('BlogPosting:Image', args=(self.slug, 'lg'))
+        return reverse('BlogPosting:Image', args=(self.pk, 'lg'))
+
+
+    def is_published(self):
+        return self.published_at and not self.deleted_at
 
 
     def save(self, update_fields=None, **kwargs):
@@ -91,11 +119,14 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
             dirty = {key: val for (key, val) in dirty.items()\
                     if key in update_fields}
 
-        if 'title' in dirty and self.title and\
-                ('slug' not in dirty or not self.slug):
-            self.slug = slugify(self.title)
-            if update_fields and 'slug' not in update_fields:
-                update_fields.append('slug')
+        for langcode, _ in settings.LANGUAGES:
+            title_field = to_attribute('title', langcode)
+            slug_field = to_attribute('slug', langcode)
+            if title_field in dirty and getattr(self, title_field) and\
+                    (slug_field not in dirty or not getattr(self, slug_field)):
+                setattr(self, slug_field, slugify(getattr(self, title_field)))
+                if update_fields and slug_field not in update_fields:
+                    update_fields.append(slug_field)
 
         return super().save(update_fields=update_fields, **kwargs)
 
@@ -107,7 +138,7 @@ class BlogPosting(DirtyFieldsMixin, RulesModel):
             if not imgfield:
                 continue
             attribute_value.append('%s %sw' % (
-                    reverse('BlogPosting:Image', args=(self.slug, name)),
+                    reverse('BlogPosting:Image', args=(self.pk, name)),
                     size[0]))
         return ', '.join(attribute_value)
 

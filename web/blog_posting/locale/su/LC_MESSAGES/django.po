@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: blog_posting/models.py:30
+#: blog_posting/templates/blog_posting/blogposting_list.html:43
+msgid "Title"
+msgstr ""
+
+#: blog_posting/models.py:35
+msgid "Body"
+msgstr ""
+
+#: blog_posting/models.py:39
+msgid "Summary"
+msgstr ""
+
+#: blog_posting/models.py:43
+msgid "URL Name"
+msgstr ""
+
+#: blog_posting/models.py:45
+msgid ""
+"Human friendly unique url to identify the content, will automatically be "
+"filled if left empty."
+msgstr ""
+
+#: blog_posting/models.py:50
+msgid "Image"
+msgstr ""
+
+#: blog_posting/models.py:57
+msgid "Publish Date"
+msgstr ""
+
+#: blog_posting/restructured_text/embed_blog.py:50
+#, python-format
+msgid "%s is not a number."
+msgstr ""
+
+#: blog_posting/restructured_text/embed_blog.py:56
+#, python-format
+msgid "Article with id:%s was not found."
+msgstr ""
+
+#: blog_posting/templates/blog_posting/base-admin-object.html:9
+#: blog_posting/templates/blog_posting/base-admin.html:9
+msgid "Index"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/base-admin-object.html:14
+#: blog_posting/templates/blog_posting/base-admin.html:14
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:92
+msgid "Create"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/base-admin-object.html:19
+#: blog_posting/templates/blog_posting/blogposting_list.html:76
+msgid "Edit"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/base-admin-object.html:24
+#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:32
+#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:48
+#: blog_posting/templates/blog_posting/blogposting_list.html:102
+msgid "Delete"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:6
+msgid "Delete Article"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:15
+msgid "Do you really want to delete"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:23
+#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:24
+#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:23
+msgid "Date Created"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:44
+#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:45
+#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:44
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:90
+#: blog_posting/templates/blog_posting/blogposting_detail-admin.html:29
+#: blog_posting/templates/blog_posting/blogposting_form.html:88
+#: blog_posting/templates/blog_posting/blogposting_list.html:19
+#: blog_posting/templates/blog_posting/blogposting_list.html:117
+msgid "Articles"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:6
+msgid "Publish Article"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:15
+msgid "Do you really want to publish"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:33
+#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:49
+#: blog_posting/templates/blog_posting/blogposting_list.html:84
+msgid "Publish"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:6
+msgid "Unpublish Article"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:15
+msgid "Do you really want to unpublish"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:32
+#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:48
+#: blog_posting/templates/blog_posting/blogposting_list.html:81
+msgid "Unpublish"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:6
+#: blog_posting/templates/blog_posting/blogposting_list.html:29
+msgid "Create Article"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:14
+#: blog_posting/templates/blog_posting/blogposting_form.html:12
+msgid "Language"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:35
+#: blog_posting/templates/blog_posting/blogposting_form.html:33
+msgid "Body Preview"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:37
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:51
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:80
+#: blog_posting/templates/blog_posting/blogposting_form.html:35
+#: blog_posting/templates/blog_posting/blogposting_form.html:49
+#: blog_posting/templates/blog_posting/blogposting_form.html:78
+msgid "Preview"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:42
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:56
+#: blog_posting/templates/blog_posting/blogposting_form.html:40
+#: blog_posting/templates/blog_posting/blogposting_form.html:54
+msgid "Editing Help"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:49
+#: blog_posting/templates/blog_posting/blogposting_form.html:47
+msgid "Summary Preview"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:71
+msgid "Submit"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_form.html:5
+msgid "Update Article"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_form.html:69
+#: blog_posting/templates/blog_posting/blogposting_form.html:92
+msgid "Update"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:5
+msgid "Manage Articles"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:10
+msgid "Linking blogs in your articles. Example:"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:13
+msgid "The number <strong>4</strong> is from the ID column below."
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:40
+msgid "ID"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:46
+msgid "Status"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:64
+msgid "Published"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_list.html:66
+msgid "Not Published"
+msgstr ""

@@ -1,13 +1,14 @@
 
 
-(function(globals) {
-
-  var django = globals.django || (globals.django = {});
+'use strict';
+{
+  const globals = this;
+  const django = globals.django || (globals.django = {});
 
   
   django.pluralidx = function(n) {
-    var v=0;
-    if (typeof(v) == 'boolean') {
+    const v = 0;
+    if (typeof v === 'boolean') {
       return v ? 1 : 0;
     } else {
       return v;
@@ -19,13 +20,13 @@
 
   django.catalog = django.catalog || {};
   
-  var newcatalog = {
+  const newcatalog = {
     "Backward button": "Tombol mundur",
     "Choose an option": "Pilih satu",
     "Clear all": "Hapus bersih",
     "Clear all selected items": "Batalkan pilihan",
     "Clear filter": "Hapus filter",
-    "Clear search input": "Bersihkan pencarian",
+    "Clear search input": "Tampilkan semua",
     "Clear selection": "Bersihkan pencarian",
     "Close menu": "Tutup menu",
     "Close the side navigation menu": "Tutup navigasi samping",
@@ -46,8 +47,10 @@
     "Multi select options": "Pilihan berganda",
     "Next page": "Halaman berikutnya",
     "Off": "Mati",
-    "Open menu": "Buka menu",
+    "Open menu": "Buka dialog",
     "Overflow": "Luapan",
+    "Page Select": "Pilih Laman",
+    "Pages": "Laman-Laman",
     "Preview": "Penampakan",
     "Previous page": "Halaman sebelumnya",
     "Remove uploaded file": "Hapus berkas unggahan",
@@ -56,14 +59,16 @@
     "Select AM/PM": "Pilih sebelum/sesudah siang",
     "Select time zone": "Pilih zona waktu",
     "Show less": "Kurangi tampilan",
-    "Show modal": "Buka dialog",
+    "Show modal": "Tutup dialog",
     "Show more": "Tampilkan lebih",
     "Show more icon": "Tampilkan tambahan icon",
     "Show password": "Tampilkan kata kunci",
     "Side navigation": "Navigasi samping",
     "Skip to main content": "Loncat ke konten",
+    "Summary": "Ringkasan",
     "Switcher": "Penampil",
-    "Table Action Bar": "Bagian Aksi Tabel",
+    "Table Action Bar": "Bagian Aksi Table",
+    "Title": "Judul",
     "Toggle the expansion state of the navigation": "Buka tutup navigasi",
     "Toolbar Search": "Pencarian",
     "breadcrumb": "remahan",
@@ -71,32 +76,32 @@
     "close modal": "tutup dialog",
     "decrease number input": "kurangi",
     "increase number input": "tambah",
-    "items selected": "baris dipilih",
-    "of {total} pages": " dari {total} halaman",
+    "items selected": "baris terpilih",
+    "of {total} pages": "dari {total} halaman",
     "on": "menyala",
     "page": "halaman",
     "select number of items per page": "pilih jumlah baris per halaman",
-    "select page number to view": "pilihan halaman untuk ditampilkan",
+    "select page number to view": "pilih halaman yang akan ditampilkan",
     "tile": "ubin"
   };
-  for (var key in newcatalog) {
+  for (const key in newcatalog) {
     django.catalog[key] = newcatalog[key];
   }
   
 
   if (!django.jsi18n_initialized) {
     django.gettext = function(msgid) {
-      var value = django.catalog[msgid];
-      if (typeof(value) == 'undefined') {
+      const value = django.catalog[msgid];
+      if (typeof value === 'undefined') {
         return msgid;
       } else {
-        return (typeof(value) == 'string') ? value : value[0];
+        return (typeof value === 'string') ? value : value[0];
       }
     };
 
     django.ngettext = function(singular, plural, count) {
-      var value = django.catalog[singular];
-      if (typeof(value) == 'undefined') {
+      const value = django.catalog[singular];
+      if (typeof value === 'undefined') {
         return (count == 1) ? singular : plural;
       } else {
         return value.constructor === Array ? value[django.pluralidx(count)] : value;
@@ -106,16 +111,16 @@
     django.gettext_noop = function(msgid) { return msgid; };
 
     django.pgettext = function(context, msgid) {
-      var value = django.gettext(context + '\x04' + msgid);
-      if (value.indexOf('\x04') != -1) {
+      let value = django.gettext(context + '\x04' + msgid);
+      if (value.includes('\x04')) {
         value = msgid;
       }
       return value;
     };
 
     django.npgettext = function(context, singular, plural, count) {
-      var value = django.ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
-      if (value.indexOf('\x04') != -1) {
+      let value = django.ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
+      if (value.includes('\x04')) {
         value = django.ngettext(singular, plural, count);
       }
       return value;
@@ -183,8 +188,8 @@
   };
 
     django.get_format = function(format_type) {
-      var value = django.formats[format_type];
-      if (typeof(value) == 'undefined') {
+      const value = django.formats[format_type];
+      if (typeof value === 'undefined') {
         return format_type;
       } else {
         return value;
@@ -203,6 +208,5 @@
 
     django.jsi18n_initialized = true;
   }
-
-}(this));
+};
 

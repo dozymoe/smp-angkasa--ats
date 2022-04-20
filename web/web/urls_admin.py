@@ -18,7 +18,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import RedirectView
+from django.utils.translation import gettext_lazy as _
 #-
 from website import views, views_admin
 
@@ -29,10 +29,7 @@ urlpatterns = [
     path('api/files/', include('my_files.urls_api', namespace='MyFileApi')),
     path('api/web_pages/', include('web_page.urls_api',
             namespace='WebPageApi')),
-]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += i18n_patterns(
     path('blog-posts/', include('blog_posting.urls_admin',
             namespace='BlogPosting')),
     path('events/', include('my_event.urls_admin', namespace='Event')),
@@ -44,17 +41,21 @@ urlpatterns += i18n_patterns(
             namespace='FrontContent')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
             name='EditorHelpText'),
-
-    prefix_default_language=False,
-)
-
-# Quickfixes
-urlpatterns += [
-    path('ppdb.<str:format>', RedirectView.as_view(url='/'), name='Ppdb'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns(
+    path(_('news/'), include('blog_posting.urls_lang',
+        namespace='BlogPostingLang')),
+    path(_('events/'), include('my_event.urls_lang', namespace='EventLang')),
+    path('index.<str:format>', views.Home.as_view(), name='HomeLang'),
+    path('', include('web_page.urls_lang', namespace='WebPageLang')),
+
+    prefix_default_language=True,
+)
 
 urlpatterns += [
     path('dashboard/', views_admin.Home.as_view()),
-    path('', views_admin.Home.as_view(), name='Home',
-            kwargs={'format': 'html'}),
+    path('', views_admin.Home.as_view(), name='Home'),
 ]

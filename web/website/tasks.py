@@ -5,40 +5,67 @@ import os
 from django.apps import apps
 from django.conf import settings
 from django.core.files.base import ContentFile
-from frozen_django.main import generate_static_view
+from django.utils import translation
 from PIL import Image
 from uwsgi_tasks import task, TaskExecutor
 #-
+from frozen_django.main import generate_static_view
+#-
 from blog_posting.models import BlogPosting
+from my_event.models import Event
 from web_page.models import WebPage
 
 _logger = logging.getLogger()
 
 
 @task(executor=TaskExecutor.SPOOLER)
-def freeze_view(view_name, base_url, dest=None, **kwargs):
+def freeze_view(view_name, base_url, langcode=None, dest=None, **kwargs):
     generate_static_view(view_name, frozen_host=base_url, frozen_dest=dest,
+            langcode=langcode, **kwargs)
+
+
+def hosts_freeze_view(view_name, langcode=None, dest=None, **kwargs):
+    host = settings.ALLOWED_HOSTS[0]
+    freeze_view(view_name, base_url=host, langcode=langcode, dest=dest,
             **kwargs)
 
 
-def hosts_freeze_view(view_name, dest=None, **kwargs):
-    host = settings.ALLOWED_HOSTS[0]
-    freeze_view(view_name, base_url=host, dest=dest, **kwargs)
-
-
 def freeze_all_views():
-    hosts_freeze_view('website.views.Home', format='html')
-    hosts_freeze_view('website.views.EditorHelpText', format='html')
-
-    for obj in BlogPosting.objects.filter(published_at__isnull=False,
-            deleted_at__isnull=True).all():
-        hosts_freeze_view('blog_posting.views.Display', slug=obj.slug,
+    for langcode, _ in settings.LANGUAGES:
+        hosts_freeze_view('website.views.Home', langcode=langcode,
+                format='html')
+        hosts_freeze_view('website.views.EditorHelpText', langcode=langcode,
                 format='html')
 
     for obj in WebPage.objects.filter(published_at__isnull=False,
             deleted_at__isnull=True).all():
-        hosts_freeze_view('web_page.views.Display', slug=obj.slug,
-                format='html')
+        for langcode, _ in settings.LANGUAGES:
+            if langcode != obj.valid_language(langcode):
+                continue
+
+            with translation.override(langcode):
+                hosts_freeze_view('web_page.views.Display', langcode=langcode,
+                        slug=obj.slug, format='html')
+
+    for obj in BlogPosting.objects.filter(published_at__isnull=False,
+            deleted_at__isnull=True).all():
+        for langcode, _ in settings.LANGUAGES:
+            if langcode != obj.valid_language(langcode):
+                continue
+
+            with translation.override(langcode):
+                hosts_freeze_view('blog_posting.views.Display',
+                        langcode=langcode, slug=obj.slug, format='html')
+
+    for obj in Event.objects.filter(published_at__isnull=False,
+            deleted_at__isnull=True).all():
+        for langcode, _ in settings.LANGUAGES:
+            if langcode != obj.valid_language(langcode):
+                continue
+
+            with translation.override(langcode):
+                hosts_freeze_view('my_event.views.Display',
+                        langcode=langcode, slug=obj.slug, format='html')
 
 
 @task(executor=TaskExecutor.SPOOLER)

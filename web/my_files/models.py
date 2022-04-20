@@ -7,6 +7,9 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import rules
 from rules.contrib.models import RulesModel
+from translated_fields import TranslatedField
+#-
+from website.mixins import MultilingualMixin, attrgetter
 
 
 class MyFileManager(models.Manager):
@@ -14,16 +17,24 @@ class MyFileManager(models.Manager):
         return self.get(filehash=key)
 
 
-class MyFile(DirtyFieldsMixin, RulesModel):
+class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
+    REQUIRED_TRANSLATED_FIELDS = ('description',)
+
     filehash = models.CharField(verbose_name=_("Title"), max_length=65,
             editable=False)
     mimetype = models.CharField(verbose_name=_("Mime Type"), max_length=50,
             editable=False)
-    description = models.TextField(verbose_name=_("Description"))
-    alt_text  = models.TextField(verbose_name=_("Alternate Text (alt text)"),
-            null=True, blank=True,
-            help_text=_("Only need to fill this if you were uploading "
-            "an image."))
+
+    description = TranslatedField(
+            models.TextField(verbose_name=_("Description"), blank=True),
+            {settings.LANGUAGE_CODE: {'blank': False}},
+            attrgetter=attrgetter)
+    alt_text = TranslatedField(
+            models.TextField(verbose_name=_("Alternate Text (alt text)"),
+                null=True, blank=True,
+                help_text=_("Only need to fill this if you were uploading "
+                "an image.")),
+            attrgetter=attrgetter)
     databits = models.FileField(verbose_name=_("Content"),
             upload_to='files/original/')
 

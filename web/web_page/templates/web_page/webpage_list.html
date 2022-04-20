@@ -54,8 +54,8 @@
           {% Td %}{{obj.pk}}{% endTd %}
 
           {% Td %}
-            <a href="{% url 'WebPage:Display' obj.slug 'html' %}">
-              {{obj.title}}
+            <a href="{{ obj.get_absolute_url }}">
+              {{obj}}
             </a>
           {% endTd %}
 

@@ -2,6 +2,7 @@
 
 factory_boy
 faker
+pipdeptree
 psycopg2
 pybuildtool
 pygments

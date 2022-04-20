@@ -5,5 +5,5 @@ from .models import MySlide
 class MySlideForm(ModelForm):
     class Meta:
         model = MySlide
-        exclude = []
-        #fields = ['location', 'image', 'description']
+        fields = ['location', 'image',
+                *MySlide.description.fields]

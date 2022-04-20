@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:48+0700\n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,16 +30,16 @@ msgid "Content"
 msgstr "Konten"
 
 #: website/templates/base-admin.html:12
+msgid "Page"
+msgstr "Laman"
+
+#: website/templates/base-admin.html:17
 msgid "Article"
 msgstr "Artikel"
 
-#: website/templates/base-admin.html:17
+#: website/templates/base-admin.html:22
 msgid "Event"
 msgstr "Kegiatan"
-
-#: website/templates/base-admin.html:22
-msgid "Page"
-msgstr "Laman"
 
 #: website/templates/base-admin.html:27
 msgid "File"

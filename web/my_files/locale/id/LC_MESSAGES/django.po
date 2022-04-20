@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:28+0700\n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: my_files/models.py:18
+#: my_files/models.py:23
 msgid "Title"
 msgstr "Judul"
 
-#: my_files/models.py:20
+#: my_files/models.py:25
 msgid "Mime Type"
 msgstr "Tipe Berkas"
 
-#: my_files/models.py:22 my_files/templates/my_files/myfile_list.html:53
+#: my_files/models.py:29 my_files/templates/my_files/myfile_list.html:53
 msgid "Description"
 msgstr "Keterangan"
 
-#: my_files/models.py:23
+#: my_files/models.py:33
 msgid "Alternate Text (alt text)"
 msgstr "Teks Alternatif (alt text)"
 
-#: my_files/models.py:25
+#: my_files/models.py:35
 msgid "Only need to fill this if you were uploading an image."
 msgstr "Hanya diisi bila mengunggah gambar."
 
-#: my_files/models.py:27
+#: my_files/models.py:38
 msgid "Content"
 msgstr "Konten"
 

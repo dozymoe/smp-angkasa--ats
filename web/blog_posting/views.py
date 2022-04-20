@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
+from translated_fields import to_attribute
 #-
 from .models import BlogPosting
 
@@ -14,9 +15,12 @@ _logger = logging.getLogger(__name__)
 class Display(DetailView):
     model = BlogPosting
 
+    def get_slug_field(self):
+        return to_attribute(self.slug_field, self.request.LANGUAGE_CODE)
 
-def serve_files(request, slug, style=None):
-    obj = get_object_or_404(BlogPosting, slug=slug)
+
+def serve_files(request, pk, style=None):
+    obj = get_object_or_404(BlogPosting, pk=pk)
     if style is None:
         field = obj.image
     else:

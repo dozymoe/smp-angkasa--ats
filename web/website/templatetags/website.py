@@ -8,7 +8,6 @@ from django.conf import settings
 from django.template.defaultfilters import stringfilter
 from django.utils.safestring import mark_safe
 from docutils.core import publish_parts
-from modeltranslation.utils import build_localized_fieldname
 #-
 from website.restructured_text.html_writer import HtmlWriter
 
@@ -123,8 +122,3 @@ def flash_messages(messages, low, high=None):
 @register.simple_tag
 def html_id(name, unique):
     return '%s-%s' % (name, unique)
-
-
-@register.filter
-def transfield(field_name, lang):
-    return build_localized_fieldname(field_name, lang)

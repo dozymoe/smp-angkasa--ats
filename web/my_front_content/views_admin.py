@@ -58,7 +58,7 @@ def move_first(request, pk):
         obj.save()
     elif obj.position > 1:
         FrontContent.objects\
-                .filter(position__gt=0, position_lt=obj.position)\
+                .filter(position__gt=0, position__lt=obj.position)\
                 .update(position=F('position') + 1)
         obj.position = 1
         obj.save()

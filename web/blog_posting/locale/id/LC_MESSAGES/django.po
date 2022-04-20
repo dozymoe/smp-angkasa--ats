@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:28+0700\n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: blog_posting/models.py:20
+#: blog_posting/models.py:30
 #: blog_posting/templates/blog_posting/blogposting_list.html:43
 msgid "Title"
 msgstr "Judul"
 
-#: blog_posting/models.py:21
+#: blog_posting/models.py:35
 msgid "Body"
 msgstr "Konten"
 
-#: blog_posting/models.py:22
+#: blog_posting/models.py:39
 msgid "Summary"
 msgstr "Deskripsi"
 
-#: blog_posting/models.py:23
+#: blog_posting/models.py:43
 msgid "URL Name"
 msgstr "Nama URL"
 
-#: blog_posting/models.py:25
+#: blog_posting/models.py:45
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
 "filled if left empty."
@@ -42,11 +42,11 @@ msgstr ""
 "Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
 "otomatis bila dibiarkan kosong."
 
-#: blog_posting/models.py:27
+#: blog_posting/models.py:50
 msgid "Image"
 msgstr "Gambar"
 
-#: blog_posting/models.py:34
+#: blog_posting/models.py:57
 msgid "Publish Date"
 msgstr "Ditayangkan Tanggal"
 

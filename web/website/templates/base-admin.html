@@ -7,6 +7,11 @@
     {% trans "Content" %}
 
     {% Slot 'submenu' %}
+      {% url 'WebPage:Index' as url %}
+      {% UiLink href=url %}
+        {% trans "Page" %}
+      {% endUiLink %}
+
       {% url 'BlogPosting:Index' as url %}
       {% UiLink href=url %}
         {% trans "Article" %}
@@ -15,11 +20,6 @@
       {% url 'Event:Index' as url %}
       {% UiLink href=url %}
         {% trans "Event" %}
-      {% endUiLink %}
-    
-      {% url 'WebPage:Index' as url %}
-      {% UiLink href=url %}
-        {% trans "Page" %}
       {% endUiLink %}
     
       {% url 'MyFile:Index' as url %}

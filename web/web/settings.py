@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'frozen_django',
     'mailer',
     'carbondesign',
-    'modeltranslation',
     'rest_framework',
     'rules',
     'statici18n',
@@ -96,6 +95,7 @@ MIDDLEWARE = [
 ]
 
 FROZEN_MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
 ]
 
@@ -186,6 +186,10 @@ LANGUAGES = (
     ('en', _("English")),
     ('su', _("Sundanese")),
     ('jv', _("Javanese")),
+)
+LOCALE_PATHS = (
+    BASE_DIR/'web'/'locale',
+    BASE_DIR/'locale',
 )
 
 USE_L10N = True

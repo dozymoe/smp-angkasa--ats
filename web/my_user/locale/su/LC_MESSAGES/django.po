@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: my_user/templates/account/account_inactive.html:5
+msgid "Account Inactive"
+msgstr ""
+
+#: my_user/templates/account/account_inactive.html:9
+msgid "This account is inactive."
+msgstr ""
+
+#: my_user/templates/account/email.html:5
+msgid "E-mail Addresses"
+msgstr ""
+
+#: my_user/templates/account/email.html:11
+msgid ""
+"\n"
+"        The following e-mail addresses are associated with your account:\n"
+"      "
+msgstr ""
+
+#: my_user/templates/account/email.html:31
+msgid "Verified"
+msgstr ""
+
+#: my_user/templates/account/email.html:33
+msgid "Unverified"
+msgstr ""
+
+#: my_user/templates/account/email.html:36
+msgid "Primary"
+msgstr ""
+
+#: my_user/templates/account/email.html:44
+msgid "Make Primary"
+msgstr ""
+
+#: my_user/templates/account/email.html:47
+msgid "Re-send Verification"
+msgstr ""
+
+#: my_user/templates/account/email.html:50
+msgid "Remove"
+msgstr ""
+
+#: my_user/templates/account/email.html:59
+msgid "Warning:"
+msgstr ""
+
+#: my_user/templates/account/email.html:60
+msgid ""
+"\n"
+"        You currently do not have any e-mail address set up. You should\n"
+"        really add an e-mail address so you can receive notifications, "
+"reset\n"
+"        your password, etc.\n"
+"      "
+msgstr ""
+
+#: my_user/templates/account/email.html:70
+msgid "Add E-mail Address"
+msgstr ""
+
+#: my_user/templates/account/email.html:82
+msgid "Add E-mail"
+msgstr ""
+
+#: my_user/templates/account/email.html:93
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: my_user/templates/account/email_confirm.html:6
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: my_user/templates/account/email_confirm.html:14
+#, python-format
+msgid ""
+"\n"
+"        Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a>\n"
+"        is an e-mail address for user %(user_display)s.\n"
+"      "
+msgstr ""
+
+#: my_user/templates/account/email_confirm.html:24
+msgid "Confirm"
+msgstr ""
+
+#: my_user/templates/account/email_confirm.html:33
+#, python-format
+msgid ""
+"\n"
+"        This e-mail confirmation link expired or is invalid. Please\n"
+"        <a href=\"%(email_url)s\">issue a new e-mail confirmation request</"
+"a>.\n"
+"      "
+msgstr ""
+
+#: my_user/templates/account/login.html:6
+#: my_user/templates/account/login.html:69
+msgid "Sign In"
+msgstr ""
+
+#: my_user/templates/account/login.html:15
+#, python-format
+msgid ""
+"\n"
+"        Please sign in with one of your existing third party accounts. Or,\n"
+"        <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s\n"
+"        account and sign in below:\n"
+"      "
+msgstr ""
+
+#: my_user/templates/account/login.html:27
+msgid "or"
+msgstr ""
+
+#: my_user/templates/account/login.html:34
+#, python-format
+msgid ""
+"\n"
+"        If you have not created an account yet, then please\n"
+"        <a href=\"%(signup_url)s\">sign up</a> first.\n"
+"      "
+msgstr ""
+
+#: my_user/templates/account/login.html:65
+#: my_user/templates/account/login.html:85
+#: my_user/templates/account/password_change.html:30
+msgid "Forgot Password?"
+msgstr ""
+
+#: my_user/templates/account/login.html:80
+#: my_user/templates/account/signup.html:5
+#: my_user/templates/account/signup.html:39
+msgid "Sign Up"
+msgstr ""
+
+#: my_user/templates/account/password_change.html:5
+#: my_user/templates/account/password_change.html:27
+#: my_user/templates/account/password_reset_from_key.html:9
+#: my_user/templates/account/password_reset_from_key.html:40
+#: my_user/templates/account/password_reset_from_key_done.html:5
+msgid "Change Password"
+msgstr ""
+
+#: my_user/templates/account/password_reset.html:6
+#: my_user/templates/account/password_reset_done.html:6
+msgid "Password Reset"
+msgstr ""
+
+#: my_user/templates/account/password_reset.html:15
+msgid ""
+"\n"
+"      Forgotten your password? Enter your e-mail address below, and we'll\n"
+"      send you an e-mail allowing you to reset it.\n"
+"    "
+msgstr ""
+
+#: my_user/templates/account/password_reset.html:31
+msgid "Reset My Password"
+msgstr ""
+
+#: my_user/templates/account/password_reset.html:36
+msgid ""
+"\n"
+"      Please contact us if you have any trouble resetting your password.\n"
+"    "
+msgstr ""
+
+#: my_user/templates/account/password_reset_done.html:15
+msgid ""
+"\n"
+"      We have sent you an e-mail. Please contact us if you do not receive "
+"it\n"
+"      within a few minutes.\n"
+"    "
+msgstr ""
+
+#: my_user/templates/account/password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr ""
+
+#: my_user/templates/account/password_reset_from_key.html:18
+#, python-format
+msgid ""
+"\n"
+"        The password reset link was invalid, possibly because it has "
+"already\n"
+"        been used.  Please request a\n"
+"        <a href=\"%(passwd_reset_url)s\">new password reset</a>.\n"
+"      "
+msgstr ""
+
+#: my_user/templates/account/password_reset_from_key.html:44
+#: my_user/templates/account/password_reset_from_key_done.html:9
+msgid "Your password is now changed."
+msgstr ""
+
+#: my_user/templates/account/password_set.html:5
+#: my_user/templates/account/password_set.html:23
+msgid "Set Password"
+msgstr ""
+
+#: my_user/templates/account/signup.html:10
+#, python-format
+msgid ""
+"\n"
+"      Already have an account? Then please\n"
+"      <a href=\"%(login_url)s\">sign in</a>.\n"
+"    "
+msgstr ""
+
+#: my_user/templates/account/signup_closed.html:5
+msgid "Sign Up Closed"
+msgstr ""
+
+#: my_user/templates/account/signup_closed.html:9
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: my_user/templates/account/verification_sent.html:5
+#: my_user/templates/account/verified_email_required.html:5
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: my_user/templates/account/verification_sent.html:10
+msgid ""
+"\n"
+"      We have sent an e-mail to you for verification. Follow the link\n"
+"      provided to finalize the signup process. Please contact us if you do\n"
+"      not receive it within a few minutes.\n"
+"    "
+msgstr ""
+
+#: my_user/templates/account/verified_email_required.html:12
+msgid ""
+"\n"
+"      This part of the site requires us to verify that you are who you "
+"claim\n"
+"      to be. For this purpose, we require that you verify ownership of your\n"
+"      e-mail address.\n"
+"    "
+msgstr ""
+
+#: my_user/templates/account/verified_email_required.html:20
+msgid ""
+"\n"
+"      We have sent an e-mail to you for verification. Please click on the\n"
+"      link inside this e-mail. Please contact us if you do not receive it\n"
+"      within a few minutes.\n"
+"    "
+msgstr ""
+
+#: my_user/templates/account/verified_email_required.html:28
+#, python-format
+msgid ""
+"\n"
+"      <strong>Note:</strong> you can still\n"
+"      <a href=\"%(email_url)s\">change your e-mail address</a>.\n"
+"    "
+msgstr ""

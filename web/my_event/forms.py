@@ -5,6 +5,8 @@ from .models import Event
 class EventForm(ModelForm):
     class Meta:
         model = Event
-        exclude = []
-        #fields = ['title', 'body', 'summary', 'slug', 'started_at',
-        #        'stopped_at']
+        fields = ['started_at', 'stopped_at',
+                *Event.title.fields,
+                *Event.slug.fields,
+                *Event.body.fields,
+                *Event.summary.fields]

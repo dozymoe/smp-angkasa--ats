@@ -24,10 +24,10 @@
 
   {% for item in LANGUAGES %}
     <div class="form-group swt-{{item.0}}">
-      {% TextArea form.{{'description'|transfield:item.0}} rows="4" class="text-editor" %}
+      {% TextArea form.description_{{item.0}} rows="4" label_suffix=" - {{item.1}}" %}
 
       {% trans "Description Preview" as title %}
-      {% Button type="button" title=title data-provide-rest-preview=form.{{'description'|transfield:item.0}}.id_for_label %}
+      {% Button type="button" title=title data-provide-rest-preview=form.description_{{item.0}}.id_for_label %}
         {% trans "Preview" %}
       {% endButton %}
 
@@ -38,7 +38,7 @@
     </div>
 
     <div class="form-group swt-{{item.0}}">
-      {% TextArea form.{{'alt_text'|transfield:item.0}} rows="4" %}
+      {% TextArea form.alt_text_{{item.0}} rows="4" label_suffix=" - {{item.1}}" %}
     </div>
   {% endfor %}
 

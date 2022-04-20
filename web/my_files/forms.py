@@ -5,5 +5,6 @@ from .models import MyFile
 class MyFileForm(ModelForm):
     class Meta:
         model = MyFile
-        exclude = []
-        #fields = ('databits', 'description', 'alt_text')
+        fields = ('databits',
+                *MyFile.description.fields,
+                *MyFile.alt_text.fields)

@@ -1,11 +1,19 @@
+import logging
+#-
 from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
+from django.utils import translation
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 import rules
 from rules.contrib.models import RulesModel
+from translated_fields import TranslatedField, to_attribute
+#-
+from website.mixins import MultilingualMixin, attrgetter
+
+_logger = logging.getLogger(__name__)
 
 
 class WebPageManager(models.Manager):
@@ -13,14 +21,28 @@ class WebPageManager(models.Manager):
         return self.get(slug=key)
 
 
-class WebPage(DirtyFieldsMixin, RulesModel):
-    title = models.CharField(verbose_name=_("Title"), max_length=65)
-    body = models.TextField(verbose_name=_("Body"))
-    summary = models.TextField(verbose_name=_("Summary"), default='')
-    slug = models.SlugField(verbose_name=_("URL Name"), max_length=64,
-            unique=True, db_index=True, blank=True,
-            help_text=_("Human friendly unique url to identify the content, "
-            "will automatically be filled if left empty."))
+class WebPage(DirtyFieldsMixin, MultilingualMixin, RulesModel):
+    REQUIRED_TRANSLATED_FIELDS = ('title', 'body', 'summary', 'slug')
+
+    title = TranslatedField(
+            models.CharField(verbose_name=_("Title"), max_length=65,
+                blank=True),
+            {settings.LANGUAGE_CODE: {'blank': False}},
+            attrgetter=attrgetter)
+    body = TranslatedField(
+            models.TextField(verbose_name=_("Body"), blank=True),
+            {settings.LANGUAGE_CODE: {'blank': False}},
+            attrgetter=attrgetter)
+    summary = TranslatedField(
+            models.TextField(verbose_name=_("Summary"), blank=True),
+            attrgetter=attrgetter)
+    slug = TranslatedField(
+            models.SlugField(verbose_name=_("URL Name"), max_length=64,
+                unique=True, db_index=True, blank=True, null=True,
+                help_text=_("Human friendly unique url to identify the "
+                "content, will automatically be filled if left empty.")),
+            {settings.LANGUAGE_CODE: {'null': False}},
+            attrgetter=attrgetter)
 
     published_at = models.DateTimeField(verbose_name=_("Publish Date"),
             db_index=True, null=True, blank=True)
@@ -55,11 +77,16 @@ class WebPage(DirtyFieldsMixin, RulesModel):
 
 
     def get_absolute_url(self):
-        return reverse('WebPage:Display', args=(self.slug, 'html'))
+        with translation.override(self.valid_language()):
+            return reverse('WebPageLang:Display', args=(self.slug, 'html'))
 
 
     def get_natural_key(self):
         return (self.slug,)
+
+
+    def is_published(self):
+        return self.published_at and not self.deleted_at
 
 
     def save(self, update_fields=None, **kwargs):
@@ -68,11 +95,14 @@ class WebPage(DirtyFieldsMixin, RulesModel):
             dirty = {key: val for (key, val) in dirty.items()\
                     if key in update_fields}
 
-        if 'title' in dirty and self.title and\
-                ('slug' not in dirty or not self.slug):
-            self.slug = slugify(self.title)
-            if update_fields and 'slug' not in update_fields:
-                update_fields.append('slug')
+        for langcode, _ in settings.LANGUAGES:
+            title_field = to_attribute('title', langcode)
+            slug_field = to_attribute('slug', langcode)
+            if title_field in dirty and getattr(self, title_field) and\
+                    (slug_field not in dirty or not getattr(self, slug_field)):
+                setattr(self, slug_field, slugify(getattr(self, title_field)))
+                if update_fields and slug_field not in update_fields:
+                    update_fields.append(slug_field)
 
         return super().save(update_fields=update_fields, **kwargs)
 
