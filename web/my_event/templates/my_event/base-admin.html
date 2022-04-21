@@ -15,3 +15,15 @@
     {% endUiNavItem %}
   {% endUiNavSection %}
 {% endblock %}
+
+
+{% block breadcrumb %}
+  {% Breadcrumb current=True %}
+    {% url 'Home' as url %}
+    {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
+    {% url 'Event:Index' as url %}
+    {% BreadcrumbItem href=url %}{% trans "Events" %}{% endBreadcrumbItem %}
+
+    {% block breadcrumb_app %}{% endblock %}
+  {% endBreadcrumb %}
+{% endblock %}

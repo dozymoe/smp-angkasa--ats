@@ -58,3 +58,9 @@
   </div>
 </form>
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'MySlide:Edit' object.pk as url %}
+  {% BreadcrumbItem href=url current=True %}{% trans "Update" %}{% endBreadcrumbItem %}
+{% endblock %}

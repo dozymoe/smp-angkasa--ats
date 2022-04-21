@@ -31,3 +31,9 @@
     </div>
   </form>
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'WebPage:Unpublish' object.pk as url %}
+  {% BreadcrumbItem href=url current=True %}{% trans "Unpublish" %}{% endBreadcrumbItem %}
+{% endblock %}

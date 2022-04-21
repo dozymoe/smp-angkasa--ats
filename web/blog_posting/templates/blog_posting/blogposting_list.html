@@ -54,9 +54,8 @@
           {% Td %}{{obj.pk}}{% endTd %}
   
           {% Td %}
-            <a href="{{ obj.get_absolute_url }}">
-              {{obj}}
-            </a>
+            {% url 'BlogPosting:Display' obj.pk 'html' as url %}
+            <a href="{{url}}">{{obj}}</a>
           {% endTd %}
   
           {% Td %}

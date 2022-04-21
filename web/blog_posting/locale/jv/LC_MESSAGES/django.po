@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2022-04-21 13:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,20 +65,28 @@ msgstr ""
 
 #: blog_posting/templates/blog_posting/base-admin-object.html:14
 #: blog_posting/templates/blog_posting/base-admin.html:14
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:92
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:87
 msgid "Create"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/base-admin-object.html:19
-#: blog_posting/templates/blog_posting/blogposting_list.html:76
+#: blog_posting/templates/blog_posting/blogposting_list.html:75
 msgid "Edit"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/base-admin-object.html:24
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:32
-#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:48
-#: blog_posting/templates/blog_posting/blogposting_list.html:102
+#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:41
+#: blog_posting/templates/blog_posting/blogposting_list.html:101
 msgid "Delete"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/base-admin-object.html:35
+#: blog_posting/templates/blog_posting/base-admin.html:25
+#: blog_posting/templates/blog_posting/blogposting_detail-admin.html:29
+#: blog_posting/templates/blog_posting/blogposting_list.html:19
+#: blog_posting/templates/blog_posting/blogposting_list.html:116
+msgid "Articles"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:6
@@ -95,17 +103,6 @@ msgstr ""
 msgid "Date Created"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_confirm_delete.html:44
-#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:45
-#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:44
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:90
-#: blog_posting/templates/blog_posting/blogposting_detail-admin.html:29
-#: blog_posting/templates/blog_posting/blogposting_form.html:88
-#: blog_posting/templates/blog_posting/blogposting_list.html:19
-#: blog_posting/templates/blog_posting/blogposting_list.html:117
-msgid "Articles"
-msgstr ""
-
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:6
 msgid "Publish Article"
 msgstr ""
@@ -115,8 +112,8 @@ msgid "Do you really want to publish"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:33
-#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:49
-#: blog_posting/templates/blog_posting/blogposting_list.html:84
+#: blog_posting/templates/blog_posting/blogposting_confirm_publish.html:42
+#: blog_posting/templates/blog_posting/blogposting_list.html:83
 msgid "Publish"
 msgstr ""
 
@@ -129,8 +126,8 @@ msgid "Do you really want to unpublish"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:32
-#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:48
-#: blog_posting/templates/blog_posting/blogposting_list.html:81
+#: blog_posting/templates/blog_posting/blogposting_confirm_unpublish.html:41
+#: blog_posting/templates/blog_posting/blogposting_list.html:80
 msgid "Unpublish"
 msgstr ""
 
@@ -179,7 +176,7 @@ msgid "Update Article"
 msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_form.html:69
-#: blog_posting/templates/blog_posting/blogposting_form.html:92
+#: blog_posting/templates/blog_posting/blogposting_form.html:85
 msgid "Update"
 msgstr ""
 
@@ -203,10 +200,10 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:64
+#: blog_posting/templates/blog_posting/blogposting_list.html:63
 msgid "Published"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_list.html:66
+#: blog_posting/templates/blog_posting/blogposting_list.html:65
 msgid "Not Published"
 msgstr ""

@@ -8,3 +8,9 @@
 {% block content %}
   {{ object.body | restify }}
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'WebPage:Display' object.slug 'html' as url %}
+  {% BreadcrumbItem href=url current=True %}{{object}}{% endBreadcrumbItem %}
+{% endblock %}

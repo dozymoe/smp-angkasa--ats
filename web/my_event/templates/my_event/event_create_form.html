@@ -82,3 +82,9 @@
     {% Slot 'heading' %}{% trans "Preview" %}{% endSlot %}
   {% endModal %}
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'Event:Create' as url %}
+  {% BreadcrumbItem href=url current=True %}{% trans "Create" %}{% endBreadcrumbItem %}
+{% endblock %}

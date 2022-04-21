@@ -7,6 +7,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DeleteView, DetailView, ListView
 from django.views.generic import UpdateView
 from rules.contrib.views import AutoPermissionRequiredMixin
+from translated_fields import to_attribute
 #-
 from .forms import WebPageForm
 from .models import WebPage

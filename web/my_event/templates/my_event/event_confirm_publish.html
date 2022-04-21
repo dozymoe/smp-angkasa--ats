@@ -35,3 +35,9 @@
   </div>
 </form>
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'Event:Publish' object.pk as url %}
+  {% BreadcrumbItem href=url current=True %}{% trans "Publish" %}{% endBreadcrumbItem %}
+{% endblock %}

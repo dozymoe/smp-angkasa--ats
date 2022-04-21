@@ -27,7 +27,7 @@
     {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
     {% url 'BlogPosting:Index' as url %}
     {% BreadcrumbItem href=url %}{% trans "Articles" %}{% endBreadcrumbItem %}
-    {% url 'BlogPosting:Display' object.slug 'html' as url %}
+    {% url 'BlogPosting:Display' object.pk 'html' as url %}
     {% BreadcrumbItem href=url current=True %}{{object}}{% endBreadcrumbItem %}
   {% endBreadcrumb %}
 {% endblock %}

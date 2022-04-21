@@ -60,9 +60,8 @@
           {% Td %}{{obj.pk}}{% endTd %}
 
           {% Td %}
-            <a href="{% url 'Event:Display' obj.slug 'html' %}">
-              {{obj}}
-            </a>
+            {% url 'Event:Display' obj.pk 'html' as url %}
+            <a href="{{url}}">{{obj}}</a>
           {% endTd %}
 
           {% Td %}
@@ -120,4 +119,14 @@
       {% endfor %}
     {% endTable %}
   </div>
+{% endblock %}
+
+
+{% block breadcrumb %}
+  {% Breadcrumb current=True %}
+    {% url 'Home' as url %}
+    {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
+    {% url 'Event:Index' as url %}
+    {% BreadcrumbItem href=url current=True %}{% trans "Events" %}{% endBreadcrumbItem %}
+  {% endBreadcrumb %}
 {% endblock %}

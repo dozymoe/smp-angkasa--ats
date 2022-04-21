@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2022-04-21 13:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,13 +32,21 @@ msgstr ""
 
 #: my_front_content/templates/my_front_content/base-admin-object.html:14
 #: my_front_content/templates/my_front_content/base-admin.html:14
+#: my_front_content/templates/my_front_content/frontcontent_create_form.html:38
 msgid "Create"
 msgstr ""
 
 #: my_front_content/templates/my_front_content/base-admin-object.html:19
 #: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:32
+#: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:41
 #: my_front_content/templates/my_front_content/frontcontent_list.html:62
 msgid "Delete"
+msgstr ""
+
+#: my_front_content/templates/my_front_content/base-admin-object.html:30
+#: my_front_content/templates/my_front_content/base-admin.html:25
+#: my_front_content/templates/my_front_content/frontcontent_list.html:118
+msgid "Featured"
 msgstr ""
 
 #: my_front_content/templates/my_front_content/frontcontent_confirm_delete.html:6

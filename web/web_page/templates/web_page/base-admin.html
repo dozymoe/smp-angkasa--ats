@@ -13,3 +13,15 @@
     {% trans "Create" %}
   {% endUiNavItem %}
 {% endblock %}
+
+
+{% block breadcrumb %}
+  {% Breadcrumb current=True %}
+    {% url 'Home' as url %}
+    {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
+    {% url 'WebPage:Index' as url %}
+    {% BreadcrumbItem href=url %}{% trans "Pages" %}{% endBreadcrumbItem %}
+
+    {% block breadcrumb_app %}{% endblock %}
+  {% endBreadcrumb %}
+{% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2022-04-21 13:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,13 +44,22 @@ msgstr ""
 
 #: my_slide/templates/my_slide/base-admin-object.html:13
 #: my_slide/templates/my_slide/base-admin.html:13
+#: my_slide/templates/my_slide/myslide_create_form.html:65
 msgid "Create"
 msgstr ""
 
 #: my_slide/templates/my_slide/base-admin-object.html:18
 #: my_slide/templates/my_slide/myslide_confirm_delete.html:33
+#: my_slide/templates/my_slide/myslide_confirm_delete.html:42
 #: my_slide/templates/my_slide/myslide_list.html:67
 msgid "Delete"
+msgstr ""
+
+#: my_slide/templates/my_slide/base-admin-object.html:28
+#: my_slide/templates/my_slide/base-admin.html:23
+#: my_slide/templates/my_slide/myslide_list.html:11
+#: my_slide/templates/my_slide/myslide_list.html:123
+msgid "Slides"
 msgstr ""
 
 #: my_slide/templates/my_slide/myslide_confirm_delete.html:6
@@ -104,15 +113,12 @@ msgid "Update Slide"
 msgstr ""
 
 #: my_slide/templates/my_slide/myslide_form.html:56
+#: my_slide/templates/my_slide/myslide_form.html:65
 msgid "Update"
 msgstr ""
 
 #: my_slide/templates/my_slide/myslide_list.html:5
 msgid "Manage Slides"
-msgstr ""
-
-#: my_slide/templates/my_slide/myslide_list.html:11
-msgid "Slides"
 msgstr ""
 
 #: my_slide/templates/my_slide/myslide_list.html:32

@@ -31,3 +31,9 @@
     </div>
   </form>
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'FrontContent:Create' as url %}
+  {% BreadcrumbItem href=url current=True %}{% trans "Create" %}{% endBreadcrumbItem %}
+{% endblock %}

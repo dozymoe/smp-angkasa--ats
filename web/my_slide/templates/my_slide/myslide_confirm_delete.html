@@ -35,3 +35,9 @@
     </div>
   </form>
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'MySlide:Destroy' object.pk as url %}
+  {% BreadcrumbItem href=url current=True %}{% trans "Delete" %}{% endBreadcrumbItem %}
+{% endblock %}

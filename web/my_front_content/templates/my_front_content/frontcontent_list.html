@@ -108,3 +108,13 @@
     {% endfor %}
   {% endTable %}
 {% endblock %}
+
+
+{% block breadcrumb %}
+  {% Breadcrumb current=True %}
+    {% url 'Home' as url %}
+    {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
+    {% url 'FrontContent:Index' as url %}
+    {% BreadcrumbItem href=url current=True %}{% trans "Featured" %}{% endBreadcrumbItem %}
+  {% endBreadcrumb %}
+{% endblock %}

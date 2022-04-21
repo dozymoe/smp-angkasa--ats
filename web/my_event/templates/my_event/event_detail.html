@@ -11,3 +11,9 @@
     {{object.body | restify}}
   </div>
 {% endblock %}
+
+
+{% block breadcrumb_app %}
+  {% url 'Event:Display' object.slug 'html' as url %}
+  {% BreadcrumbItem href=url current=True %}{{object}}{% endBreadcrumbItem %}
+{% endblock %}

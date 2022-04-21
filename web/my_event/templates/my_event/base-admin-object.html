@@ -25,3 +25,17 @@
     {% endUiNavItem %}
   {% endUiNavSection %}
 {% endblock %}
+
+
+{% block breadcrumb %}
+  {% Breadcrumb current=True %}
+    {% url 'Home' as url %}
+    {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
+    {% url 'Event:Index' as url %}
+    {% BreadcrumbItem href=url %}{% trans "Events" %}{% endBreadcrumbItem %}
+    {% url 'Event:Display' object.pk 'html' as url %}
+    {% BreadcrumbItem href=url %}{{object}}{% endBreadcrumbItem %}
+
+    {% block breadcrumb_app %}{% endblock %}
+  {% endBreadcrumb %}
+{% endblock %}

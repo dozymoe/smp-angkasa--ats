@@ -13,3 +13,15 @@
     {% trans "Create" %}
   {% endUiNavItem %}
 {% endblock %}
+
+
+{% block breadcrumb %}
+  {% Breadcrumb current=True %}
+    {% url 'Home' as url %}
+    {% BreadcrumbItem href=url %}Home{% endBreadcrumbItem %}
+    {% url 'MySlide:Index' as url %}
+    {% BreadcrumbItem href=url %}{% trans "Slides" %}{% endBreadcrumbItem %}
+
+    {% block breadcrumb_app %}{% endblock %}
+  {% endBreadcrumb %}
+{% endblock %}

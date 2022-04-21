@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2022-04-21 13:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,18 +68,28 @@ msgstr ""
 
 #: my_event/templates/my_event/base-admin-object.html:14
 #: my_event/templates/my_event/base-admin.html:14
+#: my_event/templates/my_event/event_create_form.html:89
 msgid "Create"
 msgstr ""
 
 #: my_event/templates/my_event/base-admin-object.html:19
-#: my_event/templates/my_event/event_list.html:90
+#: my_event/templates/my_event/event_list.html:89
 msgid "Edit"
 msgstr ""
 
 #: my_event/templates/my_event/base-admin-object.html:24
 #: my_event/templates/my_event/event_confirm_delete.html:32
-#: my_event/templates/my_event/event_list.html:116
+#: my_event/templates/my_event/event_confirm_delete.html:41
+#: my_event/templates/my_event/event_list.html:115
 msgid "Delete"
+msgstr ""
+
+#: my_event/templates/my_event/base-admin-object.html:35
+#: my_event/templates/my_event/base-admin.html:25
+#: my_event/templates/my_event/event_detail-admin.html:21
+#: my_event/templates/my_event/event_list.html:19
+#: my_event/templates/my_event/event_list.html:130
+msgid "Events"
 msgstr ""
 
 #: my_event/templates/my_event/event_confirm_delete.html:6
@@ -105,7 +115,8 @@ msgid "Do you really want to publish"
 msgstr ""
 
 #: my_event/templates/my_event/event_confirm_publish.html:33
-#: my_event/templates/my_event/event_list.html:98
+#: my_event/templates/my_event/event_confirm_publish.html:42
+#: my_event/templates/my_event/event_list.html:97
 msgid "Publish"
 msgstr ""
 
@@ -118,7 +129,8 @@ msgid "Do you really want to unpublish"
 msgstr ""
 
 #: my_event/templates/my_event/event_confirm_unpublish.html:32
-#: my_event/templates/my_event/event_list.html:95
+#: my_event/templates/my_event/event_confirm_unpublish.html:41
+#: my_event/templates/my_event/event_list.html:94
 msgid "Unpublish"
 msgstr ""
 
@@ -167,6 +179,7 @@ msgid "Update Event"
 msgstr ""
 
 #: my_event/templates/my_event/event_form.html:73
+#: my_event/templates/my_event/event_form.html:89
 msgid "Update"
 msgstr ""
 
@@ -182,10 +195,6 @@ msgstr ""
 msgid "The number <strong>4</strong> is from the ID column below."
 msgstr ""
 
-#: my_event/templates/my_event/event_list.html:19
-msgid "Events"
-msgstr ""
-
 #: my_event/templates/my_event/event_list.html:40
 msgid "ID"
 msgstr ""
@@ -194,10 +203,10 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: my_event/templates/my_event/event_list.html:78
+#: my_event/templates/my_event/event_list.html:77
 msgid "Published"
 msgstr ""
 
-#: my_event/templates/my_event/event_list.html:80
+#: my_event/templates/my_event/event_list.html:79
 msgid "Not Published"
 msgstr ""

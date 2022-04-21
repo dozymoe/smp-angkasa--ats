@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2022-04-21 13:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,18 +60,28 @@ msgstr ""
 
 #: web_page/templates/web_page/base-admin-object.html:13
 #: web_page/templates/web_page/base-admin.html:13
+#: web_page/templates/web_page/webpage_create_form.html:81
 msgid "Create"
 msgstr ""
 
 #: web_page/templates/web_page/base-admin-object.html:18
-#: web_page/templates/web_page/webpage_list.html:76
+#: web_page/templates/web_page/webpage_list.html:75
 msgid "Edit"
 msgstr ""
 
 #: web_page/templates/web_page/base-admin-object.html:23
 #: web_page/templates/web_page/webpage_confirm_delete.html:29
-#: web_page/templates/web_page/webpage_list.html:102
+#: web_page/templates/web_page/webpage_confirm_delete.html:38
+#: web_page/templates/web_page/webpage_list.html:101
 msgid "Delete"
+msgstr ""
+
+#: web_page/templates/web_page/base-admin-object.html:33
+#: web_page/templates/web_page/base-admin.html:23
+#: web_page/templates/web_page/webpage_detail-admin.html:18
+#: web_page/templates/web_page/webpage_list.html:19
+#: web_page/templates/web_page/webpage_list.html:116
+msgid "Pages"
 msgstr ""
 
 #: web_page/templates/web_page/webpage_confirm_delete.html:6
@@ -97,7 +107,8 @@ msgid "Do you really want to publish"
 msgstr ""
 
 #: web_page/templates/web_page/webpage_confirm_publish.html:29
-#: web_page/templates/web_page/webpage_list.html:84
+#: web_page/templates/web_page/webpage_confirm_publish.html:38
+#: web_page/templates/web_page/webpage_list.html:83
 msgid "Publish"
 msgstr ""
 
@@ -110,7 +121,8 @@ msgid "Do you really want to unpublish"
 msgstr ""
 
 #: web_page/templates/web_page/webpage_confirm_unpublish.html:29
-#: web_page/templates/web_page/webpage_list.html:81
+#: web_page/templates/web_page/webpage_confirm_unpublish.html:38
+#: web_page/templates/web_page/webpage_list.html:80
 msgid "Unpublish"
 msgstr ""
 
@@ -159,6 +171,7 @@ msgid "Update Page"
 msgstr ""
 
 #: web_page/templates/web_page/webpage_form.html:65
+#: web_page/templates/web_page/webpage_form.html:81
 msgid "Update"
 msgstr ""
 
@@ -174,10 +187,6 @@ msgstr ""
 msgid "The number <strong>4</strong> is from the ID column below."
 msgstr ""
 
-#: web_page/templates/web_page/webpage_list.html:19
-msgid "Pages"
-msgstr ""
-
 #: web_page/templates/web_page/webpage_list.html:40
 msgid "ID"
 msgstr ""
@@ -186,10 +195,10 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: web_page/templates/web_page/webpage_list.html:64
+#: web_page/templates/web_page/webpage_list.html:63
 msgid "Published"
 msgstr ""
 
-#: web_page/templates/web_page/webpage_list.html:66
+#: web_page/templates/web_page/webpage_list.html:65
 msgid "Not Published"
 msgstr ""

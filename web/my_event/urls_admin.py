@@ -12,7 +12,7 @@ urlpatterns = [
     path('<int:pk>/unpublish', views_admin.Unpublish.as_view(),
         name='Unpublish'),
 
-    path('<str:slug>.<str:format>', views_admin.Display.as_view(),
+    path('<int:pk>.<str:format>', views_admin.Display.as_view(),
         name='Display'),
 
     path('', views_admin.List.as_view(), name='Index'),

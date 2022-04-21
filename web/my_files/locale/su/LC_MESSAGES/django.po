@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2022-04-21 13:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,13 +60,22 @@ msgstr ""
 
 #: my_files/templates/my_files/base-admin-object.html:13
 #: my_files/templates/my_files/base-admin.html:13
+#: my_files/templates/my_files/myfile_create_form.html:68
 msgid "Create"
 msgstr ""
 
 #: my_files/templates/my_files/base-admin-object.html:18
 #: my_files/templates/my_files/myfile_confirm_delete.html:29
+#: my_files/templates/my_files/myfile_confirm_delete.html:38
 #: my_files/templates/my_files/myfile_list.html:89
 msgid "Delete"
+msgstr ""
+
+#: my_files/templates/my_files/base-admin-object.html:28
+#: my_files/templates/my_files/base-admin.html:23
+#: my_files/templates/my_files/myfile_list.html:29
+#: my_files/templates/my_files/myfile_list.html:104
+msgid "Files"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_confirm_delete.html:6
@@ -119,10 +128,6 @@ msgstr ""
 msgid ""
 "The number <strong>4</strong> is from the ID column below, and <strong>alt</"
 "strong>, <strong>height</strong>, <strong>width</strong> were optional."
-msgstr ""
-
-#: my_files/templates/my_files/myfile_list.html:29
-msgid "Files"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_list.html:50
