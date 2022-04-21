@@ -81,6 +81,14 @@ Next paragraph
               {% trans "Download" %}
             {% endTdOvButton %}
 
+            {% url 'MyFile:Update' obj.pk as url %}
+            {% TdOvButton tag="a" href=url %}
+              {% Slot 'icon' %}
+                {% svg 'carbon/32/edit.svg' %}
+              {% endSlot %}
+              {% trans "Edit" %}
+            {% endTdOvButton %}
+  
             {% url 'MyFile:Destroy' obj.pk as url %}
             {% TdOvButton tag="a" href=url %}
               {% Slot 'icon' %}

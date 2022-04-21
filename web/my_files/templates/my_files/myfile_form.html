@@ -1,12 +1,12 @@
-{% extends 'my_slide/base-admin.html' %}
+{% extends 'my_files/base-admin-object.html' %}
 {% load i18n %}
-{% load carbondesign website %}
+{% load carbondesign %}
 
-{% block head_title %}{% trans "Update Slide" %}{% endblock %}
+{% block head_title %}{% trans "Update File" %}{% endblock %}
 
 
 {% block content %}
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
   {% csrf_token %}
 
   {% trans "Language" as label %}
@@ -19,21 +19,12 @@
   {% endContentSwitcher %}
 
   <div class="form-group">
-    {% Select form.location autofocus="true" with_empty=False %}
-  </div>
-
-  <div class="form-group input-button-pairing">
-    <input type="hidden" name="image" id="image">
-    {% TextInput form.image widget="input" id="image-caption" name="" readonly="" value=form.instance.image.description %}
-
-    {% Button field=True type="button" data-provide-select_file="image" data-select_file-label="image-caption" %}
-      {% trans "Choose" %}
-    {% endButton %}
+    {% TextInput form.databits autofocus="true" %}
   </div>
 
   {% for item in LANGUAGES %}
     <div class="form-group swt-{{item.0}}">
-      {% TextArea form.description_{{item.0}} %}
+      {% TextArea form.description_{{item.0}} rows="4" label_suffix=" - {{item.1}}" %}
 
       {% trans "Description Preview" as title %}
       {% Button type="button" title=title data-provide-rest-preview=form.description_{{item.0}}.id_for_label %}
@@ -44,6 +35,10 @@
       {% Button tag="a" href=url target="_blank" %}
         {% trans "Editing Help" %}
       {% endButton %}
+    </div>
+
+    <div class="form-group swt-{{item.0}}">
+      {% TextArea form.alt_text_{{item.0}} rows="4" label_suffix=" - {{item.1}}" %}
     </div>
   {% endfor %}
 
@@ -56,11 +51,19 @@
       {% trans "Update" %}
     {% endButton %}
   </div>
+</div>
 </form>
 {% endblock %}
 
 
+{% block jsmodal_1 %}
+  {% Modal id="modal-rest-preview" %}
+    {% Slot 'heading' %}{% trans "Preview" %}{% endSlot %}
+  {% endModal %}
+{% endblock %}
+
+
 {% block breadcrumb_app %}
-  {% url 'MySlide:Edit' object.pk as url %}
+  {% url 'MyFile:Edit' object.pk as url %}
   {% BreadcrumbItem href=url current=True %}{% trans "Update" %}{% endBreadcrumbItem %}
 {% endblock %}

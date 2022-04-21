@@ -2,9 +2,8 @@ import logging
 #-
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-#from django.utils import timezone
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, DeleteView, ListView
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from rules.contrib.views import AutoPermissionRequiredMixin
 #-
 from .forms import MyFileForm
@@ -32,6 +31,15 @@ class Create(CreateView):
         form.instance.created_by = self.request.user
         return super().form_valid(form)
 
+
+    def get_success_url(self):
+        return reverse('MyFile:Index')
+
+
+@method_decorator(login_required, name='dispatch')
+class Edit(AutoPermissionRequiredMixin, UpdateView):
+    model = MyFile
+    form_class = MyFileForm
 
     def get_success_url(self):
         return reverse('MyFile:Index')

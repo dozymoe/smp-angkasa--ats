@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-21 13:13+0700\n"
+"POT-Creation-Date: 2022-04-21 14:16+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,14 +67,14 @@ msgstr ""
 #: my_files/templates/my_files/base-admin-object.html:18
 #: my_files/templates/my_files/myfile_confirm_delete.html:29
 #: my_files/templates/my_files/myfile_confirm_delete.html:38
-#: my_files/templates/my_files/myfile_list.html:89
+#: my_files/templates/my_files/myfile_list.html:97
 msgid "Delete"
 msgstr ""
 
 #: my_files/templates/my_files/base-admin-object.html:28
 #: my_files/templates/my_files/base-admin.html:23
 #: my_files/templates/my_files/myfile_list.html:29
-#: my_files/templates/my_files/myfile_list.html:104
+#: my_files/templates/my_files/myfile_list.html:112
 msgid "Files"
 msgstr ""
 
@@ -96,24 +96,38 @@ msgid "Create File"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_create_form.html:12
+#: my_files/templates/my_files/myfile_form.html:12
 msgid "Language"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_create_form.html:29
+#: my_files/templates/my_files/myfile_form.html:29
 msgid "Description Preview"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_create_form.html:31
 #: my_files/templates/my_files/myfile_create_form.html:61
+#: my_files/templates/my_files/myfile_form.html:31
+#: my_files/templates/my_files/myfile_form.html:61
 msgid "Preview"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_create_form.html:36
+#: my_files/templates/my_files/myfile_form.html:36
 msgid "Editing Help"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_create_form.html:51
 msgid "Submit"
+msgstr ""
+
+#: my_files/templates/my_files/myfile_form.html:5
+msgid "Update File"
+msgstr ""
+
+#: my_files/templates/my_files/myfile_form.html:51
+#: my_files/templates/my_files/myfile_form.html:68
+msgid "Update"
 msgstr ""
 
 #: my_files/templates/my_files/myfile_list.html:5
@@ -140,4 +154,8 @@ msgstr ""
 
 #: my_files/templates/my_files/myfile_list.html:81
 msgid "Download"
+msgstr ""
+
+#: my_files/templates/my_files/myfile_list.html:89
+msgid "Edit"
 msgstr ""
