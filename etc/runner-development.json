@@ -36,6 +36,7 @@
                         "etc/development/web/account.json",
                         "etc/development/web/application.json",
                         "etc/development/web/database.json",
+                        "etc/development/web/frozen.json",
                         "etc/development/web/server.json"
                     ]
                 }

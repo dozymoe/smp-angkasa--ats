@@ -214,7 +214,7 @@ SVG_DIRS = [
     ROOT_DIR/'web'/'static_svg',
 ]
 
-FROZEN_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')
+FROZEN_ROOT = _config.get('frozen.public_dir', {})
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

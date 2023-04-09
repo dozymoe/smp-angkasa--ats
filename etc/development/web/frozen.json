@@ -1,0 +1,6 @@
+{
+  "public_dir": {
+    "manage.smp-angkasa.test": "public/web-manage.smp-angkasa.test",
+    "www.smp-angkasa.test": "public/web-www.smp-angkasa.test"
+  }
+}

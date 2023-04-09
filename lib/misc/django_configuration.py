@@ -8,5 +8,6 @@ def django_conf_adapter(prefix, new, setter):
     exceptions = [
         'database.options',
         'logging.handlers',
+        'frozen.public_dir',
     ]
     setter.update(flatten_dict(prefix, new, exceptions))
