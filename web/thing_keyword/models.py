@@ -1,20 +1,26 @@
+"""Django models for working with keywords
+"""
 from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
-#from django.urls import reverse
 from django.utils.text import slugify
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from treebeard.mp_tree import MP_Node, MP_NodeManager
 
-
 class ThingKeywordManager(MP_NodeManager):
+    """Custom Django model manager that helps with serialization
+    """
     def get_by_natural_key(self, key):
+        """Unique record identifier for serialization
+        """
         return self.get(slug=key)
 
 
 class ThingKeyword(DirtyFieldsMixin, MP_Node):
+    """Model for keyword
+    """
     id = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=64, db_index=True)
     node_order_by = ['name']
@@ -35,7 +41,6 @@ class ThingKeyword(DirtyFieldsMixin, MP_Node):
 
 
     class Meta:
-
         verbose_name = "Keyword"
         ordering = ['title']
 
@@ -45,12 +50,15 @@ class ThingKeyword(DirtyFieldsMixin, MP_Node):
 
 
     def get_absolute_url(self):
-        pass
+        """Unique url that represents the model instance
+        """
         #return reverse('Keyword:Display',
         #        kwargs={'slug': self.slug, 'format': 'html'})
 
 
     def get_natural_key(self):
+        """Unique record identifier for serialization
+        """
         return (self.slug, )
 
 
@@ -71,10 +79,14 @@ class ThingKeyword(DirtyFieldsMixin, MP_Node):
 
     @staticmethod
     def get_microdata_type():
+        """Get microdata type of the model itself
+        """
         return 'http://schema.org/Thing/Keyword'
 
 
 class ThingKeywordField(models.Model):
+    """Generic many to many relationship between content and keyword
+    """
     keyword = models.ForeignKey(ThingKeyword, related_name='contents',
             on_delete=models.CASCADE)
 

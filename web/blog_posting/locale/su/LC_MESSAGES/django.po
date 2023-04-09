@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-21 13:13+0700\n"
+"POT-Creation-Date: 2023-04-08 13:32+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,43 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: blog_posting/models.py:30
+#: blog_posting/models.py:40
 #: blog_posting/templates/blog_posting/blogposting_list.html:43
 msgid "Title"
 msgstr ""
 
-#: blog_posting/models.py:35
+#: blog_posting/models.py:45
 msgid "Body"
 msgstr ""
 
-#: blog_posting/models.py:39
+#: blog_posting/models.py:49
 msgid "Summary"
 msgstr ""
 
-#: blog_posting/models.py:43
+#: blog_posting/models.py:53
 msgid "URL Name"
 msgstr ""
 
-#: blog_posting/models.py:45
+#: blog_posting/models.py:55
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
 "filled if left empty."
 msgstr ""
 
-#: blog_posting/models.py:50
+#: blog_posting/models.py:60
 msgid "Image"
 msgstr ""
 
-#: blog_posting/models.py:57
+#: blog_posting/models.py:63
 msgid "Publish Date"
 msgstr ""
 
-#: blog_posting/restructured_text/embed_blog.py:50
+#: blog_posting/restructured_text/embed_blog.py:56
 #, python-format
 msgid "%s is not a number."
 msgstr ""
 
-#: blog_posting/restructured_text/embed_blog.py:56
+#: blog_posting/restructured_text/embed_blog.py:62
 #, python-format
 msgid "Article with id:%s was not found."
 msgstr ""
@@ -65,7 +65,7 @@ msgstr ""
 
 #: blog_posting/templates/blog_posting/base-admin-object.html:14
 #: blog_posting/templates/blog_posting/base-admin.html:14
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:87
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:85
 msgid "Create"
 msgstr ""
 
@@ -148,10 +148,8 @@ msgstr ""
 
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:37
 #: blog_posting/templates/blog_posting/blogposting_create_form.html:51
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:80
 #: blog_posting/templates/blog_posting/blogposting_form.html:35
 #: blog_posting/templates/blog_posting/blogposting_form.html:49
-#: blog_posting/templates/blog_posting/blogposting_form.html:78
 msgid "Preview"
 msgstr ""
 
@@ -167,7 +165,12 @@ msgstr ""
 msgid "Summary Preview"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_create_form.html:71
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:66
+#: blog_posting/templates/blog_posting/blogposting_form.html:64
+msgid "Choose"
+msgstr ""
+
+#: blog_posting/templates/blog_posting/blogposting_create_form.html:76
 msgid "Submit"
 msgstr ""
 
@@ -175,8 +178,8 @@ msgstr ""
 msgid "Update Article"
 msgstr ""
 
-#: blog_posting/templates/blog_posting/blogposting_form.html:69
-#: blog_posting/templates/blog_posting/blogposting_form.html:85
+#: blog_posting/templates/blog_posting/blogposting_form.html:74
+#: blog_posting/templates/blog_posting/blogposting_form.html:83
 msgid "Update"
 msgstr ""
 

@@ -36,7 +36,7 @@
       {% endButton %}
 
       {% url 'EditorHelpText' 'html' as url %}
-      {% Button tag="a" href=url target="_blank" %}
+      {% Button astag="a" href=url target="_blank" %}
         {% trans "Editing Help" %}
       {% endButton %}
     </div>
@@ -50,7 +50,7 @@
       {% endButton %}
 
       {% url 'EditorHelpText' 'html' as url %}
-      {% Button tag="a" href=url target="_blank" %}
+      {% Button astag="a" href=url target="_blank" %}
         {% trans "Editing Help" %}
       {% endButton %}
     </div>
@@ -66,13 +66,6 @@
     {% endButton %}
   </div>
 </form>
-{% endblock %}
-
-
-{% block jsmodal_1 %}
-  {% Modal id="modal-rest-preview" %}
-    {% Slot 'heading' %}{% trans "Preview" %}{% endSlot %}
-  {% endModal %}
 {% endblock %}
 
 

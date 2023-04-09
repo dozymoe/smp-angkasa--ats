@@ -1,3 +1,5 @@
+"""Django routes for managing web pages
+"""
 from django.urls import path
 #-
 from . import views_admin

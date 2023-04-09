@@ -1,3 +1,5 @@
+"""Django routes for managing frontpage contents
+"""
 from django.urls import path
 #-
 from . import views_admin

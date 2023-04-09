@@ -1,19 +1,20 @@
-from datetime import datetime
+"""Django management command for deleting old website assets
+"""
 import json
 import os
 from pathlib import Path
 #-
 from django.core.management.base import BaseCommand
 
-
 class Command(BaseCommand):
+    """Cleanup old css and js assets
+    """
     help = "Cleanup old css and js assets."
 
     def handle(self, *args, **kwargs):
         project = os.environ['PROJECT_NAME']
         rootdir = Path(os.environ['ROOT_DIR']).resolve(strict=True)
         public_dir = rootdir/project/'static'
-        today = datetime.today()
 
         metafile = rootdir/'var'/project/'webpack-css.meta.json'
         if metafile.exists():
@@ -28,10 +29,7 @@ class Command(BaseCommand):
                 if filename in filenames:
                     continue
                 filename = os.path.join(assets_dir, filename)
-                delta = today - datetime.fromtimestamp(os.path.getmtime(
-                        filename))
-                if delta.days > 7:
-                    os.remove(filename)
+                os.remove(filename)
 
         metafile = rootdir/'var'/project/'webpack-js.meta.json'
         if metafile.exists():
@@ -46,9 +44,6 @@ class Command(BaseCommand):
                 if filename in filenames:
                     continue
                 filename = os.path.join(assets_dir, filename)
-                delta = today - datetime.fromtimestamp(os.path.getmtime(
-                        filename))
-                if delta.days > 7:
-                    os.remove(filename)
+                os.remove(filename)
 
         self.stdout.write(self.style.SUCCESS("css and js files cleaned."))

@@ -1,3 +1,5 @@
+"""reStructuredText directives for working with blog posts
+"""
 import logging
 import re
 #-
@@ -13,6 +15,8 @@ INLINE_PATTERN = re.compile(r'^(?P<text>.+)\s*<(?P<pk>\d+)>$')
 
 
 def parse_embed_blog(obj_id, options, block_text=None):
+    """Format blog post as hyperlink
+    """
     try:
         obj = BlogPosting.objects.get(pk=obj_id)
     except BlogPosting.DoesNotExist:
@@ -32,6 +36,8 @@ def parse_embed_blog(obj_id, options, block_text=None):
 
 def embed_blog_role(role, rawtext, text, lineno, inliner, options=None,
         content=None):
+    """Embed blog post inline with text
+    """
     if options is None:
         options = {}
 

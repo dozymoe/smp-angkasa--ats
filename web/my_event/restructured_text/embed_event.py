@@ -1,3 +1,5 @@
+"""reStructuredText directives for working with events
+"""
 import logging
 import re
 #-
@@ -13,6 +15,8 @@ INLINE_PATTERN = re.compile(r'^(?P<text>.+)\s*<(?P<pk>\d+)>$')
 
 
 def parse_embed_event(obj_id, options, block_text=None):
+    """Format event as hyperlink
+    """
     try:
         obj = Event.objects.get(pk=obj_id)
     except Event.DoesNotExist:
@@ -32,6 +36,8 @@ def parse_embed_event(obj_id, options, block_text=None):
 
 def embed_event_role(role, rawtext, text, lineno, inliner, options=None,
         content=None):
+    """Embed event inline with text
+    """
     if options is None:
         options = {}
 

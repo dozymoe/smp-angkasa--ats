@@ -1,3 +1,5 @@
+"""Django views for working with web pages
+"""
 import logging
 #-
 from django.views.generic import DetailView
@@ -9,6 +11,8 @@ _logger = logging.getLogger(__name__)
 
 
 class Display(DetailView):
+    """Show web page to visitors
+    """
     model = WebPage
 
     def get_slug_field(self):

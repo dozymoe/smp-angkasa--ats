@@ -1,8 +1,11 @@
+"""Custom DRF pagination
+"""
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 
-
 class DjangoPagination(PageNumberPagination):
+    """DRF pagination that looks like Django pagination
+    """
     page_size_query_param = 'pagesize'
 
     def get_paginated_response(self, data):

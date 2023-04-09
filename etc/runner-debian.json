@@ -12,17 +12,19 @@
         "lib.fireh_runner.setup_modules.yarn",
         "lib.fireh_runner.setup_modules.pybuildtool"
     ],
-    "python_version": "3.9",
-    "waf_version": "2.0.22",
+    "python_version": "3.11",
+    "waf_version": "2.0.25",
 
     "default_project": "web",
     "default_variant": "development",
+    "virtualenv_type": "venv",
 
     "configuration": {
         "development": {
             "": {
                 "shell_env": {
                     "PYTHONPATH": [
+                        "lib-py/django-carbondesign",
                         "lib-py/frozen-django"
                     ]
                 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-15 23:26+0700\n"
+"POT-Creation-Date: 2023-04-09 19:14+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,148 +17,115 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:2622
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "close modal"
 msgstr "tutup dialog"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:1601
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Table Action Bar"
 msgstr "Bagian Aksi Table"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:1602
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "items selected"
 msgstr "baris terpilih"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:1603
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Overflow"
 msgstr "Luapan"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:2054
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Open menu"
 msgstr "Buka dialog"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4032
-msgid "Page Select"
-msgstr "Pilih Laman"
-
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4059
-msgid "Pages"
-msgstr "Laman-Laman"
-
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4061
-#: static/js/faa326cee7f888fb1d1f.js:4409
-msgid "Id"
-msgstr ""
-
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4061
-msgid "Title"
-msgstr "Judul"
-
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4061
-msgid "Summary"
-msgstr "Ringkasan"
-
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4070
-#: static/js/faa326cee7f888fb1d1f.js:4427
-msgid "Select"
-msgstr "Pilih"
-
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:2858
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Items per page"
 msgstr "Baris per halaman"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:2859
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "select number of items per page"
 msgstr "pilih jumlah baris per halaman"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:2860
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "select page number to view"
 msgstr "pilih halaman yang akan ditampilkan"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:2861
-msgid "Backward button"
-msgstr "Tombol mundur"
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "previous page"
+msgstr ""
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:2862
-msgid "Forward button"
-msgstr "Tombol maju"
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "next page"
+msgstr ""
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:3018
-msgid "of {total} pages"
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "of"
+msgstr ""
+
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "items"
+msgstr ""
+
+#: static/js/f49c17dae1869a3a70e4.js:1
+#, fuzzy
+#| msgid "of {total} pages"
+msgid "of %(total)s pages"
 msgstr "dari {total} halaman"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4383
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "File Select"
 msgstr "Pilih Berkas"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4407
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Images"
 msgstr "Gambar-Gambar"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4409
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "Id"
+msgstr ""
+
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Image"
 msgstr "Gambar"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4409
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Description"
 msgstr "Deskripsi"
 
-#: static/js/1c30b6fdb6450dd182c4.js:1 static/js/9657512326c6f12f6100.js:1
-#: static/js/e48d7d332395f4059a52.js:1 static/js/e5d8a9b71f98142c8fcc.js:1
-#: static/js/f7622ae55fe4e608e23c.js:1 static/js/faa326cee7f888fb1d1f.js:4639
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "Select"
+msgstr "Pilih"
+
+#: static/js/f49c17dae1869a3a70e4.js:1
 msgid "Preview"
 msgstr "Penampakan"
 
-#: static/js/faa326cee7f888fb1d1f.js:2266
-msgid "Search"
-msgstr "Pencarian"
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "Page Select"
+msgstr "Pilih Laman"
 
-#: static/js/faa326cee7f888fb1d1f.js:2267
-msgid "Clear search input"
-msgstr "Tampilkan semua"
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "Pages"
+msgstr "Laman-Laman"
 
-#: static/js/faa326cee7f888fb1d1f.js:2731
-msgid "Show modal"
-msgstr "Tutup dialog"
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "Title"
+msgstr "Judul"
+
+#: static/js/f49c17dae1869a3a70e4.js:1
+msgid "Summary"
+msgstr "Ringkasan"
+
+#~ msgid "Search"
+#~ msgstr "Pencarian"
+
+#~ msgid "Clear search input"
+#~ msgstr "Tampilkan semua"
+
+#~ msgid "Show modal"
+#~ msgstr "Tutup dialog"
+
+#~ msgid "Backward button"
+#~ msgstr "Tombol mundur"
+
+#~ msgid "Forward button"
+#~ msgstr "Tombol maju"

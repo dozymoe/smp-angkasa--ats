@@ -1,3 +1,5 @@
+"""Django models for working with files
+"""
 import os
 #-
 from dirtyfields import DirtyFieldsMixin
@@ -10,14 +12,20 @@ from rules.contrib.models import RulesModel
 from translated_fields import TranslatedField
 #-
 from website.mixins import MultilingualMixin, attrgetter
-
+from website.rules import is_creator_or_staff
 
 class MyFileManager(models.Manager):
+    """Custom Django model manager that helps with serialization
+    """
     def get_by_natural_key(self, key):
+        """Unique record identifier for serialization
+        """
         return self.get(filehash=key)
 
 
 class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
+    """Model for file object
+    """
     REQUIRED_TRANSLATED_FIELDS = ('description',)
 
     filehash = models.CharField(verbose_name=_("Title"), max_length=65,
@@ -64,8 +72,8 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
         rules_permissions = {
             'add': rules.is_authenticated,
             'read': rules.always_allow,
-            'change': rules.is_staff,
-            'delete': rules.is_staff,
+            'change': is_creator_or_staff,
+            'delete': is_creator_or_staff,
         }
 
 
@@ -74,44 +82,59 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
 
 
     def get_absolute_url(self):
+        """Unique url that represents the model instance
+        """
         if self.is_image():
             return reverse('MyFile:Display', args=(self.pk, 'xs'))
         return reverse('MyFile:Display', args=(self.pk,))
 
 
     def get_natural_key(self):
+        """Unique record identifier for serialization
+        """
         return (self.filehash,)
 
 
     def is_image(self):
+        """Is file object an image
+        """
         return self.mimetype.startswith('image/')
 
 
     def get_filename(self):
+        """File object filename
+        """
         return os.path.basename(self.databits.name)
 
 
     def get_html_attr_srcset(self):
+        """Html attribute srcset for img element (responsive image)
+        """
+        if not self.is_image():
+            return ''
         attribute_value = []
         for name, size, _ in settings.IMAGE_SIZES:
             imgfield = getattr(self, f'image_{name}')
             if not imgfield:
                 continue
-            attribute_value.append('%s %sw' % (
+            attribute_value.append('%s %sw' % ( # pylint:disable=consider-using-f-string
                     reverse('MyFile:Display', args=(self.pk, name)), size[0]))
         return ', '.join(attribute_value)
 
 
     def get_html_attr_sizes(self):
+        """Html attribute sizes for img element (responsive image)
+        """
+        if not self.is_image():
+            return ''
         attribute_value = []
         for name, size, viewport_width in settings.IMAGE_SIZES:
             imgfield = getattr(self, f'image_{name}')
             if not imgfield:
                 continue
             if viewport_width:
-                attribute_value.append('(max-width: %spx) %spx' % (
-                        viewport_width,
-                        size[0]))
+                attribute_value.append(
+                        f'(max-width: {viewport_width}px) {size[0]}px')
             else:
-                attribute_value.append('%spx' % size[0])
+                attribute_value.append(f'{size[0]}px')
         return ', '.join(attribute_value)

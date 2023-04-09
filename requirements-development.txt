@@ -3,8 +3,8 @@
 factory_boy
 faker
 pipdeptree
-psycopg2
 pybuildtool
 pygments
 pylint
+pylint_django
 uwsgi

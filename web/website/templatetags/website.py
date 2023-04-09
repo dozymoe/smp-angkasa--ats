@@ -1,3 +1,5 @@
+"""Django templatetags for working with the website itself
+"""
 from collections import OrderedDict
 import json
 import logging
@@ -16,6 +18,8 @@ _logger = logging.getLogger(__name__)
 
 
 def restructured_text(value):
+    """Format reStructuredText into html
+    """
     parts = publish_parts(value, writer=HtmlWriter(),
             settings_overrides=settings.RESTRUCTURED_TEXT)
     return mark_safe(parts['html_body'])
@@ -23,23 +27,29 @@ def restructured_text(value):
 @register.filter(name='restify')
 @stringfilter
 def restify(value):
+    """Django template tag for formatting reStructuredText
+    """
     return restructured_text(value)
 
 
 @register.filter
 @stringfilter
 def fulluri(value, request):
+    """Get absolute url from url path
+    """
     return request.build_absolute_uri(value)
 
 
 @register.simple_tag
 def stylesheets(module='main'):
+    """Read stylesheet file list produced by webpack, inject into web pages
+    """
     project = os.environ['PROJECT_NAME']
     try:
         with open(os.path.join(os.environ['ROOT_DIR'], 'var', project,
                 'webpack-css.meta.json'),
-                encoding='utf-8') as f:
-            webpack = json.load(f, object_pairs_hook=OrderedDict)
+                encoding='utf-8') as fmeta:
+            webpack = json.load(fmeta, object_pairs_hook=OrderedDict)
     except OSError:
         return ''
     base_dir = os.path.join(os.environ['ROOT_DIR'], 'web', 'static', 'css')
@@ -55,12 +65,14 @@ def stylesheets(module='main'):
 
 @register.simple_tag
 def javascripts(module='main'):
+    """Read javascript file list produced by webpack, inject into web pages
+    """
     project = os.environ['PROJECT_NAME']
     try:
         with open(os.path.join(os.environ['ROOT_DIR'], 'var', project,
                 'webpack-js.meta.json'),
-                encoding='utf-8') as f:
-            webpack = json.load(f, object_pairs_hook=OrderedDict)
+                encoding='utf-8') as fmeta:
+            webpack = json.load(fmeta, object_pairs_hook=OrderedDict)
     except OSError:
         return ''
     html = []
@@ -92,9 +104,9 @@ def captureas(parser, token):
     """
     try:
         _, args = token.contents.split(None, 1)
-    except ValueError as e:
+    except ValueError as err:
         raise template.TemplateSyntaxError(
-                "'capture_as' node requires a variable name.") from e
+                "'capture_as' node requires a variable name.") from err
     nodelist = parser.parse(('endcaptureas',))
     parser.delete_first_token()
     return CaptureAsNode(nodelist, args)
@@ -102,6 +114,8 @@ def captureas(parser, token):
 
 @register.simple_tag
 def iif(condition, truish, falsy):
+    """One line if else statement in templates
+    """
     if condition:
         return truish
     return falsy
@@ -109,6 +123,8 @@ def iif(condition, truish, falsy):
 
 @register.simple_tag
 def flash_messages(messages, low, high=None):
+    """Print flash messages
+    """
     result = []
     for msg in messages:
         if msg.level < low:
@@ -121,4 +137,6 @@ def flash_messages(messages, low, high=None):
 
 @register.simple_tag
 def html_id(name, unique):
-    return '%s-%s' % (name, unique)
+    """Simple format unique html id
+    """
+    return f'{name}-{unique}'

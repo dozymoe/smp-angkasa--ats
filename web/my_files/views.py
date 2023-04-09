@@ -1,3 +1,5 @@
+"""Django views for working with files
+"""
 import logging
 import os
 #-
@@ -11,6 +13,8 @@ _logger = logging.getLogger(__name__)
 
 
 def serve_files(request, pk, style=None):
+    """Serve stored files
+    """
     obj = get_object_or_404(MyFile, pk=pk)
     filename = obj.databits.name
     if obj.is_image() and style:

@@ -1,3 +1,5 @@
+"""Django models for working with web pages
+"""
 import logging
 #-
 from dirtyfields import DirtyFieldsMixin
@@ -12,16 +14,23 @@ from rules.contrib.models import RulesModel
 from translated_fields import TranslatedField, to_attribute
 #-
 from website.mixins import MultilingualMixin, attrgetter
+from website.models_utils import uniqueness
 
 _logger = logging.getLogger(__name__)
 
 
 class WebPageManager(models.Manager):
+    """Custom Django model manager that helps with serialization
+    """
     def get_by_natural_key(self, key):
+        """Unique record identifier for serialization
+        """
         return self.get(slug=key)
 
 
 class WebPage(DirtyFieldsMixin, MultilingualMixin, RulesModel):
+    """Model for web page
+    """
     REQUIRED_TRANSLATED_FIELDS = ('title', 'body', 'summary', 'slug')
 
     title = TranslatedField(
@@ -61,7 +70,6 @@ class WebPage(DirtyFieldsMixin, MultilingualMixin, RulesModel):
 
 
     class Meta:
-
         get_latest_by = 'published_at'
         ordering = ['-modified_at']
         rules_permissions = {
@@ -77,15 +85,21 @@ class WebPage(DirtyFieldsMixin, MultilingualMixin, RulesModel):
 
 
     def get_absolute_url(self):
+        """Unique url that represents the model instance
+        """
         with translation.override(self.valid_language()):
             return reverse('WebPageLang:Display', args=(self.slug, 'html'))
 
 
     def get_natural_key(self):
+        """Unique record identifier for serialization
+        """
         return (self.slug,)
 
 
     def is_published(self):
+        """Check instance has been published
+        """
         return self.published_at and not self.deleted_at
 
 
@@ -100,7 +114,10 @@ class WebPage(DirtyFieldsMixin, MultilingualMixin, RulesModel):
             slug_field = to_attribute('slug', langcode)
             if title_field in dirty and getattr(self, title_field) and\
                     (slug_field not in dirty or not getattr(self, slug_field)):
-                setattr(self, slug_field, slugify(getattr(self, title_field)))
+
+                setattr(self, slug_field,
+                        uniqueness(slugify(getattr(self, title_field))))
+
                 if update_fields and slug_field not in update_fields:
                     update_fields.append(slug_field)
 
@@ -109,4 +126,6 @@ class WebPage(DirtyFieldsMixin, MultilingualMixin, RulesModel):
 
     @staticmethod
     def get_microdata_type():
+        """Get microdata type of the model itself
+        """
         return 'http://schema.org/WebPage'

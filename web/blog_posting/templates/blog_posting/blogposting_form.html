@@ -6,7 +6,7 @@
 
 
 {% block content %}
-<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post">
   {% csrf_token %}
 
   {% trans "Language" as label %}
@@ -36,7 +36,7 @@
       {% endButton %}
 
       {% url 'EditorHelpText' 'html' as url %}
-      {% Button tag="a" href=url target="_blank" %}
+      {% Button astag="a" href=url target="_blank" %}
         {% trans "Editing Help" %}
       {% endButton %}
     </div>
@@ -50,14 +50,19 @@
       {% endButton %}
 
       {% url 'EditorHelpText' 'html' as url %}
-      {% Button tag="a" href=url target="_blank" %}
+      {% Button astag="a" href=url target="_blank" %}
         {% trans "Editing Help" %}
       {% endButton %}
     </div>
   {% endfor %}
 
-  <div class="form-group">
-    {% TextInput type="file" form.image %}
+  <div class="form-group input-button-pairing">
+    <input type="hidden" name="image" id="image">
+    {% TextInput form.image widget="input" id="image-caption" name="" readonly="" value=form.instance.image.description %}
+
+    {% Button field=True type="button" data-provide-select_file="image" data-select_file-label="image-caption" %}
+      {% trans "Choose" %}
+    {% endButton %}
   </div>
 
   {% if form.errors %}
@@ -70,13 +75,6 @@
     {% endButton %}
   </div>
 </form>
-{% endblock %}
-
-
-{% block jsmodal_1 %}
-  {% Modal id="modal-rest-preview" %}
-    {% Slot 'heading' %}{% trans "Preview" %}{% endSlot %}
-  {% endModal %}
 {% endblock %}
 
 

@@ -1,3 +1,5 @@
+"""Django routes for multilingual blog posts
+"""
 from django.urls import path
 #-
 from . import views

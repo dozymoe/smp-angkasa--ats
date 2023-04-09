@@ -1,6 +1,7 @@
+"""Django route for managing blog posts
+"""
 from django.urls import path
 #-
-from . import views
 from . import views_admin
 
 app_name = 'blog_posting'
@@ -15,8 +16,6 @@ urlpatterns = [
 
     path('<int:pk>.<str:format>', views_admin.Display.as_view(),
         name='Display'),
-    path('<int:pk>/image-<str:style>', views.serve_files, name='Image'),
-    path('<int:pk>/image', views.serve_files, name='Image'),
 
     path('', views_admin.List.as_view(), name='Index'),
 ]

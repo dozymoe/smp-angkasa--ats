@@ -13,7 +13,7 @@
 
     {% Slot 'toolbar_actions' %}
       {% url 'FrontContent:Create' as url %}
-      {% Button tag="a" href=url icon_size=32 %}
+      {% Button astag="a" href=url icon_size=32 %}
         {% Slot 'icon' %}
           {% svg 'carbon/32/add.svg' %}
         {% endSlot %}
@@ -55,7 +55,7 @@
 
         {% Td mode="menu" %}
           {% url 'FrontContent:Destroy' obj.pk as url %}
-          {% TdOvButton tag="a" href=url %}
+          {% TdOvButton astag="a" href=url %}
             {% Slot 'icon' %}
               {% svg 'carbon/32/trash-can.svg' %}
             {% endSlot %}
@@ -65,7 +65,7 @@
           {% with request.get_full_path|urlencode as nexturl %}
             {% url 'FrontContent:MoveFirst' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/up-to-top.svg' %}
                 {% endSlot %}
@@ -75,7 +75,7 @@
 
             {% url 'FrontContent:MoveUp' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/chevron--up.svg' %}
                 {% endSlot %}
@@ -85,7 +85,7 @@
 
             {% url 'FrontContent:MoveDown' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/chevron--down.svg' %}
                 {% endSlot %}
@@ -95,7 +95,7 @@
 
             {% url 'FrontContent:MoveLast' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/down-to-bottom.svg' %}
                 {% endSlot %}

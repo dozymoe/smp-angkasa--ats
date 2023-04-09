@@ -1,3 +1,5 @@
+"""Django routes for pages API
+"""
 from django.urls import path
 #-
 from . import views_api

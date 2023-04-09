@@ -1,14 +1,19 @@
 lib-py:
   options:
     pylint_config_file: etc/pylint.rc
+    pylint_work_dir: web/
+    pylint_env:
+      DJANGO_SETTINGS_MODULE: web.settings
 
   django-carbondesign:
     pylint:
       raw_file_in: "{_1}/{_2}/carbondesign/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   frozen-django:
     pylint:
       raw_file_in: "{_1}/{_2}/frozen_django/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
 
 pygmentize:
@@ -28,6 +33,8 @@ web:
   options:
     pylint_config_file: etc/pylint.rc
     pylint_work_dir: "{_1}/"
+    pylint_env:
+      DJANGO_SETTINGS_MODULE: web.settings
     webpack_work_dir: "{_1}/"
 
   css:
@@ -36,16 +43,17 @@ web:
         options:
           command: >
             node_modules/sass/sass.js -Inode_modules
-            {_1}/website/sass/app.scss
+            {_1}_assets/website/sass/app.scss
             tmp/{_1}-index-compiled.css
         rule_in:
           - docutils/cp
           - pygmentize/shell
         raw_depend_in:
           - package-{{PROJECT_VARIANT}}.json
-          - "{_1}/blog_posting/sass/**/*.scss"
-          - "{_1}/carbondesign/sass/**/*.scss"
-          - "{_1}/website/sass/**/*.scss"
+          - "{_1}_assets/blog_posting/sass/**/*.scss"
+          - "{_1}_assets/my_event/sass/**/*.scss"
+          - "{_1}_assets/website/sass/**/*.scss"
+          - "{_1}_assets/carbondesign/sass/**/*.scss"
         raw_extra_out: tmp/{_1}-index-compiled.css
 
     postcss:
@@ -83,15 +91,15 @@ web:
   js:
     webpack:
       options:
-        config_file: "{_1}/webpack-{_2}.config.js"
+        config_file: "{_1}_assets/webpack.config.js"
         mode: production
       raw_depend_in:
         - package-{{PROJECT_VARIANT}}.json
-        - "{_1}/webpack-{_2}.config.js"
-        - "{_1}/misc/**/*.js"
-        - "{_1}/my_slide/js/**/*.js"
-        - "{_1}/website/js/**/*.js"
-        - "{_1}/website/js/**/*.jsx"
+        - "{_1}_assets/*.js"
+        - "{_1}_assets/misc/**/*.js"
+        - "{_1}_assets/my_files/mithril-js/**/*.js"
+        - "{_1}_assets/website/mithril-js/**/*.js"
+        - "{_1}_assets/web_page/mithril-js/**/*.js"
         - lib/fireh-mithril/**/*.js
         - lib-py/django-carbondesign/carbondesign/js/**/*.js
         - lib-py/django-carbondesign/carbondesign/mithril-js/**/*.js
@@ -101,46 +109,57 @@ web:
   blog_posting:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   misc:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   my_event:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   my_files:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   my_front_content:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   my_slide:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   my_user:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   thing_keyword:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   web:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   website:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
   web_page:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
+      raw_depend_in: etc/pylint.rc
 
 
   collectstatic:
@@ -157,7 +176,11 @@ web:
   unit_test:
     shell:
       options:
-        command: ./run django-manage --project={_1} test --testrunner="test_runner.UnitTestRunner"
+        command: >
+          ./run django-manage --project={_1} test
+          --testrunner="{_1}.testcases.testrunner.UnitTestRunner"
+          #-v2
+          #--parallel
       rule_in:
         - "{_1}/blog_posting/pylint"
         - "{_1}/misc/pylint"
@@ -176,14 +199,20 @@ web:
   check_migration:
     shell:
       options:
-        command: ./run django-manage --project={_1} makemigrations --check --dry-run
+        command: >
+          ./run django-manage --project={_1} makemigrations
+          --check --dry-run
       rule_in:
         - "{_1}/unit_test/shell"
 
   integration_test:
     shell:
       options:
-        command: ./run django-manage --project={_1} test --testrunner="test_runner.IntegrationTestRunner"
+        command: >
+          ./run django-manage --project={_1} test
+          --testrunner="{_1}.testcases.testrunner.IntegrationTestRunner"
+          #-v2
+          #--parallel
       rule_in:
         - "{_1}/check_migration/shell"
 

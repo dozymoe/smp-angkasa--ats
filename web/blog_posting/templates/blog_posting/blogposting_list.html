@@ -21,7 +21,7 @@
   
       {% Slot 'toolbar_actions' %}
         {% url 'BlogPosting:Create' as url %}
-        {% Button tag="a" href=url icon_size=32 %}
+        {% Button astag="a" href=url icon_size=32 %}
           {% Slot 'icon' %}
             {% svg 'carbon/32/add.svg' %}
           {% endSlot %}
@@ -68,7 +68,7 @@
   
           {% Td mode="menu" %}
             {% url 'BlogPosting:Update' obj.pk as url %}
-            {% TdOvButton tag="a" href=url %}
+            {% TdOvButton astag="a" href=url %}
               {% Slot 'icon' %}
                 {% svg 'carbon/32/edit.svg' %}
               {% endSlot %}
@@ -82,7 +82,7 @@
               {% url 'BlogPosting:Publish' obj.pk as url %}
               {% trans "Publish" as label %}
             {% endif %}
-            {% TdOvButton tag="a" href=url %}
+            {% TdOvButton astag="a" href=url %}
               {% Slot 'icon' %}
                 {% if obj.published_at %}
                   {% svg 'carbon/16/view--off.svg' %}
@@ -94,7 +94,7 @@
             {% endTdOvButton %}
   
             {% url 'BlogPosting:Destroy' obj.pk as url %}
-            {% TdOvButton tag="a" href=url %}
+            {% TdOvButton astag="a" href=url %}
               {% Slot 'icon' %}
                 {% svg 'carbon/32/trash-can.svg' %}
               {% endSlot %}

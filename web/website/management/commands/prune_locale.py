@@ -1,3 +1,8 @@
+"""Django management command for resetting invalid .po file updates
+
+The make-translations command updates the timestamp inside the .po file and
+nothing else, creating useless git revision data.
+"""
 import logging
 import os
 from pathlib import Path
@@ -10,6 +15,8 @@ _logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
+    """Cleanup translation message that only updated their timestamps
+    """
     help = "Cleanup translation message that only updated their timestamps."
 
     FILE_COUNT_PATTERN = re.compile(r'\b(?P<num>\d+)\sfile\b')

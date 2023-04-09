@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-21 13:13+0700\n"
+"POT-Creation-Date: 2023-04-09 13:19+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: my_event/models.py:23 my_event/templates/my_event/event_list.html:46
+#: my_event/models.py:31 my_event/templates/my_event/event_list.html:46
 msgid "Started At"
 msgstr ""
 
-#: my_event/models.py:25 my_event/templates/my_event/event_list.html:49
+#: my_event/models.py:33 my_event/templates/my_event/event_list.html:49
 msgid "Stopped At"
 msgstr ""
 
-#: my_event/models.py:29 my_event/templates/my_event/event_list.html:43
+#: my_event/models.py:37 my_event/templates/my_event/event_list.html:43
 msgid "Title"
 msgstr ""
 
-#: my_event/models.py:34
+#: my_event/models.py:42
 msgid "Body"
 msgstr ""
 
-#: my_event/models.py:38
+#: my_event/models.py:45
 msgid "Summary"
 msgstr ""
 
-#: my_event/models.py:42
+#: my_event/models.py:48
 msgid "URL Name"
 msgstr ""
 
-#: my_event/models.py:44
+#: my_event/models.py:50
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
 "filled if left empty."
 msgstr ""
 
-#: my_event/models.py:48
+#: my_event/models.py:55
 msgid "Publish Date"
 msgstr ""
 
-#: my_event/restructured_text/embed_event.py:50
+#: my_event/restructured_text/embed_event.py:56
 #, python-format
 msgid "%s is not a number."
 msgstr ""
 
-#: my_event/restructured_text/embed_event.py:56
+#: my_event/restructured_text/embed_event.py:62
 #, python-format
 msgid "Event with id:%s was not found."
 msgstr ""
@@ -68,7 +68,7 @@ msgstr ""
 
 #: my_event/templates/my_event/base-admin-object.html:14
 #: my_event/templates/my_event/base-admin.html:14
-#: my_event/templates/my_event/event_create_form.html:89
+#: my_event/templates/my_event/event_create_form.html:88
 msgid "Create"
 msgstr ""
 
@@ -144,33 +144,31 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: my_event/templates/my_event/event_create_form.html:41
-#: my_event/templates/my_event/event_form.html:41
+#: my_event/templates/my_event/event_create_form.html:47
+#: my_event/templates/my_event/event_form.html:47
 msgid "Body Preview"
 msgstr ""
 
-#: my_event/templates/my_event/event_create_form.html:43
-#: my_event/templates/my_event/event_create_form.html:57
-#: my_event/templates/my_event/event_create_form.html:82
-#: my_event/templates/my_event/event_form.html:43
-#: my_event/templates/my_event/event_form.html:57
-#: my_event/templates/my_event/event_form.html:82
+#: my_event/templates/my_event/event_create_form.html:49
+#: my_event/templates/my_event/event_create_form.html:63
+#: my_event/templates/my_event/event_form.html:49
+#: my_event/templates/my_event/event_form.html:63
 msgid "Preview"
 msgstr ""
 
-#: my_event/templates/my_event/event_create_form.html:48
-#: my_event/templates/my_event/event_create_form.html:62
-#: my_event/templates/my_event/event_form.html:48
-#: my_event/templates/my_event/event_form.html:62
+#: my_event/templates/my_event/event_create_form.html:54
+#: my_event/templates/my_event/event_create_form.html:68
+#: my_event/templates/my_event/event_form.html:54
+#: my_event/templates/my_event/event_form.html:68
 msgid "Editing Help"
 msgstr ""
 
-#: my_event/templates/my_event/event_create_form.html:55
-#: my_event/templates/my_event/event_form.html:55
+#: my_event/templates/my_event/event_create_form.html:61
+#: my_event/templates/my_event/event_form.html:61
 msgid "Summary Preview"
 msgstr ""
 
-#: my_event/templates/my_event/event_create_form.html:73
+#: my_event/templates/my_event/event_create_form.html:79
 msgid "Submit"
 msgstr ""
 
@@ -178,8 +176,8 @@ msgstr ""
 msgid "Update Event"
 msgstr ""
 
-#: my_event/templates/my_event/event_form.html:73
-#: my_event/templates/my_event/event_form.html:89
+#: my_event/templates/my_event/event_form.html:79
+#: my_event/templates/my_event/event_form.html:88
 msgid "Update"
 msgstr ""
 

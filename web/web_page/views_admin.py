@@ -1,3 +1,5 @@
+"""Django views for managing web pages
+"""
 import logging
 #-
 from django.contrib.auth.decorators import login_required
@@ -7,7 +9,6 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DeleteView, DetailView, ListView
 from django.views.generic import UpdateView
 from rules.contrib.views import AutoPermissionRequiredMixin
-from translated_fields import to_attribute
 #-
 from .forms import WebPageForm
 from .models import WebPage
@@ -17,6 +18,8 @@ _logger = logging.getLogger(__name__)
 
 @method_decorator(login_required, name='dispatch')
 class List(ListView):
+    """List all web pages
+    """
     model = WebPage
     paginate_by = 10
 
@@ -26,6 +29,8 @@ class List(ListView):
 
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
+    """Create new web page
+    """
     model = WebPage
     form_class = WebPageForm
     template_name_suffix = '_create_form'
@@ -41,12 +46,16 @@ class Create(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class Display(DetailView):
+    """Show web page to visitors
+    """
     model = WebPage
     template_name_suffix = '_detail-admin'
 
 
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
+    """Edit web page
+    """
     model = WebPage
     form_class = WebPageForm
 
@@ -56,6 +65,8 @@ class Edit(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Publish(AutoPermissionRequiredMixin, UpdateView):
+    """Publish web page
+    """
     model = WebPage
     fields = []
     template_name_suffix = '_confirm_publish'
@@ -71,6 +82,8 @@ class Publish(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Unpublish(AutoPermissionRequiredMixin, UpdateView):
+    """Cancel a published web page
+    """
     model = WebPage
     fields = []
     template_name_suffix = '_confirm_unpublish'
@@ -86,6 +99,8 @@ class Unpublish(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Destroy(AutoPermissionRequiredMixin, DeleteView):
+    """Delete web page
+    """
     model = WebPage
 
     def get_success_url(self):

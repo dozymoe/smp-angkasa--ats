@@ -1,0 +1,26 @@
+.front-events
+{
+    margin: 10em 0;
+
+    .front-section-header h2
+    {
+        font-weight: bolder;
+        margin-bottom: 1em;
+    }
+
+    [role="article"]
+    {
+        margin-bottom: 2em;
+    }
+}
+
+@media (min-width: 66rem)
+{
+    .front-events .front-section-header
+    {
+        h2
+        {
+            font-weight: normal;
+        }
+    }
+}

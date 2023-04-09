@@ -1,10 +1,12 @@
+aiozmq
+async_timeout
 bs4
 django
 django-allauth
 django-dirtyfields
 django-honeypot
 django-mailer
-django-rest-framework-rules
+#django-rest-framework-rules
 django-simple-captcha
 django-statici18n
 django-treebeard
@@ -13,6 +15,7 @@ djangorestframework
 docutils
 lxml
 Pillow
+psycopg2-binary
 python-dateutil
 python-magic
 rules

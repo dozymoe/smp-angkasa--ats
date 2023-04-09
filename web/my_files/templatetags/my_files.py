@@ -1,3 +1,5 @@
+"""Django templatetags for working with files
+"""
 from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
@@ -9,11 +11,13 @@ register = template.Library()
 
 @register.simple_tag
 def webfile(pk, alt=None):
+    """Embed file as hyperlink or image in the templates
+    """
     obj_id = int(pk)
     try:
         obj = MyFile.objects.get(pk=obj_id)
     except MyFile.DoesNotExist:
-        return ':webfile:`%s`' % pk
+        return f':webfile:`{pk}`'
 
     if obj.mimetype.startswith('image/'):
         url = obj.image_lg.url

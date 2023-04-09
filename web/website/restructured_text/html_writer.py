@@ -1,3 +1,5 @@
+"""Customize the output of docutils reStructuredText
+"""
 import logging
 import os
 import re
@@ -11,10 +13,12 @@ _logger = logging.getLogger(__name__)
 
 
 class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
-
+    """Custom Html translator
+    """
     def visit_image(self, node):
-        """ Please keep this copy in sync with: python_modules/docutils/writers/html4css1/__init__.py
+        """Please keep this copy in sync with: python_modules/docutils/writers/html4css1/__init__.py
         """ # pylint:disable=line-too-long
+        # pylint:disable=too-many-branches,too-many-statements
         atts = {}
         uri = node['uri']
         ext = os.path.splitext(uri)[1].lower()
@@ -46,15 +50,15 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
                     self.settings.record_dependencies.add(
                         imagepath.replace('\\', '/'))
                     if 'width' not in atts:
-                        atts['width'] = '%dpx' % img.size[0]
+                        atts['width'] = f'{img.size[0]:d}px'
                     if 'height' not in atts:
-                        atts['height'] = '%dpx' % img.size[1]
+                        atts['height'] = f'{img.size[1]:d}px'
                     del img
             for att_name in 'width', 'height':
                 if att_name in atts:
                     match = re.match(r'([0-9.]+)(\S*)$', atts[att_name])
                     assert match
-                    atts[att_name] = '%s%s' % (
+                    atts[att_name] = '%s%s' % ( # pylint:disable=consider-using-f-string
                         float(match.group(1)) * (float(node['scale']) / 100),
                         match.group(2))
         style = []
@@ -63,7 +67,7 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
                 if re.match(r'^[0-9.]+$', atts[att_name]):
                     # Interpret unitless values as pixels.
                     atts[att_name] += 'px'
-                style.append('%s: %s;' % (att_name, atts[att_name]))
+                style.append(f'{att_name}: {atts[att_name]};')
                 del atts[att_name]
         if style:
             atts['style'] = ' '.join(style)
@@ -75,7 +79,7 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
         else:
             suffix = '\n'
         if 'align' in node:
-            atts['class'] = 'align-%s' % node['align']
+            atts['class'] = f"align-{node['align']}"
         if ext in self.object_image_types:
             # do NOT use an empty tag: incorrect rendering in browsers
             self.body.append(self.starttag(node, 'object', '', **atts) +
@@ -85,6 +89,8 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
 
 
     def visit_link(self, node):
+        """Start the Html "a" element
+        """
         atts = {'href': node['uri']}
         for att_name in ('target',):
             if att_name in node:
@@ -95,6 +101,8 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
 
 
     def depart_link(self, node):
+        """Close the Html "a" element
+        """
         if (isinstance(node.parent, nodes.TextElement) or
             (isinstance(node.parent, nodes.reference) and
              not isinstance(node.parent.parent, nodes.TextElement))):
@@ -106,6 +114,8 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
 
 
     def visit_video(self, node):
+        """Start the Html video element
+        """
         atts = {}
         source_atts = {}
 
@@ -130,11 +140,14 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
 
 
     def depart_video(self, node):
+        """Close the Html video element
+        """
         self.body.append('</video>\n')
 
 
 class HtmlWriter(html4css1.Writer):
-
+    """Html writer with custom translator class
+    """
     def __init__(self):
         super().__init__()
         self.translator_class = HtmlTranslator

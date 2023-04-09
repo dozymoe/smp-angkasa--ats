@@ -13,10 +13,11 @@
         "lib.fireh_runner.setup_modules.pybuildtool"
     ],
     "python_version": "3.9",
-    "waf_version": "2.0.22",
+    "waf_version": "2.0.23",
 
     "default_project": "web",
     "default_variant": "development",
+    "virtualenv_type": "venv",
 
     "configuration": {
         "development": {

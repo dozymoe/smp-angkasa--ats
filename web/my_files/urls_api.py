@@ -1,3 +1,5 @@
+"""Django routes for working with files
+"""
 from django.urls import path
 #-
 from . import views_api

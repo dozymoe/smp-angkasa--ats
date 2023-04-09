@@ -3,15 +3,17 @@
 {% load carbondesign %}
 
 {% block navigation_app %}
-  {% url 'MySlide:Index' as url %}
-  {% UiNavItem href=url %}
-    {% trans "Index" %}
-  {% endUiNavItem %}
+  {% UiNavSection %}
+    {% url 'MySlide:Index' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Index" %}
+    {% endUiNavItem %}
 
-  {% url 'MySlide:Create' as url %}
-  {% UiNavItem href=url %}
-    {% trans "Create" %}
-  {% endUiNavItem %}
+    {% url 'MySlide:Create' as url %}
+    {% UiNavItem href=url %}
+      {% trans "Create" %}
+    {% endUiNavItem %}
+  {% endUiNavSection %}
 {% endblock %}
 
 

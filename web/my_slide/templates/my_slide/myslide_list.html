@@ -13,7 +13,7 @@
 
     {% Slot 'toolbar_actions' %}
       {% url 'MySlide:Create' as url %}
-      {% Button tag="a" href=url icon_size=32 %}
+      {% Button astag="a" href=url icon_size=32 %}
         {% Slot 'icon' %}
           {% svg 'carbon/32/add.svg' %}
         {% endSlot %}
@@ -52,7 +52,7 @@
 
         {% Td mode="menu" %}
           {% url 'MySlide:Update' obj.pk as url %}
-          {% TdOvButton tag="a" href=url %}
+          {% TdOvButton astag="a" href=url %}
             {% Slot 'icon' %}
               {% svg 'carbon/32/edit.svg' %}
             {% endSlot %}
@@ -60,7 +60,7 @@
           {% endTdOvButton %}
 
           {% url 'MySlide:Destroy' obj.pk as url %}
-          {% TdOvButton tag="a" href=url %}
+          {% TdOvButton astag="a" href=url %}
             {% Slot 'icon' %}
               {% svg 'carbon/32/trash-can.svg' %}
             {% endSlot %}
@@ -70,7 +70,7 @@
           {% with request.get_full_path|urlencode as nexturl %}
             {% url 'MySlide:MoveFirst' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/up-to-top.svg' %}
                 {% endSlot %}
@@ -80,7 +80,7 @@
 
             {% url 'MySlide:MoveUp' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/chevron--up.svg' %}
                 {% endSlot %}
@@ -90,7 +90,7 @@
 
             {% url 'MySlide:MoveDown' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/chevron--down.svg' %}
                 {% endSlot %}
@@ -100,7 +100,7 @@
 
             {% url 'MySlide:MoveLast' obj.pk as baseurl %}
             {% with baseurl|add:'?next='|add:nexturl as url %}
-              {% TdOvButton tag="a" href=url %}
+              {% TdOvButton astag="a" href=url %}
                 {% Slot 'icon' %}
                   {% svg 'carbon/32/down-to-bottom.svg' %}
                 {% endSlot %}

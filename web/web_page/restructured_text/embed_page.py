@@ -1,3 +1,5 @@
+"""reStructuredText directives for working with web pages
+"""
 import logging
 import re
 #-
@@ -13,6 +15,8 @@ INLINE_PATTERN = re.compile(r'^(?P<text>.+)\s*<(?P<pk>\d+)>$')
 
 
 def parse_embed_page(obj_id, options, block_text=None):
+    """Format web page as hyperlink
+    """
     try:
         obj = WebPage.objects.get(pk=obj_id)
     except WebPage.DoesNotExist:
@@ -32,6 +36,8 @@ def parse_embed_page(obj_id, options, block_text=None):
 
 def embed_page_role(role, rawtext, text, lineno, inliner, options=None,
         content=None):
+    """Embed web page inline with text
+    """
     if options is None:
         options = {}
 

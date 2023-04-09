@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-21 13:13+0700\n"
+"POT-Creation-Date: 2023-04-08 14:25+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: web_page/models.py:28 web_page/templates/web_page/webpage_list.html:43
+#: web_page/models.py:37 web_page/templates/web_page/webpage_list.html:43
 msgid "Title"
 msgstr "Judul"
 
-#: web_page/models.py:33
+#: web_page/models.py:42
 msgid "Body"
 msgstr "Konten"
 
-#: web_page/models.py:37
+#: web_page/models.py:46
 msgid "Summary"
 msgstr "Ringkasan"
 
-#: web_page/models.py:40
+#: web_page/models.py:49
 msgid "URL Name"
 msgstr "Nama URL"
 
-#: web_page/models.py:42
+#: web_page/models.py:51
 msgid ""
 "Human friendly unique url to identify the content, will automatically be "
 "filled if left empty."
@@ -41,45 +41,45 @@ msgstr ""
 "Alamat tautan yang ramah pengguna untuk identifikasi konten, akan diisi "
 "otomatis bila dibiarkan kosong."
 
-#: web_page/models.py:47
+#: web_page/models.py:56
 msgid "Publish Date"
 msgstr "Ditayangkan Tanggal"
 
-#: web_page/restructured_text/embed_page.py:50
+#: web_page/restructured_text/embed_page.py:56
 #, python-format
 msgid "%s is not a number."
 msgstr "%s itu bukan angka."
 
-#: web_page/restructured_text/embed_page.py:55
+#: web_page/restructured_text/embed_page.py:61
 #, python-format
 msgid "Page with id:%s was not found."
 msgstr "Laman dengan nomor:%s tidak ada."
 
-#: web_page/templates/web_page/base-admin-object.html:8
-#: web_page/templates/web_page/base-admin.html:8
+#: web_page/templates/web_page/base-admin-object.html:9
+#: web_page/templates/web_page/base-admin.html:9
 msgid "Index"
 msgstr "Katalog"
 
-#: web_page/templates/web_page/base-admin-object.html:13
-#: web_page/templates/web_page/base-admin.html:13
-#: web_page/templates/web_page/webpage_create_form.html:81
+#: web_page/templates/web_page/base-admin-object.html:14
+#: web_page/templates/web_page/base-admin.html:14
+#: web_page/templates/web_page/webpage_create_form.html:74
 msgid "Create"
 msgstr "Bikin"
 
-#: web_page/templates/web_page/base-admin-object.html:18
+#: web_page/templates/web_page/base-admin-object.html:19
 #: web_page/templates/web_page/webpage_list.html:75
 msgid "Edit"
 msgstr "Ubah"
 
-#: web_page/templates/web_page/base-admin-object.html:23
+#: web_page/templates/web_page/base-admin-object.html:24
 #: web_page/templates/web_page/webpage_confirm_delete.html:29
 #: web_page/templates/web_page/webpage_confirm_delete.html:38
 #: web_page/templates/web_page/webpage_list.html:101
 msgid "Delete"
 msgstr "Hapus"
 
-#: web_page/templates/web_page/base-admin-object.html:33
-#: web_page/templates/web_page/base-admin.html:23
+#: web_page/templates/web_page/base-admin-object.html:35
+#: web_page/templates/web_page/base-admin.html:25
 #: web_page/templates/web_page/webpage_detail-admin.html:18
 #: web_page/templates/web_page/webpage_list.html:19
 #: web_page/templates/web_page/webpage_list.html:116
@@ -145,10 +145,8 @@ msgstr "Penampakan Konten"
 
 #: web_page/templates/web_page/webpage_create_form.html:35
 #: web_page/templates/web_page/webpage_create_form.html:49
-#: web_page/templates/web_page/webpage_create_form.html:74
 #: web_page/templates/web_page/webpage_form.html:35
 #: web_page/templates/web_page/webpage_form.html:49
-#: web_page/templates/web_page/webpage_form.html:74
 msgid "Preview"
 msgstr "Penampakan"
 
@@ -173,7 +171,7 @@ msgid "Update Page"
 msgstr "Ubah Laman"
 
 #: web_page/templates/web_page/webpage_form.html:65
-#: web_page/templates/web_page/webpage_form.html:81
+#: web_page/templates/web_page/webpage_form.html:74
 msgid "Update"
 msgstr "Ubah"
 

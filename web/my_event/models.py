@@ -1,3 +1,5 @@
+"""Django models for working with events
+"""
 from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.db import models
@@ -9,16 +11,22 @@ import rules
 from rules.contrib.models import RulesModel
 from translated_fields import TranslatedField, to_attribute
 #-
+from website.models_utils import uniqueness
 from website.mixins import MultilingualMixin, attrgetter
 
-
 class EventManager(models.Manager):
+    """Custom Django model manager that helps with serialization
+    """
     def get_by_natural_key(self, key):
+        """Unique record identifier for serialization
+        """
         return self.get(slug=key)
 
 
 class Event(DirtyFieldsMixin, MultilingualMixin, RulesModel):
-    REQUIRED_TRANSLATED_FIELDS = ('title', 'body', 'summary', 'slug')
+    """Model for web page
+    """
+    REQUIRED_TRANSLATED_FIELDS = ('title', 'slug')
 
     started_at = models.DateTimeField(verbose_name=_("Started At"),
             db_index=True)
@@ -31,18 +39,17 @@ class Event(DirtyFieldsMixin, MultilingualMixin, RulesModel):
             {settings.LANGUAGE_CODE: {'blank': False}},
             attrgetter=attrgetter)
     body = TranslatedField(
-            models.TextField(verbose_name=_("Body"), blank=True),
-            {settings.LANGUAGE_CODE: {'blank': False}},
+            models.TextField(verbose_name=_("Body"), blank=True, null=True),
             attrgetter=attrgetter)
     summary = TranslatedField(
-            models.TextField(verbose_name=_("Summary"), blank=True),
-            {settings.LANGUAGE_CODE: {'blank': False}},
+            models.TextField(verbose_name=_("Summary"), blank=True, null=True),
             attrgetter=attrgetter)
     slug = TranslatedField(
             models.SlugField(verbose_name=_("URL Name"), max_length=64,
-                unique=True, db_index=True, blank=True,
+                unique=True, db_index=True, blank=True, null=True,
                 help_text=_("Human friendly unique url to identify the "
                 "content, will automatically be filled if left empty.")),
+            {settings.LANGUAGE_CODE: {'null': False}},
             attrgetter=attrgetter)
 
     published_at = models.DateTimeField(verbose_name=_("Publish Date"),
@@ -62,7 +69,6 @@ class Event(DirtyFieldsMixin, MultilingualMixin, RulesModel):
 
 
     class Meta:
-
         get_latest_by = 'created_at'
         ordering = ['-created_at']
         rules_permissions = {
@@ -78,15 +84,21 @@ class Event(DirtyFieldsMixin, MultilingualMixin, RulesModel):
 
 
     def get_absolute_url(self):
+        """Unique url that represents the model instance
+        """
         with translation.override(self.valid_language()):
             return reverse('EventLang:Display', args=(self.slug, 'html'))
 
 
     def get_natural_key(self):
+        """Unique record identifier for serialization
+        """
         return (self.slug,)
 
 
     def is_published(self):
+        """Check instance has been published
+        """
         return self.published_at and not self.deleted_at
 
 
@@ -101,7 +113,10 @@ class Event(DirtyFieldsMixin, MultilingualMixin, RulesModel):
             slug_field = to_attribute('slug', langcode)
             if title_field in dirty and getattr(self, title_field) and\
                     (slug_field not in dirty or not getattr(self, slug_field)):
-                setattr(self, slug_field, slugify(getattr(self, title_field)))
+
+                setattr(self, slug_field,
+                        uniqueness(slugify(getattr(self, title_field))))
+
                 if update_fields and slug_field not in update_fields:
                     update_fields.append(slug_field)
 

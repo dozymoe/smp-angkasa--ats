@@ -1,3 +1,5 @@
+"""Django views for managing slideshows
+"""
 import logging
 #-
 from django.contrib.auth.decorators import login_required
@@ -16,6 +18,8 @@ _logger = logging.getLogger(__name__)
 
 @method_decorator(login_required, name='dispatch')
 class List(ListView):
+    """List all slides
+    """
     model = MySlide
     paginate_by = 10
     ordering = ('position', '-created_at')
@@ -26,6 +30,8 @@ class List(ListView):
 
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
+    """Create new slide
+    """
     model = MySlide
     form_class = MySlideForm
     template_name_suffix = '_create_form'
@@ -41,6 +47,8 @@ class Create(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
+    """Edit slide
+    """
     model = MySlide
     form_class = MySlideForm
 
@@ -50,6 +58,8 @@ class Edit(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Destroy(AutoPermissionRequiredMixin, DeleteView):
+    """Delete slide
+    """
     model = MySlide
 
     def get_success_url(self):
@@ -58,6 +68,8 @@ class Destroy(AutoPermissionRequiredMixin, DeleteView):
 
 @login_required
 def move_first(request, pk):
+    """Move the ordering position of the slide
+    """
     obj = get_object_or_404(MySlide, pk=pk)
     # Position 0 is special, it's default value.
     if obj.position == 0:
@@ -74,8 +86,11 @@ def move_first(request, pk):
         obj.save()
     return redirect(request.GET['next'])
 
+
 @login_required
 def move_up(request, pk):
+    """Move the ordering position of the slide
+    """
     obj = get_object_or_404(MySlide, pk=pk)
     # Position 0 is special, it's default value.
     if obj.position == 0:
@@ -92,8 +107,11 @@ def move_up(request, pk):
         obj.save()
     return redirect(request.GET['next'])
 
+
 @login_required
 def move_down(request, pk):
+    """Move the ordering position of the slide
+    """
     obj = get_object_or_404(MySlide, pk=pk)
     # Position 0 is special, it's default value.
     if obj.position == 0:
@@ -110,8 +128,11 @@ def move_down(request, pk):
         obj.save()
     return redirect(request.GET['next'])
 
+
 @login_required
 def move_last(request, pk):
+    """Move the ordering position of the slide
+    """
     obj = get_object_or_404(MySlide, pk=pk)
     max_value = MySlide.objects\
             .aggregate(Max('position'))\

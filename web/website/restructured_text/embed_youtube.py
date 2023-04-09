@@ -1,3 +1,5 @@
+"""Embed youtube link in the templates
+"""
 import logging
 #-
 from docutils import nodes
@@ -9,6 +11,8 @@ DEFAULT_WIDTH = 320
 DEFAULT_HEIGHT = 200
 
 def parse_embed_youtube(video_id, options, block_text=None):
+    """Render youtube id as Html iframe element
+    """
     template = """
 <iframe src="https://www.youtube.com/embed/%(video_id)s" width="%(width)u"
     height="%(height)u" frameborder="0" webkitAllowFullScreen mozallowfullscreen
@@ -23,7 +27,8 @@ def parse_embed_youtube(video_id, options, block_text=None):
 
 
 class EmbedYoutubeDirective(Directive):
-
+    """Embed youtube video as a section of its own
+    """
     required_arguments = 1
     optional_arguments = 0
     final_argument_whitespace = True

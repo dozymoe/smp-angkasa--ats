@@ -1,3 +1,5 @@
+"""Django views for managing files
+"""
 import logging
 #-
 from django.contrib.auth.decorators import login_required
@@ -14,6 +16,8 @@ _logger = logging.getLogger(__name__)
 
 @method_decorator(login_required, name='dispatch')
 class List(ListView):
+    """List all files
+    """
     model = MyFile
     paginate_by = 10
 
@@ -23,6 +27,8 @@ class List(ListView):
 
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
+    """Create new file
+    """
     model = MyFile
     form_class = MyFileForm
     template_name_suffix = '_create_form'
@@ -33,11 +39,14 @@ class Create(CreateView):
 
 
     def get_success_url(self):
-        return reverse('MyFile:Index')
+        return reverse('MyFile:Update', args=(self.object.id,))
+
 
 
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
+    """Edit file
+    """
     model = MyFile
     form_class = MyFileForm
 
@@ -47,6 +56,8 @@ class Edit(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Destroy(AutoPermissionRequiredMixin, DeleteView):
+    """Delete file
+    """
     model = MyFile
 
     def get_success_url(self):

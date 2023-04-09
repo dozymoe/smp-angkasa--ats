@@ -1,3 +1,5 @@
+"""Django views for managing web pages that will have its summary in front page
+"""
 import logging
 #-
 from django.contrib.auth.decorators import login_required
@@ -15,6 +17,8 @@ _logger = logging.getLogger(__name__)
 
 @method_decorator(login_required, name='dispatch')
 class List(ListView):
+    """List all front contents
+    """
     model = FrontContent
     paginate_by = 10
     ordering = ('position', '-created_at')
@@ -25,6 +29,8 @@ class List(ListView):
 
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
+    """Create new front content
+    """
     model = FrontContent
     fields = ['content']
     template_name_suffix = '_create_form'
@@ -40,6 +46,8 @@ class Create(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class Destroy(AutoPermissionRequiredMixin, DeleteView):
+    """Delete front content
+    """
     model = FrontContent
 
     def get_success_url(self):
@@ -48,6 +56,8 @@ class Destroy(AutoPermissionRequiredMixin, DeleteView):
 
 @login_required
 def move_first(request, pk):
+    """Change the ordering position of front content
+    """
     obj = get_object_or_404(FrontContent, pk=pk)
     # Position 0 is special, it's default value.
     if obj.position == 0:
@@ -64,8 +74,11 @@ def move_first(request, pk):
         obj.save()
     return redirect(request.GET['next'])
 
+
 @login_required
 def move_up(request, pk):
+    """Change the ordering position of front content
+    """
     obj = get_object_or_404(FrontContent, pk=pk)
     # Position 0 is special, it's default value.
     if obj.position == 0:
@@ -82,8 +95,11 @@ def move_up(request, pk):
         obj.save()
     return redirect(request.GET['next'])
 
+
 @login_required
 def move_down(request, pk):
+    """Change the ordering position of front content
+    """
     obj = get_object_or_404(FrontContent, pk=pk)
     # Position 0 is special, it's default value.
     if obj.position == 0:
@@ -100,8 +116,11 @@ def move_down(request, pk):
         obj.save()
     return redirect(request.GET['next'])
 
+
 @login_required
 def move_last(request, pk):
+    """Change the ordering position of front content
+    """
     obj = get_object_or_404(FrontContent, pk=pk)
     max_value = FrontContent.objects\
             .aggregate(Max('position'))\

@@ -24,14 +24,13 @@ from website import views
 urlpatterns = [
     re_path(r'^i18n/', include('django.conf.urls.i18n')),
 
-    path('news/', include('blog_posting.urls', namespace='BlogPosting')),
+    path('files/', include('my_files.urls', namespace='MyFile')),
 ]
 
 urlpatterns += i18n_patterns(
     path(_('news/'), include('blog_posting.urls_lang',
         namespace='BlogPostingLang')),
     path(_('events/'), include('my_event.urls_lang', namespace='EventLang')),
-    path(_('files/'), include('my_files.urls', namespace='MyFile')),
     path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
         name='EditorHelpText'),
     path('index.<str:format>', views.Home.as_view(), name='HomeLang'),

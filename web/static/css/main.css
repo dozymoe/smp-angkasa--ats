@@ -23460,7 +23460,7 @@ a.bx--navigation-link:focus {
 /* Minimal style sheet for the HTML output of Docutils.                    */
 /*                                                                         */
 /* :Author: Günter Milde, based on html4css1.css by David Goodger          */
-/* :Id: $Id: minimal.css 8783 2021-06-30 07:47:46Z milde $                                                               */
+/* :Id: $Id: minimal.css 9079 2022-06-19 14:00:56Z milde $                                                               */
 /* :Copyright: © 2015, 2021 Günter Milde.                                  */
 /* :License: Released under the terms of the `2-Clause BSD license`_,      */
 /*    in short:                                                            */
@@ -23665,7 +23665,7 @@ span.option {
 }
 
 .footnote.superscript {
-  padding-left: 0.9em;
+  padding-left: 1em;
 }
 
 .citation > .label {
@@ -23677,7 +23677,7 @@ span.option {
 }
 
 .footnote.superscript > .label {
-  margin-left: -0.9em;
+  margin-left: -1em;
 }
 
 .footnote > .label + *,
@@ -23696,6 +23696,13 @@ span.option {
 .citation > .label + p, .citation > .backrefs + p {
   display: inline;
   vertical-align: inherit;
+}
+
+.backrefs {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .backrefs > a {
@@ -32461,6 +32468,9 @@ img.img-responsive {
 /* stylelint-disable-line no-invalid-position-at-import-rule */
 body.front-page .carousel {
   margin-bottom: 4rem;
+  margin-left: -3rem;
+  margin-right: -3rem;
+  margin-top: -2rem;
 }
 body.front-page .carousel .carousel-cell {
   max-height: 400px;
@@ -32471,7 +32481,9 @@ body.front-page .carousel .carousel-cell {
   justify-content: center;
 }
 body.front-page .carousel .carousel-cell > img {
-  display: block;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 body.front-page .carousel .text-overlay {
@@ -32504,14 +32516,79 @@ body.front-page .featured-content .document {
   letter-spacing: 0.16px;
 }
 
-.front-blog-posts > li {
+.front-blog-posts {
+  margin: 10em 0;
+}
+.front-blog-posts .front-section-header h2 {
+  font-weight: bolder;
   margin-bottom: 1em;
+}
+.front-blog-posts .front-blog-summary-pop {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in;
+}
+.front-blog-posts [role=article] {
+  margin-bottom: 2em;
+}
+.front-blog-posts [role=article] > .outside {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+}
+.front-blog-posts [role=article] img {
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.front-blog-posts [role=article] a {
+  color: white;
+  text-decoration: none;
+}
+.front-blog-posts [role=article] h3 {
+  font-size: 1rem;
+}
+.front-blog-posts [role=article]:hover .front-blog-summary-pop,
+.front-blog-posts [role=article] a:active .front-blog-summary-pop {
   margin-top: 1em;
+  max-height: 400px;
+}
+.front-blog-posts .front-blog-summary {
+  background: rgba(0, 0, 200, 0.8);
+  bottom: 0;
+  padding: 0.5em;
+  position: absolute;
 }
 
-.front-events > li {
+@media (min-width: 66rem) {
+  .front-blog-posts .front-section-header > .outside {
+    border-right: 1em solid red;
+    direction: rtl;
+    text-align: right;
+    padding-right: 2em;
+  }
+  .front-blog-posts .front-section-header h2 {
+    display: inline-block;
+    font-weight: normal;
+    max-width: 2em;
+  }
+}
+.front-events {
+  margin: 10em 0;
+}
+.front-events .front-section-header h2 {
+  font-weight: bolder;
   margin-bottom: 1em;
-  margin-top: 1em;
+}
+.front-events [role=article] {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 66rem) {
+  .front-events .front-section-header h2 {
+    font-weight: normal;
+  }
 }
 
 /*# sourceMappingURL=web-index-prefixed.css.map */

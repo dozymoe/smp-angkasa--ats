@@ -2,48 +2,50 @@
 {% load i18n %}
 {% load carbondesign %}
 
-{% block links %}
-  {% UiLink %}
-    {% trans "Content" %}
+{% block navigation_all_apps %}
+  {% UiNavSection %}
+    {% UiNavItem %}
+      {% trans "Content" %}
 
-    {% Slot 'submenu' %}
-      {% url 'WebPage:Index' as url %}
-      {% UiLink href=url %}
-        {% trans "Page" %}
-      {% endUiLink %}
+      {% Slot 'submenu' %}
+        {% url 'WebPage:Index' as url %}
+        {% UiNavItem href=url %}
+          {% trans "Page" %}
+        {% endUiNavItem %}
 
-      {% url 'BlogPosting:Index' as url %}
-      {% UiLink href=url %}
-        {% trans "Article" %}
-      {% endUiLink %}
+        {% url 'BlogPosting:Index' as url %}
+        {% UiNavItem href=url %}
+          {% trans "Article" %}
+        {% endUiNavItem %}
     
-      {% url 'Event:Index' as url %}
-      {% UiLink href=url %}
-        {% trans "Event" %}
-      {% endUiLink %}
+        {% url 'Event:Index' as url %}
+        {% UiNavItem href=url %}
+          {% trans "Event" %}
+        {% endUiNavItem %}
     
-      {% url 'MyFile:Index' as url %}
-      {% UiLink href=url %}
-        {% trans "File" %}
-      {% endUiLink %}
-    {% endSlot %}
-  {% endUiLink %}
+        {% url 'MyFile:Index' as url %}
+        {% UiNavItem href=url %}
+          {% trans "File" %}
+        {% endUiNavItem %}
+      {% endSlot %}
+    {% endUiNavItem %}
 
-  {% UiLink %}
-    {% trans "Front Page" %}
+    {% UiNavItem %}
+      {% trans "Front Page" %}
 
-    {% Slot 'submenu' %}
-      {% url 'MySlide:Index' as url %}
-      {% UiLink href=url %}
-        {% trans "Slide" %}
-      {% endUiLink %}
-    
-      {% url 'FrontContent:Index' as url %}
-      {% UiLink href=url %}
-        {% trans "Featured" %}
-      {% endUiLink %}
-    {% endSlot %}
-  {% endUiLink %}
+      {% Slot 'submenu' %}
+        {% url 'MySlide:Index' as url %}
+        {% UiNavItem href=url %}
+          {% trans "Slide" %}
+        {% endUiNavItem %}
+      
+        {% url 'FrontContent:Index' as url %}
+        {% UiNavItem href=url %}
+          {% trans "Featured" %}
+        {% endUiNavItem %}
+      {% endSlot %}
+    {% endUiNavItem %}
+  {% endUiNavSection %}
 {% endblock %}
 
 

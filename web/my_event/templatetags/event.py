@@ -1,3 +1,5 @@
+"""Django templatetags for working with events
+"""
 from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
@@ -9,6 +11,8 @@ register = template.Library()
 
 @register.simple_tag
 def webevent(pk, alt=None):
+    """Embed event as hyperlink in the templates
+    """
     obj_id = int(pk)
     try:
         obj = Event.objects.get(pk=obj_id)
@@ -16,7 +20,7 @@ def webevent(pk, alt=None):
         obj = None
 
     if obj is None or obj.published_at is None or obj.deleted_at is not None:
-        return ':webevent:`%s`' % pk
+        return f':webevent:`{pk}`'
 
     url = obj.get_absolute_url()
     if alt:

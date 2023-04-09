@@ -1,3 +1,5 @@
+"""Django models for working with slideshows
+"""
 from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.db import models
@@ -15,6 +17,8 @@ AVAILABLE_SLIDES = (
         )
 
 class MySlide(DirtyFieldsMixin, MultilingualMixin, RulesModel):
+    """Model for slide
+    """
     REQUIRED_TRANSLATED_FIELDS = ('description',)
 
     location = models.CharField(verbose_name=_("Location"), max_length=12,
@@ -33,12 +37,12 @@ class MySlide(DirtyFieldsMixin, MultilingualMixin, RulesModel):
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL,
             on_delete=models.PROTECT, db_index=True,
             related_name='created_slides')
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True,
+            editable=False)
     modified_at = models.DateTimeField(auto_now=True, editable=False)
 
 
     class Meta:
-
         get_latest_by = 'created_at'
         ordering = ['-created_at']
         rules_permissions = {

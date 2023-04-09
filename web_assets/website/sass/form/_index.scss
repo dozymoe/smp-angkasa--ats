@@ -1,0 +1,28 @@
+.bx--text-area
+{
+    font-family: monospace;
+}
+
+.form-errors
+{
+    font-size: 0.8em;
+    margin-left: 1em;
+    padding-left: 0;
+}
+
+.form-group
+{
+    margin: 1rem 0;
+}
+
+.input-button-pairing
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    > button
+    {
+        margin-top: auto;
+        margin-left: 4px;
+    }
+}

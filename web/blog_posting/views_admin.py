@@ -1,3 +1,5 @@
+"""Django views for managing blog postings
+"""
 import logging
 #-
 from django.contrib.auth.decorators import login_required
@@ -16,6 +18,8 @@ _logger = logging.getLogger(__name__)
 
 @method_decorator(login_required, name='dispatch')
 class List(ListView):
+    """List all blog posts
+    """
     model = BlogPosting
     paginate_by = 10
 
@@ -25,6 +29,8 @@ class List(ListView):
 
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
+    """Create new blog post
+    """
     model = BlogPosting
     form_class = BlogPostingForm
     template_name_suffix = '_create_form'
@@ -40,12 +46,16 @@ class Create(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class Display(DetailView):
+    """Show blog post to visitors
+    """
     model = BlogPosting
     template_name_suffix = '_detail-admin'
 
 
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
+    """Edit blog post
+    """
     model = BlogPosting
     form_class = BlogPostingForm
 
@@ -55,6 +65,8 @@ class Edit(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Publish(AutoPermissionRequiredMixin, UpdateView):
+    """Publish a blog post
+    """
     model = BlogPosting
     fields = []
     template_name_suffix = '_confirm_publish'
@@ -70,6 +82,8 @@ class Publish(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Unpublish(AutoPermissionRequiredMixin, UpdateView):
+    """Cancel published blog post
+    """
     model = BlogPosting
     fields = []
     template_name_suffix = '_confirm_unpublish'
@@ -85,6 +99,8 @@ class Unpublish(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Destroy(AutoPermissionRequiredMixin, DeleteView):
+    """Delete blog post
+    """
     model = BlogPosting
 
     def get_success_url(self):

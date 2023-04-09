@@ -1,9 +1,13 @@
+"""Django signal handlers, see apps.py
+"""
 from django.conf import settings
 from django.utils import translation
 #-
 from website.tasks import hosts_freeze_view
 
-def post_updated(sender, instance, **kwargs):
+def page_updated(sender, instance, **kwargs):
+    """On web page change, rebuild static files
+    """
     dirty = instance.get_dirty_fields()
 
     if instance.is_published() or 'published_at' in dirty or\
@@ -21,7 +25,9 @@ def post_updated(sender, instance, **kwargs):
                         slug=instance.slug, format='html')
 
 
-def post_deleted(sender, instance, **kwargs):
+def page_deleted(sender, instance, **kwargs):
+    """On web page delete, update home page static file
+    """
     if instance.is_published():
         for langcode, _ in settings.LANGUAGES:
             hosts_freeze_view('website.views.Home', langcode=langcode,

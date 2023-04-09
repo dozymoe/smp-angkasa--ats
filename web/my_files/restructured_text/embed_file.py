@@ -1,3 +1,5 @@
+"""reStructuredText directives for working with files
+"""
 import logging
 import re
 #-
@@ -16,6 +18,8 @@ INLINE_PATTERN = re.compile(r'^(?P<text>.+)\s*<(?P<pk>\d+)>$')
 
 
 def parse_embed_file(obj_id, options, block_text=None):
+    """Format file object as image or hyperlink
+    """
     try:
         obj = MyFile.objects.get(pk=obj_id)
     except MyFile.DoesNotExist:
@@ -53,7 +57,8 @@ def parse_embed_file(obj_id, options, block_text=None):
 
 
 class EmbedFileDirective(Directive):
-
+    """Embed file object as a section of its own
+    """
     required_arguments = 1
     optional_arguments = 0
     final_argument_whitespace = True
@@ -84,7 +89,8 @@ class EmbedFileDirective(Directive):
             pk = int(self.arguments[0])
         except ValueError:
             msg = self.state_machine.reporter.error(
-                    _("%s is not a number.") % pk, line=self.lineno)
+                    _("%s is not a number.") % self.arguments[0],
+                    line=self.lineno)
             return [msg]
 
         _nodes = parse_embed_file(pk, self.options, self.block_text)
@@ -102,6 +108,8 @@ class EmbedFileDirective(Directive):
 
 def embed_file_role(role, rawtext, text, lineno, inliner, options=None,
         content=None):
+    """Embed file object inline with text
+    """
     if options is None:
         options = {}
 

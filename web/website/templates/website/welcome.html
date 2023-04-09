@@ -6,87 +6,83 @@
 
 
 {% block content %}
-  {% Grid %}
-    {% Row %}
-      {% Col lg=8 %}
-        {% Grid class="ph-0" %}
-          {% Row %}
-            {% Col lg=12 %}
-              <h2>{% trans "Latest News" %}</h2>
-            {% endCol %}
-          {% endRow %}
-          {% Row tag="ul" class="front-blog-posts" %}
-            {% for obj in blogposts %}
-              {% Col lg=6 tag="li" role="article" %}
-                {% if obj.image %}
-                  <img src="{{obj.get_image_url}}"
-                      srcset="{{obj.get_html_attr_srcset}}"
-                      sizes="{{obj.get_html_attr_sizes}}"
-                      class="img-responsive">
-                {% endif %}
-                <h3>{{obj}}</h3>
-                <p>
-                  {% trans "Posted on" %}
-                  <time datetime="{{ obj.published_at }}">
-                    {{ obj.published_at | date:'j F' }}
-                  </time>.
-                </p>
-                {{ obj.summary | restify }}
-                <footer>
-                  <a href="{{obj.get_absolute_url}}">
-                    {% trans "Read more" %}
-                  </a>
-                </footer>
-              {% endCol %}
-            {% endfor %}
-          {% endRow %}
-        {% endGrid %}
-      {% endCol %}
+  {% if events %}
+    <div class="front-events">
+      {% Grid full_width=True %}
+        {% Row %}
+          {% Col sm=4 md=8 class="front-section-header" %}
+            <h2>{% trans "Upcoming Events" %}</h2>
+          {% endCol %}
 
-      {% Col lg=4 %}
-        {% Grid class="ph-0" %}
-          {% Row %}
-            {% Col lg=12 %}
-              <h2>{% trans "Events" %}</h2>
-            {% endCol %}
-          {% endRow %}
-          {% Row tag="ul" class="font-events" %}
-            {% for obj in events %}
-              {% Col lg=6 tag="li" role="article" %}
-                <h3>{{obj.title}}</h3>
-                <p>
-                  {% trans "Started at" %}
-                  <time datetime="{{obj.started_at}}">
-                    {{ obj.started_at | date:'j F' }}
-                  </time>
+          {% Col sm=4 md=8 %}
+            {% Row astag="ul" %}
+              {% for obj in events %}
+                {% Col sm=4 md=4 xlg=4 astag="li" role="article" %}
+                  <strong>
+                    <time datetime="{{obj.started_at}}">
+                      {{ obj.started_at | date:'j F H:i' }}
+                    </time>
+                  </strong>
                   {% if obj.stopped_at %}
-                    <br/>
-                    {% trans "Stopped at" %}
+                    -
                     <time datetime="{{obj.stopped_at}}">
-                      {{ obj.stopped_at | date:'j F' }}
+                      {{ obj.stopped_at | date:'j F H:i' }}
                     </time>
                   {% endif %}
-                </p>
-                {{ obj.summary | restify }}
-                <footer>
+                  <strong>{{obj.started_at | date:'Y'}}</strong>
+                  <hr>
                   <a href="{{obj.get_absolute_url}}">
-                    {% trans "Read more" %}
+                    <h3>{{obj.title}}</h3>
                   </a>
-                </footer>
-              {% endCol %}
-            {% endfor %}
-          {% endRow %}
-        {% endGrid %}
-      {% endCol %}
-    {% endRow %}
-  {% endGrid %}
+                  {{ obj.summary | restify }}
+                {% endCol %}
+              {% endfor %}
+            {% endRow %}
+          {% endCol %}
+        {% endRow %}
+      {% endGrid %}
+    </div>
+  {% endif %}
+
+  {% if blogposts %}
+    <div class="front-blog-posts">
+      {% Grid full_width=True %}
+        {% Row %}
+          {% Col sm=4 md=8 lg=4 xlg=3 class="front-section-header" %}
+            <h2>{% trans "Recent News" %}</h2>
+          {% endCol %}
+          {% Col sm=4 md=8 lg=8 xlg=6 %}
+            {% Row astag="ul" %}
+              {% for obj in blogposts %}
+                {% Col sm=4 md=4 astag="li" role="article" %}
+                  {% if obj.image %}
+                    <img src="{{obj.image.get_absolute_url}}"
+                        srcset="{{obj.image.get_html_attr_srcset}}"
+                        sizes="{{obj.image.get_html_attr_sizes}}"
+                        class="img-responsive">
+                  {% endif %}
+                  <a href="{{obj.get_absolute_url}}" class="front-blog-summary">
+                    <div>
+                      <h3>{{obj}}</h3>
+                      <div class="front-blog-summary-pop">
+                        {{ obj.summary | restify }}
+                      </div>
+                    </div>
+                  </a>
+                {% endCol %}
+              {% endfor %}
+            {% endRow %}
+          {% endCol %}
+        {% endRow %}
+      {% endGrid %}
+    </div>
+  {% endif %}
 {% endblock %}
 
 
 {% block banner %}
   {% if slides %}
-    <div class="carousel"
-        data-flickity='{"lazyLoad":true, "autoPlay":true, "fade":true}'>
+    <div class="carousel" data-flickity='{"lazyLoad":true, "autoPlay":true, "fade":true}'>
       {% for slide in slides %}
         <div class="carousel-cell">
           <img data-flickity-lazyload="{{slide.image.get_absolute_url}}"

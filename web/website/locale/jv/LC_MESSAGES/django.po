@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2023-04-08 15:11+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,43 +25,43 @@ msgstr ""
 msgid "Server Error"
 msgstr ""
 
-#: website/templates/base-admin.html:7
+#: website/templates/base-admin.html:8
 msgid "Content"
 msgstr ""
 
-#: website/templates/base-admin.html:12
+#: website/templates/base-admin.html:13
 msgid "Page"
 msgstr ""
 
-#: website/templates/base-admin.html:17
+#: website/templates/base-admin.html:18
 msgid "Article"
 msgstr ""
 
-#: website/templates/base-admin.html:22
+#: website/templates/base-admin.html:23
 msgid "Event"
 msgstr ""
 
-#: website/templates/base-admin.html:27
+#: website/templates/base-admin.html:28
 msgid "File"
 msgstr ""
 
-#: website/templates/base-admin.html:33
+#: website/templates/base-admin.html:34
 msgid "Front Page"
 msgstr ""
 
-#: website/templates/base-admin.html:38
+#: website/templates/base-admin.html:39
 msgid "Slide"
 msgstr ""
 
-#: website/templates/base-admin.html:43
+#: website/templates/base-admin.html:44
 msgid "Featured"
 msgstr ""
 
-#: website/templates/base-admin.html:55
+#: website/templates/base-admin.html:57
 msgid "Sign Out"
 msgstr ""
 
-#: website/templates/base-admin.html:60
+#: website/templates/base-admin.html:62
 msgid "Sign In"
 msgstr ""
 
@@ -129,27 +129,10 @@ msgstr ""
 msgid "Implicit hyperlink targets"
 msgstr ""
 
-#: website/templates/website/welcome.html:15
-msgid "Latest News"
+#: website/templates/website/welcome.html:14
+msgid "Upcoming Events"
 msgstr ""
 
-#: website/templates/website/welcome.html:29
-msgid "Posted on"
-msgstr ""
-
-#: website/templates/website/welcome.html:37
-#: website/templates/website/welcome.html:73
-msgid "Read more"
-msgstr ""
-
-#: website/templates/website/welcome.html:50
-msgid "Events"
-msgstr ""
-
-#: website/templates/website/welcome.html:58
-msgid "Started at"
-msgstr ""
-
-#: website/templates/website/welcome.html:64
-msgid "Stopped at"
+#: website/templates/website/welcome.html:52
+msgid "Recent News"
 msgstr ""

@@ -1,4 +1,5 @@
-#pylint:disable=wrong-import-position,unused-import
+"""Uwsgi task workers entry point
+"""
 from uwsgi_tasks import django_setup, set_uwsgi_callbacks
 
 set_uwsgi_callbacks()

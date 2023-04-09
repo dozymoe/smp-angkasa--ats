@@ -31,7 +31,7 @@ Next paragraph
 
       {% Slot 'toolbar_actions' %}
         {% url 'MyFile:Create' as url %}
-        {% Button tag="a" href=url icon_size=32 %}
+        {% Button astag="a" href=url icon_size=32 %}
           {% Slot 'icon' %}
             {% svg 'carbon/32/add.svg' %}
           {% endSlot %}
@@ -74,7 +74,7 @@ Next paragraph
           {% endTd %}
 
           {% Td mode="menu" %}
-            {% TdOvButton tag="a" href=obj.databits.url target="_blank" %}
+            {% TdOvButton astag="a" href=obj.databits.url target="_blank" %}
               {% Slot 'icon' %}
                 {% svg 'carbon/32/download.svg' %}
               {% endSlot %}
@@ -82,7 +82,7 @@ Next paragraph
             {% endTdOvButton %}
 
             {% url 'MyFile:Update' obj.pk as url %}
-            {% TdOvButton tag="a" href=url %}
+            {% TdOvButton astag="a" href=url %}
               {% Slot 'icon' %}
                 {% svg 'carbon/32/edit.svg' %}
               {% endSlot %}
@@ -90,7 +90,7 @@ Next paragraph
             {% endTdOvButton %}
   
             {% url 'MyFile:Destroy' obj.pk as url %}
-            {% TdOvButton tag="a" href=url %}
+            {% TdOvButton astag="a" href=url %}
               {% Slot 'icon' %}
                 {% svg 'carbon/32/trash-can.svg' %}
               {% endSlot %}

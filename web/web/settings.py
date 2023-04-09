@@ -18,7 +18,7 @@ from misc import configuration
 from misc.django_configuration import django_conf_adapter
 
 # Setup config
-_config = {} # pylint:disable=invalid-name
+_config = {}
 configuration.load_files_from_shell(_config, adapter=django_conf_adapter)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,6 +34,7 @@ SECRET_KEY = _config['application.secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = _config.get('application.debug', False)
+TESTING = False
 
 ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
 
@@ -196,6 +197,8 @@ USE_L10N = True
 USE_TZ = True
 TIME_ZONE = 'Asia/Jakarta'
 
+TIME_INPUT_FORMATS = ('%H:%M',)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -281,4 +284,4 @@ IMAGE_SIZES = (
 )
 
 
-_config = None # pylint:disable=invalid-name
+_config = None

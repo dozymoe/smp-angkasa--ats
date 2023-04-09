@@ -8,9 +8,9 @@
 {% block content %}
   {% if object.image %}
     <div class="form-group">
-      <img src="{{object.get_image_url}}"
-          srcset="{{object.get_html_attr_srcset}}"
-          sizes="{{object.get_html_attr_sizes}}"
+      <img src="{{object.image.get_absolute_url}}"
+          srcset="{{object.image.get_html_attr_srcset}}"
+          sizes="{{object.image.get_html_attr_sizes}}"
           class="img-responsive">
     </div>
   {% endif %}

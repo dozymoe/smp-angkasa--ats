@@ -1,21 +1,14 @@
+"""Django signal handlers, see apps.py
+"""
 from django.conf import settings
 from django.utils import translation
 #-
-from website.tasks import create_thumbnail, hosts_freeze_view
+from website.tasks import hosts_freeze_view
 
-def post_updated(sender, instance, **kwargs):
+def blog_updated(sender, instance, **kwargs):
+    """On blog post change, rebuild static files and low resolution images
+    """
     dirty = instance.get_dirty_fields()
-
-    # Ignore thumbnail images.
-    for name, _, _ in settings.IMAGE_SIZES:
-        if 'image_' + name in dirty:
-            return
-
-    if 'image' in dirty and bool(instance.image):
-        for name, size, _ in settings.IMAGE_SIZES:
-            create_thumbnail(
-                    ('blog_posting', 'BlogPosting', instance.pk),
-                    'image', 'image_' + name, size)
 
     if instance.is_published() or 'published_at' in dirty or\
             'deleted_at' in dirty:
@@ -32,7 +25,9 @@ def post_updated(sender, instance, **kwargs):
                         langcode=langcode, slug=instance.slug, format='html')
 
 
-def post_deleted(sender, instance, **kwargs):
+def blog_deleted(sender, instance, **kwargs):
+    """On blog post delete, update home page static file
+    """
     if instance.is_published():
         for langcode, _ in settings.LANGUAGES:
             hosts_freeze_view('website.views.Home', langcode=langcode,

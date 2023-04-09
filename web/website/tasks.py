@@ -1,3 +1,5 @@
+"""Uwsgi task jobs for website data
+"""
 from io import BytesIO
 import logging
 import os
@@ -20,17 +22,23 @@ _logger = logging.getLogger()
 
 @task(executor=TaskExecutor.SPOOLER)
 def freeze_view(view_name, base_url, langcode=None, dest=None, **kwargs):
+    """Create static html files cache from Django view
+    """
     generate_static_view(view_name, frozen_host=base_url, frozen_dest=dest,
             langcode=langcode, **kwargs)
 
 
 def hosts_freeze_view(view_name, langcode=None, dest=None, **kwargs):
+    """Generate static html files cache for Django view, by hostnames
+    """
     host = settings.ALLOWED_HOSTS[0]
     freeze_view(view_name, base_url=host, langcode=langcode, dest=dest,
             **kwargs)
 
 
 def freeze_all_views():
+    """Recreate all of the static files cache
+    """
     for langcode, _ in settings.LANGUAGES:
         hosts_freeze_view('website.views.Home', langcode=langcode,
                 format='html')
@@ -70,24 +78,26 @@ def freeze_all_views():
 
 @task(executor=TaskExecutor.SPOOLER)
 def create_thumbnail(obj_info, source_field, target_field, estimate_size):
+    """Create low resolution images for image fields
+    """
     model = apps.get_model(obj_info[0], obj_info[1])
     obj = model.objects.get(pk=obj_info[2])
 
     source = getattr(obj, source_field)
-    im = Image.open(source)
-    im.load()
+    img = Image.open(source)
+    img.load()
 
-    if im.size[0] <= estimate_size[0] and im.size[1] <= estimate_size[1]:
+    if img.size[0] <= estimate_size[0] and img.size[1] <= estimate_size[1]:
         setattr(obj, target_field, None)
     else:
-        im.thumbnail(estimate_size, Image.ANTIALIAS)
-        io = BytesIO()
-        im.save(io, im.format)
+        img.thumbnail(estimate_size, Image.ANTIALIAS)
+        temp_io = BytesIO()
+        img.save(temp_io, img.format)
 
         target = getattr(obj, target_field)
-        target.save(os.path.basename(source.name), ContentFile(io.getvalue()),
-                save=False)
+        target.save(os.path.basename(source.name),
+                ContentFile(temp_io.getvalue()), save=False)
         # Don't close the image
-        #im.close()
+        #img.close()
 
     obj.save(update_fields=[target_field])

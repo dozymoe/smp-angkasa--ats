@@ -1,3 +1,5 @@
+"""Django views for miscellaneous pages
+"""
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -8,8 +10,9 @@ from my_event.models import Event
 from my_front_content.models import FrontContent
 from my_slide.models import MySlide
 
-
 class Home(TemplateView):
+    """Show home page to visitors
+    """
     template_name = 'website/welcome.html'
 
     def get_context_data(self, **kwargs):
@@ -20,7 +23,8 @@ class Home(TemplateView):
                 .filter(
                     published_at__isnull=False,
                     deleted_at__isnull=True)\
-                .all()[:10]
+                .order_by('-published_at')\
+                .all()[:4]
         context['events'] = Event.objects\
                 .filter(
                     published_at__isnull=False,
@@ -39,8 +43,12 @@ class Home(TemplateView):
 
 
 class EditorHelpText(TemplateView):
+    """Show the editor help text
+    """
     template_name = 'website/editor-helptext.html'
 
 
 def home(request):
+    """Redirect from non multilingual home page
+    """
     return redirect(reverse('HomeLang', args=('html',)))

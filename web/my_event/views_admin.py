@@ -1,3 +1,5 @@
+"""Django views for managing events
+"""
 import logging
 #-
 from django.contrib.auth.decorators import login_required
@@ -16,6 +18,8 @@ _logger = logging.getLogger(__name__)
 
 @method_decorator(login_required, name='dispatch')
 class List(ListView):
+    """List all events
+    """
     model = Event
     paginate_by = 10
 
@@ -25,6 +29,8 @@ class List(ListView):
 
 @method_decorator(login_required, name='dispatch')
 class Create(CreateView):
+    """Create new event
+    """
     model = Event
     form_class = EventForm
     template_name_suffix = '_create_form'
@@ -40,12 +46,16 @@ class Create(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class Display(DetailView):
+    """Show event to visitors
+    """
     model = Event
     template_name_suffix = '_detail-admin'
 
 
 @method_decorator(login_required, name='dispatch')
 class Edit(AutoPermissionRequiredMixin, UpdateView):
+    """Edit event
+    """
     model = Event
     form_class = EventForm
 
@@ -55,6 +65,8 @@ class Edit(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Publish(AutoPermissionRequiredMixin, UpdateView):
+    """Publish event
+    """
     model = Event
     fields = []
     template_name_suffix = '_confirm_publish'
@@ -70,6 +82,8 @@ class Publish(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Unpublish(AutoPermissionRequiredMixin, UpdateView):
+    """Cancel a published event
+    """
     model = Event
     fields = []
     template_name_suffix = '_confirm_unpublish'
@@ -85,6 +99,8 @@ class Unpublish(AutoPermissionRequiredMixin, UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class Destroy(AutoPermissionRequiredMixin, DeleteView):
+    """Delete event
+    """
     model = Event
 
     def get_success_url(self):

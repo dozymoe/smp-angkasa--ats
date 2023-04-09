@@ -1,3 +1,5 @@
+"""Django model mixins for multilingual models
+"""
 import logging
 #-
 from django.conf import settings
@@ -8,10 +10,16 @@ _logger = logging.getLogger(__name__)
 
 
 class MultilingualMixin:
+    """Multilingual model mixin
+    """
     REQUIRED_TRANSLATED_FIELDS = ()
     _is_valid_for_language = None
 
     def valid_language(self, current=None):
+        """Check for current language, if all required fields have been filled
+
+        If not then show fallback language.
+        """
         if current is None:
             current = translation.get_language()
         if current == settings.LANGUAGE_CODE:
@@ -33,6 +41,8 @@ class MultilingualMixin:
 
 
     def save(self, update_fields=None, **kwargs):
+        """Update instance's cache _is_valid_for_language on save
+        """
         if self._is_valid_for_language:
             dirty = set(self.get_dirty_fields().keys())
             if update_fields is not None:
@@ -51,6 +61,10 @@ class MultilingualMixin:
 
 
 def attrgetter(name, field):
+    """Python decorator that retrieves multilingual field
+    """
     def getter(self):
+        """Get the field (multilingual) for current language
+        """
         return getattr(self, to_attribute(name, self.valid_language()))
     return getter
