@@ -71,14 +71,16 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 ]
 STATICI18N_PACKAGES = [
-    'carbondesign',
     'blog_posting',
-    'my_user',
+    'carbondesign',
+    'my_event',
     'my_files',
+    'my_front_content',
+    'my_slide',
+    'my_user',
     'thing_keyword',
     'website',
     'web_page',
-    'my_slide',
 ]
 
 MIDDLEWARE = [

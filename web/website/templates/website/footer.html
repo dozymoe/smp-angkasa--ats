@@ -4,48 +4,43 @@
 <footer>
   {% Grid %}
     {% Row %}
-      {% Col md=4 lg=4 %}
-        <p>
-          <a href="tel:+622517536254" aria-label="Telephone"
-              title="Telephone" class="contact-info">
-            <span class="fa fa-phone"></span>
-            (0251) 7536253
-          </a>
+      {% Col md=4 lg=8 class="section" %}
+        <p class="footer-address-header">
+          <strong>SMP ANGKASA</strong>
         </p>
-        <p>
-          <a href="mailto:smpangkasabogor@gmail.com" aria-label="E-Mail"
-              title="E-Mail" class="contact-info">
-            <span class="fa fa-envelope"></span>
-            smpangkasabogor@gmail.com
-          </a>
-        </p>
-        <p>
-          <span>Media  Sosial:</span>
-          <a href="https://facebook.com" aria-label="Facebook" title="Facebook"
-              class="mdc-icon-button">
-            <span class="fab fa-facebook"></span>
-          </a>
-          <a href="https://www.instagram.com/smpangkasaatsbogor/"
-              aria-label="Instagram" title="Instagram" class="mdc-icon-button">
-            <span class="fab fa-instagram"></span>
-          </a>
-          <a href="https://www.youtube.com/channel/UCrSbpjJ5YlQBNRcMe_8M9Ig"
-              aria-label="YouTube" title="YouTube" class="mdc-icon-button">
-            <span class="fab fa-youtube"></span>
-          </a>
-        </p>
-      {% endCol %}
-
-      {% Col md=4 lg=4 %}
-        <p>SMP ANGKASA</p>
         <p>
           Jalan Raya Semplak Lanud Atang Sendjaja<br>
           Kecamatan Kemang Kabupaten Bogor<br>
           Provinsi Jawa Barat 16310
         </p>
+        <p class="footer-social-media">
+          <a href="tel:+622517536254" title="Telephone" class="contact-info">
+            <span class="icon fa fa-phone"></span>
+            <span class="bx--visually-hidden">(0251) 7536253</span>
+          </a>
+          <a href="mailto:smpangkasabogor@gmail.com" title="E-Mail"
+              class="contact-info">
+            <span class="icon fa fa-envelope"></span>
+            <span class="bx--visually-hidden">smpangkasabogor@gmail.com</span>
+          </a>
+          <a href="https://facebook.com" title="Facebook">
+            <span class="icon fab fa-facebook"></span>
+            <span class="bx--visually-hidden">Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/smpangkasaatsbogor/"
+             title="Instagram">
+            <span class="icon fab fa-instagram"></span>
+            <span class="bx--visually-hidden">Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/channel/UCrSbpjJ5YlQBNRcMe_8M9Ig"
+              title="YouTube">
+            <span class="icon fab fa-youtube"></span>
+            <span class="bx--visually-hidden">Youtube</span>
+          </a>
+        </p>
       {% endCol %}
 
-      {% Col md=8 lg=4 %}
+      {% Col md=4 lg=4 class="section" %}
         <p>
           {% webpage 1 "Penerimaan Peserta Didik Baru (PPDB)" %}
         </p>
