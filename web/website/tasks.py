@@ -24,7 +24,6 @@ _logger = logging.getLogger()
 def freeze_view(view_name, host, langcode=None, dest=None, **kwargs):
     """Create static html files cache from Django view
     """
-    _logger.error("website.tasks.feeze_view")
     is_admin = host == settings.ALLOWED_HOSTS[0]
     urlconf = 'web.urls_admin' if is_admin else 'web.urls'
     generate_static_view(view_name, frozen_host=host, frozen_dest=dest,
@@ -34,9 +33,7 @@ def freeze_view(view_name, host, langcode=None, dest=None, **kwargs):
 def hosts_freeze_view(view_name, langcode=None, **kwargs):
     """Generate static html files cache for Django view, by hostnames
     """
-    _logger.error(settings.FROZEN_ROOT)
     for host, dest in settings.FROZEN_ROOT.items():
-        _logger.error("website.tasks.hosts_feeze_view %s", host)
         freeze_view(view_name, host=host, langcode=langcode,
                 dest=settings.ROOT_DIR / dest, **kwargs)
 
@@ -44,7 +41,6 @@ def hosts_freeze_view(view_name, langcode=None, **kwargs):
 def freeze_all_views():
     """Recreate all of the static files cache
     """
-    _logger.error("website.tasks.feeze_all_view")
     for langcode, _ in settings.LANGUAGES:
         hosts_freeze_view('website.views.Home', langcode=langcode,
                 format='html')
