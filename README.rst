@@ -2,6 +2,10 @@
 Middle School Website Project
 -----------------------------
 
+This is an open source project for the school website
+https://www.smp-angkasa-ats.sch.id
+
+
 Quickstart
 ----------
 
