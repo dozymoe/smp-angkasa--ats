@@ -6,18 +6,24 @@
 
 
 {% block content %}
-  {% if object.image %}
-    <div>
-      <img src="{{object.image.get_absolute_url}}"
-          srcset="{{object.image.get_html_attr_srcset}}"
-          sizes="{{object.image.get_html_attr_sizes}}"
-          class="img-responsive">
-    </div>
-  {% endif %}
-  <h1>{{object.title}}</h1>
-  <div>
-    {{object.body | restify}}
-  </div>
+  {% Grid %}
+    {% Row %}
+      {% Col md=8 lg=2 xlg=3 %}{% endCol %}
+      {% Col md=8 lg=8 xlg=6 %}
+        {% if object.image %}
+          <div>
+            <img src="{{object.image.get_absolute_url}}"
+                srcset="{{object.image.get_html_attr_srcset}}"
+                sizes="{{object.image.get_html_attr_sizes}}"
+                class="img-responsive">
+          </div>
+        {% endif %}
+        <div>
+          {{object.body | restify}}
+        </div>
+      {% endCol %}
+    {% endRow %}
+  {% endGrid %}
 {% endblock %}
 
 

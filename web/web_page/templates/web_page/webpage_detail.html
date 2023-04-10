@@ -6,7 +6,14 @@
 
 
 {% block content %}
-  {{ object.body | restify }}
+  {% Grid %}
+    {% Row %}
+      {% Col md=8 lg=2 xlg=3 %}{% endCol %}
+      {% Col md=8 lg=8 xlg=6 %}
+        {{ object.body | restify }}
+      {% endCol %}
+    {% endRow %}
+  {% endGrid %}
 {% endblock %}
 
 

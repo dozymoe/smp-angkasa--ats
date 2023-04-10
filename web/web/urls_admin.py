@@ -23,6 +23,8 @@ from django.utils.translation import gettext_lazy as _
 from website import views, views_admin
 
 urlpatterns = [
+    path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
+            name='EditorHelpText'),
     path('account/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('api/render-html', views_admin.ReSTPreview.as_view()),
@@ -39,8 +41,6 @@ urlpatterns = [
     path('slides/', include('my_slide.urls_admin', namespace='MySlide')),
     path('front-contents/', include('my_front_content.urls_admin',
             namespace='FrontContent')),
-    path('admin/editor-helptext.<str:format>', views.EditorHelpText.as_view(),
-            name='EditorHelpText'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

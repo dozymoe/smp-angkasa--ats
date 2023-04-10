@@ -25,9 +25,8 @@ def parse_embed_file(obj_id, options, block_text=None):
     except MyFile.DoesNotExist:
         return []
 
+    options['uri'] = obj.get_absolute_url()
     if obj.mimetype.startswith('image/'):
-        options['uri'] = reverse('MyFile:Display', args=(obj_id, 'lg'))
-
         if 'alt' in options:
             pass
         elif obj.alt_text:
@@ -36,16 +35,15 @@ def parse_embed_file(obj_id, options, block_text=None):
             options['alt'] = obj.description
         options['srcset'] = obj.get_html_attr_srcset()
         options['sizes'] = obj.get_html_attr_sizes()
+        options['class'] = ['img-responsive']
         fn = nodes.image
     elif obj.mimetype.startswith('video/'):
-        options['uri'] = reverse('MyFile:Display', args=(obj_id,))
         options['type'] = obj.mimetype
         if not 'alt' in options:
             options['alt'] = obj.description
         options['class'] = ['w-100']
         fn = video
     else:
-        options['uri'] = reverse('MyFile:Display', args=(obj_id,))
         options['target'] = '_blank'
         if not 'alt' in options:
             options['alt'] = obj.description

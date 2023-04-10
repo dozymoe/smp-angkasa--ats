@@ -10,7 +10,7 @@ from .models import BlogPosting
 class BlogPostingForm(forms.ModelForm):
     """Form definition for blog post model
     """
-    image_label = forms.CharField()
+    image_label = forms.CharField(required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

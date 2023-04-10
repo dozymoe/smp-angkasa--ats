@@ -58,7 +58,7 @@ class BlogPosting(DirtyFieldsMixin, MultilingualMixin, RulesModel):
             attrgetter=attrgetter)
 
     image = models.ForeignKey(MyFile, verbose_name=_("Image"),
-            on_delete=models.CASCADE, null=True)
+            on_delete=models.CASCADE, null=True, blank=True)
 
     published_at = models.DateTimeField(verbose_name=_("Publish Date"),
             db_index=True, null=True, blank=True)
