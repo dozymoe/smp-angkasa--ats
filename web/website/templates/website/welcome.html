@@ -1,6 +1,6 @@
 {% extends "base-anon.html" %}
 {% load i18n %}
-{% load carbondesign website %}
+{% load carbondesign my_files website %}
 
 {% block body_classes %}front-page{% endblock %}
 
@@ -85,10 +85,7 @@
     <div class="carousel" data-flickity='{"lazyLoad":true, "autoPlay":true, "fade":true}'>
       {% for slide in slides %}
         <div class="carousel-cell">
-          <img data-flickity-lazyload="{{slide.image.get_absolute_url}}"
-              srcset="{{slide.image.get_html_attr_srcset}}"
-              sizes="{{slide.image.get_html_attr_sizes}}"
-              alt="{{slide.image.alt_text}}" />
+          {% webfile slide.image theme="minimal" %}
           {% if slide.description %}
             <div class="text-overlay">
               {{slide.description | restify}}

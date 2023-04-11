@@ -50,8 +50,8 @@ body.front-page .carousel
 
     .carousel-cell
     {
-        max-height: 400px;
-        max-height: 50vh;
+        height: 400px;
+        height: 50vh;
         overflow: hidden;
         width: 100%;
 
@@ -59,9 +59,15 @@ body.front-page .carousel
         //align-items: center;
         justify-content: center;
 
-        > img
+        picture
+        {
+            width: 100%;
+        }
+
+        img
         {
             height: 400px;
+            height: 50vh;
             object-fit: cover;
             width: 100%;
         }

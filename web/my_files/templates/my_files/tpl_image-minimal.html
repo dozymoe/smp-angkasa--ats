@@ -1,0 +1,7 @@
+{% load website %}
+<picture>
+  {% for media, vw in items %}
+    <source media="(min-width: {{vw}}rem)" srcset="{{media.url}}">
+  {% endfor %}
+  <img alt="{{object.alt_text}}" src="{{media.url}}" class="img-responsive">
+</picture>

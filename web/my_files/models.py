@@ -120,56 +120,29 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
         return os.path.basename(self.databits.name)
 
 
-    def get_html_attr_srcset(self):
-        """Html attribute srcset for img element (responsive image)
-        """
-        if not self.is_image():
-            return ''
-        attribute_value = []
-        for name, size, _ in settings.IMAGE_SIZES:
-            imgfield = getattr(self, f'image_{name}')
-            if not imgfield:
-                continue
-            attribute_value.append('%s %sw' % ( # pylint:disable=consider-using-f-string
-                    reverse('MyFile:Display', args=(self.pk, name)), size[0]))
-        return ', '.join(attribute_value)
-
-
-    def get_html_attr_sizes(self):
-        """Html attribute sizes for img element (responsive image)
-        """
-        if not self.is_image():
-            return ''
-        attribute_value = []
-        for name, size, viewport_width in settings.IMAGE_SIZES:
-            imgfield = getattr(self, f'image_{name}')
-            if not imgfield:
-                continue
-            if viewport_width:
-                attribute_value.append(
-                        f'(max-width: {viewport_width}px) {size[0]}px')
-            else:
-                attribute_value.append(f'{size[0]}px')
-        return ', '.join(attribute_value)
-
-
     def render(self, theme='default', classlist=None):
         """Render the instance as html
         """
         context = {
             'object': self,
-            'media': self.databits,
+            'media': None,
             'class': classlist,
         }
         if self.is_image():
             obj_type = 'image'
             items = []
-            for name, _t, viewport_width in reversed(settings.IMAGE_SIZES):
+            for name, _t, viewport_width in settings.IMAGE_SIZES:
                 fieldobj = getattr(self, f'image_{name}')
-                if fieldobj:
-                    if viewport_width:
-                        items.append((fieldobj, viewport_width + 1))
+                if not fieldobj:
+                    break
+                if not context['media']:
                     context['media'] = fieldobj
+                else:
+                    items.append((fieldobj, viewport_width + 1))
+            if fieldobj:
+                items.append((self.databits, settings.IMAGE_SIZE_MAX + 1))
+            else:
+                items.append((self.databits, viewport_width + 1))
             context['items'] = items
         elif self.is_video():
             obj_type = 'video'

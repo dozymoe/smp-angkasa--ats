@@ -284,8 +284,8 @@ IMAGE_SIZES = (
     ('md', (1056, 792), 42), # 42rem 672px
     ('lg', (1312, 984), 66), # 66rem 1056px
     ('xlg', (1584, 1188), 82), # 82rem 1312px
-    # max 99rem 1584px
 )
+IMAGE_SIZE_MAX = 99 # 99rem 1584px
 
 
 _config = None

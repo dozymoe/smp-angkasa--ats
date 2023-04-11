@@ -32495,15 +32495,19 @@ body.front-page .carousel {
   margin-top: -2rem;
 }
 body.front-page .carousel .carousel-cell {
-  max-height: 400px;
-  max-height: 50vh;
+  height: 400px;
+  height: 50vh;
   overflow: hidden;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-body.front-page .carousel .carousel-cell > img {
+body.front-page .carousel .carousel-cell picture {
+  width: 100%;
+}
+body.front-page .carousel .carousel-cell img {
   height: 400px;
+  height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
