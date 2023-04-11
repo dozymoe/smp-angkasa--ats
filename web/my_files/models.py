@@ -5,6 +5,7 @@ import os
 from dirtyfields import DirtyFieldsMixin
 from django.conf import settings
 from django.db import models
+from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import rules
@@ -34,14 +35,14 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
             editable=False)
 
     description = TranslatedField(
-            models.TextField(verbose_name=_("Description"), blank=True),
-            {settings.LANGUAGE_CODE: {'blank': False}},
+            models.TextField(verbose_name=_("Description"), null=True,
+                blank=True),
             attrgetter=attrgetter)
     alt_text = TranslatedField(
             models.TextField(verbose_name=_("Alternate Text (alt text)"),
                 null=True, blank=True,
-                help_text=_("Only need to fill this if you were uploading "
-                "an image.")),
+                help_text=_("Textual representation of media or hyperlink text.")), # pylint:disable=line-too-long
+            {settings.LANGUAGE_CODE: {'blank': False}},
             attrgetter=attrgetter)
     databits = models.FileField(verbose_name=_("Content"),
             upload_to='files/original/')
@@ -60,6 +61,8 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
     image_md = models.ImageField(upload_to='files/image_md/', null=True,
             editable=False)
     image_lg = models.ImageField(upload_to='files/image_lg/', null=True,
+            editable=False)
+    image_xlg = models.ImageField(upload_to='files/image_xlg/', null=True,
             editable=False)
 
     objects = MyFileManager()
@@ -85,7 +88,11 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
         """Unique url that represents the model instance
         """
         if self.is_image():
-            return reverse('MyFile:Display', args=(self.pk, 'xs'))
+            for name, _t, _t in settings.IMAGE_SIZES:
+                field = getattr(self, f'image_{name}', None)
+                if not field:
+                    continue
+                return reverse('MyFile:Display', args=(self.pk, name))
         return reverse('MyFile:Display', args=(self.pk,))
 
 
@@ -99,6 +106,12 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
         """Is file object an image
         """
         return self.mimetype.startswith('image/')
+
+
+    def is_video(self):
+        """Is file object a video
+        """
+        return self.mimetype.startswith('video/')
 
 
     def get_filename(self):
@@ -138,3 +151,29 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
             else:
                 attribute_value.append(f'{size[0]}px')
         return ', '.join(attribute_value)
+
+
+    def render(self, theme='default', classlist=None):
+        """Render the instance as html
+        """
+        context = {
+            'object': self,
+            'media': self.databits,
+            'class': classlist,
+        }
+        if self.is_image():
+            obj_type = 'image'
+            items = []
+            for name, _t, viewport_width in reversed(settings.IMAGE_SIZES):
+                fieldobj = getattr(self, f'image_{name}')
+                if fieldobj:
+                    if viewport_width:
+                        items.append((fieldobj, viewport_width + 1))
+                    context['media'] = fieldobj
+            context['items'] = items
+        elif self.is_video():
+            obj_type = 'video'
+        else:
+            obj_type = 'link'
+        return render_to_string(f'my_files/tpl_{obj_type}-{theme}.html',
+                context)

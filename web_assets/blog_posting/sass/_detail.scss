@@ -1,0 +1,41 @@
+.blog-article-full
+{
+    h1
+    {
+        font-weight: bold;
+        margin: 1em 0 0.5em;
+    }
+
+    .blog-image figcaption
+    {
+        margin: 1rem 0;
+
+        p
+        {
+            font-size: 0.8rem;
+        }
+    }
+
+    .blog-meta
+    {
+        margin: 3rem 0 2rem;
+    }
+
+    .blog-meta + .document
+    {
+        p
+        {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin: 1em 0;
+        }
+
+        figure
+        {
+            border: 1px solid lightgray;
+            border-radius: 10px; 
+            margin: 3rem 10px;
+            padding: 1em;
+        }
+    }
+}

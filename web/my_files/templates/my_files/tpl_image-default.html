@@ -1,0 +1,13 @@
+{% load website %}
+<figure id="figure-file-{{object.id}}"{% if class %} class="{{class}}"{% endif %}
+    data-original-media="{{object.databits.url}}">
+  <picture>
+    {% for media, vw in items %}
+      <source media="(min-width: {{vw}}rem)" srcset="{{media.url}}">
+    {% endfor %}
+    <img alt="{{object.alt_text}}" src="{{media.url}}" class="img-responsive">
+  </picture>
+  {% if object.description %}
+    <figcaption>{{object.description | restify}}</figcaption>
+  {% endif %}
+</figure>

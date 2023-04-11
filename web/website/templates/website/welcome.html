@@ -63,9 +63,9 @@
                   {% endif %}
                   <a href="{{obj.get_absolute_url}}" class="front-blog-summary">
                     <div>
-                      <h3>{{obj}}</h3>
+                      <h3>{{obj.title}}</h3>
                       <div class="front-blog-summary-pop">
-                        {{ obj.summary | restify }}
+                        {{obj.summary | restify}}
                       </div>
                     </div>
                   </a>

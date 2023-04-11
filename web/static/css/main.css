@@ -32596,6 +32596,31 @@ body.front-page .featured-content .document {
     max-width: 2em;
   }
 }
+.blog-article-full h1 {
+  font-weight: bold;
+  margin: 1em 0 0.5em;
+}
+.blog-article-full .blog-image figcaption {
+  margin: 1rem 0;
+}
+.blog-article-full .blog-image figcaption p {
+  font-size: 0.8rem;
+}
+.blog-article-full .blog-meta {
+  margin: 3rem 0 2rem;
+}
+.blog-article-full .blog-meta + .document p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 1em 0;
+}
+.blog-article-full .blog-meta + .document figure {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: 3rem 10px;
+  padding: 1em;
+}
+
 .front-events {
   margin: 10em 0;
 }

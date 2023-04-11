@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 12:12+0700\n"
+"POT-Creation-Date: 2023-04-11 14:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: my_files/models.py:31
+#: my_files/models.py:32
 msgid "Title"
 msgstr "Judul"
 
-#: my_files/models.py:33
+#: my_files/models.py:34
 msgid "Mime Type"
 msgstr "Tipe Berkas"
 
-#: my_files/models.py:37 my_files/templates/my_files/myfile_list.html:53
+#: my_files/models.py:38 my_files/templates/my_files/myfile_list.html:53
 msgid "Description"
 msgstr "Keterangan"
 
-#: my_files/models.py:41
+#: my_files/models.py:42
 msgid "Alternate Text (alt text)"
 msgstr "Teks Alternatif (alt text)"
 
-#: my_files/models.py:43
-msgid "Only need to fill this if you were uploading an image."
-msgstr "Hanya diisi bila mengunggah gambar."
+#: my_files/models.py:44
+msgid "Textual representation of media or hyperlink text."
+msgstr ""
 
-#: my_files/models.py:46
+#: my_files/models.py:47
 msgid "Content"
 msgstr "Konten"
 
-#: my_files/restructured_text/embed_file.py:90
-#: my_files/restructured_text/embed_file.py:125
+#: my_files/restructured_text/embed_file.py:62
+#: my_files/restructured_text/embed_file.py:97
 #, python-format
 msgid "%s is not a number."
 msgstr "%s itu bukan angka."
 
-#: my_files/restructured_text/embed_file.py:100
-#: my_files/restructured_text/embed_file.py:130
+#: my_files/restructured_text/embed_file.py:72
+#: my_files/restructured_text/embed_file.py:102
 #, python-format
 msgid "File with id:%s was not found."
 msgstr "Berkas dengan nomor:%s tidak ada."
@@ -160,3 +160,14 @@ msgstr "Unduh"
 #: my_files/templates/my_files/myfile_list.html:89
 msgid "Edit"
 msgstr "Ubah"
+
+#: my_files/templates/my_files/tpl_video-default.html:6
+#, python-format
+msgid ""
+"\n"
+"        Download the file here %(url)s\n"
+"      "
+msgstr ""
+
+#~ msgid "Only need to fill this if you were uploading an image."
+#~ msgstr "Hanya diisi bila mengunggah gambar."

@@ -3,18 +3,16 @@
 import logging
 import re
 #-
-from django.urls import reverse
 from django.utils.translation import gettext as _
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
-from docutils.parsers.rst.roles import set_classes
 #-
-from website.restructured_text.nodes import link, video
+from website.restructured_text.nodes import rawhtml
 from ..models import MyFile
 
 _logger = logging.getLogger(__name__)
 
-INLINE_PATTERN = re.compile(r'^(?P<text>.+)\s*<(?P<pk>\d+)>$')
+INLINE_PATTERN = re.compile(r'^(?P<pk>\d+)\s+(?P<text>.+)$')
 
 
 def parse_embed_file(obj_id, options, block_text=None):
@@ -25,33 +23,7 @@ def parse_embed_file(obj_id, options, block_text=None):
     except MyFile.DoesNotExist:
         return []
 
-    options['uri'] = obj.get_absolute_url()
-    if obj.mimetype.startswith('image/'):
-        if 'alt' in options:
-            pass
-        elif obj.alt_text:
-            options['alt'] = obj.alt_text
-        elif obj.description:
-            options['alt'] = obj.description
-        options['srcset'] = obj.get_html_attr_srcset()
-        options['sizes'] = obj.get_html_attr_sizes()
-        options['class'] = ['img-responsive']
-        fn = nodes.image
-    elif obj.mimetype.startswith('video/'):
-        options['type'] = obj.mimetype
-        if not 'alt' in options:
-            options['alt'] = obj.description
-        options['class'] = ['w-100']
-        fn = video
-    else:
-        options['target'] = '_blank'
-        if not 'alt' in options:
-            options['alt'] = obj.description
-        fn = link
-
-    set_classes(options)
-    node = fn(block_text, **options)
-    return [node]
+    return [rawhtml(obj.render())]
 
 
 class EmbedFileDirective(Directive):

@@ -33,7 +33,7 @@ def copy_image_into_myfile(apps, schema_editor):
                 'created_by': blog.created_by,
             }
             for lang_code, _ in settings.LANGUAGES:
-                data[to_attribute('description', lang_code)] =\
+                data[to_attribute('alt_text', lang_code)] =\
                         getattr(blog, to_attribute('title', lang_code))
 
             newfile = MyFile(**data)

@@ -49,6 +49,7 @@ def file_updating(sender, instance, **kwargs):
             schedule_for_deletion(old_instance.image_sm, old_files)
             schedule_for_deletion(old_instance.image_md, old_files)
             schedule_for_deletion(old_instance.image_lg, old_files)
+            schedule_for_deletion(old_instance.image_xlg, old_files)
             instance._old_databits = old_files # pylint:disable=protected-access
 
         binary = instance.databits
@@ -70,7 +71,7 @@ def file_updated(sender, instance, **kwargs):
     dirty = instance.get_dirty_fields()
 
     # Ignore thumbnail images.
-    for name, _, _ in settings.IMAGE_SIZES:
+    for name, _t, _t in settings.IMAGE_SIZES:
         if 'image_' + name in dirty:
             return
 
@@ -80,7 +81,7 @@ def file_updated(sender, instance, **kwargs):
             storage.delete(name)
 
         if instance.mimetype.startswith('image/'):
-            for name, size, _ in settings.IMAGE_SIZES:
+            for name, size, _t in settings.IMAGE_SIZES:
                 create_thumbnail(
                         ('my_files', 'MyFile', instance.pk),
                         'databits', 'image_' + name, size)
@@ -99,3 +100,5 @@ def file_deleted(sender, instance, **kwargs):
         instance.image_md.storage.delete(instance.image_md.name)
     if instance.image_lg:
         instance.image_lg.storage.delete(instance.image_lg.name)
+    if instance.image_xlg:
+        instance.image_lg.storage.delete(instance.image_xlg.name)

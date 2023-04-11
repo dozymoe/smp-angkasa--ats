@@ -46,8 +46,8 @@ class TestManageFileCreatePage(SmpTestCase):
         resp = self.client.post(base_url / 'add',
                 {
                     'databits': tmp_file,
-                    'description_id': "Berkas acak",
-                    'description_en': "Random file",
+                    'alt_text_id': "Berkas acak",
+                    'alt_text_en': "Random file",
                 },
                 format='multipart',
                 **self.client_env(admin=True))
@@ -67,8 +67,8 @@ class TestManageFileCreatePage(SmpTestCase):
         resp = self.client.post(base_url / 'add',
                 {
                     'databits': tmp_file,
-                    'description_id': "Berkas acak",
-                    'description_en': "Random file",
+                    'alt_text_id': "Berkas acak",
+                    'alt_text_en': "Random file",
                 },
                 format='multipart',
                 **self.client_env(admin=True))

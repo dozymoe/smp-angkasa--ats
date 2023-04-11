@@ -28,8 +28,8 @@ class TestManageFileDeletePage(SmpTestCase):
         """
         self.fileobj = MyFile.objects.create(
                 databits=self.random_image(),
-                description_id="Periksa ubah berkas",
-                description_en="Test update file",
+                alt_text_id="Periksa ubah berkas",
+                alt_text_en="Test update file",
                 created_by=self.user)
 
 

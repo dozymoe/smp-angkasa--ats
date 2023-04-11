@@ -1,0 +1,14 @@
+{% load i18n website %}
+<figure id="figure-file-{{object.id}}"{% if class %} class="{{class}}"{% endif %}>
+  <video controls class="w-100">
+    <source src="{{object.databits.url}}" type="{{object.mimetype}}">
+    <p>
+      {% blocktranslate with url=object.databits.url %}
+        Download the file here {{url}}
+      {% endblocktranslate %}
+    </p>
+  </video>
+  {% if object.description %}
+    <figcaption>{{object.description | restify}}</figcaption>
+  {% endif %}
+</figure>

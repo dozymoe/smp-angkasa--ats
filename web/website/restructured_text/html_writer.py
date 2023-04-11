@@ -145,6 +145,17 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
         self.body.append('</video>\n')
 
 
+    def visit_rawhtml(self, node):
+        """Start raw html
+        """
+        self.body.append(str(node))
+
+
+    def depart_rawhtml(self, node):
+        """Close raw html
+        """
+
+
 class HtmlWriter(html4css1.Writer):
     """Html writer with custom translator class
     """

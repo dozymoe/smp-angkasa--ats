@@ -29,8 +29,8 @@ class TestManageFileUpdatePage(SmpTestCase):
         """
         self.fileobj = MyFile.objects.create(
                 databits=self.random_image(),
-                description_id="Periksa ubah berkas",
-                description_en="Test update file",
+                alt_text_id="Periksa ubah berkas",
+                alt_text_en="Test update file",
                 created_by=self.user)
 
 
@@ -76,8 +76,8 @@ class TestManageFileUpdatePage(SmpTestCase):
         resp = self.client.post(url,
                 {
                     'databits': tmp_file,
-                    'description_id': "Berkas acak",
-                    'description_en': "Random file",
+                    'alt_text_id': "Berkas acak",
+                    'alt_text_en': "Random file",
                 },
                 format='multipart',
                 **self.client_env(admin=True))
@@ -98,8 +98,8 @@ class TestManageFileUpdatePage(SmpTestCase):
         resp = self.client.post(url,
                 {
                     'databits': tmp_file,
-                    'description_id': "Berkas acak",
-                    'description_en': "Random file",
+                    'alt_text_id': "Berkas acak",
+                    'alt_text_en': "Random file",
                 },
                 format='multipart',
                 **self.client_env(admin=True))

@@ -12,3 +12,8 @@ class link(nodes.General, nodes.Inline, nodes.Element):
 class video(nodes.General, nodes.Element):
     """HTML video element
     """
+
+
+class rawhtml(nodes.Text):
+    """Raw HTML
+    """
