@@ -32596,25 +32596,25 @@ body.front-page .featured-content .document {
     max-width: 2em;
   }
 }
-.blog-article-full h1 {
+.blogpost-full h1 {
   font-weight: bold;
   margin: 1em 0 0.5em;
 }
-.blog-article-full .blog-image figcaption {
+.blogpost-full .blog-image figcaption {
   margin: 1rem 0;
 }
-.blog-article-full .blog-image figcaption p {
+.blogpost-full .blog-image figcaption p {
   font-size: 0.8rem;
 }
-.blog-article-full .blog-meta {
+.blogpost-full .blog-meta {
   margin: 3rem 0 2rem;
 }
-.blog-article-full .blog-meta + .document p {
+.blogpost-full .blog-meta + .document p {
   font-size: 1.125rem;
   line-height: 1.6;
   margin: 1em 0;
 }
-.blog-article-full .blog-meta + .document figure {
+.blogpost-full .blog-meta + .document figure {
   border: 1px solid lightgray;
   border-radius: 10px;
   margin: 3rem 10px;
@@ -32636,6 +32636,21 @@ body.front-page .featured-content .document {
   .front-events .front-section-header h2 {
     font-weight: normal;
   }
+}
+.webpage-full h1 {
+  font-weight: bold;
+  margin: 1em 0 0.5em;
+}
+.webpage-full h1 + .document p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 1em 0;
+}
+.webpage-full h1 + .document figure {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: 3rem 10px;
+  padding: 1em;
 }
 
 /*# sourceMappingURL=web-index-prefixed.css.map */

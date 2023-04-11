@@ -1,4 +1,4 @@
-.blogpost-full
+.webpage-full
 {
     h1
     {
@@ -6,22 +6,7 @@
         margin: 1em 0 0.5em;
     }
 
-    .blog-image figcaption
-    {
-        margin: 1rem 0;
-
-        p
-        {
-            font-size: 0.8rem;
-        }
-    }
-
-    .blog-meta
-    {
-        margin: 3rem 0 2rem;
-    }
-
-    .blog-meta + .document
+    h1 + .document
     {
         p
         {

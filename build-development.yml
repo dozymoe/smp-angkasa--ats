@@ -53,6 +53,7 @@ web:
           - "{_1}_assets/blog_posting/sass/**/*.scss"
           - "{_1}_assets/my_event/sass/**/*.scss"
           - "{_1}_assets/website/sass/**/*.scss"
+          - "{_1}_assets/web_page/sass/**/*.scss"
           - "{_1}_assets/carbondesign/sass/**/*.scss"
         raw_extra_out: tmp/{_1}-index-compiled.css
 

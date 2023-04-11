@@ -9,8 +9,9 @@
   {% Grid %}
     {% Row %}
       {% Col md=8 lg=2 xlg=3 %}{% endCol %}
-      {% Col md=8 lg=8 xlg=6 %}
-        {{ object.body | restify }}
+      {% Col md=8 lg=8 xlg=6 class="webpage-full" %}
+        <h1>{{object.title}}</h1>
+        {{object.body | restify}}
       {% endCol %}
     {% endRow %}
   {% endGrid %}

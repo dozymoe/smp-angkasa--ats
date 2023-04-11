@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-11 03:26+0700\n"
+"POT-Creation-Date: 2023-04-11 16:17+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: web_page/templates/web_page/base-admin-object.html:35
 #: web_page/templates/web_page/base-admin.html:25
-#: web_page/templates/web_page/webpage_detail-admin.html:25
+#: web_page/templates/web_page/webpage_detail-admin.html:26
 #: web_page/templates/web_page/webpage_list.html:19
 #: web_page/templates/web_page/webpage_list.html:116
 msgid "Pages"
