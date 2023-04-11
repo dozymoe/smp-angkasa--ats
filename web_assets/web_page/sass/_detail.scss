@@ -1,9 +1,24 @@
 .webpage-full
 {
+    h2, h3, h4, h5, h6
+    {
+        margin: 1em 0 0.5em;
+    }
+
     h1
     {
         font-weight: bold;
         margin: 1em 0 0.5em;
+    }
+
+    ul
+    {
+        list-style: initial;
+    }
+
+    li
+    {
+        margin: 1em 0;
     }
 
     h1 + .document

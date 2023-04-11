@@ -32600,9 +32600,18 @@ body.front-page .featured-content .document {
     max-width: 2em;
   }
 }
+.blogpost-full h2, .blogpost-full h3, .blogpost-full h4, .blogpost-full h5, .blogpost-full h6 {
+  margin: 1em 0 0.5em;
+}
 .blogpost-full h1 {
   font-weight: bold;
   margin: 1em 0 0.5em;
+}
+.blogpost-full ul {
+  list-style: initial;
+}
+.blogpost-full li {
+  margin: 1em 0;
 }
 .blogpost-full .blog-image figcaption {
   margin: 1rem 0;
@@ -32641,9 +32650,18 @@ body.front-page .featured-content .document {
     font-weight: normal;
   }
 }
+.webpage-full h2, .webpage-full h3, .webpage-full h4, .webpage-full h5, .webpage-full h6 {
+  margin: 1em 0 0.5em;
+}
 .webpage-full h1 {
   font-weight: bold;
   margin: 1em 0 0.5em;
+}
+.webpage-full ul {
+  list-style: initial;
+}
+.webpage-full li {
+  margin: 1em 0;
 }
 .webpage-full h1 + .document p {
   font-size: 1.125rem;
