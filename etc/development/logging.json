@@ -1,8 +1,0 @@
-{
-    "level": "DEBUG",
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler"
-        }
-    }
-}

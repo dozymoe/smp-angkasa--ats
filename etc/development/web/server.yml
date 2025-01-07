@@ -1,0 +1,5 @@
+allowed_hosts:
+    - manage.smp-angkasa.test
+    - www.smp-angkasa.test
+static_root: /var/www/smp-angkasa-ats/htdocs/assets
+media_root: /var/www/smp-angkasa-ats/uploads

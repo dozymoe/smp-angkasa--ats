@@ -1,0 +1,3 @@
+public_dir:
+    "www.smp-angkasa.test": /var/www/smp-angkasa-ats/htdocs-www
+    "manage.smp-angkasa.test": /var/www/smp-angkasa-ats/htdocs-manage

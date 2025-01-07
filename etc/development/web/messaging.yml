@@ -1,0 +1,1 @@
+job_broker: "amqp://local:local@localhost:5672/smp_angkasa"

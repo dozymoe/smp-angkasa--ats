@@ -32,13 +32,13 @@
             "web": {
                 "shell_env": {
                     "CONFIG_FILENAMES": [
-                        "etc/development/logging.json",
-                        "etc/development/web/account.json",
-                        "etc/development/web/application.json",
-                        "etc/development/web/database.json",
-                        "etc/development/web/messaging.json",
-                        "etc/development/web/frozen.json",
-                        "etc/development/web/server.json"
+                        "etc/development/logging.yml",
+                        "etc/development/web/account.yml",
+                        "etc/development/web/application.yml",
+                        "etc/development/web/database.yml",
+                        "etc/development/web/messaging.yml",
+                        "etc/development/web/frozen.yml",
+                        "etc/development/web/server.yml"
                     ]
                 }
             }
