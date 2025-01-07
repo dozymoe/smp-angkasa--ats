@@ -4,12 +4,12 @@ from io import BytesIO
 import logging
 import os
 #-
+from celery import shared_task
 from django.apps import apps
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.utils import translation
 from PIL import Image
-from uwsgi_tasks import task, TaskExecutor
 #-
 from frozen_django.main import generate_static_view
 #-
@@ -20,7 +20,7 @@ from web_page.models import WebPage
 _logger = logging.getLogger()
 
 
-@task(executor=TaskExecutor.SPOOLER)
+@shared_task
 def freeze_view(view_name, host, langcode=None, dest=None, **kwargs):
     """Create static html files cache from Django view
     """
@@ -78,7 +78,7 @@ def freeze_all_views():
                         langcode=langcode, slug=obj.slug, format='html')
 
 
-@task(executor=TaskExecutor.SPOOLER)
+@shared_task
 def create_thumbnail(obj_info, source_field, target_field, estimate_size):
     """Create low resolution images for image fields
     """
@@ -92,7 +92,7 @@ def create_thumbnail(obj_info, source_field, target_field, estimate_size):
     if img.size[0] <= estimate_size[0] and img.size[1] <= estimate_size[1]:
         setattr(obj, target_field, None)
     else:
-        img.thumbnail(estimate_size, Image.ANTIALIAS)
+        img.thumbnail(estimate_size)
         temp_io = BytesIO()
         img.save(temp_io, img.format)
 

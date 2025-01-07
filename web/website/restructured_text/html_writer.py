@@ -3,11 +3,10 @@
 import logging
 import os
 import re
-import sys
 #-
 from docutils import nodes
 from docutils.writers import html4css1
-from docutils.writers._html_base import PIL, url2pathname
+from docutils.writers._html_base import PIL
 
 _logger = logging.getLogger(__name__)
 
@@ -40,20 +39,19 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
         if 'scale' in node:
             if (PIL and not ('width' in node and 'height' in node)
                 and self.settings.file_insertion_enabled):
-                imagepath = url2pathname(uri)
+                imagepath = self.uri2imagepath(uri)
                 try:
-                    img = PIL.Image.open(
-                            imagepath.encode(sys.getfilesystemencoding()))
+                    with PIL.Image.open(imagepath) as img:
+                        img_size = img.size
                 except (IOError, UnicodeEncodeError):
                     pass # TODO: warn?
                 else:
                     self.settings.record_dependencies.add(
                         imagepath.replace('\\', '/'))
                     if 'width' not in atts:
-                        atts['width'] = f'{img.size[0]:d}px'
+                        atts['width'] = f'{img_size[0]:d}px'
                     if 'height' not in atts:
-                        atts['height'] = f'{img.size[1]:d}px'
-                    del img
+                        atts['height'] = f'{img_size[1]:d}px'
             for att_name in 'width', 'height':
                 if att_name in atts:
                     match = re.match(r'([0-9.]+)(\S*)$', atts[att_name])
@@ -71,19 +69,19 @@ class HtmlTranslator(html4css1.HTMLTranslator): # pylint:disable=abstract-method
                 del atts[att_name]
         if style:
             atts['style'] = ' '.join(style)
-        if (isinstance(node.parent, nodes.TextElement) or
-            (isinstance(node.parent, nodes.reference) and
-             not isinstance(node.parent.parent, nodes.TextElement))):
-            # Inline context or surrounded by <a>...</a>.
-            suffix = ''
-        else:
+        # No newlines around inline images.
+        if (not isinstance(node.parent, nodes.TextElement)
+            or isinstance(node.parent, nodes.reference)
+            and not isinstance(node.parent.parent, nodes.TextElement)):
             suffix = '\n'
+        else:
+            suffix = ''
         if 'align' in node:
             atts['class'] = f"align-{node['align']}"
         if ext in self.object_image_types:
             # do NOT use an empty tag: incorrect rendering in browsers
-            self.body.append(self.starttag(node, 'object', '', **atts) +
-                             node.get('alt', uri) + '</object>' + suffix)
+            self.body.append(self.starttag(node, 'object', '', **atts)
+                             + node.get('alt', uri) + '</object>' + suffix)
         else:
             self.body.append(self.emptytag(node, 'img', suffix, **atts))
 

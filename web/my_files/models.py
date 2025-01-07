@@ -141,8 +141,6 @@ class MyFile(DirtyFieldsMixin, MultilingualMixin, RulesModel):
                     items.append((fieldobj, viewport_width + 1))
             if fieldobj:
                 items.append((self.databits, settings.IMAGE_SIZE_MAX + 1))
-            else:
-                items.append((self.databits, viewport_width + 1))
             context['items'] = items
         elif self.is_video():
             obj_type = 'video'

@@ -94,6 +94,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
 
+    'allauth.account.middleware.AccountMiddleware',
+
     'website.middleware.domain_urls.DomainUrlsMiddleware',
 ]
 
@@ -206,9 +208,9 @@ TIME_INPUT_FORMATS = ('%H:%M',)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/assets/'
-STATIC_ROOT = ROOT_DIR/_config.get('server.public_root', 'public/web')/'assets'
+STATIC_ROOT = _config.get('server.static_root', ROOT_DIR/'public'/'web'/'assets')
 MEDIA_URL = '/uploads/'
-MEDIA_ROOT = ROOT_DIR/'var'/'web'/'uploads'
+MEDIA_ROOT = _config.get('server.media_root', ROOT_DIR/'var'/'web'/'uploads')
 STATICFILES_DIRS = [
     BASE_DIR/'static',
 ]
@@ -261,6 +263,9 @@ SOCIALACCOUNT_PROVIDERS = {
 ## Background Tasks
 
 BACKGROUND_TASK_RUN_ASYNC = True
+
+CELERY_BROKER_URL = _config.get('messaging.job_broker',
+        'amqp://guest:guest@localhost:5672/smp_angkasa')
 
 
 REST_FRAMEWORK = {

@@ -62,7 +62,7 @@ class ThingKeyword(DirtyFieldsMixin, MP_Node):
         return (self.slug, )
 
 
-    def save(self, update_fields=None, **kwargs):
+    def save(self, *args, update_fields=None, **kwargs):
         dirty = self.get_dirty_fields()
         if not update_fields is None:
             dirty = {key: val for (key, val) in dirty.items()\

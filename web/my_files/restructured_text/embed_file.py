@@ -4,7 +4,6 @@ import logging
 import re
 #-
 from django.utils.translation import gettext as _
-from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 #-
 from website.restructured_text.nodes import rawhtml

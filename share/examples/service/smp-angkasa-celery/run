@@ -1,0 +1,5 @@
+#!/bin/sh
+exec 2>&1
+
+exec ~/work/smp-angkasa/smp-angkasa--ats/run pybin --project=web \
+    celery -A web worker -l INFO

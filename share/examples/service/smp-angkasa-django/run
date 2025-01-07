@@ -1,0 +1,8 @@
+#!/bin/sh
+exec 2>&1
+
+~/work/smp-angkasa/smp-angkasa--ats/run django-manage migrate
+~/work/smp-angkasa/smp-angkasa--ats/run django-manage collectstatic --noinput
+
+exec ~/work/smp-angkasa/smp-angkasa--ats/run bin --project=web gunicorn \
+    web.asgi:application -k uvicorn_worker.UvicornWorker -b 127.0.0.2:8000

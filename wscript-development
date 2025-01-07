@@ -16,12 +16,12 @@ else:
 
 def build(bld):
     # load main configuration file
-    import pystache, yaml
+    import chevron, yaml
     from pybuildtool.misc.resource import prepare_targets
     from pybuildtool.misc.yaml_utils import OrderedDictYAMLLoader
     conf_file = os.path.join(bld.path.abspath(), 'build.yml')
     with open(conf_file) as f:
-        tasks = pystache.render(f.read(), dict(os.environ))
+        tasks = chevron.render(f.read(), dict(os.environ))
         conf = yaml.load(tasks, Loader=OrderedDictYAMLLoader)
     # parse data as waf tasks
     prepare_targets(conf, bld)
@@ -32,16 +32,20 @@ def options(opt):
     import sys
     sys.path.append(opt.path.abspath())
     # load predefined tools from pybuildtool
-    from imp import find_module
-    pybuildtool_dir = find_module('pybuildtool')[1]
+    from importlib.machinery import PathFinder
+    pybuildtool_dir = os.path.dirname(PathFinder().find_spec('pybuildtool').origin)
     addons_dir = os.path.join(pybuildtool_dir, 'addons')
     opt.load('watch', tooldir=addons_dir)
 
 
 def configure(ctx):
+    ## load custom tools
+    #custom_tools_dir = './lib/build_tools'
+    #ctx.load('my_tool', tooldir=custom_tools_dir)
+
     # load predefined tools from pybuildtool
-    from imp import find_module
-    pybuildtool_dir = find_module('pybuildtool')[1]
+    from importlib.machinery import PathFinder
+    pybuildtool_dir = os.path.dirname(PathFinder().find_spec('pybuildtool').origin)
     tools_dir = os.path.join(pybuildtool_dir, 'tools')
     #ctx.load('ansibleplay', tooldir=tools_dir)
     #ctx.load('browserify', tooldir=tools_dir)

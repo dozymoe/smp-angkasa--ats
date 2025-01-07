@@ -12,8 +12,8 @@
         "lib.fireh_runner.setup_modules.yarn",
         "lib.fireh_runner.setup_modules.pybuildtool"
     ],
-    "python_version": "3.9",
-    "waf_version": "2.0.23",
+    "python_version": "3.12",
+    "waf_version": "2.1.4",
 
     "default_project": "web",
     "default_variant": "development",
@@ -36,6 +36,7 @@
                         "etc/development/web/account.json",
                         "etc/development/web/application.json",
                         "etc/development/web/database.json",
+                        "etc/development/web/messaging.json",
                         "etc/development/web/frozen.json",
                         "etc/development/web/server.json"
                     ]

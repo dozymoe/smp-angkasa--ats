@@ -1,6 +1,6 @@
 lib-py:
   options:
-    pylint_config_file: etc/pylint.rc
+    pylint_config_file: etc/pylint.toml
     pylint_work_dir: web/
     pylint_env:
       DJANGO_SETTINGS_MODULE: web.settings
@@ -8,12 +8,12 @@ lib-py:
   django-carbondesign:
     pylint:
       raw_file_in: "{_1}/{_2}/carbondesign/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   frozen-django:
     pylint:
       raw_file_in: "{_1}/{_2}/frozen_django/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
 
 pygmentize:
@@ -31,7 +31,7 @@ docutils:
 
 web:
   options:
-    pylint_config_file: etc/pylint.rc
+    pylint_config_file: etc/pylint.toml
     pylint_work_dir: "{_1}/"
     pylint_env:
       DJANGO_SETTINGS_MODULE: web.settings
@@ -110,57 +110,57 @@ web:
   blog_posting:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   misc:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   my_event:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   my_files:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   my_front_content:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   my_slide:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   my_user:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   thing_keyword:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   web:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   website:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
   web_page:
     pylint:
       raw_file_in: "{_1}/{_2}/**/*.py"
-      raw_depend_in: etc/pylint.rc
+      raw_depend_in: etc/pylint.toml
 
 
   collectstatic:
@@ -265,13 +265,13 @@ web:
       raw_depend_in:
         - "{_1}/{_1}/settings*.py"
       raw_extra_out:
-        - public/{_1}/assets/jsi18n/en/djangojs.js
+        - /var/www/smp-angkasa-ats/htdocs/assets/jsi18n/en/djangojs.js
 
 
   runit_sv:
     options:
       command: restart
-      target: "{{HOME}}/service/smp-{_1}-django/"
+      target: "{{HOME}}/service/smp-angkasa-django/"
       wait_sec: 120
       force: true
     rule_in:
@@ -282,6 +282,16 @@ web:
       - etc/{{PROJECT_VARIANT}}/*.json
       - etc/{{PROJECT_VARIANT}}/{_1}/*.json
       - etc/{{PROJECT_VARIANT}}/{_1}/uwsgi.ini
+
+  worker:
+    runit_sv:
+      options:
+        command: restart
+        target: "{{HOME}}/service/smp-angkasa-celery/"
+        wait_sec: 120
+        force: true
+      rule_in:
+        - "{_1}/runit_sv"
 
   build:
     shell:
