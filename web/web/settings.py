@@ -37,6 +37,7 @@ DEBUG = _config.get('application.debug', False)
 TESTING = False
 
 ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
+CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
 
 
 # Application definition
