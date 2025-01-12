@@ -82,7 +82,7 @@ def file_updated(sender, instance, **kwargs):
 
         if instance.mimetype.startswith('image/'):
             for name, size, _t in settings.IMAGE_SIZES:
-                create_thumbnail(
+                create_thumbnail.delay(
                         ('my_files', 'MyFile', instance.pk),
                         'databits', 'image_' + name, size)
 

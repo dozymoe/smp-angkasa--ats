@@ -1,5 +1,7 @@
 """Django views for miscellaneous pages
 """
+import logging
+#-
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -9,7 +11,12 @@ from blog_posting.models import BlogPosting
 from my_event.models import Event
 from my_front_content.models import FrontContent
 from my_slide.models import MySlide
+#-
+from .decorators import thawed_class_view
 
+_logger = logging.getLogger(__name__)
+
+@thawed_class_view()
 class Home(TemplateView):
     """Show home page to visitors
     """
@@ -42,6 +49,7 @@ class Home(TemplateView):
         return context
 
 
+@thawed_class_view()
 class EditorHelpText(TemplateView):
     """Show the editor help text
     """

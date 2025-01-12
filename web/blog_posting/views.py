@@ -3,8 +3,11 @@
 from django.views.generic import DetailView
 from translated_fields import to_attribute
 #-
+from website.decorators import thawed_class_view
+#-
 from .models import BlogPosting
 
+@thawed_class_view()
 class Display(DetailView):
     """Show blog post to visitors
     """

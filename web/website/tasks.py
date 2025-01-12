@@ -34,8 +34,8 @@ def hosts_freeze_view(view_name, langcode=None, **kwargs):
     """Generate static html files cache for Django view, by hostnames
     """
     for host, dest in settings.FROZEN_ROOT.items():
-        freeze_view(view_name, host=host, langcode=langcode,
-                dest=settings.ROOT_DIR / dest, **kwargs)
+        freeze_view.delay(view_name, host=host, langcode=langcode,
+                dest=str(settings.ROOT_DIR / dest), **kwargs)
 
 
 def freeze_all_views():
