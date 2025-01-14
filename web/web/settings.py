@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import ssl
 #-
 from django.utils.translation import gettext_lazy as _
 #-
@@ -266,8 +267,15 @@ SOCIALACCOUNT_PROVIDERS = {
 
 BACKGROUND_TASK_RUN_ASYNC = True
 
-CELERY_BROKER_URL = _config.get('messaging.job_broker',
+CELERY_BROKER_URL = _config.get('messaging.job_broker.conn_str',
         'amqp://guest:guest@localhost:5672/smp_angkasa')
+if _config.get('messaging.job_broker.cert_file'):
+    CELERY_BROKER_USE_SSL = {
+        'keyfile': _config.get('messaging.job_broker.key_file'),
+        'certfile': _config.get('messaging.job_broker.cert_file'),
+        'ca_certs': _config.get('messaging.job_broker.ca_file'),
+        'cert_reqs': ssl.CERT_REQUIRED,
+    }
 
 
 REST_FRAMEWORK = {
