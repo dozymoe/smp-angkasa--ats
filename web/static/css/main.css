@@ -24335,6 +24335,34 @@ span.linenos.special {
 }
 
 /* Literal.Number.Integer.Long */
+.bg-secondary {
+  background-color: dimgray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+p, li {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+td, th {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+ul, ol {
+  list-style: revert;
+}
+
+.bx--navigation li {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 /* roboto-100normal - latin */
 @font-face {
   font-family: "Roboto";
