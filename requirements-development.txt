@@ -7,4 +7,5 @@ pybuildtool
 pygments
 pylint
 pylint_django
+sphinx
 uwsgi

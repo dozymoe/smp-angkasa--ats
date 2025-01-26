@@ -32142,6 +32142,22 @@ body {
   margin-bottom: 2rem;
 }
 
+.bx--overflow-menu-options__option-content svg {
+  display: inline;
+  margin-right: 0;
+}
+
+.bx--toast-notification {
+  padding-bottom: 0.25em;
+  padding-top: 0.5em;
+}
+
+#js_notification {
+  position: fixed;
+  top: 50px;
+  right: 0;
+}
+
 html {
   height: 100%;
 }

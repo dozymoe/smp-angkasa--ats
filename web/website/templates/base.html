@@ -48,14 +48,6 @@
 
       {% Slot 'actions' id="uishell-actions" %}{% endSlot %}
 
-      {% for msg in messages %}
-        {% Notification mode='toast' variant=msg.level %}
-          {% NotificationSubtitle %}
-            {{msg.message}}
-          {% endNotificationSubtitle %}
-        {% endNotification %}
-      {% endfor %}
-
       {% block breadcrumb %}{% endblock %}
 
       {% block banner %}{% endblock %}
@@ -66,10 +58,22 @@
         {% block jscontent %}<div id="js_app"></div>{% endblock %}
       </main>
       {% block extra_body %}{% endblock %}
+
     {% endUiShell %}
   {% endblock %}
   {% block footer %}{% endblock %}
   <div id="js_modal-1">{% block jsmodal_1 %}{% endblock %}</div>
   <div id="js_modal-2">{% block jsmodal_2 %}{% endblock %}</div>
   <div id="js_modal-3">{% block jsmodal_3 %}{% endblock %}</div>
+  {% if messages %}
+    <div id="js_notification">
+      {% for msg in messages %}
+        {% Notification mode='toast' variant=msg.level %}
+          {% NotificationSubtitle %}
+            {{msg.message}}
+          {% endNotificationSubtitle %}
+        {% endNotification %}
+      {% endfor %}
+    </div>
+  {% endif %}
 </body>

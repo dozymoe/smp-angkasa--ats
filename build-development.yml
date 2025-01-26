@@ -324,3 +324,30 @@ node_modules:
         raw_file_in: "{_1}/@fortawesome/{_2}-free/webfonts/*"
         raw_file_out:
           - web/static/fonts/
+
+
+docs:
+  epub:
+    shell:
+      options:
+        command: ./run sphinx-build --project={_1} -- -M {_2} . _build
+      raw_depend_in:
+        - "{_1}-src/_static/*"
+        - "{_1}-src/_templates/*"
+        - "{_1}-src/conf.py"
+        - "{_1}-src/*.rst"
+  latexpdf:
+    shell:
+      options:
+        command: ./run sphinx-build --project={_1} -- -M {_2} . _build
+      raw_depend_in:
+        - "{_1}-src/_static/*"
+        - "{_1}-src/_templates/*"
+        - "{_1}-src/conf.py"
+        - "{_1}-src/*.rst"
+  install:
+    cp:
+      raw_file_in:
+        - "{_1}-src/_build/epub/SMPAngkasaATS.epub"
+        - "{_1}-src/_build/latex/smpangkasaats.pdf"
+      raw_file_out: "{_1}/"

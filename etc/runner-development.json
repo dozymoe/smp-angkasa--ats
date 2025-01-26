@@ -5,7 +5,8 @@
         "lib.fireh_runner.modules.virtualenv",
         "lib.fireh_runner.modules.waf",
         "lib.fireh_runner.modules.django",
-        "lib.fireh_runner.modules.uwsgi"
+        "lib.fireh_runner.modules.uwsgi",
+        "lib.fireh_runner.modules.sphinx"
     ],
     "setup_modules": [
         "lib.fireh_runner.setup_modules.python",
@@ -41,6 +42,9 @@
                         "etc/development/web/server.yml"
                     ]
                 }
+            },
+            "docs": {
+                "work_dir": "docs-src"
             }
         }
     }
