@@ -56,10 +56,7 @@
               {% for obj in blogposts %}
                 {% Col sm=4 md=4 astag="li" role="article" %}
                   {% if obj.image %}
-                    <img src="{{obj.image.get_absolute_url}}"
-                        srcset="{{obj.image.get_html_attr_srcset}}"
-                        sizes="{{obj.image.get_html_attr_sizes}}"
-                        class="img-responsive">
+                    {% webfile obj.image theme="minimal" %}
                   {% endif %}
                   <a href="{{obj.get_absolute_url}}" class="front-blog-summary">
                     <div>
