@@ -39,7 +39,8 @@
                         "etc/development/web/database.yml",
                         "etc/development/web/messaging.yml",
                         "etc/development/web/frozen.yml",
-                        "etc/development/web/server.yml"
+                        "etc/development/web/server.yml",
+                        "etc/development/web/smtp.yml"
                     ]
                 }
             },

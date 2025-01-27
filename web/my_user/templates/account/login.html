@@ -60,11 +60,6 @@
 
     {{form.errors}}
 
-    {% url 'account_reset_password' as url %}
-    {% Button astag="a" href=url %}
-      {% trans "Forgot Password?" %}
-    {% endButton %}
-
     {% Button type="submit" %}
       {% trans "Sign In" %}
     {% endButton %}

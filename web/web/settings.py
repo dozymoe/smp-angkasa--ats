@@ -246,6 +246,7 @@ CURRENCIES = ['IDR', 'USD']
 
 ## AllAuth
 
+ACCOUNT_ADAPTER = 'my_user.account_adapter.NoNewUsersAccountAdapter'
 ACCOUNT_AUTHENTICATION_METHOD = _config.get('account.authentication_method',
         'username')
 ACCOUNT_CONFIRM_EMAIL_ON_GET = _config.get('account.confirm_email_on_get',

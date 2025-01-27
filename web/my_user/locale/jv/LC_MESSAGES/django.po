@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 19:52+0700\n"
+"POT-Creation-Date: 2025-01-27 21:17+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,7 +114,7 @@ msgid ""
 msgstr ""
 
 #: my_user/templates/account/login.html:6
-#: my_user/templates/account/login.html:69
+#: my_user/templates/account/login.html:64
 msgid "Sign In"
 msgstr ""
 
@@ -141,16 +141,15 @@ msgid ""
 "      "
 msgstr ""
 
-#: my_user/templates/account/login.html:65
-#: my_user/templates/account/login.html:85
-#: my_user/templates/account/password_change.html:30
-msgid "Forgot Password?"
-msgstr ""
-
-#: my_user/templates/account/login.html:80
+#: my_user/templates/account/login.html:75
 #: my_user/templates/account/signup.html:5
 #: my_user/templates/account/signup.html:39
 msgid "Sign Up"
+msgstr ""
+
+#: my_user/templates/account/login.html:80
+#: my_user/templates/account/password_change.html:30
+msgid "Forgot Password?"
 msgstr ""
 
 #: my_user/templates/account/password_change.html:5

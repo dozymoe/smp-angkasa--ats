@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-02 04:29+0700\n"
+"POT-Creation-Date: 2025-01-27 21:17+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,7 +131,7 @@ msgstr ""
 "      "
 
 #: my_user/templates/account/login.html:6
-#: my_user/templates/account/login.html:69
+#: my_user/templates/account/login.html:64
 msgid "Sign In"
 msgstr "Masuk"
 
@@ -167,17 +167,16 @@ msgstr ""
 "        <a href=\"%(signup_url)s\">daftar</a> dahulu.\n"
 "      "
 
-#: my_user/templates/account/login.html:65
-#: my_user/templates/account/login.html:85
-#: my_user/templates/account/password_change.html:30
-msgid "Forgot Password?"
-msgstr "Lupa Kata Sandi"
-
-#: my_user/templates/account/login.html:80
+#: my_user/templates/account/login.html:75
 #: my_user/templates/account/signup.html:5
 #: my_user/templates/account/signup.html:39
 msgid "Sign Up"
 msgstr "Daftar"
+
+#: my_user/templates/account/login.html:80
+#: my_user/templates/account/password_change.html:30
+msgid "Forgot Password?"
+msgstr "Lupa Kata Sandi"
 
 #: my_user/templates/account/password_change.html:5
 #: my_user/templates/account/password_change.html:27

@@ -275,6 +275,7 @@ web:
       wait_sec: 120
       force: true
     rule_in:
+      - "{_1}/integration_test/shell"
       - "{_1}/compilemessages/shell"
       - "{_1}/js/webpack"
     raw_depend_in:

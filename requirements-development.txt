@@ -1,5 +1,6 @@
 -r requirements-common.txt
 
+aiosmtpd
 factory_boy
 faker
 pipdeptree
