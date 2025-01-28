@@ -37,5 +37,5 @@ class FrontContent(DirtyFieldsMixin, RulesModel):
         }
 
 
-    def __str__(self): # pylint:disable=invalid-str-returned
-        return self.content.title
+    def __str__(self):
+        return str(self.content.title)
