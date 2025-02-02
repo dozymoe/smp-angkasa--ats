@@ -16,12 +16,38 @@ def create_test_users(sender, **kwargs):
     User = get_user_model()
     TestCase = SmpTestCase
 
-    User.objects.create(username=TestCase.USER1_USERNAME,
-            password=make_password(TestCase.USER1_PASSWORD),
-            is_staff=False, is_active=True)
-    User.objects.create(username=TestCase.USER2_USERNAME,
-            password=make_password(TestCase.USER2_PASSWORD),
-            is_staff=False, is_active=True)
-    User.objects.create(username=TestCase.STAFF1_USERNAME,
-            password=make_password(TestCase.STAFF1_PASSWORD),
-            is_staff=True, is_active=True)
+    User.objects.update_or_create(
+        username=TestCase.USER1_USERNAME,
+        defaults={
+            'password': make_password(TestCase.USER1_PASSWORD),
+            'is_active': True, 'is_staff': False, 'is_superuser': False,
+        },
+    )
+    User.objects.update_or_create(
+        username=TestCase.USER2_USERNAME,
+        defaults={
+            'password': make_password(TestCase.USER2_PASSWORD),
+            'is_active': True, 'is_staff': False, 'is_superuser': False,
+        },
+    )
+    User.objects.update_or_create(
+        username=TestCase.STAFF1_USERNAME,
+        defaults={
+            'password': make_password(TestCase.STAFF1_PASSWORD),
+            'is_active': True, 'is_staff': True, 'is_superuser': False,
+        },
+    )
+    User.objects.update_or_create(
+        username=TestCase.ADMIN1_USERNAME,
+        defaults={
+            'password': make_password(TestCase.ADMIN1_PASSWORD),
+            'is_active': True, 'is_staff': False, 'is_superuser': True,
+        },
+    )
+    User.objects.update_or_create(
+        username=TestCase.BANNED1_USERNAME,
+        defaults={
+            'password': make_password(TestCase.BANNED1_PASSWORD),
+            'is_active': False, 'is_staff': False, 'is_superuser': False,
+        },
+    )

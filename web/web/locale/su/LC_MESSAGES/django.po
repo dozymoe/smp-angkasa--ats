@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-15 05:21+0700\n"
+"POT-Creation-Date: 2025-02-02 13:18+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: web/settings.py:193
+#: web/settings.py:204
 msgid "Bahasa Indonesia"
 msgstr ""
 
-#: web/settings.py:194
+#: web/settings.py:205
 msgid "English"
 msgstr ""
 
-#: web/settings.py:195
+#: web/settings.py:206
 msgid "Sundanese"
 msgstr ""
 
-#: web/settings.py:196
+#: web/settings.py:207
 msgid "Javanese"
 msgstr ""
 

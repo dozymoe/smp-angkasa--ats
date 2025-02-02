@@ -1,5 +1,6 @@
 """Django test runner that separate UnitTest and IntegrationTest
 """
+import logging
 import os
 from unittest.suite import TestSuite
 #-
@@ -7,11 +8,14 @@ from django.conf import settings
 from django.test import TransactionTestCase
 from django.test.runner import DiscoverRunner
 
+_logger = logging.getLogger()
+
 class IntegrationTestRunner(DiscoverRunner):
     """Only run integration tests
     """
     def build_suite(self, *args, **kwargs):
         # Customize Django settings for testing
+        settings.DEBUG = False
         settings.TESTING = True
         settings.PASSWORD_HASHERS = [
             'django.contrib.auth.hashers.MD5PasswordHasher',

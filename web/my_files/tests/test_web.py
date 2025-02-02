@@ -11,7 +11,6 @@ from web.testcases.testcase import SmpTestCase
 
 _logger = logging.getLogger(__name__)
 
-
 class TestFileRoutes(SimpleTestCase):
     """Test routing for working with files
     """

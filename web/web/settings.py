@@ -35,6 +35,7 @@ SECRET_KEY = _config['application.secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = _config.get('application.debug', False)
+TEMPLATE_DEBUG = DEBUG
 TESTING = False
 
 ALLOWED_HOSTS = _config.get('server.allowed_hosts', [])
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
     'thing_keyword',
     'web_page',
     'website',
+    'website.admin.WebsiteAdminConfig',
 
     'allauth',
     'allauth.account',
@@ -64,7 +66,8 @@ INSTALLED_APPS = [
     'rules',
     'statici18n',
 
-    'django.contrib.admin',
+    # already configured in website.admin.WebsiteAdminConfig
+    #'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -141,6 +144,10 @@ DATABASES = {
         'USER': _config.get('database.username'),
         'PASSWORD': _config.get('database.password'),
         'OPTIONS': _config.get('database.options', {}),
+
+        'TEST': {
+            'NAME': _config.get('database.name', BASE_DIR/'db.sqlite3') + '_test',
+        },
     }
 }
 
@@ -151,6 +158,10 @@ LOGGING = {
     'root': {
         'handlers': ['console'],
         'level': _config.get('logging.level', 'INFO'),
+    },
+    'loggers': {
+        'celery': { 'level': 'WARNING' },
+        'PIL.PngImagePlugin': { 'level': 'WARNING' },
     },
 }
 
@@ -257,6 +268,8 @@ ACCOUNT_EMAIL_VERIFICATION = _config.get('account.email_verification',
 ACCOUNT_LOGOUT_ON_GET = _config.get('account.logout_on_get', False)
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = _config.get(
         'account.logout_on_password_change', False)
+ACCOUNT_LOGOUT_REDIRECT_URL = '/account/login/'
+
 
 #SITE_ID = 1
 

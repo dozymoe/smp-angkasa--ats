@@ -212,7 +212,10 @@ web:
         command: >
           ./run django-manage --project={_1} test
           --testrunner="{_1}.testcases.testrunner.IntegrationTestRunner"
-          #-v2
+          -v2
+          --failfast
+          --timing
+          --noinput
           #--parallel
       rule_in:
         - "{_1}/check_migration/shell"

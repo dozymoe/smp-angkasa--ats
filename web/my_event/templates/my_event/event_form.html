@@ -42,7 +42,7 @@
 
   {% for item in LANGUAGES %}
     <div class="form-group swt-{{item.0}}">
-      {% TextArea form.body_{{item.0}} label_suffix=" - {{item.1}}" %}
+      {% TextArea form.body_{{item.0}} label_suffix=" - {{item.1}}" rows=30 %}
 
       {% trans "Body Preview" as title %}
       {% Button type="button" title=title data-provide-rest-preview=form.body_{{item.0}}.id_for_label %}

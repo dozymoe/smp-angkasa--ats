@@ -1,6 +1,7 @@
 -r requirements-common.txt
 
 aiosmtpd
+bs4
 factory_boy
 faker
 pipdeptree
@@ -9,4 +10,5 @@ pygments
 pylint
 pylint_django
 sphinx
+tblib
 uwsgi
