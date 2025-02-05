@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-08 15:11+0700\n"
+"POT-Creation-Date: 2025-02-06 05:41+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,55 +77,51 @@ msgstr ""
 msgid "Text Editor Documentation"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:12
+#: website/templates/website/editor-helptext.html:14
+msgid "Notes"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:15
+msgid "Code"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:16
+msgid "Result"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:22
 msgid "Headings"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:26
-msgid "Heading Size"
-msgstr ""
-
-#: website/templates/website/editor-helptext.html:27
-msgid "Formatting"
-msgstr ""
-
-#: website/templates/website/editor-helptext.html:71
-msgid "Markup"
-msgstr ""
-
-#: website/templates/website/editor-helptext.html:72
+#: website/templates/website/editor-helptext.html:97
 msgid "Inline markup"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:93
+#: website/templates/website/editor-helptext.html:127
 msgid "Bulleted list"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:116
+#: website/templates/website/editor-helptext.html:159
 msgid "Numbered list"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:138
+#: website/templates/website/editor-helptext.html:190
 msgid "Nested list"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:160
-msgid "Hyperlinks"
-msgstr ""
-
-#: website/templates/website/editor-helptext.html:161
+#: website/templates/website/editor-helptext.html:215
 msgid "Hyperlink references"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:179
+#: website/templates/website/editor-helptext.html:238
 msgid "External hyperlink targets"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:216
+#: website/templates/website/editor-helptext.html:280
 msgid "Internal hyperlink targets"
 msgstr ""
 
-#: website/templates/website/editor-helptext.html:261
+#: website/templates/website/editor-helptext.html:330
 msgid "Implicit hyperlink targets"
 msgstr ""
 

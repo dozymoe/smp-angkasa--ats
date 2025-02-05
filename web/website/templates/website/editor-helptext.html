@@ -8,265 +8,339 @@
 
 
 {% block content %}
-<section>
-  <h2>{% trans "Headings" %}</h2>
-  <p>
-    Untuk setiap huruf di dalam judul bab, tuliskan simbol (contohnya, = atau *)
-    dengan jumlah yang sama.
-  </p>
-  <p>
-    Mengenai simbol tersebut, karakter yang dipakai sebenarnya tidak penting,
-    urutan penggunaan simbol tersebut yang menjadikannya &lt;h1&gt; atau
-    &lt;h2&gt;. Ikuti penggunaan simbol di bawah agar menghasilkan teks yang
-    seragam.
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>{% trans "Heading Size" %}</th>
-        <th>{% trans "Formatting" %}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>H2</th>
-        <td>
-          Heading<br>
-          =======
-        </td>
-      </tr>
-      <tr>
-        <th>H3</th>
-        <td>
-          Heading<br>
-          -------
-        </td>
-      </tr>
-      <tr>
-        <th>H4</th>
-        <td>
-          Heading<br>
-          ~~~~~~~
-        </td>
-      </tr>
-      <tr>
-        <th>H5</th>
-        <td>
-          Heading<br>
-          *******
-        </td>
-      </tr>
-      <tr>
-        <th>H6</th>
-        <td>
-          Heading<br>
-          ^^^^^^^
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+<table>
+  <thead>
+    <tr>
+      <th>{% trans "Notes" %}</th>
+      <th>{% trans "Code" %}</th>
+      <th>{% trans "Result" %}</th>
+    <tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3">
+        <h2>{% trans "Headings" %}</h2>
+        <p>
+        Untuk setiap huruf di dalam judul bab, tuliskan simbol (contohnya, = atau
+        *) dengan jumlah yang sama.
+        </p>
+        <p>
+        Mengenai simbol tersebut, karakter yang dipakai sebenarnya tidak penting,
+        urutan penggunaan simbol tersebut yang menjadikannya &lt;h1&gt; atau
+        &lt;h2&gt;. Ikuti penggunaan simbol di bawah agar menghasilkan teks yang
+        seragam.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th>H2</th>
+      <td>
+        <pre>
+Heading<br>
+=======
+        </pre>
+      </td>
+      <td>
+        <h2>Heading</h2>
+      </td>
+    </tr>
+    <tr>
+      <th>H3</th>
+      <td>
+        <pre>
+Heading<br>
+-------
+        </pre>
+      </td>
+      <td>
+        <h3>Heading</h3>
+      </td>
+    </tr>
+    <tr>
+      <th>H4</th>
+      <td>
+        <pre>
+Heading<br>
+~~~~~~~
+        </pre>
+      </td>
+      <td>
+        <h4>Heading</h4>
+      </td>
+    </tr>
+    <tr>
+      <th>H5</th>
+      <td>
+        <pre>
+Heading<br>
+*******
+        </pre>
+      </td>
+      <td>
+        <h5>Heading</h5>
+      </td>
+    </tr>
+    <tr>
+      <th>H6</th>
+      <td>
+        <pre>
+Heading<br>
+^^^^^^^
+        </pre>
+      </td>
+      <td>
+        <h6>Heading</h6>
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="3">
+        <h2>{% trans "Inline markup" %}</h2>
+        <p>
+        Gunakan marka teks berikut untuk memberikan makna tambahan pada kalimat.
+        </p>
+      </td>
+      <td>
+        <pre>
+**Text**
+        </pre>
+      </td>
+      <td><b>Text</b></td>
+    </tr>
+    <tr>
+      <td>
+        <pre>
+*Text*
+        </pre>
+      </td>
+      <td><i>Text</i></td>
+    </tr>
+    <tr>
+      <td>
+        <pre>
+``Text`
+        </pre>
+      </td>
+      <td><code>Text</code></td>
+    </tr>
+    <tr>
+      <th rowspan="2">
+        <h2>{% trans "Bulleted list" %}</h2>
+      </th>
+      <td>
+        <pre>
+- This is a bulleted list.
+- It has two items, the second
+  item uses two lines.
+        </pre>
+      </td>
+      <td>
+        <ul>
+          <li>This is a bulleted list.</li>
+          <li>It has two items, the second item uses two lines.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <pre>
+* This is a bulleted list too.
+* The principle stays the same.
+        </pre>
+      </td>
+      <td>
+        <ul>
+          <li>This is a bulleted list too.</li>
+          <li>The principle stays the same.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="2">
+        <h2>{% trans "Numbered list" %}</h2>
+      </th>
+      <td>
+        <pre>
+#. This is a numbered list.
+#. Numbering is automatic.
+        </pre>
+      </td>
+      <td>
+        <ol>
+          <li>This is a numbered list.</li>
+          <li>Numbering is automatic.</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <pre>
+1. This is a numbered list too.
+2. Use this format to specify the numbering.
+        </pre>
+      </td>
+      <td>
+        <ol>
+          <li>This is a numbered list too.</li>
+          <li>Use this format to specify the numbering.</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <h2>{% trans "Nested list" %}</h2>
+      </th>
+      <td>
+        <pre>
+- This is the first item of a bulleted list.
 
-<section>
-  <h2>{% trans "Markup" %}</h2>
-  <h3>{% trans "Inline markup" %}</h3>
-  <p>
-    Gunakan marka teks berikut untuk memberikan makna tambahan pada kalimat.
-  </p>
-  <table>
-    <tbody>
-      <tr>
-        <th>**Text**</th>
-        <td><b>Text</b></td>
-      </tr>
-      <tr>
-        <th>*Text*</th>
-        <td><i>Text</i></td>
-      </tr>
-      <tr>
-        <th>``Text``</th>
-        <td><code>Text</code></td>
-      </tr>
-    </tbody>
-  </table>
+  1. It has a nested numbered list
+  2. with two items.
+        </pre>
+      </td>
+      <td>
+        <ul>
+          <li>
+            This is the first item of a bulleted list.
 
-  <h3>{% trans "Bulleted list" %}</h3>
-  <p>Contoh:</p>
-  <pre>
-    - This is a bulleted list.
-    - It has two items, the second
-      item uses two lines.
-  </pre>
-  <p>Hasil:</p>
-  <ul>
-    <li>This is a bulleted list.</li>
-    <li>It has two items, the second item uses two lines.</li>
-  </ul>
-  <p>Contoh:</p>
-  <pre>
-    * This is a bulleted list too.
-    * The principle stays the same.
-  </pre>
-  <p>Hasil:</p>
-  <ul>
-    <li>This is a bulleted list too.</li>
-    <li>The principle stays the same.</li>
-  </ul>
+            <ol>
+              <li>It has a nested numbered list</li>
+              <li>with two items.</li>
+            </ol>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>{% trans "Hyperlink references" %}</h2>
+        <p>
+        Acuan tautan adalah tautan kepada sebuah URL dengan teks tersendiri,
+        penulisannya seperti ini: <code>`label &lt;URL&gt;`_</code>.
+        </p>
+        <p>
+        Diakhiri dengan garis bawah, kalau teksnya terdiri lebih dari satu kata maka
+        teks tersebut dikelompokkan menggunakan karakter <code>`</code>.
+        </p>
+      </td>
+      <td>
+        <pre>
+For instance, `this is a hyperlink reference &lt;https://odoo.com&gt;`_.
+        </pre>
+      </td>
+      <td>
+        <p>
+        For instance, <a href="https://odoo.com">this is a hyperlink reference</a>.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>{% trans "External hyperlink targets" %}</h2>
+        <p>
+        Dengan sumber acuan tautan, kita bisa buat pintasan untuk digunakan oleh
+        acuan tautan. Penulisannya seperti ini: <code>.. _target: URL</code>.
+        </p>
+        <p>
+        Ada dua cara untuk merujuk sebuah sumber acuan tautan, tergantung
+        penggunaannya:
+        </p>
+        <ol>
+          <li>
+            <code>target_</code> membuat tautan dengan nama target sebagai teksnya
+            dan URL sebagai tautannya. Perhatikan bahwa karakter garis bawah sekarang
+            ada di akhir kata "target"!
+          </li>
+          <li>
+            <code>`label &lt;target_&gt;`_</code> itu sama dengan yang sebelumnya,
+            tetapi tampilan teksnya diganti dengan <code>label</code>.
+          </li>
+        </ol>
+      </td>
+      <td>
+        <pre>
+.. _proof-of-concept: https://en.wikipedia.org/wiki/Proof_of_concept
 
-  <h3>{% trans "Numbered list" %}</h3>
-  <p>Contoh:</p>
-  <pre>
-    #. This is a numbered list.
-    #. Numbering is automatic.
-  </pre>
-  <p>Hasil:</p>
-  <ol>
-    <li>This is a numbered list.</li>
-    <li>Numbering is automatic.</li>
-  </ol>
-  <p>Contoh:</p>
-  <pre>
-    1. This is a numbered list too.
-    2. Use this format to specify the numbering.
-  </pre>
-  <p>Hasil:</p>
-  <ol>
-    <li>This is a numbered list too.</li>
-    <li>Use this format to specify the numbering.</li>
-  </ol>
+A proof-of-concept_ is a simplified version, a prototype of what is
+expected to agree on the main lines of expected changes.
+`PoC &lt;proof-of-concept_&gt;`_ is a common abbreviation.
+        </pre>
+      </td>
+      <td>
+        <p>
+        A <a href="https://en.wikipedia.org/wiki/Proof_of_concept">proof-of-concept
+        </a> is a simplified version, a prototype of what is expected to agree on
+        the main lines of expected changes.
+        <a href="https://en.wikipedia.org/wiki/Proof_of_concept">PoC</a> is a common
+        abbreviation.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>{% trans "Internal hyperlink targets" %}</h2>
+        <p>
+        Sumber acuan tautan internal mengikuti penulisan yang sama dengan yang
+        external, tapi tanpa URL. Target dari tautannya ada di dalam dokumen itu
+        sendiri. Ketika pengguna mengklik acuan tautan, tampilan dokumennya bergeser
+        ke lokasi sumber acuan tautan di halaman yang sama.
+        Pola penulisannya adalah: <code>.. _target:</code>.
+        </p>
+        <p>
+        Ada dua cara merujuk ke sumber acuan, keduanya menggunakan kode
+        <code>ref</code>.
+        </p>
+        <ol>
+          <li>
+            <code>:ref:`target`</code> buat tautan ke jangkar dengan bab yang ada
+            di bawahnya digunakan sebagai teks tautan.
+          </li>
+          <li>
+            <code>:ref:`label &lt;target&gt;`</code> sama dengan di atas, tapi label
+            dijadikan teks tautan.
+          </li>
+        </ol>
+      </td>
+      <td>
+        <pre>
+.. _sales/quotation/start-of-page:
 
-  <h3>{% trans "Nested list" %}</h3>
-  <p>Contoh:</p>
-  <pre>
-    - This is the first item of a bulleted list.
+This can easily be done by creating a new product, see :ref:`product` for
+additional help.
 
-      1. It has a nested numbered list
-      2. with two items.
-  </pre>
-  <p>Hasil:</p>
-  <ul>
-    <li>
-      This is the first item of a bulleted list.
+.. _sales/quotation/product:
 
-      <ol>
-        <li>It has a nested numbered list</li>
-        <li>with two items.</li>
-      </ol>
-    </li>
-  </ul>
-</section>
+How to create a product?
+=========================
 
-<section class="mdc-layout-grid__cell--span-12">
-  <h2>{% trans "Hyperlinks" %}</h2>
-  <h3>{% trans "Hyperlink references" %}</h3>
-  <p>
-    Acuan tautan adalah tautan kepada sebuah URL dengan teks tersendiri,
-    penulisannya seperti ini: <code>`label &lt;URL&gt;`_</code>.
-  </p>
-  <p>
-    Diakhiri dengan garis bawah, kalau teksnya terdiri lebih dari satu kata maka
-    teks tersebut dikelompokkan menggunakan karakter <code>`</code>.
-  </p>
-  <p>Contoh:</p>
-  <pre>
-    For instance, `this is a hyperlink reference &lt;https://odoo.com&gt;`_.
-  </pre>
-  <p>Hasil:</p>
-  <p>
-    For instance, <a href="https://odoo.com">this is a hyperlink reference</a>.
-  </p>
-
-  <h3>{% trans "External hyperlink targets" %}</h3>
-  <p>
-    Dengan sumber acuan tautan, kita bisa buat pintasan untuk digunakan oleh
-    acuan tautan. Penulisannya seperti ini: <code>.. _target: URL</code>.
-  </p>
-  <p>
-    Ada dua cara untuk merujuk sebuah sumber acuan tautan, tergantung
-    penggunaannya:
-  </p>
-  <ol>
-    <li>
-      <code>target_</code> membuat tautan dengan nama target sebagai teksnya
-      dan URL sebagai tautannya. Perhatikan bahwa karakter garis bawah sekarang
-      ada di akhir kata "target"!
-    </li>
-    <li>
-      <code>`label &lt;target_&gt;`_</code> itu sama dengan yang sebelumnya,
-      tetapi tampilan teksnya diganti dengan <code>label</code>.
-    </li>
-  </ol>
-  <p>Contoh:</p>
-  <pre>
-    .. _proof-of-concept: https://en.wikipedia.org/wiki/Proof_of_concept
-
-    A proof-of-concept_ is a simplified version, a prototype of what is
-    expected to agree on the main lines of expected changes.
-    `PoC &lt;proof-of-concept_&gt;`_ is a common abbreviation.
-  </pre>
-  <p>Hasil:</p>
-  <p>
-    A <a href="https://en.wikipedia.org/wiki/Proof_of_concept">proof-of-concept
-    </a> is a simplified version, a prototype of what is expected to agree on
-    the main lines of expected changes.
-    <a href="https://en.wikipedia.org/wiki/Proof_of_concept">PoC</a> is a common
-    abbreviation.
-  </p>
-
-  <h3>{% trans "Internal hyperlink targets" %}</h3>
-  <p>
-    Sumber acuan tautan internal mengikuti penulisan yang sama dengan yang
-    external, tapi tanpa URL. Target dari tautannya ada di dalam dokumen itu
-    sendiri. Ketika pengguna mengklik acuan tautan, tampilan dokumennya bergeser
-    ke lokasi sumber acuan tautan di halaman yang sama.
-    Pola penulisannya adalah: <code>.. _target:</code>.
-  </p>
-  <p>
-    Ada dua cara merujuk ke sumber acuan, keduanya menggunakan kode
-    <code>ref</code>.
-  </p>
-  <ol>
-    <li>
-      <code>:ref:`target`</code> buat tautan ke jangkar dengan bab yang ada
-      di bawahnya digunakan sebagai teks tautan.
-    </li>
-    <li>
-      <code>:ref:`label &lt;target&gt;`</code> sama dengan di atas, tapi label
-      dijadikan teks tautan.
-    </li>
-  </ol>
-  <p>Contoh:</p>
-  <pre>
-    .. _sales/quotation/start-of-page:
-
-    This can easily be done by creating a new product, see :ref:`product` for
-    additional help.
-
-    .. _sales/quotation/product:
-
-    How to create a product?
-    =========================
-
-    As explained at the :ref:`start of the page
-    &lt;sales/quotation/start-of-page&gt;`, ...
-  </pre>
-  <p>Hasil:</p>
-  <p>
-    This can easily be done by creating a new product, see <a href="#">How to
-    create a product?</a> for additional help.
-  </p>
-  <p><strong>How to create a product?</strong></p>
-  <p>As explained at the <a href="#">start of the page</a>, ...</p>
-
-  <h3>{% trans "Implicit hyperlink targets" %}</h3>
-</section>
+As explained at the :ref:`start of the page
+&lt;sales/quotation/start-of-page&gt;`, ...
+        </pre>
+      </td>
+      <td>
+        <p>
+        This can easily be done by creating a new product, see <a href="#">How to
+        create a product?</a> for additional help.
+        </p>
+        <p><strong>How to create a product?</strong></p>
+        <p>As explained at the <a href="#">start of the page</a>, ...</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>{% trans "Implicit hyperlink targets" %}</h2>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 <div>
   <p>
-    Sumber:
-    <a href="https://www.odoo.com/documentation/user/14.0/contributing/documentation/rst_cheat_sheet.html">
-      Dokumentasi Odoo
-    </a>
+  Sumber:
+  <a href="https://www.odoo.com/documentation/user/14.0/contributing/documentation/rst_cheat_sheet.html">
+    Dokumentasi Odoo
+  </a>
   </p>
 </div>
 {% endblock %}

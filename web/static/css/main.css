@@ -24356,6 +24356,19 @@ td, th {
 
 ul, ol {
   list-style: revert;
+  margin-left: 1.5em;
+}
+
+b {
+  font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
+pre {
+  font-family: monospace;
 }
 
 .bx--navigation li {

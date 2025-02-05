@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-08 15:11+0700\n"
+"POT-Creation-Date: 2025-02-06 05:41+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,55 +77,51 @@ msgstr ""
 msgid "Text Editor Documentation"
 msgstr "Dokumentasi Penyunting Teks"
 
-#: website/templates/website/editor-helptext.html:12
+#: website/templates/website/editor-helptext.html:14
+msgid "Notes"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:15
+msgid "Code"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:16
+msgid "Result"
+msgstr ""
+
+#: website/templates/website/editor-helptext.html:22
 msgid "Headings"
 msgstr "Tentang Heading"
 
-#: website/templates/website/editor-helptext.html:26
-msgid "Heading Size"
-msgstr "Tingkatan Heading"
-
-#: website/templates/website/editor-helptext.html:27
-msgid "Formatting"
-msgstr "Penampilan"
-
-#: website/templates/website/editor-helptext.html:71
-msgid "Markup"
-msgstr "Markah"
-
-#: website/templates/website/editor-helptext.html:72
+#: website/templates/website/editor-helptext.html:97
 msgid "Inline markup"
 msgstr "Markah dalam kalimat"
 
-#: website/templates/website/editor-helptext.html:93
+#: website/templates/website/editor-helptext.html:127
 msgid "Bulleted list"
 msgstr "Daftar"
 
-#: website/templates/website/editor-helptext.html:116
+#: website/templates/website/editor-helptext.html:159
 msgid "Numbered list"
 msgstr "Daftar terurut"
 
-#: website/templates/website/editor-helptext.html:138
+#: website/templates/website/editor-helptext.html:190
 msgid "Nested list"
 msgstr "Anakan daftar"
 
-#: website/templates/website/editor-helptext.html:160
-msgid "Hyperlinks"
-msgstr "Tentang tautan"
-
-#: website/templates/website/editor-helptext.html:161
+#: website/templates/website/editor-helptext.html:215
 msgid "Hyperlink references"
 msgstr "Tentang acuan tautan"
 
-#: website/templates/website/editor-helptext.html:179
+#: website/templates/website/editor-helptext.html:238
 msgid "External hyperlink targets"
 msgstr "Tentang sumber acuan tautan eksternal"
 
-#: website/templates/website/editor-helptext.html:216
+#: website/templates/website/editor-helptext.html:280
 msgid "Internal hyperlink targets"
 msgstr "Tentang sumber acuan tautan internal"
 
-#: website/templates/website/editor-helptext.html:261
+#: website/templates/website/editor-helptext.html:330
 msgid "Implicit hyperlink targets"
 msgstr "Tentang sumber acuan tautan implisit"
 
@@ -138,6 +134,18 @@ msgstr ""
 #| msgid "Latest News"
 msgid "Recent News"
 msgstr "Berita Terbaru"
+
+#~ msgid "Hyperlinks"
+#~ msgstr "Tentang tautan"
+
+#~ msgid "Markup"
+#~ msgstr "Markah"
+
+#~ msgid "Heading Size"
+#~ msgstr "Tingkatan Heading"
+
+#~ msgid "Formatting"
+#~ msgstr "Penampilan"
 
 #~ msgid "Read more"
 #~ msgstr "Baca Selengkapnya"
